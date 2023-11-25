@@ -1,24 +1,23 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from './components/HomePage.vue';
 
-import HomePage from './components/HomePage.vue'
+import GenerateContent from './components/GenerateContent.vue';
 
-import GenerateContent from './components/GenerateContent.vue'
-
-const router = createRouter({ 
+const router = createRouter({
   history: createWebHistory(),
-    mode: 'history',
-    routes: [
-        { 
-          path: '/',
-          name: 'HomePage',
-          component: HomePage
-        },
-        { 
-          path: '/generate', 
-          name: 'GenerateContent',
-          component: GenerateContent
-        }
-    ]
-})
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'HomePage',
+      component: HomePage,
+    },
+    {
+      path: '/generate',
+      name: 'GenerateContent',
+      component: GenerateContent,
+    },
+  ],
+});
 
-export default router
+export default router;

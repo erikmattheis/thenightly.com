@@ -7,30 +7,46 @@
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
     <div v-html="content"></div>
-    <button @click="saveContent">Save Content</button>
+    <div v-html="sidebar"></div>
+    <button @click="testSaveContent">Save Content</button>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+
 export default {
   name: 'GenerateContent',
   data() {
     return {
+      topic: '',
+      grade: 8,
+      len: 850,
       title: '',
       description: '',
       content: '',
+      sidebar: '',
     };
   },
-  async mounted() {
-    const response = await this.fetchContent();
-    this.title = response.title;
-    this.description = response.description;
-    this.content = response.content;
+  created() {
+    // this.testSaveContent();
   },
   methods: {
+    async testSaveContent() {
+      const response = await axios.post('/.netlify/functions/testfirestore', {
+        title: 'Test Title',
+        description: 'Test Description',
+        content: 'Test Content',
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const body = await response.json();
+      console.log('Saved content:', body);
+    },
     async fetchContent() {
-      const response = await axios.post(`/.netlify/functions/generate-content?topic=${this.topic}`);
+      const response = await axios.post(`/.netlify/functions/generatecontent-background?topic=${this.topic}&grade=${this.grade}&len=${this.len}`);
       return {
         title: response.title,
         description: response.description,
@@ -38,7 +54,7 @@ export default {
       };
     },
     async saveContent() {
-      const response = await axios.post('/.netlify/functions/save-content', {
+      const response = await axios.post('/.netlify/functions/savecontent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
