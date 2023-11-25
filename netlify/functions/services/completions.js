@@ -12,37 +12,33 @@ async function generateDesiredContentCallback(result) {
   fs.writeFileSync('result.json', JSON.stringify(result, null, 2));
 }
 
+function getMessage(response) {
+  return response.choices[0].message.content.trim();
+}
+
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'user',
-    content: `Write funny informative ${len} word article topic ${topic}, 
-  grade ${grade} level about {$len} words long. Reply only with a HTML body tag, using only p tags and h2 tags for section titles`,
+    content: `Write funny informative ${len} word article about ${topic}, at a 
+  grade ${grade} level. Reply in a HTML document, using only p tags and h2 tags.`,
   }];
 
   return messages;
 }
 
-async function generateDesiredContent(messages) {
+async function generateContent(messages) {
   const response = await openai.chat.completions.create({
     messages,
     model,
-    max_tokens: 1000,
   });
 
-  const result = response.choices[0].message.content.trim();
-
-  return result;
-
-  // eslint-disable-next-line no-constant-condition
-  // return callback(result);
-
-  // return generateDesiredContent(messages, generateDesiredContent, i);
+  return response;
 }
 
 function makeDescriptionMessages(content) {
   const messages = [{
     role: 'user',
-    content: `Meta description for article: ${content}`,
+    content: `Meta description fewer than 158 characters for article: ${content}`,
   }];
 
   return messages;
@@ -59,7 +55,7 @@ function makeTitleMessages(description) {
 function makeSidebarMessages(content) {
   const messages = [{
     role: 'user',
-    content: `Sidebar, no more than two or three sentances, add 
+    content: `Sidebar, no more than two or three sentences, add 
     any appropriate strong and em tags, if it is very short, put it in a singe h4 tag, 
     pulled from article ${content}`,
   }];
@@ -73,44 +69,51 @@ async function generateCompletion(messages) {
     model,
   });
 
-  return response.choices[0].message.content.trim();
+  return response;
 }
 
 async function generateArticle(topic, grade, len) {
   const contentMessages = makeContentMessages(topic, grade, len);
 
-  const content = await generateDesiredContent(contentMessages, generateDesiredContentCallback);
+  const contentResponse = await generateContent(contentMessages, generateDesiredContentCallback);
+
+  const content = getMessage(contentResponse);
 
   const descriptionMessages = makeDescriptionMessages(content);
 
-  const description = await generateCompletion(descriptionMessages);
+  const descriptionResponse = await generateCompletion(descriptionMessages);
+
+  const description = getMessage(descriptionResponse);
 
   const titleMessages = makeTitleMessages(description);
 
-  const title = await generateCompletion(titleMessages);
+  const titleResponse = await generateCompletion(titleMessages);
 
-  const sidebarMessages = makeSidebarMessages(content);
+  const title = getMessage(titleResponse);
 
-  const sidebar = await generateCompletion(sidebarMessages);
+  const sidebarMessagesResponse = makeSidebarMessages(content);
+
+  const sidebarMessages = await generateCompletion(sidebarMessagesResponse);
+
+  const sidebar = await getMessage(sidebarMessages);
 
   return {
-    statusCode: 200,
-    body: JSON.stringify({
-      content,
-      contentMessages,
-      description,
-      descriptionMessages,
-      title,
-      titleMessages,
-      sidebar,
-      sidebarMessages,
-      args: {
-        topic,
-        grade,
-        len,
-        model,
+    content,
+    description,
+    title,
+    sidebar,
+    input: {
+      topic,
+      grade,
+      len,
+      model,
+      messages: {
+        content: contentMessages,
+        description: descriptionMessages,
+        title: titleMessages,
+        sidebar: sidebarMessages,
       },
-    }),
+    },
   };
 }
 

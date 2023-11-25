@@ -1,21 +1,30 @@
 // functions/generatecontent-background.js
 // eslint-disable-next-line import/no-import-module-exports, import/named
-const fs = require('fs');
-const sanitize = require('sanitize-filename');
+
+const { performance } = require('perf_hooks');
+const { save } = require('./services/firestore');
 
 const { generateArticle } = require('./services/completions');
 
-exports.handler = async function myHandler(event) {
-  const prompt = event.queryStringParameters.prompt || 'Synthetic fabrics used in sports';
-  const grade = event.queryStringParameters.grade || 8;
-  const len = event.queryStringParameters.len || 180;
-  const response = await generateArticle(prompt, grade, len);
+function executionTimeToSeconds(executionTime) {
+  return Math.round((executionTime / 1000) * 100) / 100;
+}
 
-  const safeFilename = sanitize(prompt);
-  fs.writeFileSync(`${safeFilename}.json`, JSON.stringify(response, null, 2));
+// eslint-disable-next-line func-names
+exports.handler = async function (request) {
+  const body = JSON.parse(request.body);
+  const topic = body.topic || 'Synthetic fabrics used in sports';
+  const grade = body.grade || 10;
+  const len = body.len || 180;
+  const start = performance.now();
+  const response = await generateArticle(topic, grade, len);
+  const end = performance.now();
+  console.log(`Execution time: ${end - start} ms`);
+  const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
+  await save('dyes', { ...response, executionTime });
 
   return {
     statusCode: 200,
-    body: JSON.stringify(response),
+    body: response,
   };
 };
