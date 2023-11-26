@@ -49,9 +49,9 @@ function executionTimeToSeconds(executionTime) {
 exports.handler = async function (request) {
   const body = JSON.parse(request.body);
   // const topic = body.topic || 'Synthetic fabrics used in sports';
-  const json = getJSONFromFile(path.resolve(__dirname, './data/config/lists/dyes.json'));
+  const json = getJSONFromFile(path.resolve(__dirname, './data/config/lists/fibers.json'));
   // const topics = ['Radiohead']; // json.dyes.map((dye) => dye.name);
-  const topics = json.dyes.map((dye) => dye.name);
+  const topics = json.fibers.map((dye) => dye.name);
   topics.forEach(async (topic) => {
     const start = performance.now();
     const grade = body.grade || getAGrade();
@@ -60,7 +60,7 @@ exports.handler = async function (request) {
     const end = performance.now();
     console.log(`Execution time: ${end - start} ms`);
     const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
-    await save('dyes', { ...response, executionTime });
+    await save('fibers', { ...response, executionTime });
   });
   console.log('Done.');
   return {
