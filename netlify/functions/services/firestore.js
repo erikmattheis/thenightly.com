@@ -30,7 +30,7 @@ async function save(collection, doc) {
 
     const docRef = db.collection(collection).doc(docId);
     const timestamp = admin.firestore.Timestamp.now();
-    await docRef.set({ ...doc, timestamp });
+    await docRef.set({ ...doc, docId, timestamp });
 
     const result = docRef.get();
     return result.data();

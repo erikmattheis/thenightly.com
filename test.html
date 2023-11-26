@@ -2,75 +2,67 @@
 <html>
 
 <head>
-  <title>Chart.js Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <title>Title of the document</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+  <!-- cdn for mathjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.4/math.min.js"></script>
+
+
 </head>
 
 <body>
   <canvas id="myChart"></canvas>
   <script>
 
-
-
-    function clusteredRandomWithinRange(min, max, mid) {
-      const range = max - min;
-      const mean = (mid - min) / range; // Mean of the distribution, relative to the range
-      const stdDev = 0.2; // Adjust the standard deviation based on your preferences
-
-      // Use the Box-Muller transform to generate two independent standard normally distributed random numbers
-      const u1 = 1 - Math.random(); // to avoid log(0)
-      const u2 = 1 - Math.random();
-      const z0 = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
-
-      // Scale and shift the distribution
-      let result = Math.round(mean * range + min + z0 * stdDev * range);
-
-      // Ensure the result is greater than the minimum
-
-
-      // Ensure the result is less than the maximum
-      result = max - Math.abs(max - result);
-
-      return Math.abs(result);
+    function normalRandom(mean, stdDev) {
+      let u = 0, v = 0;
+      while (u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+      while (v === 0) v = Math.random();
+      let num = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+      num = num * stdDev + mean;
+      return num;
     }
 
-    const result = [];
-    // Example usage
-    for (let i = 0; i < 1000; i++) {
-      const randomNumber = clusteredRandomWithinRange(200, 1000, 400);
-      result.push(randomNumber);
+    function simulateWordCount(assignedWords) {
+      let finalWordCount;
+      do {
+        const revisionFactor = this.normalRandom(1.1, 0.07);
+        finalWordCount = (assignedWords * revisionFactor);
+
+        finalWordCount = Math.round(finalWordCount);
+      } while (finalWordCount < assignedWords * 0.7 || finalWordCount > assignedWords * 1.5);
+      return finalWordCount;
     }
+    const len = 1000;
+    const yValues = Array.from({ length: len }, () => simulateWordCount(500));
 
-    const data = result.map((n, i) => ({
-      y: n,
-      x: i
-    }));
 
+    // Create a chart
     const ctx = document.getElementById('myChart').getContext('2d');
-    new Chart(ctx, {
+    const myChart = new Chart(ctx, {
       type: 'scatter',
       data: {
+        labels: Array.from({ length: len }, (_, i) => i),
         datasets: [{
-          label: 'Scatter Dataset',
-          data: data,
+          label: 'Word Count',
+          data: Array.from({ length: len }, (_, i) => ({ x: i, y: yValues[i] })),
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
         }]
       },
       options: {
         scales: {
-          x: {
-            type: 'linear',
-            position: 'bottom',
+          yAxes: [{
             ticks: {
-              stepSize: 1,
-              callback: function (value) {
-                return Number.isInteger(value) ? value : '';
-              }
+              beginAtZero: true
             }
-          }
+          }]
         }
       }
     });
-
   </script>
 </body>
 

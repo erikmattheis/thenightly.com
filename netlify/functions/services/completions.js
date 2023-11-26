@@ -18,9 +18,11 @@ function getMessage(response) {
 
 function makeContentMessages(topic, grade, len) {
   const messages = [{
+    role: 'system',
+    content: 'You are a darkly humorous, imaginative and abrasive writer.',
+  }, {
     role: 'user',
-    content: `Write funny informative ${len} word article about ${topic}, at a 
-  grade ${grade} level. Reply in a HTML document, using only p tags and h2 tags.`,
+    content: `${len} word article about natural dye ${topic}, ${grade} reading level. Reply in HTML article element, use only p tags and h2 tags.`,
   }];
 
   return messages;
@@ -46,7 +48,7 @@ function makeDescriptionMessages(content) {
 
 function makeTitleMessages(description) {
   const messages = [{
-    role: 'user', content: `Title for article described as ${description}`,
+    role: 'user', content: `Title fewer than 66 characters, article described as ${description}`,
   }];
 
   return messages;
@@ -55,9 +57,11 @@ function makeTitleMessages(description) {
 function makeSidebarMessages(content) {
   const messages = [{
     role: 'user',
-    content: `Sidebar, no more than two or three sentences, add 
-    any appropriate strong and em tags, if it is very short, put it in a singe h4 tag, 
-    pulled from article ${content}`,
+    content: `Catchy sidebar extracted directly from article:
+    
+    ${content}
+    
+    No more than two or three sentences, add appropriate strong or em tags, if it is fewer than 10 words wrap it in an h4 tag.`,
   }];
 
   return messages;
