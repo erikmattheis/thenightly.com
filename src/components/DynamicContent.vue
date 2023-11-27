@@ -1,7 +1,7 @@
 <!-- src/views/HomePage.vue -->
 <template>
   <div>
-    <div v-for="(article, i) in dyes" :key="i">
+    <div v-for="(article, i) in articles" :key="i">
       <h1>{{ article.title }}</h1>
       <p>{{ article.description }}</p>
       <div v-html="article.content"></div>
@@ -12,27 +12,19 @@
 </template>
 
 <script>
-import axios from 'axios';
+import dyes from '../data/dyes.json';
 
 export default {
   name: 'DynamicContent',
   data() {
     return {
-      articles: [],
+      articles: dyes,
     };
   },
   created() {
     this.newParams();
   },
   methods: {
-
-    async saveContent() {
-      await axios.post('/.netlify/functions/generatecontent-background', {
-        topic: this.topic,
-        grade: this.grade,
-        len: this.len,
-      });
-    },
 
     getAGrade() {
       const grades = [7, 8, 9, 10, 11, 12, 'college'];

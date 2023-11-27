@@ -21,7 +21,7 @@ exports.handler = async function () {
   const t0 = performance.now();
   // const topic = body.topic || 'Synthetic fabrics used in sports';
   const subjects = [
-    'dyes', 'fabrics',
+    'dyes',
   ];
   function replaceWhiteSpaceWithDash(name) {
     return name.replace(/\s*/g, '-');

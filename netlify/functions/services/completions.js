@@ -19,10 +19,10 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You have an imaginative, abrasive writing style with a dark sense of humor.',
+    content: 'You are a writer with an abrasive, occasionally outrageous, angry style and a dark sense of humor.',
   }, {
     role: 'user',
-    content: `${len} word article about the fiber ${topic} for a ${grade} reading level. Format in HTML, use only p, em, strong and h2 tags.`,
+    content: `${len} word article about ${topic} for a ${grade} reading level. Format in HTML, use only p, em, strong and h2 tags.`,
   }];
 
   return messages;
@@ -41,7 +41,7 @@ function makeDescriptionMessages(str) {
   const shorter = str.split(' ').slice(0, 100).join(' ');
   const messages = [{
     role: 'user',
-    content: `HTML meta description less than 158 characters for article: ${shorter}`,
+    content: `Write a HTML meta description less than 158 characters for article: ${shorter}`,
   }];
 
   return messages;
@@ -78,6 +78,7 @@ async function generateCompletion(messages) {
 }
 
 function getRidOfAllButBodyContent(str) {
+  if (!str.includes('<body>') || !str.includes('</body>')) return str;
   const body = str.split('<body>')[1].split('</body>')[0];
   return body;
 }

@@ -1,6 +1,7 @@
 <!-- src/views/HomePage.vue -->
 <template>
   <div>
+    <button @click="createInitialData()">Create Initial Data</button>
     <h1>Generate Content</h1>
     <input v-model="topic" placeholder="Type topic here" /><br />
     <input v-model="grade" placeholder="Type grade here" /><br />
@@ -34,6 +35,13 @@ export default {
     this.newParams();
   },
   methods: {
+    async createInitialData() {
+      await axios.post('/.netlify/functions/generatecontent-background', {
+        topic: 'test',
+        grade: 'College',
+        len: 100,
+      });
+    },
 
     async saveContent() {
       await axios.post('/.netlify/functions/generate-json', {
