@@ -19,10 +19,10 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are a darkly humorous, imaginative and abrasive writer.',
+    content: 'You have an imaginative, abrasive writing style with a dark sense of humor.',
   }, {
     role: 'user',
-    content: `${len} word article about natural dye ${topic}, ${grade} reading level. Reply in HTML article element, use only p tags and h2 tags.`,
+    content: `${len} word article about the fiber ${topic} for a ${grade} reading level. Format in HTML, use only p, em, strong and h2 tags.`,
   }];
 
   return messages;
@@ -37,36 +37,37 @@ async function generateContent(messages) {
   return response;
 }
 
-function makeDescriptionMessages(content) {
+function makeDescriptionMessages(str) {
+  const shorter = str.split(' ').slice(0, 100).join(' ');
   const messages = [{
     role: 'user',
-    content: `Meta description fewer than 158 characters for article: ${content}`,
+    content: `HTML meta description less than 158 characters for article: ${shorter}`,
   }];
 
   return messages;
 }
 
-function makeTitleMessages(description) {
+function makeTitleMessages(str) {
   const messages = [{
-    role: 'user', content: `Title fewer than 66 characters, article described as ${description}`,
+    role: 'user', content: `Title less than 66 characters, article described as ${str}`,
   }];
 
   return messages;
 }
-
-function makeSidebarMessages(content) {
+/*
+function makeSidebarMessages(str) {
   const messages = [{
     role: 'user',
-    content: `Catchy sidebar extracted directly from article:
-    
-    ${content}
-    
-    No more than two or three sentences, add appropriate strong or em tags, if it is fewer than 10 words wrap it in an h4 tag.`,
+    content: `Sidebar fewer than 100 words taken directly from article:
+
+    ${str}
+
+    .`,
   }];
 
   return messages;
 }
-
+*/
 async function generateCompletion(messages) {
   const response = await openai.chat.completions.create({
     messages,
@@ -76,12 +77,21 @@ async function generateCompletion(messages) {
   return response;
 }
 
-async function generateArticle(topic, grade, len) {
+function getRidOfAllButBodyContent(str) {
+  const body = str.split('<body>')[1].split('</body>')[0];
+  return body;
+}
+async function generateArticle(topic, grade, len, color) {
   const contentMessages = makeContentMessages(topic, grade, len);
 
   const contentResponse = await generateContent(contentMessages, generateDesiredContentCallback);
 
-  const content = getMessage(contentResponse);
+  // eslint-disable-next-line max-len
+  // const cleanedContentResponse = JSON.parse(JSON.stringify(contentResponse).replace(/\\n/g, ' '));
+
+  const preliminaryContent = getMessage(contentResponse);
+
+  const content = getRidOfAllButBodyContent(preliminaryContent);
 
   const descriptionMessages = makeDescriptionMessages(content);
 
@@ -94,18 +104,20 @@ async function generateArticle(topic, grade, len) {
   const titleResponse = await generateCompletion(titleMessages);
 
   const title = getMessage(titleResponse);
-
+  /*
   const sidebarMessagesResponse = makeSidebarMessages(content);
 
   const sidebarMessages = await generateCompletion(sidebarMessagesResponse);
 
   const sidebar = await getMessage(sidebarMessages);
-
+*/
   return {
+    title,
+    shortTitle: topic,
+    color,
     content,
     description,
-    title,
-    sidebar,
+    // sidebar,
     input: {
       topic,
       grade,
@@ -115,7 +127,7 @@ async function generateArticle(topic, grade, len) {
         content: contentMessages,
         description: descriptionMessages,
         title: titleMessages,
-        sidebar: sidebarMessages,
+        // sidebar: sidebarMessages,
       },
     },
   };

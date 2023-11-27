@@ -24,9 +24,10 @@ function sanitizeId(id) {
 }
 
 async function save(collection, doc) {
+  console.log('Saving to Firestore...', collection);
   try {
     // Add a new document with a generated id to the 'messages' collection
-    const docId = sanitizeId(`${doc.input.topic}_${Date.now()}`);
+    const docId = sanitizeId(`${doc.input.topic}`);
 
     const docRef = db.collection(collection).doc(docId);
     const timestamp = admin.firestore.Timestamp.now();
@@ -39,4 +40,17 @@ async function save(collection, doc) {
   }
 }
 
-module.exports = { save };
+async function getArticles(name) {
+  const articlesRef = db.collection(name).orderBy('topic', 'asc');
+  const snapshot = await articlesRef.get();
+
+  const articles = snapshot.docs.map((doc) => ({
+    title: doc.data().title,
+    description: doc.data().description,
+    content: doc.data().content,
+  }));
+
+  return articles;
+}
+
+module.exports = { save, getArticles };

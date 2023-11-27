@@ -46,20 +46,21 @@ function executionTimeToSeconds(executionTime) {
 }
 
 // eslint-disable-next-line func-names
-exports.handler = async function (request) {
-  const body = JSON.parse(request.body);
+exports.handler = async function () {
   // const topic = body.topic || 'Synthetic fabrics used in sports';
   const json = getJSONFromFile(path.resolve(__dirname, './data/config/lists/fibers.json'));
-  // const topics = ['Radiohead']; // json.dyes.map((dye) => dye.name);
-  const topics = json.fibers.map((dye) => dye.name);
-  topics.forEach(async (topic) => {
+  console.log(json);
+  const topics = json.fibers;
+  // only use first three topics for now
+  topics.length = 3;
+  await topics.forEach(async (topic) => {
     const start = performance.now();
-    const grade = body.grade || getAGrade();
-    const len = body.len || getALength(500);
-    const response = await generateArticle(topic, grade, len);
+    const grade = getAGrade();
+    const len = getALength(500);
+    const response = await generateArticle(`${`${topic.name}`}`, grade, len, topic.color);
     const end = performance.now();
-    console.log(`Execution time: ${end - start} ms`);
     const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
+    console.log(`Execution time: ${executionTime}`);
     await save('fibers', { ...response, executionTime });
   });
   console.log('Done.');
