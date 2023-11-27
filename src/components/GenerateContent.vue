@@ -36,7 +36,7 @@ export default {
   methods: {
 
     async saveContent() {
-      await axios.post('/.netlify/functions/generatecontent-background', {
+      await axios.post('/.netlify/functions/generate-json', {
         topic: this.topic,
         grade: this.grade,
         len: this.len,

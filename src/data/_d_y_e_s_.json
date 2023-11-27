@@ -1,0 +1,39 @@
+{
+  "_query": {
+    "_firestore": {
+      "projectId": "thenightlydotcom"
+    },
+    "_queryOptions": {
+      "parentPath": {
+        "segments": []
+      },
+      "collectionId": "dyes",
+      "converter": {},
+      "allDescendants": false,
+      "filters": [],
+      "fieldOrders": [
+        {
+          "field": {
+            "segments": [
+              "topic"
+            ]
+          },
+          "direction": "ASCENDING"
+        }
+      ],
+      "kindless": false,
+      "requireConsistency": true
+    },
+    "_serializer": {
+      "allowUndefined": false
+    },
+    "_allowUndefined": false
+  },
+  "_readTime": {
+    "_seconds": 1701069125,
+    "_nanoseconds": 129988000
+  },
+  "_size": 0,
+  "_materializedDocs": null,
+  "_materializedChanges": null
+}

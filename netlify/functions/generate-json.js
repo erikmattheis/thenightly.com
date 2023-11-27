@@ -20,11 +20,16 @@ exports.handler = async function () {
   console.log('Generating JSON...');
   const t0 = performance.now();
   // const topic = body.topic || 'Synthetic fabrics used in sports';
-  const subjects = 'dyes';
-
-  await subjects.forEach(async (subject) => {
+  const subjects = [
+    'dyes', 'fabrics',
+  ];
+  function replaceWhiteSpaceWithDash(name) {
+    return name.replace(/\s*/g, '-');
+  }
+  subjects.forEach(async (subject) => {
     const topics = await getArticles(subject);
-    const fileName = subject.replace(/\s*/g, '_');
+    console.log('topics', topics.length);
+    const fileName = replaceWhiteSpaceWithDash(subject);
     fs.writeFileSync(path.join(__dirname, `../../src/data/${fileName}.json`), JSON.stringify(topics, null, 2));
   });
 
