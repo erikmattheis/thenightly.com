@@ -19,9 +19,10 @@ const router = createRouter({
       component: GenerateContent,
     },
     {
-      path: '/articles',
+      path: '/articles/:topic',
       name: 'DynamicContent',
       component: DynamicContent,
+      props: true,
     },
   ],
 });

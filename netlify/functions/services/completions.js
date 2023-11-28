@@ -22,7 +22,7 @@ function makeContentMessages(topic, grade, len) {
     content: 'You are a writer with an abrasive, occasionally outrageous, angry style and a dark sense of humor.',
   }, {
     role: 'user',
-    content: `${len} word article about ${topic} for a ${grade} reading level. Format in HTML, use only p, em, strong and h2 tags.`,
+    content: `${len} word article about natural dye ${topic} for a ${grade} reading level. Format in HTML, use only p, em, strong and h2 tags.`,
   }];
 
   return messages;
