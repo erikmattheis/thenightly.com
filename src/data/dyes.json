@@ -1,30 +1,30 @@
 [
   {
     "input": {
-      "len": 543,
-      "grade": "10th grade",
+      "len": 542,
+      "grade": "7th grade",
       "topic": "Alkanet",
       "messages": {
         "description": [
           {
             "role": "user",
-            "content": "A page about Alkanet and starts \"\n\n    The Mystique of Alkanet: A Natural Dye Revolution\n\n    \n        Picture this: you're strutting down the fashion runway with a couture piece that not only turns heads\" needs a HTML meta-description. Give only attribute value."
+            "content": "A page about Alkanet and starts \"The Wild Tale of Alkanet: Nature's Quirkiest Dye\n\nDisclaimer: The following article contains liberal doses of sarcasm, humor, and a sprinkle of reality. Proceed at your own risk.\n\nLet's dive into the delightful world of natural dyes, where colors come alive without\" needs a HTML meta-description. Give only attribute value."
           }
         ],
         "title": [
           {
             "role": "user",
-            "content": "Title less than 66 characters, article described as content"
+            "content": "Title less than 66 characters, article described as content=\"Learn about the wild and quirky dye called Alkanet. Dive into the world of natural dyes and discover the vibrant colors it can bring to your life. Proceed with caution as sarcasm, humor, and reality blend together in this fun-filled journey.\""
           }
         ],
         "content": [
           {
             "role": "system",
-            "content": "You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson. You are writing an article for a fashion magazine."
+            "content": "You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson."
           },
           {
             "role": "user",
-            "content": "543 word article about natural dye Alkanet. Format in HTML, use only p, em, strong and h2 tags"
+            "content": "542 word article about natural dye Alkanet. Format in HTML, use only p, em, strong and h2 tags"
           }
         ]
       },
@@ -33,228 +33,228 @@
     "image": "Alkanet.jpg",
     "color": "#8B008B",
     "docId": "Alkanet",
-    "description": "content",
+    "description": "content=\"Learn about the wild and quirky dye called Alkanet. Dive into the world of natural dyes and discover the vibrant colors it can bring to your life. Proceed with caution as sarcasm, humor, and reality blend together in this fun-filled journey.\"",
     "shortTitle": "Alkanet",
-    "title": "How to Write Engaging and Informative Website Content",
-    "content": "\n\n    <h2>The Mystique of Alkanet: A Natural Dye Revolution</h2>\n\n    <p>\n        Picture this: you're strutting down the fashion runway with a couture piece that not only turns heads but also\n        makes people question their entire existence. What's the secret behind such an awe-inspiring garment, you ask?\n        It's none other than alkanet, the natural dye that's taking the fashion world by storm.\n    </p>\n\n    <p>\n        Move over, synthetic dyes; alkanet is here to redefine chic. While most dyes are manufactured in a lab,\n        alkanet is derived from the roots of the Alkanna tinctoria plant – as pure and natural as Mother Earth herself.\n        This gem promises to revolutionize the way we approach color in fashion, offering a spectrum that is intricate,\n        rustic, and oh-so-cool.\n    </p>\n\n    <p>\n        Alkanet possesses an almost magical quality, imparting shades that are earthy and enigmatic. Imagine a rich,\n        deep maroon reminiscent of fine Merlot swirling in your glass. That's the power of alkanet, my friends – a deep,\n        seductive hue that demands attention and challenges conformity.\n    </p>\n\n    <p>\n        This natural dye not only brings a touch of edgy elegance to your wardrobe, but it also engages our\n        environment-conscious selves. Alkanet is a sustainable alternative to those harsh, chemical-laden dyes we\n        foolishly resorted to for far too long. With Alkanna tinctoria as your fashion companion, you can embrace\n        eco-friendly fashion without sacrificing style.\n    </p>\n\n    <p>\n        But wait, there's more! The journey of alkanet doesn't end with its stunning colors – oh no, this dye has a\n        secret superpower. It's a chameleon of sorts, transforming its hues based on the fabric it's applied to. From\n        silk to cotton, alkanet adapts like a fashion shapeshifter, revealing unique shades and textures that keep you\n        on your toes.\n    </p>\n\n    <p>\n        And let's not forget about the mesmerizing history behind alkanet. This dye has been used for centuries,\n        beloved by ancient civilizations for its boldness and ability to evoke intrigue. Rocking alkanet isn't just\n        wearing a color; it's embracing a legacy.\n    </p>\n\n    <p>\n        So, my fellow fashionistas, it's time to break free from the monotony of mass-produced dyes and embrace the\n        allure of alkanet. Let it infuse your garments with a touch of mystery, a whisper of rebellion, and a splash of\n        environmental consciousness. Let's embark on this natural dye revolution together, one fashion-forward step at a\n        time.\n    </p>\n\n    <p>\n        Disclaimer: Side effects may include an uncontrollable desire to strut with confidence, an increased number of\n        admirers, and an overwhelming urge to ditch synthetic dyes forever. Proceed with caution and unleash your\n        fashionable self.\n    </p>\n\n",
+    "title": "\"The Colorful World of Alkanet: Dive into the Quirky Realm of Natural Dyes\"",
+    "content": "<h2>The Wild Tale of Alkanet: Nature's Quirkiest Dye</h2>\n\n<p><em>Disclaimer: The following article contains liberal doses of sarcasm, humor, and a sprinkle of reality. Proceed at your own risk.</em></p>\n\n<p>Let's dive into the delightful world of natural dyes, where colors come alive without the use of synthetic chemicals. Today, we shift our focus to a dye so peculiar, so enigmatic that it could easily be mistaken for the lovechild of Lady Gaga and Salvador Dalí. Yes, folks, we present to you the wild tale of alkanet - nature's quirkiest dye.</p>\n\n<p><strong>From Roots to Color Explosion:</strong></p>\n\n<p>Alkanet is derived from the roots of the Alkanna tinctoria plant. It's been around since the dawn of time, waiting patiently for curious hippies and intrepid artisans to unbury its vibrant potential. Once extracted, its mesmerizing deep blue to purple color is unleashed, causing unsuspecting spectators to question reality.</p>\n\n<p><strong>A Brief Encounter with History:</strong></p>\n\n<p>Throughout the ages, alkanet has had quite the reputation. In Medieval times, it was known as \"The Alchemist's Nightmare\" due to its ability to bewitch colors and minds alike. Renaissance artists dabbled in its unpredictable hues, often resulting in the most bizarre interpretations of the human face since Picasso's \"Les Demoiselles d'Avignon.\"</p>\n\n<p><strong>Alkanet: More Than Meets the Eye:</strong></p>\n\n<p>While alkanet may be primarily renowned for its unpredictable nature, it has other talents hidden up its sleeve. Medieval warriors crushed alkanet roots and concocted the perfect potion for invincibility. Although it may have been mere superstition, at least they looked fabulous on the battlefield.</p>\n\n<p><strong>Caution: Shedding and Stains Ahead:</strong></p>\n\n<p>Beware, dear readers, alkanet isn't for the faint of heart. Its colors, although magical, have a penchant for leaving an everlasting impression. Once alkanet finds its way onto fabric, consider it a permanent artistic statement. Your favorite white shirt will become a testament to your artsy adventures, boldly declaring to the world, \"I embrace the chaos of natural dyes!\"</p>\n\n<p><strong>For the Adventurous Souls:</strong></p>\n\n<p>If you're eager to kick-start your alkanet journey, we salute your bravery. However, a word of advice: prepare yourself for endless hours of experimentation, wildly inconsistent results, and the potential for incurring strange glances from friends and relatives. But hey, suffering for art is always a noble pursuit, right? </p>\n\n<p><strong>Resilience Against the Odds:</strong></p>\n\n<p>Alkanet's eccentricity does not stop at its mesmerizing colors; it also boasts remarkable resilience. Even when subjected to the harshest washing machines and scorching sun, alkanet dye clings onto fabrics like a clingy ex-partner, refusing to fade away. So, rest easy knowing that your alkanet creations will outlive even the cockroaches of the dye world.</p>\n\n<p><strong>In Conclusion:</strong></p>\n\n<p>Alkanet, nature's quirky gift to the dyeing world, is a perfect reminder that life is too short for predictable, uniform colors. So, embrace the chaos, indulge in the eccentric, and let alkanet take you on a journey through the rabbit hole of natural dyes. Just be sure to pack an open mind and a sense of humor along for the ride. Happy dyeing!</p>",
     "timestamp": {
-      "_seconds": 1701253278,
-      "_nanoseconds": 365000000
+      "_seconds": 1701254295,
+      "_nanoseconds": 899000000
     }
   },
   {
-    "executionTime": "17.53 seconds",
     "input": {
-      "len": 505,
-      "grade": "college",
+      "len": 584,
+      "grade": "6th grade",
       "topic": "Annatto",
       "messages": {
         "description": [
           {
             "role": "user",
-            "content": "A page about Annatto and starts \"\n\nThe Vibrant World of Annatto: Nature's Colourful Dye\n\nHave you ever wondered how nature manages to create such vibrant and captivating colors? Well, let me introduce you to the magic of annatto, the natural dye that brings a burst of color\" needs HTML meta-description. Give only content attribute value."
+            "content": "A page about Annatto and starts \"A Journey Through Annatto: The Colorful World of Natural Dye\n\n\"What the hell is annatto?\" you might wonder, as you gaze curiously at the vibrant, orange-yellow hue of your favorite cheddar cheese. Well, my friend, that's the work of the mystical\" needs a HTML meta-description. Give only attribute value."
           }
         ],
         "title": [
           {
             "role": "user",
-            "content": "Title less than 66 characters, article described as meta description: \"Discover the vibrant world of annatto, nature's colorful dye, and learn how this natural pigment creates mesmerizing hues. Explore the magic behind annatto's burst of color and marvel at the wonders of nature's artistic palette.\""
+            "content": "Title less than 66 characters, article described as name=\"description\" content=\"Discover the fascinating world of annatto, a natural dye that gives a vibrant, orange-yellow hue to various foods, including your favorite cheddar cheese.\""
           }
         ],
         "content": [
           {
             "role": "system",
-            "content": "You are a writer with humour like Richard Pryor"
+            "content": "You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson."
           },
           {
             "role": "user",
-            "content": "505 word article about natural dye Annatto. Format in HTML, use only p, em, strong and h2 tags"
+            "content": "584 word article about natural dye Annatto. Format in HTML, use only p, em, strong and h2 tags"
           }
         ]
       },
       "model": "gpt-3.5-turbo"
     },
+    "image": "Annatto.jpg",
     "color": "#FFD700",
     "docId": "Annatto",
-    "description": "meta description: \"Discover the vibrant world of annatto, nature's colorful dye, and learn how this natural pigment creates mesmerizing hues. Explore the magic behind annatto's burst of color and marvel at the wonders of nature's artistic palette.\"",
+    "description": "name=\"description\" content=\"Discover the fascinating world of annatto, a natural dye that gives a vibrant, orange-yellow hue to various foods, including your favorite cheddar cheese.\"",
     "shortTitle": "Annatto",
-    "title": "Unveiling Annatto: Nature's Colorful Dye and Its Mesmerizing Hues",
-    "content": "\n\n<h2>The Vibrant World of Annatto: Nature's Colourful Dye</h2>\n\n<p>Have you ever wondered how nature manages to create such vibrant and captivating colors? Well, let me introduce you to the magic of annatto, the natural dye that brings a burst of color to the world around us.</p>\n\n<p>Anatto, also known as achiote, comes from the seeds of the annatto tree, native to tropical regions of the Americas. When these seeds are exposed to air, they transform into a gorgeous range of colors, from yellow to deep orange, making it a delight for both artists and chefs alike.</p>\n\n<p><em>Fun Fact: Did you know that annatto has been used as a dye for thousands of years? Ancient Mayans used it for body paint and even as a sunscreen!</em></p>\n\n<p>Annatto's vibrant hues have found their way to numerous culinary creations. From adding a sunny touch to a traditional paella to creating a golden hue in cheese, the versatility of annatto cannot be overstated in the culinary world. Just a pinch can transform a bland-looking dish into a visual masterpiece.</p>\n\n<p>But annatto's uses don't stop there! It can also be found in many non-food products, including lipstick, nail polish, and even textiles. Imagine wearing a shirt woven with threads dyed in nature's vibrant palette! You're sure to stand out in the crowd.</p>\n\n<p><strong>Cautionary Note:</strong> While annatto can create stunning colors, it's always best to exercise caution when working with natural dyes. Remember to wear gloves and protect your work surfaces to avoid unwanted stains. Trust me; you don't want to learn this the hard way!</p>\n\n<p>Aside from its colorful contributions, annatto has also made its mark in the health and wellness world. Traditional medicine practitioners have celebrated its many benefits, including its antioxidant properties, ability to support digestion, and even its potential ability to enhance eye health. Talk about a multi-talented dye!</p>\n\n<p><em>Note: While annatto has potential health benefits, it's always a good idea to consult with a healthcare professional before taking it as a supplement or in large quantities.</em></p>\n\n<p>So, the next time you come across vibrant yellow-orange hues in your food or personal care products, take a moment to appreciate the wonders of annatto. Nature's very own artist, annatto leaves its mark in both the visual and culinary arts. Just remember to enjoy it responsibly, and preferably not while wearing your favorite white shirt!</p>\n\n",
+    "title": "The Colorful World of Annatto: A Natural Dye for Vibrant Foods",
+    "content": "<h2>A Journey Through Annatto: The Colorful World of Natural Dye</h2>\n\n<p><em>\"What the hell is annatto?\"</em> you might wonder, as you gaze curiously at the vibrant, orange-yellow hue of your favorite cheddar cheese. Well, my friend, that's the work of the mystical natural dye known as annatto. Prepare to embark on a journey through the colorful world of annatto, a journey that might just blow your mind.</p>\n\n<p>Annatto, derived from the seeds of the Achiote tree, has been used for centuries as a natural coloring agent. This little wonder come all the way from the tropical rainforests of Latin America, where indigenous people extracted the dye for various purposes, including body painting and food coloring.</p>\n\n<p>Today, annatto is commonly used in the food industry to add a pleasing hue to everything from cheeses and butter to cereals and snacks. It's like the fairy godmother of food dye, granting a vibrant golden touch to your guilty pleasures.</p>\n\n<p><strong>But what sets annatto apart from its synthetic counterparts?</strong> Well, my friend, this dye packs a double punch. Not only does it add color, but it also carries a unique earthy flavor. It's like Mother Nature's way of saying, \"Here, have some visual and culinary satisfaction all in one go.\"</p>\n\n<p><em>Let's talk benefits, shall we?</em> Unlike its synthetic brethren, annatto is free from harmful chemicals and additives. No more worries about slurping down artificial colors that might give you superpowers or other dubious side effects. Annatto is as natural as it gets, making it a solid choice for those conscious of what they put in their bodies.</p>\n\n<p>But it doesn't stop there, my friend! Annatto also boasts remarkable medicinal properties. Indigenous communities have long used it to treat everything from wounds to stomach issues. It's like the Swiss Army knife of natural remedies, tucked away in a tiny seed.</p>\n\n<p><em>Hold onto your seats, folks!</em> The rabbit hole goes even deeper. Annatto is not just a mere dye; it's also a source of inspiration. Artists and craftsmen have harnessed its vibrant hues to create stunning masterpieces. You thought Van Gogh's \"Starry Night\" was a trip? Wait till you feast your eyes on a canvas colored with annatto. It's like visiting an acid-soaked psychedelic utopia, but without the psychedelic part.</p>\n\n<p><strong>But how does one extract the magical dye?</strong> Don't worry; I've got your back. The process involves grinding the annatto seeds into a fine powder and infusing them in a liquid. It's like a voodoo ritual for color, with the seeds offering their sacrifice while the liquid absorbs their essence, leaving nothing but enchanting hues behind.</p>\n\n<p>In conclusion, my curious compadre, annatto is more than just a dye. It's a journey, a visual feast, and a natural remedy all wrapped up in an unassuming little seed. So next time you behold the mesmerizing color of your favorite cheese, take a moment to appreciate the magical journey that annatto has traveled to reach your plate. And remember, sometimes the best things in life are naturally vibrant.</p>",
     "timestamp": {
-      "_seconds": 1701243486,
-      "_nanoseconds": 184000000
+      "_seconds": 1701254774,
+      "_nanoseconds": 665000000
     }
   },
   {
-    "executionTime": "20.5 seconds",
     "input": {
-      "len": 510,
-      "grade": "12th grade",
+      "len": 543,
+      "grade": "college",
       "topic": "Avocado pits",
       "messages": {
         "description": [
           {
             "role": "user",
-            "content": "Write HTML meta description fewer than 158 characters long for article that starts: <h2>Avocado Pits: Mother Nature's Bougie Natural Dye</h2>\n\n<p>Avocado. The silky, smooth superfood that hipsters and health fanatics can't live without. It's the green goddess of the produce aisle, worshipped for its alleged health benefits and drool-inducing taste. But did you know that its luscious flesh isn't the only thing worth salivating over? Brace yourself, because I'm about to drop some knowledge bombs on you about avocado pits - the black sheep of the avocado family that are out here proving they have more to offer than just being tossed in the trash.</p>\n\n<p>Forget about chemical-laden dyes that harm both your skin and"
+            "content": "A page about Avocado pits and starts \"\n  The Unveiling of Avocado Pits: A Hilarious Journey into Natural Dye\n\n  \n    Avocado. The green and creamy fruit that has taken the world by storm. It's the toast-topping superstar, the guacamole's best friend, and\" needs a HTML meta-description. Give only attribute value."
           }
         ],
         "title": [
           {
             "role": "user",
-            "content": "Title less than 66 characters, article described as the environment. Discover the secret of avocado pits as a luxurious, all-natural dye. Embrace sustainable fashion with Mother Nature's bougie alternative."
+            "content": "Title less than 66 characters, article described as <meta name=\"description\" content=\"Discover the fascinating world of avocado pits and starts. Explore how these seemingly ordinary parts of the fruit can be transformed into natural dyes, leading to unexpected and hilarious journeys. Learn about the process, techniques, and creative possibilities of avocado pit dyeing. Unveil the vibrant and unique colors that emerge from this sustainable and eco-friendly practice.\">"
           }
         ],
         "content": [
           {
             "role": "system",
-            "content": "You are a writer with an abrasive, occasionally outrageous, angry style and a dark sense of humor."
+            "content": "You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson."
           },
           {
             "role": "user",
-            "content": "510 word article about natural dye Avocado pits for a 12th grade reading level. Format in HTML, use only p, em, strong and h2 tags."
+            "content": "543 word article about natural dye Avocado pits. Format in HTML, use only p, em, strong and h2 tags"
           }
         ]
       },
       "model": "gpt-3.5-turbo"
     },
+    "image": "Avocado pits.jpg",
     "color": "#568203",
     "docId": "Avocado_pits",
-    "description": "the environment. Discover the secret of avocado pits as a luxurious, all-natural dye. Embrace sustainable fashion with Mother Nature's bougie alternative.",
+    "description": "<meta name=\"description\" content=\"Discover the fascinating world of avocado pits and starts. Explore how these seemingly ordinary parts of the fruit can be transformed into natural dyes, leading to unexpected and hilarious journeys. Learn about the process, techniques, and creative possibilities of avocado pit dyeing. Unveil the vibrant and unique colors that emerge from this sustainable and eco-friendly practice.\">",
     "shortTitle": "Avocado pits",
-    "title": "\"The Luxurious Secret of Avocado Pits: Mother Nature's Sustainable Fashion Dye\"",
-    "content": "<h2>Avocado Pits: Mother Nature's Bougie Natural Dye</h2>\n\n<p>Avocado. The silky, smooth superfood that hipsters and health fanatics can't live without. It's the green goddess of the produce aisle, worshipped for its alleged health benefits and drool-inducing taste. But did you know that its luscious flesh isn't the only thing worth salivating over? Brace yourself, because I'm about to drop some knowledge bombs on you about avocado pits - the black sheep of the avocado family that are out here proving they have more to offer than just being tossed in the trash.</p>\n\n<p>Forget about chemical-laden dyes that harm both your skin and the environment. Avocado pits are the answer to all your natural dye dreams. They are like the hidden treasure of the culinary world - underestimated, underappreciated, and completely badass.</p>\n\n<p>So, how do you get your dye game on with these pits? It's simple. Just follow these steps:</p>\n\n<p>1. Eat that creamy avocado like a boss.</p>\n<p>2. Extract the pit from the avocado with the finesse of an avocado pit whisperer.</p>\n<p>3. Throw that pit in a bag and beat it like it owes you money. Grind it into pieces with a hammer, until you feel the satisfying crunch of victory. Release your inner beast, my friend.</p>\n<p>4. Toss the pit shards into a pot of water and let it simmer like an angry volcano for about an hour. The mixture will transform into a beautiful, earthy pinkish-reddish dye. It's like rainbows made out of attitude.</p>\n<p>5. Strain the liquid to remove the pit remnants, and voila - you've got yourself a bucket full of avocado dye!</p>\n\n<p>But what can you actually do with this avocadoy concoction, you ask? Well, my friend, the possibilities are endless.</p>\n\n<p>Want to dye that boring white t-shirt you've had since the dawn of time? Dip it into the avocado goodness and watch it transform into a fashionable pale pink masterpiece. Embrace the au naturel, but make it fashion.</p>\n\n<p>Got a pair of socks that are so dull they could make a cup of chamomile tea seem exciting? Dunk them in the avocado pit dye and boom! Socks that will make heads turn. You'll be the envy of all the sock-wearing folks out there.</p>\n\n<p>Feeling truly adventurous? Dip your weary hands into a bowl of avocado dye and let the magic happen. Marvel at the way your hands turn into something out of a Tim Burton film. You're a walking piece of art now - a masterpiece that could give Vincent van Gogh a run for his money.</p>\n\n<p>So, there you have it - avocado pits, the unsung heroes of natural dyeing. They're here to save the day, one pit at a time. Say goodbye to boring, toxic dyes and embrace the dark side. Mother Nature approves, and so do I.</p>\n\n<p><strong>Warning:</strong> Side effects of dyeing with avocado pits may include an inflated sense of superiority, a smug smile, and an insatiable desire to tell everyone about your eco-friendly dyeing techniques. Use with caution, but never forget to flaunt your avocado-dyed creations with pride.</p>",
+    "title": "Avocado Pit Dyeing: Unveiling Vibrant Colors in a Sustainable and Eco-Friendly Process",
+    "content": "\n  <h2>The Unveiling of Avocado Pits: A Hilarious Journey into Natural Dye</h2>\n\n  <p>\n    Avocado. The green and creamy fruit that has taken the world by storm. It's the toast-topping superstar, the guacamole's best friend, and now, brace yourself, it's a natural dye. You heard that right, folks. Those pesky pits that we used to toss aside like yesterday's bad decisions are now the latest sensation in the world of DIY dyeing. Buckle up and get ready for a hilarious adventure as we explore the fabulous world of avocado pit dyeing.\n  </p>\n\n  <p>\n    Picture this: you're in your kitchen, armed with a pile of discarded avocado pits, determined to achieve a vibrant hue with these unsuspecting heroes. You peel away the skin, revealing the pit's shiny surface, which glimmers with the promise of color. With the enthusiasm of a mad scientist, you throw the pits into a pot of boiling water, expecting a magical transformation. But alas, the process is not as easy as it seems.\n  </p>\n\n  <p>\n    As you nervously stir the boiling potion, a pungent, earthy aroma fills the air, reminiscent of a mix between a compost heap and your eccentric aunt Mabel's potpourri collection. You start to wonder if you've accidentally stumbled upon an ancient recipe for witch's brew. Maybe these pits have secret powers, turning ordinary mortals into dye-obsessed madmen. Who knows? But hey, at least you'll have a funky-colored fabric to show for it, right?\n  </p>\n\n  <p>\n    After what seems like an eternity (but is actually only an hour), you finally extract the pits, revealing that the dye has transformed into an unappetizing shade of grayish-brown. You can't help but laugh at the irony. The vibrant green fruit has given birth to something even the most avant-garde fashion designer would find repulsive. Regardless, you soldier on.\n  </p>\n\n  <p>\n    Armed with your sorry excuse for dye, you decide to give it a test run on a white T-shirt. As you dip the fabric into the murky liquid, you can't help but feel like you're committing a crime against fashion. But alas, fashion be damned, because you, my friend, are a dyeing pioneer. And just like that, you emerge with a splotchy, faded mess that can only be described as avocado-chic. Move over, tie-dye, there's a new sheriff in town!\n  </p>\n\n  <p>\n    As you proudly model your avocado-dyed masterpiece, your friends and family can't help but burst into laughter. Pity mixed with amusement fills the room as they question your sanity and choice of pastimes. But you, dear reader, are unfazed. You see the untapped potential in these scraggly pits, the beauty in embracing the imperfect and the absurd.\n  </p>\n\n  <p>\n    So, the next time you find yourself waist-deep in discarded avocado pits, remember: laughter is the best dye fixative. Embrace the unpredictable, accept the unsightly, and find joy in the unconventional. And who knows, maybe, just maybe, you'll stumble upon the next big avocado pit dye fashion trend. Stranger things have happened. Cheers!\n  </p>\n",
     "timestamp": {
-      "_seconds": 1701157804,
-      "_nanoseconds": 316000000
+      "_seconds": 1701254804,
+      "_nanoseconds": 895000000
     }
   },
   {
-    "executionTime": "21.18 seconds",
     "input": {
-      "len": 524,
-      "grade": "7th grade",
+      "len": 542,
+      "grade": "6th grade",
       "topic": "Beets",
       "messages": {
         "description": [
           {
             "role": "user",
-            "content": "Write HTML meta description fewer than 158 characters long for article that starts: <h2>Colorful Beets: Nature's Own Dye Factory</h2>\n\n<p><strong>Hey kiddos!</strong> Today, we're going to dive into the fascinating world of natural dyes. And what better way to start than with the humble beet? Yes, you read that right. Those red, juicy, and sometimes stinky veggies that you either love or hate have the power to be like a little coloring factory - except way cooler. Get ready to unlock the secrets of beets!</p>\n\n<p><em>So, how do beets make such a colorful mess?</em> It's all about a pigment called betalain. Betalain is what gives beets their vibrant colors. Think of it as Mother Nature's paintbrush"
+            "content": "A page about Beets and starts \"\n  Beets: The Hilariously Stainful Natural Dye\n\n  Imagine a world where your culinary creations can double as art supplies. Enter the humble beet, a vegetable with a hidden talent for turning everything it touches into vibrant shades of,\" needs a HTML meta-description. Give only attribute value."
           }
         ],
         "title": [
           {
             "role": "user",
-            "content": "Title less than 66 characters, article described as creating a masterpiece in your kitchen. From deep purple to vibrant pink, beets can add a pop of color to everything from textiles to food. So whether you're a budding artist or just want to impress your friends with some colorful creations, join us as we explore the world of beets and their natural dyeing powers.</p>"
+            "content": "Title less than 66 characters, article described as content=\"Discover the vibrant and stainful world of beets - the natural dye that can turn your culinary creations into works of art. Explore the hidden talent of this humble vegetable and unleash your creativity with its vibrant shades.\""
           }
         ],
         "content": [
           {
             "role": "system",
-            "content": "You are a writer with an abrasive, occasionally outrageous, angry style and a dark sense of humor."
+            "content": "You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson."
           },
           {
             "role": "user",
-            "content": "524 word article about natural dye Beets for a 7th grade reading level. Format in HTML, use only p, em, strong and h2 tags."
+            "content": "542 word article about natural dye Beets. Format in HTML, use only p, em, strong and h2 tags"
           }
         ]
       },
       "model": "gpt-3.5-turbo"
     },
+    "image": "Beets.jpg",
     "color": "#8E354A",
     "docId": "Beets",
-    "description": "creating a masterpiece in your kitchen. From deep purple to vibrant pink, beets can add a pop of color to everything from textiles to food. So whether you're a budding artist or just want to impress your friends with some colorful creations, join us as we explore the world of beets and their natural dyeing powers.</p>",
+    "description": "content=\"Discover the vibrant and stainful world of beets - the natural dye that can turn your culinary creations into works of art. Explore the hidden talent of this humble vegetable and unleash your creativity with its vibrant shades.\"",
     "shortTitle": "Beets",
-    "title": "\"The Art of Beets: Masterpiece Creations in Your Kitchen\"",
-    "content": "<h2>Colorful Beets: Nature's Own Dye Factory</h2>\n\n<p><strong>Hey kiddos!</strong> Today, we're going to dive into the fascinating world of natural dyes. And what better way to start than with the humble beet? Yes, you read that right. Those red, juicy, and sometimes stinky veggies that you either love or hate have the power to be like a little coloring factory - except way cooler. Get ready to unlock the secrets of beets!</p>\n\n<p><em>So, how do beets make such a colorful mess?</em> It's all about a pigment called betalain. Betalain is what gives beets their vibrant colors. Think of it as Mother Nature's paintbrush - but with less cleanup.</p>\n\n<p>The cool thing about betalains is that they come in different shades. Red, pink, yellow, and even purple! So if you're bored with the usual colors, beets have got your back.</p>\n\n<p><strong>But how can we extract these colors from beets?</strong></p>\n\n<p><em>Well, it’s time to become a mad scientist!</em> First, grab a few beets from the grocery store or your grandma's garden (with permission, of course). Next, put on some gloves, because things are about to get messy. Wash the beets to get rid of any dirt and grime.</p>\n\n<p>Now, this is where the magic happens. Cut the beets into small pieces and toss them into a pot. Pour enough water to cover the beets, then bring it to a boil. After the water boils, reduce the heat and let the beets simmer for about an hour.</p>\n\n<p>Once the hour is up, take out the pot - but be careful, it's hot! Then, strain the liquid into a bowl. What you're left with is a brilliant, beet-colored liquid that's ready to dye all the things!</p>\n\n<p><strong>Now, let's get creative with our beet dye!</strong></p>\n\n<p><em>Dip a piece of cloth or a plain white t-shirt into the bowl of beet dye.</em> Swish it around, making sure the fabric soaks up all that vibrant color. Leave it in the dye for at least an hour (or longer if you want a darker shade).</p>\n\n<p>Once you're ready, take out the cloth and rinse it thoroughly. Give it a wash in the washing machine and voila! You've just dyed your way into a fashion statement that's all-natural and eco-friendly.</p>\n\n<p><strong>But wait, there's more!</strong></p>\n\n<p><em>Beet dye isn't limited to fabrics alone.</em> You can use it to give eggs a stunning makeover, too! Boil a few eggs and let them cool. Then, place them in a bowl with the beet dye and let them sit for a few hours. When you crack those eggs open later, you'll find beautiful pinkish-red yolks. It's like a magical surprise inside your breakfast!</p>\n\n<p>So, my young scientists, remember that sometimes the most unexpected things can bring bursts of color into our lives. Who would have thought that beets, those innocent-looking veggies, could be a secret weapon in the art of dyeing? Nature truly is full of surprises!</p>",
+    "title": "The Colorful World of Beets: Unleash Your Creativity!",
+    "content": "\n  <h2>Beets: The Hilariously Stainful Natural Dye</h2>\n\n  <p>Imagine a world where your culinary creations can double as art supplies. Enter the humble beet, a vegetable with a hidden talent for turning everything it touches into vibrant shades of, well, beet-red. Strap yourself in, this journey into the hilariously stainful world of beet dyes is about to begin!</p>\n\n  <p>First things first, beets are not to be underestimated. These unsuspecting root vegetables may appear harmless, but their power to transform the color of any fabric, skin, or countertop is downright awe-inspiring. Just ask anyone who has ever dared to cook with them while wearing a white shirt.</p>\n\n  <p>One might think that extracting dye from beets is a process of intricate chemistry and precise measurements. But oh no, it's much simpler than that. All you need to do is take a beet, admire its vibrant hue, and proceed to give it a vigorous squeeze. Voila! You'll witness the birth of a mess that's more potent than any paintbrush in the hands of Picasso.</p>\n\n  <p>Let's not forget about the versatility of beet dye. Want to add some pizzazz to your socks? Dip them in beet juice and watch as your feet transform into vibrant fireballs of color. Need to prank your friends? \"Accidentally\" spill some beet juice on their favorite shirt, and watch their reactions as they discover their new fashion statement. The possibilities are as endless as the stains themselves.</p>\n\n  <p>For those who dare to venture into the world of beet dyeing, embracing the stains becomes a way of life. Your clothes will forever bear the mark of your artistic endeavors, serving as a testament to your dedication to the beet. Who needs a pristine wardrobe when you can have a closet full of garments that scream, \"I fearlessly embrace the messiness of life!\"</p>\n\n  <p>Beet dyeing is not for the faint of heart. It requires a sense of adventure, a desire to live on the edge, and an affinity for cleaning up colorful spills. But oh, the satisfaction of creating something truly unique, something that cannot be replicated with store-bought dyes.</p>\n\n  <p>So, next time you find yourself face-to-face with a beet, don't just think about its culinary possibilities. Embrace its stainful allure, let it infiltrate your life, and revel in the chaos that ensues. After all, what's a little extra color when compared to the joy of experiencing the world through a beet-tinted lens?</p>\n\n  <p><em>Note: The author cannot be held responsible for any ruined clothing, furniture, or relationships resulting from beet dyeing experiments.</em></p>\n",
     "timestamp": {
-      "_seconds": 1701157804,
-      "_nanoseconds": 998000000
+      "_seconds": 1701254832,
+      "_nanoseconds": 366000000
     }
   },
   {
-    "executionTime": "19.89 seconds",
     "input": {
-      "len": 521,
-      "grade": "6th grade",
+      "len": 566,
+      "grade": "12th grade",
       "topic": "Black Beans",
       "messages": {
         "description": [
           {
             "role": "user",
-            "content": "Write HTML meta description fewer than 158 characters long for article that starts: \n<h2>The Dark and Mysterious World of Black Beans</h2>\n<p>Let's step into the dark side for a moment, folks, and explore the fascinating world of natural dyeing. And what better way to kick things off than with the enigmatic black beans?</p>\n\n<p>Black beans, those little devils, aren't just for making savory dishes anymore. They can also be used to create a gorgeous and intense black dye. Who would have thought, right?</p>\n\n<p>To extract the dye from these little legumes, you'll need your very own secret laboratory, complete with a black cauldron and a spoon made from the teeth of your worst enemy. Okay, okay,"
+            "content": "A page about Black Beans and starts \"\n  The Magic of Black Beans: A Dye Like No Other\n  Move over, tie-die! There's a new kid on the block, and its name is black beans. That's right, those tiny legumes you've been enjoying in your tacos\" needs a HTML meta-description. Give only attribute value."
           }
         ],
         "title": [
           {
             "role": "user",
-            "content": "Title less than 66 characters, article described as maybe not that extreme. In reality, all you need is a pot, some water, and a handful of black beans. But the results are truly magical.</p>"
+            "content": "Title less than 66 characters, article described as content=\"Discover the magical properties of black beans as a dye, surpassing tie-dye in creativity and versatility. Explore the endless possibilities of incorporating black beans into your artistic endeavors.\""
           }
         ],
         "content": [
           {
             "role": "system",
-            "content": "You are a writer with an abrasive, occasionally outrageous, angry style and a dark sense of humor."
+            "content": "You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson."
           },
           {
             "role": "user",
-            "content": "521 word article about natural dye Black Beans for a 6th grade reading level. Format in HTML, use only p, em, strong and h2 tags."
+            "content": "566 word article about natural dye Black Beans. Format in HTML, use only p, em, strong and h2 tags"
           }
         ]
       },
       "model": "gpt-3.5-turbo"
     },
+    "image": "Black Beans.jpg",
     "color": "#3D2B1F",
     "docId": "Black_Beans",
-    "description": "maybe not that extreme. In reality, all you need is a pot, some water, and a handful of black beans. But the results are truly magical.</p>",
+    "description": "content=\"Discover the magical properties of black beans as a dye, surpassing tie-dye in creativity and versatility. Explore the endless possibilities of incorporating black beans into your artistic endeavors.\"",
     "shortTitle": "Black Beans",
-    "title": "\"Black Bean Magic: A Simple Recipe with Extraordinary Results\"",
-    "content": "\n<h2>The Dark and Mysterious World of Black Beans</h2>\n<p>Let's step into the dark side for a moment, folks, and explore the fascinating world of natural dyeing. And what better way to kick things off than with the enigmatic black beans?</p>\n\n<p>Black beans, those little devils, aren't just for making savory dishes anymore. They can also be used to create a gorgeous and intense black dye. Who would have thought, right?</p>\n\n<p>To extract the dye from these little legumes, you'll need your very own secret laboratory, complete with a black cauldron and a spoon made from the teeth of your worst enemy. Okay, okay, I'm kidding! All you need are some black beans and a pot with water.</p>\n\n<p><strong>Step 1:</strong> Muster up all your dark energy, and soak a full cup of black beans in water overnight. This will allow the dye to seep out of them and fill your dreams with dark and mysterious visions.</p>\n\n<p><strong>Step 2:</strong> The next day, drain the soaked beans. This is the point where you can unleash all your pent-up anger and frustration by smashing the beans with a potato masher or your fist. Just don't forget to wear protective goggles and gloves, unless you want to end up with black bean stains on your face and hands.</p>\n\n<p><strong>Step 3:</strong> Place your squashed black beans in a pot and cover them with enough water to fully immerse them. Now, prepare yourself for the brewing process. It's kind of like making a witch's potion, but less likely to turn you into a frog. Bring the beans and water to a boil, then reduce the heat and simmer for about an hour. The longer you simmer, the deeper the shade of black you'll achieve.</p>\n\n<p><strong>Step 4:</strong> After the simmering has completely transformed your kitchen into a cauldron of darkness, strain the liquid carefully through a fine mesh sieve. You wouldn't want any rogue bean particles ruining your masterpiece, would you?</p>\n\n<p><strong>Step 5:</strong> You're almost there, my darlings! Allow the liquid to cool down completely, and then you can dip your favorite fabric into the obsidian nectar you've created. Let it soak for as long as your tortured soul desires, depending on how dark you want the final result to be.</p>\n\n<p><em>Beware</em>: The dyeing goddesses demand sacrifice! Your fabric may appear lighter when wet, but once it has dried, it will take on a deep, mysterious black that will cloak you in its inky embrace.</p>\n\n<p>So there you have it, my little minions. Black beans aren't just for eating anymore; they can also help you transform boring fabrics into something truly bewitching. Get your hands dirty, embrace the darkness, and let the natural dyeing world open up a whole new dimension of creativity. Just remember to clean up the mess once you're done, or your parents will curse your name for all eternity!</p>\n",
+    "title": "The Magical Dye Power of Black Beans: Endless Artistic Possibilities",
+    "content": "\n  <h2>The Magic of Black Beans: A Dye Like No Other</h2>\n  <p>Move over, tie-die! There's a new kid on the block, and its name is black beans. That's right, those tiny legumes you've been enjoying in your tacos and salads have a secret talent—they can transform fabrics into something truly extraordinary.</p>\n\n  <p>Now, before you start raiding your pantry, let's get one thing straight: using black beans as a natural dye is a surprisingly simple process, but it does require a bit of patience and experimentation. Think of it as a wild journey into the unknown, like hitchhiking through the desert with no map or GPS. It might get messy, but trust me, it'll be worth it.</p>\n\n  <p>So, you're probably wondering, what makes black beans such a remarkable dye? Is it their mysterious dark powers or some long-lost ancient spell? Not quite.</p>\n\n  <p><strong>It's all about those pigments.</strong> Black beans contain a compound called anthocyanin, which is responsible for their deep, rich color. When exposed to heat and acidity, these pigments can be extracted and bind with fabric fibers, leaving behind a gorgeous shade of purplish-blue.</p>\n\n  <p><em>Warning:</em> your kitchen might end up looking like a science experiment gone wrong. But hey, no masterpiece was ever created without a little chaos, right?</p>\n\n  <p>Now, let's dive into the enchanting process of black bean dyeing:</p>\n\n  <h2>The Recipe</h2>\n\n  <p>Ingredients:</p>\n  <ul>\n    <li>1 cup of dried black beans</li>\n    <li>Water</li>\n    <li>White fabric</li>\n    <li>Vinegar (optional)</li>\n  </ul>\n\n  <p>Instructions:</p>\n\n  <ol>\n    <li>Soak the black beans in a large bowl of water overnight. This will help release their pigments.</li>\n    <li>Drain the beans and transfer them into a pot. Cover them with water and bring it to a boil. Lower the heat and let it simmer for about an hour.</li>\n    <li>Remove the pot from the heat and strain the liquid into another container. Allow it to cool.</li>\n    <li>Now, it's time to dip your fabric! Submerge it in the dye bath and let it sit for at least two hours. For a darker shade, leave it overnight.</li>\n    <li>Remove the fabric and rinse it with cold water until the water runs clear. You can also add vinegar during this step to help set the color.</li>\n    <li>Hang the fabric to dry, preferably in a shady area to prevent fading.</li>\n  </ol>\n\n  <p>Remember, the beauty of natural dyeing is the unpredictable nature of the process. Each batch will yield different results, making every piece unique. So, embrace the randomness and let your creativity run wild!</p>\n\n  <p>Now that you're armed with the magical knowledge of black bean dyeing, go forth and dye like there's no tomorrow. Who needs store-bought dyes when you have a pot of beans and a taste for adventure?</p>\n",
     "timestamp": {
-      "_seconds": 1701157803,
-      "_nanoseconds": 710000000
+      "_seconds": 1701254863,
+      "_nanoseconds": 149000000
     }
   },
   {
-    "executionTime": "22.2 seconds",
     "input": {
-      "len": 517,
-      "grade": "12th grade",
+      "len": 535,
+      "grade": "9th grade",
       "topic": "Black Elderberry",
       "messages": {
         "description": [
           {
             "role": "user",
-            "content": "Write HTML meta description fewer than 158 characters long for article that starts: \n<h2>The Dark Side of Black Elderberry: Unleashing Nature's Angry Dye</h2>\n\n<p>Prepare to dive into the twisted world of colors derived from the Black Elderberry. This seemingly innocuous plant hides a dark secret beneath its delicate flowers and juicy berries. Unleashing this natural dye upon the world may just be a recipe for chaos and rebellion.</p>\n\n<h2>Nature's Wrath: The Fierce Black Elderberry</h2>\n\n<p>The Black Elderberry, also known as <strong>Sambucus nigra</strong>, possesses a deep and brooding appearance that mirrors the depths of its wrath. Not only does it hold the power to stain anything it touches with an indelible black, but it has an unrelenting"
+            "content": "A page about Black Elderberry and starts \"\nThe Dark (and Berry) Side: Black Elderberry and Natural Dye\nMove aside, artificial dyes! There's a new natural superstar in town, and it goes by the name of Black Elderberry. Not only is this humble fruit packed with health benefits, but\" needs a HTML meta-description. Give only attribute value."
           }
         ],
         "title": [
           {
             "role": "user",
-            "content": "Title less than 66 characters, article described as power to release its color upon the world, causing chaos and rebellion. Dive into the dark side of Black Elderberry's angry dye now."
+            "content": "Title less than 66 characters, article described as \"Move aside, artificial dyes! There's a new natural superstar in town, and it goes by the name of Black Elderberry. Not only is this humble fruit packed with health benefits, but it can also be used as a natural dye. Explore the dark (and berry) side of Black Elderberry and learn about its various uses in dyeing fabrics and materials. Discover the vibrant shades and eco-friendly approach of Black Elderberry dye. Dive into the world of natural dyes and unleash your creativity with this versatile and sustainable option.\""
           }
         ],
         "content": [
           {
             "role": "system",
-            "content": "You are a writer with an abrasive, occasionally outrageous, angry style and a dark sense of humor."
+            "content": "You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson."
           },
           {
             "role": "user",
-            "content": "517 word article about natural dye Black Elderberry for a 12th grade reading level. Format in HTML, use only p, em, strong and h2 tags."
+            "content": "535 word article about natural dye Black Elderberry. Format in HTML, use only p, em, strong and h2 tags"
           }
         ]
       },
       "model": "gpt-3.5-turbo"
     },
+    "image": "Black Elderberry.jpg",
     "color": "#503047",
     "docId": "Black_Elderberry",
-    "description": "power to release its color upon the world, causing chaos and rebellion. Dive into the dark side of Black Elderberry's angry dye now.",
+    "description": "\"Move aside, artificial dyes! There's a new natural superstar in town, and it goes by the name of Black Elderberry. Not only is this humble fruit packed with health benefits, but it can also be used as a natural dye. Explore the dark (and berry) side of Black Elderberry and learn about its various uses in dyeing fabrics and materials. Discover the vibrant shades and eco-friendly approach of Black Elderberry dye. Dive into the world of natural dyes and unleash your creativity with this versatile and sustainable option.\"",
     "shortTitle": "Black Elderberry",
-    "title": "Unleashing Chaos: Black Elderberry's Angry Dye Revealed",
-    "content": "\n<h2>The Dark Side of Black Elderberry: Unleashing Nature's Angry Dye</h2>\n\n<p>Prepare to dive into the twisted world of colors derived from the Black Elderberry. This seemingly innocuous plant hides a dark secret beneath its delicate flowers and juicy berries. Unleashing this natural dye upon the world may just be a recipe for chaos and rebellion.</p>\n\n<h2>Nature's Wrath: The Fierce Black Elderberry</h2>\n\n<p>The Black Elderberry, also known as <strong>Sambucus nigra</strong>, possesses a deep and brooding appearance that mirrors the depths of its wrath. Not only does it hold the power to stain anything it touches with an indelible black, but it has an unrelenting desire to create powerful emotions in those who dare to encounter it.</p>\n\n<h2>An Outrageous Hue: The Ebony Elixir</h2>\n\n<p>Extracting dye from the Black Elderberry reveals a hue that defies boundaries. A deep, sultry black, this color demands attention and commands respect. It embodies the very essence of rebellion, like a teenage punk band screaming profanities at an unsuspecting audience.</p>\n\n<p><em>\"Begone, oh mundane colors! Embrace your inner darkness and revel in the outrageous hue of the Ebony Elixir!\"</em></p>\n\n<h2>The Dark Horse: Toxicity and Caution</h2>\n\n<p>Beware, intrepid explorers, for beneath the alluring façade of the Black Elderberry lies a toxic brew. The plant's leaves and twigs carry a compound known as cyanogenic glycosides - a name that sounds like it was plucked directly from the annals of madness. Ingesting even a small quantity of these malevolent components may cause nausea, vomiting, and even worse, a fear of colors themselves.</p>\n\n<p>Handle this wild and unpredictable dye with extreme caution, or it may seek its revenge upon your unsuspecting garments, furniture, or loved ones.</p>\n\n<h2>Embrace the Darkness: Rebellion in a Dyed Garment</h2>\n\n<p>Black Elderberry dye, with its fierce and unyielding nature, offers an opportunity for individuals to assert their rebellion. Imagine dressing yourself in garments soaked in the color of defiance, declaring to the world, \"I am unafraid to challenge societal norms!\"</p>\n\n<p><em>\"Behold, mortals! Feast your eyes upon my wicked attire and tremble in awe of my outrageous style! Step aside, conformists, for my black fabric screams liberation!\"</em></p>\n\n<h2>In Conclusion: Enter the Abyss</h2>\n\n<p>The Black Elderberry dye unlocks a world of defiance and intrigue, where colors become weapons and garments become banners of rebellion. Approach with caution, for delving into this dark abyss may change your perception of life forever.</p>\n\n<p><em>\"Dye your world with the twisted brilliance of Black Elderberry, and immerse yourself in the insane beauty of nature's angry hue!\"</em></p>\n\n",
+    "title": "Unleash Your Creativity with Black Elderberry Dye",
+    "content": "\n<h2>The Dark (and Berry) Side: Black Elderberry and Natural Dye</h2>\n<p>Move aside, artificial dyes! There's a new natural superstar in town, and it goes by the name of Black Elderberry. Not only is this humble fruit packed with health benefits, but it also possesses hidden potential as a natural dye.</p>\n\n<h2>The Magical Transformation</h2>\n<p>Picture this: a cluster of deep, dark purple berries hanging in the crisp autumn air. But what if I told you that those berries could be transformed into a stunning, rich black dye? Yes, my friend, that's the magic of Black Elderberry.</p>\n\n<h2>The Color That Dreams are Made Of</h2>\n<p>Black is a color steeped in mystery and allure. And what better way to add a touch of enchantment to your wardrobe than by dyeing fabrics with this natural, midnight hue? Black Elderberry offers a deep, moody shade that can elevate any garment from drab to fab.</p>\n\n<h2>Harvesting the Power</h2>\n<p>To embark on your dyeing adventure, you'll need to get your hands on some fresh Black Elderberries. They can be found growing on Elder trees, and if you're lucky, you might stumble upon a patch while exploring the great outdoors.</p>\n<p><strong>Pro tip:</strong> Make sure to wear gloves during the harvesting process to prevent an impromptu fashion statement of purple-stained fingers!</p>\n\n<h2>The Recipe for Success</h2>\n<p>Once you have your Black Elderberries, it's time to work your magic in the kitchen. Here's a simple recipe to get you started:</p>\n<p><strong>Ingredients:</strong></p>\n<ul>\n    <li>1 cup fresh Black Elderberries</li>\n    <li>4 cups water</li>\n    <li>1 tablespoon vinegar</li>\n</ul>\n<p><strong>Instructions:</strong></p>\n<ol>\n    <li>Combine the Black Elderberries and water in a large pot.</li>\n    <li>Bring the mixture to a boil, then reduce the heat and let it simmer for about an hour.</li>\n    <li>Strain the liquid and add vinegar to help set the color.</li>\n    <li>Allow the dye to cool before submerging your fabric.</li>\n    <li>Let your fabric soak in the dye for at least an hour or until you achieve the desired hue.</li>\n    <li>Rinse the fabric with cold water and let it air dry.</li>\n</ol>\n\n<h2>Unleash Your Creativity</h2>\n<p>With your black-dyed fabric in hand, the possibilities are endless. Create a little black dress that rivals the iconic Audrey Hepburn, or craft avant-garde accessories that are sure to turn heads. The choice is yours!</p>\n<p><em>Disclaimer: we cannot guarantee that wearing clothing dyed with Black Elderberry will grant you Audrey Hepburn's charisma or automatically make you the talk of the town.</em></p>\n\n<h2>Embracing Nature's Palette</h2>\n<p>Natural dyeing is not just a creative endeavor; it's also an eco-conscious choice. By utilizing the power of Black Elderberries, we reduce our reliance on synthetic dyes that harm the environment and pose potential health risks. It's a win-win situation!</p>\n\n<p><strong>In conclusion,</strong> Black Elderberry is not only a superstar in the health world; it's also a potent natural dye that allows us to embrace the beauty of the color black. So, say goodbye to commercial dyes and embark on a journey to the dark (and berry) side. Happy dyeing!</p>\n\n",
     "timestamp": {
-      "_seconds": 1701157806,
-      "_nanoseconds": 24000000
+      "_seconds": 1701254896,
+      "_nanoseconds": 720000000
     }
   },
   {

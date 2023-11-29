@@ -6,13 +6,13 @@
           <label>
             Title
             <input type="text" v-model="article.title" />
-          </label>
+          </label><br>
           <label>
             Short Title
             <input type="text" v-model="article.shortTitle" />
-          </label>
-          <textarea v-model="article.content"></textarea>
-          <button type="submit">Submit</button>
+          </label><br>
+          <textarea v-model="article.content"></textarea><br>
+          <button type="submit">Submit</button><br>
           <button type="button" @click="editMode = false">Cancel</button>
         </form>
       </div>

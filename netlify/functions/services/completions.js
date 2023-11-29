@@ -13,7 +13,7 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson. You are writing an article for a fashion magazine.',
+    content: 'You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson.',
   }, {
     role: 'user',
     content: `${len} word article about natural dye ${topic}. Format in HTML, use only p, em, strong and h2 tags`,
