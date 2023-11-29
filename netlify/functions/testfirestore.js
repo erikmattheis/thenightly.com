@@ -16,9 +16,7 @@ if (!admin.apps.length) {
   });
 }
 console.log('admin.apps keys', Object.keys(admin.apps));
-// console.log('process.env.FIREBASE_SERVICE_ACCOUNTt', process.env.FIREBASE_SERVICE_ACCOUNT);
 
-// Get a Firestore database reference
 const db = admin.firestore();
 
 exports.handler = async () => {

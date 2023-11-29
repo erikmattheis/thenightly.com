@@ -1,14 +1,13 @@
-// functions/generatecontent-background.js
-// eslint-disable-next-line import/no-import-module-exports, import/named
-
 const { performance } = require('perf_hooks');
 const fs = require('fs');
 const path = require('path');
 const { save } = require('./services/firestore');
+const generateImage = require('./generate-image');
+const generateJson = require('./generate-json');
 
 const { generateArticle } = require('./services/completions');
 
-function getJSONFromFile(filePath) { // eslint-disable-line no-unused-vars
+function getJSONFromFile(filePath) {
   const json = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(json);
 }
@@ -19,6 +18,7 @@ function getAGrade() {
 }
 
 function normalRandom(mean, stdDev) {
+  // warning: can return unusable negative numbers
   let u = 0;
   let v = 0;
   while (u === 0) u = Math.random();
@@ -26,7 +26,6 @@ function normalRandom(mean, stdDev) {
   let num = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
   num = num * stdDev + mean; // Translate to desired mean and standard deviation
 
-  num = Math.max(num, 0); // In case of negative values
   return num;
 }
 
@@ -52,18 +51,33 @@ exports.handler = async function () {
 
   const topics = json.dyes;
   // only use first two topics for now
+  topics.length = 1;
 
-  await topics.forEach(async (topic) => {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const topic of topics) {
     const start = performance.now();
     const grade = getAGrade();
     const len = getALength(500);
+    console.log(`Generating article for ${JSON.stringify(topic.name, null, 2)}...`);
+    // eslint-disable-next-line no-await-in-loop
     const response = await generateArticle(`${`${topic.name}`}`, grade, len, topic.color);
     const end = performance.now();
     const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
     console.log(`Execution time: ${executionTime}`);
-    await save('dyes', { ...response, executionTime });
-  });
+
+    // eslint-disable-next-line no-await-in-loop
+    const imageName = await generateImage.handler(`${topic.name} natural dye`, topic.name);
+
+    JSON.stringify({ ...response, executionTime, image: imageName }, null, 2);
+
+    // eslint-disable-next-line no-await-in-loop
+    await save('dyes', { ...response, image: imageName });
+  }
+
+  await generateJson.handler();
+
   console.log('Done.');
+
   return {
     statusCode: 200,
     body: 'Done.',

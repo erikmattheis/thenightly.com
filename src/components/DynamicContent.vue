@@ -4,7 +4,7 @@
       <div v-if="editMode">
         <form @submit.prevent="submitForm(article)">
           <label>
-            Subject
+            Title
             <input type="text" v-model="article.title" />
           </label>
           <label>
@@ -18,16 +18,18 @@
       </div>
       <div v-else>
         <button @click="editMode = true">Edit</button>
-        <h2>{{ article.title }}</h2>
-        <p>{{ article.description }}</p>
-        <p v-html="`<div>${article.content}</div>`"></p>
+        <h2 style="color:red">{{ article.title }}</h2>
+        <p style="color:green" v-html="`<div>${article.description}</div>`"></p>
+        <!-- modern way without float to embed image with text wrapped around it -->
+
+        <p style="color:blue" v-html="`<div>${content}</div>`"></p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+
 import dyes from '../data/dyes.json';
 
 export default {
@@ -37,7 +39,6 @@ export default {
       type: String,
       required: true,
     },
-
   },
   data() {
     return {
@@ -50,18 +51,21 @@ export default {
       article: {},
     };
   },
+  computed: {
+
+    content() {
+      const { content } = this.article;
+      const img = `<img src="/assets/photos/${this.article.image}" alt="${this.article.title}" style="width: 100%; height: auto;" />`;
+      const firstParagraph = content.indexOf('</p>');
+      return content.slice(0, firstParagraph + 4) + img + content.slice(firstParagraph + 4);
+    },
+
+  },
   created() {
     this.article = this.articles.find((article) => article.shortTitle === this.topic);
   },
   methods: {
-    async submitForm(article) {
-      try {
-        await axios.post('functions', this.form);
-        this.editMode[article.topic] = false;
-      } catch (error) {
-        console.error(error);
-      }
-    },
+
   },
 };
 </script>

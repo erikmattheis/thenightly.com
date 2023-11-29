@@ -1,16 +1,5 @@
 const admin = require('firebase-admin');
 
-const dotenv = require('dotenv');
-
-const fs = require('fs');
-
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config('../../../.env.local');
-  console.log('index.htmll file exists: ', !!fs.existsSync('../../../index.html'));
-  console.log('Service Account Exists: ', !!process.env.FIREBASE_SERVICE_ACCOUNT);
-  console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-}
-
 // Load your service account credentials from an environment variable or secret manager
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
@@ -46,7 +35,7 @@ async function save(collection, doc) {
 }
 
 async function getArticles(name) {
-  const articlesRef = db.collection(name);// .orderBy('topic', 'asc');
+  const articlesRef = db.collection(name); // .orderBy('topic', 'asc');
   const snapshot = await articlesRef.get();
   const articles = snapshot.docs.map((doc) => doc.data());
   /*

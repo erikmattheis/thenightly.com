@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <ul v-for="article in topics" :key="article.id">
+    <ul v-for="article in topics" :key="article.shortTitle">
 
       <li v-if="editMode">
 
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import dyes from '../data/dyes.json';
 
 export default {
@@ -55,8 +55,8 @@ export default {
   methods: {
     async submitForm(article) {
       try {
-        await axios.post('functions', this.form);
-        this.editMode[article.topic] = false;
+        // await axios.post('functions', this.form);
+        this.editMode[article.shortTitle] = false;
       } catch (error) {
         console.error(error);
       }

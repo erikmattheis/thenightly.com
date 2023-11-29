@@ -24,9 +24,9 @@ exports.handler = async function () {
     'dyes',
   ];
   function replaceWhiteSpaceWithDash(name) {
-    return name.replace(/\s*/g, '-');
+    return name.replace(/\s+/g, '-');
   }
-  subjects.forEach(async (subject) => {
+  await subjects.forEach(async (subject) => {
     const topics = await getArticles(subject);
     console.log('topics', topics.length);
     const fileName = replaceWhiteSpaceWithDash(subject);

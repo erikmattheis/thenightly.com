@@ -1,16 +1,10 @@
-/* eslint-disable no-unreachable */
 const OpenAI = require('openai');
-const fs = require('fs');
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 const model = 'gpt-3.5-turbo';
-
-async function generateDesiredContentCallback(result) {
-  fs.writeFileSync('result.json', JSON.stringify(result, null, 2));
-}
 
 function getMessage(response) {
   return response.choices[0].message.content.trim();
@@ -19,10 +13,10 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are a writer with an abrasive, occasionally outrageous, angry style and a dark sense of humor.',
+    content: 'You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson. You are writing an article for a fashion magazine.',
   }, {
     role: 'user',
-    content: `${len} word article about natural dye ${topic} for a ${grade} reading level. Format in HTML, use only p, em, strong and h2 tags.`,
+    content: `${len} word article about natural dye ${topic}. Format in HTML, use only p, em, strong and h2 tags`,
   }];
 
   return messages;
@@ -37,11 +31,15 @@ async function generateContent(messages) {
   return response;
 }
 
-function makeDescriptionMessages(str) {
-  const shorter = str.split(' ').slice(0, 100).join(' ');
+function stripHtml(str) {
+  return str.replace(/<[^>]*>?/gm, '');
+}
+
+function makeDescriptionMessages(str, topic) {
+  const shorter = stripHtml(str.split(' ').slice(0, 40).join(' '));
   const messages = [{
     role: 'user',
-    content: `Write a HTML meta description less than 158 characters for article: ${shorter}`,
+    content: `A page about ${topic} and starts "${shorter}" needs a HTML meta-description. Give only attribute value.`,
   }];
 
   return messages;
@@ -54,6 +52,7 @@ function makeTitleMessages(str) {
 
   return messages;
 }
+
 /*
 function makeSidebarMessages(str) {
   const messages = [{
@@ -82,10 +81,11 @@ function getRidOfAllButBodyContent(str) {
   const body = str.split('<body>')[1].split('</body>')[0];
   return body;
 }
+
 async function generateArticle(topic, grade, len, color) {
   const contentMessages = makeContentMessages(topic, grade, len);
 
-  const contentResponse = await generateContent(contentMessages, generateDesiredContentCallback);
+  const contentResponse = await generateContent(contentMessages);
 
   // eslint-disable-next-line max-len
   // const cleanedContentResponse = JSON.parse(JSON.stringify(contentResponse).replace(/\\n/g, ' '));
@@ -94,7 +94,7 @@ async function generateArticle(topic, grade, len, color) {
 
   const content = getRidOfAllButBodyContent(preliminaryContent);
 
-  const descriptionMessages = makeDescriptionMessages(content);
+  const descriptionMessages = makeDescriptionMessages(content, topic);
 
   const descriptionResponse = await generateCompletion(descriptionMessages);
 
