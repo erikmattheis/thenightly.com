@@ -1,7 +1,7 @@
 const { performance } = require('perf_hooks');
 const fs = require('fs');
 const path = require('path');
-const { save } = require('./services/firestore');
+const { saveArticle } = require('./services/firestore');
 const generateImage = require('./generate-image');
 const generateJson = require('./generate-json');
 
@@ -13,7 +13,7 @@ function getJSONFromFile(filePath) {
 }
 
 function getAGrade() {
-  const grades = ['6th grade', '7th grade', '8th grade', '9th grade', '10th grade', '11th grade', '12th grade', 'college'];
+  const grades = ['6th grade', '7th grade', '8th grade', '9th grade', '10th grade', '11th grade', '12th grade', 'college', 'graduate school', 'doctorate', 'post-doctorate', 'professor'];
   return grades[Math.floor(Math.random() * grades.length)];
 }
 
@@ -37,6 +37,8 @@ function getALength(assignedWords) {
 
     finalWordCount = Math.round(finalWordCount);
   } while (finalWordCount < assignedWords * 0.7 || finalWordCount > assignedWords * 1.5);
+  // add plus or minus 20
+  finalWordCount += Math.floor(Math.random() * 40) - 20;
   return finalWordCount;
 }
 
@@ -49,31 +51,54 @@ exports.handler = async function () {
   // const topic = body.topic || 'Synthetic fabrics used in sports';
   const json = getJSONFromFile(path.resolve(__dirname, './data/config/lists/dyes.json'));
 
-  const x = 6;
+  const x = 0;
   // skip first x of array
   const topics = json.dyes.slice(x);
-  // only use first topics for now
+  // only use first few topics for now
   topics.length = 3;
+
+  const colorThemes = [{ name: 'Indochine and complimentary', colors: ['#CF6B00', '#4F3C28'] }, { name: 'Indochine', colors: ['#CF6B00'] }, { name: 'Razzmatazz and complementary', colors: ['#D10067', '#52293D'] }, { name: 'Razzmatazz', colors: ['#D10067'] }];
 
   // eslint-disable-next-line no-restricted-syntax
   for (const topic of topics) {
     const start = performance.now();
     const grade = getAGrade();
     const len = getALength(500);
+    const colorTheme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
+    const colorThemeDescription = `${colorTheme.colors.join(', ')}and mostly ${topic.color}`;
+
     console.log(`Generating article for ${JSON.stringify(topic.name, null, 2)}...`);
+    const imagePrompt = `${topic.name} natural dye featured {#topic.color} and ${colorThemeDescription} still-life.`;
+
+    const imageModel = Math.random() > 0.5 ? 'dall-e-2' : 'dall-e-3';
+
+    const imageSize = '512x512';
+
+    const n = 1;
+
     // eslint-disable-next-line no-await-in-loop
-    const response = await generateArticle(`${`${topic.name}`}`, grade, len, topic.color);
+    const imageUrl = await generateImage.handler(imagePrompt, topic.name, imageModel, n, imageSize);
+
+    const imageInformation = {
+      imageUrl,
+      colorTheme,
+      imagePrompt,
+      imageModel,
+      imageSize,
+    };
+
+    const temperature = Math.random() + 0.7;
+
+    // eslint-disable-next-line no-await-in-loop
+    const response = await generateArticle(`${`${topic.name}`}`, grade, len, topic.color, colorTheme, temperature);
     const end = performance.now();
     const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
     console.log(`Execution time: ${executionTime}`);
 
-    // eslint-disable-next-line no-await-in-loop
-    const imageName = await generateImage.handler(`${topic.name} natural dye`, topic.name);
-
-    JSON.stringify({ ...response, executionTime, image: imageName }, null, 2);
+    // JSON.stringify({ ...response, executionTime, topic: topic.name }, null, 2);
 
     // eslint-disable-next-line no-await-in-loop
-    await save('dyes', { ...response, image: imageName });
+    await saveArticle('dyes', { ...response, image: imageInformation });
   }
 
   await generateJson.handler();

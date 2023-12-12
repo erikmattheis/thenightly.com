@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const OpenAI = require('openai');
 
+const { saveImage } = require('./services/firestore');
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -29,12 +31,16 @@ function replaceWhiteSpaceWithDash(imageName) {
   return imageName.replace(/\s+/g, '-');
 }
 
-exports.handler = async function handler(prompt, imageName, model = 'dall-e-2', n = 1, size = '512x512') {
-  const images = await generateImage(prompt, model, n, size);
-  console.log('image: ', JSON.stringify(images, null, 2));
-  const safeName = replaceWhiteSpaceWithDash(imageName);
-  const imagePath = `../../public/assets/photos/${safeName}.jpg`;
-  await saveImageToFile(images[0].url, imagePath);
+exports.handler = async function handler(prompt, imageName, model = 'dall-e-2', n = 1, size = '1024x1024') {
+  const imageBuffer = await generateImage(prompt, model, n, size);
+
+  await saveImage('articles', imageBuffer, imageName);
+
+  const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
+
+  const imagePath = `./data/images/${imageNameWithDash}.jpg`;
+
+  await saveImageToFile(imageBuffer, imagePath);
 
   return `${imageName}.jpg`;
 };

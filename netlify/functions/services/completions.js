@@ -13,18 +13,19 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are a writer with humor like Lenny Bruce and a style like Hunter S. Thompson.',
+    content: 'You are a writerexpert in natural dyes and fabric  with a style like Hunter S. Thompson but dont even allude this in your writing.',
   }, {
     role: 'user',
-    content: `${len} word article about natural dye ${topic}. Format in HTML, use only p, em, strong and h2 tags`,
+    content: `${len} word article about natural dye ${topic}. Format in HTML5 document, using only p, em, strong and h2 tags in the body`,
   }];
 
   return messages;
 }
 
-async function generateContent(messages) {
+async function generateContent(messages, temperature) {
   const response = await openai.chat.completions.create({
     messages,
+    temperature,
     model,
   });
 
@@ -36,7 +37,7 @@ function stripHtml(str) {
 }
 
 function makeDescriptionMessages(str, topic) {
-  const shorter = stripHtml(str.split(' ').slice(0, 40).join(' '));
+  const shorter = stripHtml(str).split(' ').slice(0, 40).join(' ');
   const messages = [{
     role: 'user',
     content: `A page about ${topic} and starts "${shorter}" needs a HTML meta-description. Give only attribute value.`,
@@ -82,10 +83,10 @@ function getRidOfAllButBodyContent(str) {
   return body;
 }
 
-async function generateArticle(topic, grade, len, color) {
+async function generateArticle(topic, grade, len, color, colorTheme, temperature) {
   const contentMessages = makeContentMessages(topic, grade, len);
 
-  const contentResponse = await generateContent(contentMessages);
+  const contentResponse = await generateContent(contentMessages, temperature);
 
   // eslint-disable-next-line max-len
   // const cleanedContentResponse = JSON.parse(JSON.stringify(contentResponse).replace(/\\n/g, ' '));
@@ -122,6 +123,9 @@ async function generateArticle(topic, grade, len, color) {
     input: {
       topic,
       grade,
+      color,
+      colorTheme,
+      temperature,
       len,
       model,
       messages: {

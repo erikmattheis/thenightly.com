@@ -8,10 +8,12 @@
     "start": "vite"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.7.0",
     "@vitejs/plugin-vue": "^4.5.0",
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "firebase-admin": "^11.11.1",
+    "gm": "^1.25.0",
     "install": "^0.13.0",
     "npm": "^10.2.4",
     "oh-vue-icons": "^1.0.0-rc3",
