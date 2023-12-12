@@ -2,15 +2,17 @@
 <template>
   <div>
     <header>
-      <h1>Come to dye</h1>
+      <h1>COME TO DYE</h1>
     </header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'App',
+
 };
 </script>
 

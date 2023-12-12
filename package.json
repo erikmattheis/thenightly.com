@@ -1,31 +1,34 @@
 {
   "name": "goodinformation",
   "version": "0.0.0",
-  "description": "Periodically iterates over AI-generated content, measuring improvement with Custom Search JSON API ",
+  "description": "Generates rough drafts of articles from configuration files. Like a glorified lorem ipsum. For demonstratation, it makes a static website about natural dyes and fibers. The next step would be to allow a human to edit the rough draft, giving it back to the AI for further refinement if desired.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "start": "vite"
   },
   "dependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "firebase-admin": "^11.11.1",
+    "install": "^0.13.0",
+    "npm": "^10.2.4",
     "oh-vue-icons": "^1.0.0-rc3",
     "openai": "^4.11.0",
     "sanitize-filename": "^1.6.3",
+    "vanilla-jsoneditor": "^0.19.0",
+    "vite": "^5.0.0",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
-    "@vitejs/plugin-vue": "^4.5.0",
     "eslint": "^8.54.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-vue": "^9.18.1",
-    "vite": "^5.0.0"
+    "eslint-plugin-vue": "^9.18.1"
   },
   "author": "erik@mattheis.org",
   "license": "ISC"

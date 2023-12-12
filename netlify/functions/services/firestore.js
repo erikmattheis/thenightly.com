@@ -14,7 +14,7 @@ if (!admin.apps.length) {
 const db = admin.firestore();
 
 function sanitizeId(id) {
-  return id.replace(/[.#$/[\] ]/g, '_');
+  return encodeURIComponent(id.toLowerCase().replace(/\s/g, '-'));
 }
 
 async function save(collection, doc) {

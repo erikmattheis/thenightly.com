@@ -48,10 +48,12 @@ function executionTimeToSeconds(executionTime) {
 exports.handler = async function () {
   // const topic = body.topic || 'Synthetic fabrics used in sports';
   const json = getJSONFromFile(path.resolve(__dirname, './data/config/lists/dyes.json'));
-  // skip first member of array
-  const topics = json.dyes.slice(1);
-  // only use first two topics for now
-  topics.length = 5;
+
+  const x = 6;
+  // skip first x of array
+  const topics = json.dyes.slice(x);
+  // only use first topics for now
+  topics.length = 3;
 
   // eslint-disable-next-line no-restricted-syntax
   for (const topic of topics) {
