@@ -26,12 +26,14 @@ exports.handler = async function () {
   function replaceWhiteSpaceWithDash(name) {
     return name.replace(/\s+/g, '-');
   }
-  await subjects.forEach(async (subject) => {
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const subject of subjects) {
+    // eslint-disable-next-line no-await-in-loop
     const topics = await getArticles(subject);
-    console.log('topics', topics.length);
     const fileName = replaceWhiteSpaceWithDash(subject);
     fs.writeFileSync(path.join(__dirname, `../../src/data/${fileName}.json`), JSON.stringify(topics, null, 2));
-  });
+  }
 
   const t1 = performance.now();
   const executionTime = executionTimeToSeconds(t1 - t0);

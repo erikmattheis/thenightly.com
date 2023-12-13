@@ -1,29 +1,29 @@
-const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const OpenAI = require('openai');
 
-const { saveImage } = require('./services/firestore');
+const { saveImage } = require('./services/google-cloud');
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 async function generateImage(prompt, model, n, size) {
-  const response = await openai.images.generate({
-    prompt,
-    model,
-    n,
-    size,
-  });
-  return response.data;
+  try {
+    const response = await openai.images.generate({
+      prompt,
+      model,
+      n,
+      size,
+      response_format: 'b64_json',
+    });
+    return response.data[0];
+  } catch (error) {
+    console.log('Error generating image:', error);
+    return `Error generating image: ${error}`;
+  }
 }
-
-async function saveImageToFile(image, imagePath) {
-  const imageBuffer = await axios.get(image, {
-    responseType: 'arraybuffer',
-  });
-
+async function saveImageBufferToFile(imageBuffer, imagePath) {
   fs.writeFileSync(path.join(__dirname, imagePath), imageBuffer.data);
 }
 
@@ -32,15 +32,17 @@ function replaceWhiteSpaceWithDash(imageName) {
 }
 
 exports.handler = async function handler(prompt, imageName, model = 'dall-e-2', n = 1, size = '1024x1024') {
-  const imageBuffer = await generateImage(prompt, model, n, size);
+  const image = await generateImage(prompt, model, n, size);
 
-  await saveImage('articles', imageBuffer, imageName);
+  const buffer = Buffer.from(image.b64_json, 'base64');
+
+  await saveImage(buffer, imageName);
 
   const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
 
   const imagePath = `./data/images/${imageNameWithDash}.jpg`;
 
-  await saveImageToFile(imageBuffer, imagePath);
+  await saveImageBufferToFile(image.b64_json, imagePath);
 
   return `${imageName}.jpg`;
 };

@@ -2881,6 +2881,56 @@
     }
   },
   {
+    "input": {
+      "color": "#8B008B",
+      "len": 490,
+      "grade": "college",
+      "colorTheme": {
+        "name": "Razzmatazz",
+        "colors": [
+          "#D10067"
+        ]
+      },
+      "temperature": 1.1306163175172994,
+      "topic": "Alkanet",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "A page about Alkanet and starts \"\n    The Vibrant Allure of Alkanet: A Natural Dye\n    Alkanet, a captivating natural dye, possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Derived from the roots of\" needs a HTML meta-description. Give only attribute value."
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title less than 66 characters, article described as \"Derived from the roots of alkanet plants, this captivating natural dye possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Discover the vibrant allure of alkanet as you dive into its history, uses, and the stunning shades it can produce.\""
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a writer expert in natural dyes and fabric with a style like Hunter S. Thompson but dont even allude this in your writing."
+          },
+          {
+            "role": "user",
+            "content": "490 word article about natural dye Alkanet. Format in HTML5 document, using only p, em, strong and h2 tags in the body"
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "color": "#8B008B",
+    "docId": "alkanet",
+    "description": "\"Derived from the roots of alkanet plants, this captivating natural dye possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Discover the vibrant allure of alkanet as you dive into its history, uses, and the stunning shades it can produce.\"",
+    "shortTitle": "Alkanet",
+    "title": "\"Alkanet: Unparalleled Beauty in Natural Fabric Dye\"",
+    "content": "\n    <h2>The Vibrant Allure of Alkanet: A Natural Dye</h2>\n    <p>Alkanet, a captivating natural dye, possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Derived from the roots of the Alkanna tinctoria plant, this remarkable dye offers a wide range of hues, from deep purples and blues to magnificent shades of red. Its potency and versatility have made it a favorite among those dedicated to exploring the wonders of natural dyes.</p>\n\n    <p><em>Alkanet, my friends, is a gateway to another dimension of color.</em></p>\n\n    <p>The process of extracting the dye from the alkanet roots is an experience in itself. Steeped in history, this ancient technique unleashes a primal energy that can only be equated to summoning the spirits of antiquity. Tenderly coaxing the magic from the roots requires patience and finesse, as if conducting a delicate symphony.</p>\n\n    <p>The resulting dye, vivid and enchanting, is nothing short of transcendental. When applied to fabric, it imparts an otherworldly depth and a seductive allure that is guaranteed to turn heads. It engages with the fibers on a molecular level, intertwining its essence with the fabric's very soul. The fabric becomes a living canvas, vibrantly expressing the essence of alkanet.</p>\n\n    <p><strong>Behold the majesty of a garment bathed in alkanet!</strong> The colors dance like flame and water, flickering with a life force borrowed from nature's own palette. Each shade truly represents a union between the earth and the heavens, as if the celestial bodies themselves conspired to create a masterpiece.</p>\n\n    <p>Alkanet dye is not just a feast for the eyes, my friends, but for the senses as a whole. Envelop yourself in the fabric and a new world opens up—a world of untamed sensuality and enigmatic allure. Its scent, best described as earthy and remarkable, carries whiffs of secrets long forgotten. On the skin, it is an indulgence of the senses, engaging in a tactile ballet of pleasure and fascination. Oh, what an experience!</p>\n    \n    <p>However, tread the path of alkanet with caution, for its mesmerizing powers may tempt you to forsake all other natural dyes in its favor. But, my dear readers, diversity is the spice of life, and variety is the key to discovering new realms of creativity and beauty.</p>\n\n    <p><em>Remember this, as you venture into the enchanting world of alkanet, be propelled by wonder and curiosity, for it is the artists and creators who dare to explore the untamed universe of natural dyes that truly shape the future of fashion and design.</em></p>\n",
+    "timestamp": {
+      "_seconds": 1702442285,
+      "_nanoseconds": 931000000
+    }
+  },
+  {
     "executionTime": "23.26 seconds",
     "input": {
       "len": 615,
