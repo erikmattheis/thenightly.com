@@ -113,7 +113,7 @@ async function generateArticle(topic, grade, len, color, colorTheme, temperature
   const sidebarMessages = await generateCompletion(sidebarMessagesResponse);
 
   const sidebar = await getMessage(sidebarMessages);
-*/
+  */
   return {
     title,
     shortTitle: topic,
