@@ -23,8 +23,9 @@ async function generateImage(prompt, model, n, size) {
     return `Error generating image: ${error}`;
   }
 }
+
 async function saveImageBufferToFile(imageBuffer, imagePath) {
-  fs.writeFileSync(path.join(__dirname, imagePath), imageBuffer.data);
+  fs.writeFileSync(path.join(__dirname, imagePath), imageBuffer);
 }
 
 function replaceWhiteSpaceWithDash(imageName) {
@@ -42,7 +43,7 @@ exports.handler = async function handler(prompt, imageName, model = 'dall-e-2', 
 
   const imagePath = `./data/images/${imageNameWithDash}.jpg`;
 
-  await saveImageBufferToFile(image.b64_json, imagePath);
+  await saveImageBufferToFile(buffer, imagePath);
 
   return `${imageName}.jpg`;
 };

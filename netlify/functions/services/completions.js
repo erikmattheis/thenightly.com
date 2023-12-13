@@ -84,6 +84,7 @@ function getRidOfAllButBodyContent(str) {
 }
 
 async function generateArticle(topic, grade, len, color, colorTheme, temperature) {
+  console.log('Generating text...');
   const contentMessages = makeContentMessages(topic, grade, len);
 
   const contentResponse = await generateContent(contentMessages, temperature);

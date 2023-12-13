@@ -3,8 +3,6 @@ const admin = require('firebase-admin');
 // Load your service account credentials from an environment variable or secret manager
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
-console.log('serviceAccount', serviceAccount);
-
 // Initialize the Firebase application with the service account credentials
 if (!admin.apps.length) {
   admin.initializeApp({

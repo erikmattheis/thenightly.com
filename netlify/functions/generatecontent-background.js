@@ -334,11 +334,11 @@ exports.handler = async function () {
 
     const colorThemeDescription = colorTheme.colors.length > 1 ? `${colorTheme.colors[0]} and ${colorTheme.colors[1]}` : colorTheme.colors[0]; // eslint-disable-line max-len
 
-    const imagePrompt = `${topic.name} natural dye featured {$topic.color} ${colorThemeDescription} still-life.`;
+    const imagePrompt = `Contemporary magazine shot of ${topic.name} natural dye. ${colorThemeDescription} background colors.`;
 
-    const imageModel = 'dall-e-2'; // Math.random() > 0.5 ? 'dall-e-2' : 'dall-e-3';
+    const imageModel = Math.random() > 0.5 ? 'dall-e-2' : 'dall-e-3';
 
-    const imageSize = '512x512'; // '1024x1024';
+    const imageSize = '1024x1024';
 
     const n = 1;
 
