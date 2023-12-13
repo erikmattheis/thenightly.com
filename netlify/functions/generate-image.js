@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const OpenAI = require('openai');
+const sharp = require('sharp');
 
 const { saveImage } = require('./services/google-cloud');
 
@@ -32,18 +33,34 @@ function replaceWhiteSpaceWithDash(imageName) {
   return imageName.replace(/\s+/g, '-');
 }
 
-exports.handler = async function handler(prompt, imageName, model = 'dall-e-2', n = 1, size = '1024x1024') {
+exports.handler = async function handler(prompt, imageStr, model = 'dall-e-2', n = 1, size = '512x512') {
   const image = await generateImage(prompt, model, n, size);
 
   const buffer = Buffer.from(image.b64_json, 'base64');
 
-  await saveImage(buffer, imageName);
+  console.log('buffer type received:', typeof buffer);
+
+  const imageName = await saveImage(buffer, imageStr);
+
+  const images = [20, 40, 60, 80, 90].map(async (quality) => {
+    console.log('buffer type:', typeof buffer);
+
+    const compressedBuffer = await sharp(buffer)
+      .jpeg({ quality })
+      .toBuffer();
+
+    const compressedFilename = imageName.replace('.jpg', `-q${quality}.jpg`);
+
+    await saveImage(compressedBuffer, compressedFilename);
+
+    return compressedFilename;
+  });
 
   const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
 
-  const imagePath = `./data/images/${imageNameWithDash}.jpg`;
+  const imagePath = `../../public/images/${imageNameWithDash}.jpg`;
 
   await saveImageBufferToFile(buffer, imagePath);
 
-  return `${imageName}.jpg`;
+  return [...images, imagePath];
 };

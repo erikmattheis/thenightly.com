@@ -336,19 +336,19 @@ exports.handler = async function () {
 
     const imagePrompt = `Contemporary magazine shot of ${topic.name} natural dye. ${colorThemeDescription} background colors.`;
 
-    const imageModel = Math.random() > 0.5 ? 'dall-e-2' : 'dall-e-3';
+    const imageModel = 'dall-e-2'; // Math.random() > 0.5 ? 'dall-e-2' : 'dall-e-3';
 
-    const imageSize = '1024x1024';
+    const imageSize = '512x512';// '1024x1024';
 
     const n = 1;
 
     const imageName = `${topic.name}.jpg`;
 
     // eslint-disable-next-line no-await-in-loop
-    const imageUrl = await generateImage.handler(imagePrompt, imageName, imageModel, n, imageSize);
+    const images = await generateImage.handler(imagePrompt, imageName, imageModel, n, imageSize);
 
     const image = {
-      imageUrl,
+      images,
       imagePrompt,
       colorTheme,
       imageModel,

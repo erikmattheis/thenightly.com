@@ -14,61 +14,36 @@ const storage = new Storage({
   projectId: serviceAccount.project_id,
   credentials: serviceAccount,
 });
+
 /*
+
 async function saveImage(buffer, name) {
-  console.log('Saving image to ..google cloud...');
+  console.log('Saving image to Google Cloud...');
   try {
-    // Upload the image data to Google Cloud Storage
     const bucketName = 'thenightly';
     const fileGroupName = 'article-images';
-    const smallerSize = 698;
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
+    const fileName = sanitizeId(name);
 
-    // slash is organizational delimiter used by google cloud storage
-    const filename = sanitizeId(`${name}-${year}-${month}-${day}.jpg`);
-    // const filename = sanitizeId(`${name}-${year}-${month}-${day}.jpg`);
+    const bucket = storage.bucket(bucketName);
+    const file = bucket.file(`${fileGroupName}/${fileName}`);
 
-    const googleCloudFilename = `${fileGroupName}/${filename}`;
+    await bucket.upload(buffer, {
+      destination: file,
+      metadata: {
+        contentType: 'image/jpeg',
+      },
+    });
 
-    const file = storage.bucket(bucketName).file(googleCloudFilename);
+    const publicUrl = `https://storage.googleapis.com/${bucketName}/${fileGroupName}${fileName}`;
 
-    await file.save(buffer, { contentType: 'image/jpeg' });
-
-    await file.makePublic();
-
-    // const compressedFilename = filename.replace('.jpg', `-${smallerSize}.jpg`);
-
-    const googleCloudCompressedFilename = `${fileGroupName}/${smallerSize}/${filename}`;
-
-    const gmImageQualities = [30, 40, 50, 60, 70];
-    const gmImageQuality = gmImageQualities[Math.floor(Math.random() * gmImageQualities.length)];
-
-    const smallCompressedBuffer = gm(buffer).quality(gmImageQuality).resize(smallerSize).toBuffer();
-
-    const googleCloudSmallFilename = `${fileGroupName}/${smallerSize}/${filename}`;
-
-    const smallFile = storage.bucket(bucketName).file(googleCloudSmallFilename);
-
-    await smallFile.save(smallCompressedBuffer, { contentType: 'image/jpeg' });
-
-    const publicUrl = `https://storage.googleapis.com/${bucketName}/${googleCloudCompressedFilename}`;
-    /*
-    // Save the image URL in Firestore
-
-    const docRef = db.collection(collection).doc(docId);
-    await docRef.set({ imageUrl: publicUrl }, { merge: true });
-
-    console.log('Image saved to Firestore');
-*
     return publicUrl;
   } catch (error) {
     console.error('Error saving image to Google Cloud:', error);
     return `Error saving image to Google Cloud: ${error}`;
   }
 }
+
+module.exports = { saveImage };
 
 */
 
@@ -86,15 +61,15 @@ async function saveImage(buffer, name) {
       metadata: {
         contentType: 'image/jpeg',
       },
+      public: true,
     });
 
     stream.write(buffer);
     stream.end();
 
-    return new Promise((resolve, reject) => {
-      stream.on('error', reject);
-      stream.on('finish', resolve);
-    });
+    const publicUrl = `https://storage.googleapis.com/${bucketName}/${fileGroupName}${fileName}`;
+
+    return publicUrl;
   } catch (error) {
     console.error('Error saving image to Google Cloud:', error);
     return `Error saving image to Google Cloud: ${error}`;
