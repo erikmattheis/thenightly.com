@@ -342,8 +342,10 @@ exports.handler = async function () {
 
     const n = 1;
 
+    const imageName = `${topic.name}.jpg`;
+
     // eslint-disable-next-line no-await-in-loop
-    const imageUrl = await generateImage.handler(imagePrompt, topic.name, imageModel, n, imageSize);
+    const imageUrl = await generateImage.handler(imagePrompt, imageName, imageModel, n, imageSize);
 
     const image = {
       imageUrl,

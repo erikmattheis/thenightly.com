@@ -4,11 +4,16 @@ const { Storage } = require('@google-cloud/storage');
 
 // Load your service account credentials from an environment variable or secret manager
 
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
 function sanitizeId(id) {
   return encodeURIComponent(id.toLowerCase().replace(/\s/g, '-'));
 }
 
-const storage = new Storage();
+const storage = new Storage({
+  projectId: serviceAccount.project_id,
+  credentials: serviceAccount,
+});
 /*
 async function saveImage(buffer, name) {
   console.log('Saving image to ..google cloud...');
