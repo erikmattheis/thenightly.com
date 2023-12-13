@@ -61,13 +61,13 @@ async function saveImage(buffer, name) {
       metadata: {
         contentType: 'image/jpeg',
       },
-      public: true,
+      gzip: true,
     });
 
     stream.write(buffer);
     stream.end();
 
-    const publicUrl = `https://storage.googleapis.com/${bucketName}/${fileGroupName}${fileName}`;
+    const publicUrl = `https://storage.googleapis.com/${bucketName}/${fileGroupName}/${fileName}`;
 
     return publicUrl;
   } catch (error) {

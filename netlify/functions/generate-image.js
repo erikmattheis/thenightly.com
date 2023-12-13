@@ -40,7 +40,9 @@ exports.handler = async function handler(prompt, imageStr, model = 'dall-e-2', n
 
   console.log('buffer type received:', typeof buffer);
 
-  const imageName = await saveImage(buffer, imageStr);
+  const imageUrl = await saveImage(buffer, imageStr);
+
+  const imageName = imageUrl.split('/').slice(-1)[0];
 
   const images = [20, 40, 60, 80, 90].map(async (quality) => {
     console.log('buffer type:', typeof buffer);
