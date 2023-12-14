@@ -4,7 +4,6 @@
     <header>
       <TopicList />
       <h1>NATURALY HUED</h1>
-      <p>A Passion Project in Harmony with AI Creativity!</p>
     </header>
     <router-view></router-view>
   </div>
@@ -23,12 +22,11 @@ export default {
 header {
   background-color: #301;
   color: #fff;
-  text-align: center;
-
+  text-align: right;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
   padding: 0;
 }
