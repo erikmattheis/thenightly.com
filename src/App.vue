@@ -26,4 +26,16 @@ header {
   text-align: center;
 
 }
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
 </style>

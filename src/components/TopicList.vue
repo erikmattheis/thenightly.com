@@ -73,9 +73,28 @@ export default {
   computed: {
     rectangleStyle() {
       if (this.animateButton) {
-        return `animation: rainbow 5s linear infinite; --start-color: ${this.buttonStoppedColor};`;
+        // Calculate the colors...
+        const t14Color = calculateColor(this.buttonStoppedColor, 14);
+        const t28Color = calculateColor(this.buttonStoppedColor, 28);
+        const t42Color = calculateColor(this.buttonStoppedColor, 42);
+        const t57Color = calculateColor(this.buttonStoppedColor, 57);
+        const t71Color = calculateColor(this.buttonStoppedColor, 71);
+        const t85Color = calculateColor(this.buttonStoppedColor, 85);
+
+        return `
+        animation: rainbow 5s linear infinite;
+        --start-color: ${this.buttonStoppedColor};
+        --t14-color: ${t14Color};
+        --t28-color: ${t28Color};
+        --t41-color: ${t42Color};
+        --t57-color: ${t57Color};
+        --t71-color: ${t71Color};
+        --t85-color: ${t85Color};
+        
+      `;
       }
       return `fill: ${this.buttonStoppedColor};`;
+      // return `animation: rainbow 5s linear infinite; --start-color: ${this.buttonStoppedColor};`;
     },
   },
   mounted() {
@@ -111,6 +130,14 @@ export default {
     },
   },
   methods: {
+    calculateColor(hex, percent) {
+      const rgb = this.hexToRgb(hex);
+      const r = Math.floor((rgb.r * (100 + percent)) / 100);
+      const g = Math.floor((rgb.g * (100 + percent)) / 100);
+      const b = Math.floor((rgb.b * (100 + percent)) / 100);
+
+      return `rgb(${r}, ${g}, ${b})`;
+    },
     handleMouseMove(event) {
       if (event.clientX < 100) {
         this.isDrawerOpen = true;
@@ -230,27 +257,27 @@ li {
   }
 
   14% {
-    fill: orange;
+    fill: var(--t14-color);
   }
 
   28% {
-    fill: yellow;
+    fill: var(--t28-color);
   }
 
   42% {
-    fill: green;
+    fill: var(--t42-color);
   }
 
   57% {
-    fill: blue;
+    fill: var(--t57-color);
   }
 
   71% {
-    fill: indigo;
+    fill: var(--t71-color);
   }
 
   85% {
-    fill: violet;
+    fill: var(--t85-color);
   }
 
   100% {
