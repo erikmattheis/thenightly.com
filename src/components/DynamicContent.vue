@@ -1,6 +1,6 @@
 <template>
   <article>
-    <TopFilter :filters="articles" />
+    <!-- <TopFilter :filters="articles" /> -->
     <div v-if="editMode">
       <form @submit.prevent="submitForm(article)">
         <label>
@@ -29,7 +29,7 @@
 
 <script>
 import dyes from '../data/dyes.json';
-import TopFilter from '@/components/TopFilter.vue';
+// import TopFilter from '@/components/TopFilter.vue';
 
 export default {
   name: 'DynamicContent',
@@ -39,7 +39,7 @@ export default {
       required: true,
     },
   },
-  components: { TopFilter },
+  // components: { TopFilter },
   data() {
     return {
       editMode: false,

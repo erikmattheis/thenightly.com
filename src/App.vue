@@ -2,6 +2,7 @@
 <template>
   <div>
     <header>
+      <TopicList />
       <h2>ERIK’S CRAZY WORLD OF</h2>
       <h1>NATURAL DYES AND FIBERS</h1>
     </header>
@@ -10,10 +11,11 @@
 </template>
 
 <script>
+import TopicList from './components/TopicList.vue';
 
 export default {
   name: 'App',
-
+  components: { TopicList },
 };
 </script>
 
@@ -21,7 +23,7 @@ export default {
 header {
   background-color: #301;
   color: #fff;
-  padding: 1rem;
   text-align: center;
+
 }
 </style>
