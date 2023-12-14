@@ -2,7 +2,8 @@
 <template>
   <div>
     <header>
-      <h1>COME TO DYE</h1>
+      <h2>ERIK’S CRAZY WORLD OF</h2>
+      <h1>NATURAL DYES AND FIBERS</h1>
     </header>
     <router-view></router-view>
   </div>

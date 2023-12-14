@@ -3,7 +3,7 @@
   <div>
     <h1>Good Information</h1>
     <p>The best descriptions of things you look up.</p>
-    <TopicList />>
+    <TopicList />
   </div>
 </template>
 
