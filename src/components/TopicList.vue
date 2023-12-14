@@ -1,13 +1,12 @@
 <template>
   <div class="drawer-container">
-
-    <button ref="floatingButton" @click="toggleDrawer" v-if="!isDrawerOpen" class="floating-button">
+    {{ buttonStoppedColor }}
+    <button @click="toggleDrawer" class="floating-button">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
         viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" fill="#fff">
         <g>
-          <rect x="7" y="12" width="12" height="12" :style="{ 'fill': buttonStoppedColor }">
-            <animate v-if="animateButton" attributeName="fill" values="red;orange;yellow;green;blue;indigo;violet;red"
-              dur="5s" repeatCount="indefinite" />
+          <rect x="7" y="12" width="12" height="12" ref="rectangle" :style="rectangleStyle">
+
           </rect>
           <path
             d="M7.8248291,9.8899841c-0.8098145,0.0700073-1.619873,0.1500244-2.4399414,0.25   c-1.8200684,0.2299805-3.1899414,1.7700195-3.1899414,3.5800171v7.1900024c0,2.2399902,1.8200684,4.0599976,4.0500488,4.0599976   h13.5c2.2399902,0,4.0600586-1.8200073,4.0600586-4.0599976v-7.1900024c0-1.8099976-1.3701172-3.3500366-3.2001953-3.5800171   c-0.8498535-0.0999756-1.7099609-0.1900024-2.5698242-0.2600098c-0.2102051-0.0200195-0.380127-0.1900024-0.380127-0.3999634   V7.9299622h0.2399902c1.3701172,0,2.4899902-1.1199951,2.4899902-2.4899902V3.7599792   c0-1.5-1.2199707-2.7299805-2.7299805-2.7299805H8.1048584c-1.369873,0-2.4899902,1.1199951-2.4899902,2.5v1.9099731   c0,1.3699951,1.1201172,2.4899902,2.4899902,2.4899902h0.1000977v1.5599976   C8.2049561,9.6999817,8.0450439,9.8699646,7.8248291,9.8899841z M9.8548584,14.0499573h6.2900391   c0.9299316,0,1.6799316,0.75,1.6799316,1.6800537v3.4599609c0,0.9299927-0.75,1.6799927-1.6799316,1.6799927H9.8548584   c-0.9199219,0-1.6799316-0.75-1.6799316-1.6799927V15.730011C8.1749268,14.7999573,8.9349365,14.0499573,9.8548584,14.0499573z" />
@@ -17,24 +16,7 @@
 
     <transition name="slide">
 
-      <ul v-show="isDrawerOpen" class="drawer">
-
-        <li class="button-container">
-
-          <button ref="movingButton" @click="toggleDrawer" class="moving-button">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
-              y="0px" viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" fill="#fff">
-              <g>
-                <rect x="7" y="12" width="12" height="12" ref="rectangle">
-                  <animate attributeName="fill" values="red;orange;yellow;green;blue;indigo;violet;red" dur="5s"
-                    repeatCount="indefinite" />
-                </rect>
-                <path
-                  d="M7.8248291,9.8899841c-0.8098145,0.0700073-1.619873,0.1500244-2.4399414,0.25   c-1.8200684,0.2299805-3.1899414,1.7700195-3.1899414,3.5800171v7.1900024c0,2.2399902,1.8200684,4.0599976,4.0500488,4.0599976   h13.5c2.2399902,0,4.0600586-1.8200073,4.0600586-4.0599976v-7.1900024c0-1.8099976-1.3701172-3.3500366-3.2001953-3.5800171   c-0.8498535-0.0999756-1.7099609-0.1900024-2.5698242-0.2600098c-0.2102051-0.0200195-0.380127-0.1900024-0.380127-0.3999634   V7.9299622h0.2399902c1.3701172,0,2.4899902-1.1199951,2.4899902-2.4899902V3.7599792   c0-1.5-1.2199707-2.7299805-2.7299805-2.7299805H8.1048584c-1.369873,0-2.4899902,1.1199951-2.4899902,2.5v1.9099731   c0,1.3699951,1.1201172,2.4899902,2.4899902,2.4899902h0.1000977v1.5599976   C8.2049561,9.6999817,8.0450439,9.8699646,7.8248291,9.8899841z M9.8548584,14.0499573h6.2900391   c0.9299316,0,1.6799316,0.75,1.6799316,1.6800537v3.4599609c0,0.9299927-0.75,1.6799927-1.6799316,1.6799927H9.8548584   c-0.9199219,0-1.6799316-0.75-1.6799316-1.6799927V15.730011C8.1749268,14.7999573,8.9349365,14.0499573,9.8548584,14.0499573z" />
-              </g>
-            </svg>
-          </button>
-        </li>
+      <ul v-show="expanded" class="drawer">
 
         <li v-for="article in topics" :key="article.shortTitle"
           :style="{ 'background-color': article.color.background, transform: `scaleY(${article.scaleFactor}) translateY(${article.translateY}px)` }"
@@ -65,38 +47,64 @@ export default {
     return {
       editMode: false,
       topics: dyes,
-      isDrawerOpen: true,
-      animateButton: true,
-      buttonStoppedColor: 'transparent',
+      expanded: false,
+      buttonStoppedColor: this.hexStringToHsl('#FF0000'),
     };
   },
   computed: {
     rectangleStyle() {
-      if (this.animateButton) {
-        // Calculate the colors...
-        const t14Color = calculateColor(this.buttonStoppedColor, 14);
-        const t28Color = calculateColor(this.buttonStoppedColor, 28);
-        const t42Color = calculateColor(this.buttonStoppedColor, 42);
-        const t57Color = calculateColor(this.buttonStoppedColor, 57);
-        const t71Color = calculateColor(this.buttonStoppedColor, 71);
-        const t85Color = calculateColor(this.buttonStoppedColor, 85);
+      let styles;
+      if (this.expanded) {
+        const t14Color = this.calculateNewHSLColor(this.buttonStoppedColor, 14);
+        const t28Color = this.calculateNewHSLColor(this.buttonStoppedColor, 28);
+        const t42Color = this.calculateNewHSLColor(this.buttonStoppedColor, 42);
+        const t57Color = this.calculateNewHSLColor(this.buttonStoppedColor, 57);
+        const t71Color = this.calculateNewHSLColor(this.buttonStoppedColor, 71);
+        const t85Color = this.calculateNewHSLColor(this.buttonStoppedColor, 85);
 
-        return `
-        animation: rainbow 5s linear infinite;
-        --start-color: ${this.buttonStoppedColor};
-        --t14-color: ${t14Color};
-        --t28-color: ${t28Color};
-        --t41-color: ${t42Color};
-        --t57-color: ${t57Color};
-        --t71-color: ${t71Color};
-        --t85-color: ${t85Color};
-        
-      `;
+        styles = `animation: rainbow 5s linear infinite; --start-color: ${this.buttonStoppedColor};
+          --t14-color: ${t14Color};
+          --t28-color: ${t28Color};
+          --t41-color: ${t42Color};
+          --t57-color: ${t57Color};
+          --t71-color: ${t71Color};
+          --t85-color: ${t85Color};`;
+      } else {
+        styles = `fill: ${this.buttonStoppedColor};`;
       }
-      return `fill: ${this.buttonStoppedColor};`;
-      // return `animation: rainbow 5s linear infinite; --start-color: ${this.buttonStoppedColor};`;
+      console.log(styles);
+      return styles;
     },
+    /*
+      rectangleStyle() {
+        if (this.expanded) {
+          const t14Color = this.calculateNewHSLColor(this.buttonStoppedColor, 14);
+          const t28Color = this.calculateNewHSLColor(this.buttonStoppedColor, 28);
+          console.log('t28Color', t28Color);
+          const t42Color = this.calculateNewHSLColor(this.buttonStoppedColor, 42);
+          const t57Color = this(this.buttonStoppedColor, 57);
+          const t71Color = this.calculateNewHSLColor(this.buttonStoppedColor, 71);
+          const t85Color = this.calculateNewHSLColor(this.buttonStoppedColor, 85);
+
+          return `
+          animation: rainbow 5s linear infinite;
+          --start-color: ${this.buttonStoppedColor};
+          --t14-color: ${t14Color};
+          --t28-color: ${t28Color};
+          --t41-color: ${t42Color};
+          --t57-color: ${t57Color};
+          --t71-color: ${t71Color};
+          --t85-color: ${t85Color};
+
+        `;
+        }
+        return `fill: ${this.buttonStoppedColor};`;
+        // return `animation: rainbow 5s linear infinite; --start-color: ${this.buttonStoppedColor};`;
+
+  }, */
+
   },
+
   mounted() {
     this.topics = this.topics.map((topic) => ({
       ...topic,
@@ -106,50 +114,33 @@ export default {
       },
     }));
     window.addEventListener('mousemove', this.handleMouseMove);
-    const { movingButton } = this.$refs;
-    const { floatingButton } = this.$refs;
-
-    const observer = new MutationObserver(() => {
-      floatingButton.style.left = `${movingButton.offsetLeft}px`;
-    });
-
-    observer.observe(movingButton, { attributes: true, childList: true, subtree: true });
   },
   beforeUnmount() {
     window.removeEventListener('mousemove', this.handleMouseMove);
   },
   watch: {
-    animateButton(newVal) {
-      if (!newVal) {
+    expanded(newVal) {
+      if (newVal) {
+        console.log('expanded', newVal);
         const { rectangle } = this.$refs;
         const style = window.getComputedStyle(rectangle);
         const fillColor = style.fill;
-
-        this.buttonStoppedColor = fillColor;
+        console.log('fillColor', fillColor);
+        this.buttonStoppedColor = this.rgbStringToHsl(fillColor);
       }
     },
   },
   methods: {
-    calculateColor(hex, percent) {
-      const rgb = this.hexToRgb(hex);
-      const r = Math.floor((rgb.r * (100 + percent)) / 100);
-      const g = Math.floor((rgb.g * (100 + percent)) / 100);
-      const b = Math.floor((rgb.b * (100 + percent)) / 100);
 
-      return `rgb(${r}, ${g}, ${b})`;
-    },
     handleMouseMove(event) {
       if (event.clientX < 100) {
-        this.isDrawerOpen = true;
-        this.animateButton = true;
+        this.expanded = false;
       } else {
-        this.isDrawerOpen = false;
-        this.animateButton = false;
+        this.expanded = true;
       }
     },
     toggleDrawer() {
-      this.isDrawerOpen = !this.isDrawerOpen;
-      this.animateButton = !this.animateButton;
+      this.expanded = !this.expanded;
     },
     async submitForm(article) {
       try {
@@ -159,17 +150,69 @@ export default {
         console.error(error);
       }
     },
-    hexToRgb(hex) {
+    calculateNewHSLColor({ h1, s, l }, percent) {
+      // move the hue by percent
+      const h = h1 * (1 + (percent / 100));
+      const result = `hsl(${h}, ${s}, ${l})`;
+      console.log('calculateNewHSLColor', result);
+      return result;
+    },
+    rgbStringToRgbObj(rgb) {
+      const obj = rgb.replace(/[^\d,]/g, '').split(',');
+      console.log('rgbStringToRgbObj', JSON.stringify(obj));
+      return obj;
+    },
+    rgbStringToHsl(rgb) {
+      const rgbObj = this.rgbStringToRgbObj(rgb);
+      const hsl = this.rgbObjToHslString(rgbObj);
+      console.log('rgbStringToHsl', hsl);
+      return hsl;
+    },
+    rgbObjToHslString({ r1, g1, b1 }) {
+      const r = r1 / 255;
+      const g = g1 / 255;
+      const b = b1 / 255;
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      let h;
+      let s;
+      const l = (max + min) / 2;
+
+      if (max === min) {
+        h = 0;
+        s = 0;
+      } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+          default: h = 0;
+        }
+        h /= 6;
+      }
+      const result = { h: h * 360, s: s * 100, l: l * 100 };
+      console.log('rgbObjToHslString', result);
+      return result;
+    },
+    hexStringToRgbObj(hex) {
       const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
       return result ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16),
-      } : { r: 0, g: 0, b: 0 }; // default to black
+      } : { r: 0, g: 0, b: 0 };
+    },
+    hexStringToHsl(hex) {
+      const rgb = this.hexStringToRgbObj(hex);
+      const hsl = this.rgbObjToHslString(rgb);
+      console.log('hexStringToHsl', hsl);
+      return hsl;
     },
     contrastingColor(hex) {
-      const rgb = this.hexToRgb(hex);
+      const rgb = this.hexStringToRgbObj(hex);
       const luminance = (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b);
       return (luminance < 140) ? '#ffffff' : '#000000';
     },
@@ -226,6 +269,7 @@ li {
 }
 
 .drawer button {
+  background-color: transparent;
   width: 52px;
   height: 52px;
   position: absolute;
