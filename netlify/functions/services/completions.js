@@ -13,10 +13,10 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are a writer expert in natural dyes and fabric with a style like Hunter S. Thompson but dont even allude this in your writing.',
+    content: 'You are a writer expert in natural dyes and fabric with a style like Hunter S. Thompson but dont even allude this in your writing. Make no commentary about your writing, provide the final magazine article.',
   }, {
     role: 'user',
-    content: `${len} word article about natural dye ${topic}. Format in HTML5 document, using only p, em, strong and h2 tags in the body`,
+    content: `${len} word article about natural dye ${topic}. Format in HTML5 document, using only p, em, strong and h2 tags in the body. Other than these two exeptions: Put two short pullquotes in blockquote tags. Use an aside tag with a short paragraph about the history of natual dye ${topic}.`,
   }];
 
   return messages;
@@ -54,7 +54,6 @@ function makeTitleMessages(str) {
   return messages;
 }
 
-/*
 function makeSidebarMessages(str) {
   const messages = [{
     role: 'user',
@@ -67,7 +66,7 @@ function makeSidebarMessages(str) {
 
   return messages;
 }
-*/
+
 async function generateCompletion(messages) {
   const response = await openai.chat.completions.create({
     messages,
@@ -107,20 +106,20 @@ async function generateArticle(topic, grade, len, color, colorTheme, temperature
   const titleResponse = await generateCompletion(titleMessages);
 
   const title = getMessage(titleResponse);
-  /*
+
   const sidebarMessagesResponse = makeSidebarMessages(content);
 
   const sidebarMessages = await generateCompletion(sidebarMessagesResponse);
 
   const sidebar = await getMessage(sidebarMessages);
-  */
+
   return {
     title,
     shortTitle: topic,
     color,
     content,
     description,
-    // sidebar,
+    sidebar,
     input: {
       topic,
       grade,

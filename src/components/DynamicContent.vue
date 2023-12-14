@@ -17,12 +17,12 @@
       </form>
     </div>
     <div v-else>
-      <!--<button @click="editMode = true">Edit</button>-->
-      <h2>{{ article.title }}</h2>
-      <p v-html="`<div>${article.description}</div>`"></p>
-      <!-- modern way without float to embed image with text wrapped around it -->
-
-      <p v-html="`<div>${content}</div>`"></p>
+      <article class="wrapper">
+        <h2 v-bind="title" :style="{ 'background-color': article.color }"></h2>
+        <div class="text" v-html="article.content"></div>
+        <blockquote class="quote">Welcome to 'Naturally Hued,' where every pixel, every word, is a testament to the
+          exciting possibilities when human curiosity meets the power of AI."</blockquote>
+      </article>
     </div>
   </article>
 </template>
@@ -51,16 +51,6 @@ export default {
       article: {},
     };
   },
-  computed: {
-
-    content() {
-      const { content } = this.article;
-      const img = `<img src="/assets/photos/${this.article.image}" alt="${this.article.title}" style="width: 100%; height: auto;" />`;
-      const firstParagraph = content.indexOf('</p>');
-      return content.slice(0, firstParagraph + 4) + img + content.slice(firstParagraph + 4);
-    },
-
-  },
   created() {
     this.article = this.articles.find((article) => article.shortTitle === this.topic);
   },
@@ -73,5 +63,42 @@ export default {
 <style scoped>
 article {
   padding: 1rem;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: auto;
+  padding: 1.5rem
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0
+  }
+}
+
+.quote {
+  margin: 0 0 0 -3rem;
+  width: 50%;
+  float: left;
+  padding: 3rem 3rem 3rem 0;
+}
+
+.quote {
+  padding: 1.5rem 1.5rem 1.5rem 0;
+  margin-left: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 700;
+  font-family: serif;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+
+  .text,
+  .headline {
+    margin-left: 150px
+  }
 }
 </style>

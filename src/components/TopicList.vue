@@ -106,7 +106,7 @@ export default {
         const { rectangle } = this.$refs;
         const style = window.getComputedStyle(rectangle);
         const fillColor = style.fill;
-        this.buttonStoppedColor = this.rgbStringToHsl(fillColor);
+        this.buttonStoppedColor = this.rgbStringToHslString(fillColor);
         this.$refs.button.style.position = 'absolute';
         this.$refs.button.style.left = 'auto';
         this.$refs.button.style.right = '10px';
@@ -149,10 +149,9 @@ export default {
       console.log('rgbStringToRgbObj', JSON.stringify(obj));
       return obj;
     },
-    rgbStringToHsl(rgb) {
+    rgbStringToHslString(rgb) {
       const rgbObj = this.rgbStringToRgbObj(rgb);
       const hsl = this.rgbObjToHslString(rgbObj);
-      console.log('rgbStringToHsl', hsl);
       return hsl;
     },
     rgbObjToHslString({ r1, g1, b1 }) {
