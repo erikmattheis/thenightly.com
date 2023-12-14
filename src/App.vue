@@ -3,8 +3,8 @@
   <div>
     <header>
       <TopicList />
-      <h2>ERIK’S CRAZY WORLD OF</h2>
-      <h1>NATURAL DYES AND FIBERS</h1>
+      <h1>NATURALY HUED</h1>
+      <p>A Passion Project in Harmony with AI Creativity!</p>
     </header>
     <router-view></router-view>
   </div>
