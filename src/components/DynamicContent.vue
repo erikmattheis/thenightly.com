@@ -18,11 +18,11 @@
     </div>
     <div v-else>
       <!--<button @click="editMode = true">Edit</button>-->
-      <h2 style="color:red">{{ article.title }}</h2>
-      <p style="color:green" v-html="`<div>${article.description}</div>`"></p>
+      <h2>{{ article.title }}</h2>
+      <p v-html="`<div>${article.description}</div>`"></p>
       <!-- modern way without float to embed image with text wrapped around it -->
 
-      <p style="color:blue" v-html="`<div>${content}</div>`"></p>
+      <p v-html="`<div>${content}</div>`"></p>
     </div>
   </article>
 </template>
@@ -72,9 +72,6 @@ export default {
 
 <style scoped>
 article {
-  margin: 1rem;
   padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 </style>

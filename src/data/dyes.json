@@ -2881,29 +2881,31 @@
     }
   },
   {
+    "executionTime": "54.01 seconds",
     "input": {
       "color": "#8B008B",
-      "len": 490,
-      "grade": "college",
+      "len": 507,
+      "grade": "12th grade",
       "colorTheme": {
-        "name": "Razzmatazz",
+        "name": "Razzmatazz and complementary",
         "colors": [
-          "#D10067"
+          "#D10067",
+          "#52293D"
         ]
       },
-      "temperature": 1.1306163175172994,
+      "temperature": 0.4400602891306293,
       "topic": "Alkanet",
       "messages": {
         "description": [
           {
             "role": "user",
-            "content": "A page about Alkanet and starts \"\n    The Vibrant Allure of Alkanet: A Natural Dye\n    Alkanet, a captivating natural dye, possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Derived from the roots of\" needs a HTML meta-description. Give only attribute value."
+            "content": "A page about Alkanet and starts \"\nAlkanet: The Vibrant Natural Dye\nAlkanet, also known as Alkanna tinctoria, is a powerful natural dye that has been used for centuries to impart rich and vibrant colors to fabrics. Derived from the roots of the Alkanet plant, this dye offers\" needs a HTML meta-description. Give only attribute value."
           }
         ],
         "title": [
           {
             "role": "user",
-            "content": "Title less than 66 characters, article described as \"Derived from the roots of alkanet plants, this captivating natural dye possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Discover the vibrant allure of alkanet as you dive into its history, uses, and the stunning shades it can produce.\""
+            "content": "Title less than 66 characters, article described as Alkanet: The Vibrant Natural Dye - Alkanet, also known as Alkanna tinctoria, is a powerful natural dye that has been used for centuries to impart rich and vibrant colors to fabrics. Derived from the roots of the Alkanet plant, this dye offers."
           }
         ],
         "content": [
@@ -2913,21 +2915,35 @@
           },
           {
             "role": "user",
-            "content": "490 word article about natural dye Alkanet. Format in HTML5 document, using only p, em, strong and h2 tags in the body"
+            "content": "507 word article about natural dye Alkanet. Format in HTML5 document, using only p, em, strong and h2 tags in the body"
           }
         ]
       },
       "model": "gpt-3.5-turbo"
     },
+    "image": {
+      "imagePrompt": "Contemporary magazine shot of Alkanet natural dye. #D10067 and #52293D background colors.",
+      "imageUrl": "Alkanet.jpg.jpg",
+      "colorTheme": {
+        "name": "Razzmatazz and complementary",
+        "colors": [
+          "#D10067",
+          "#52293D"
+        ]
+      },
+      "imageSize": "1024x1024",
+      "imageModel": "dall-e-3"
+    },
     "color": "#8B008B",
     "docId": "alkanet",
-    "description": "\"Derived from the roots of alkanet plants, this captivating natural dye possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Discover the vibrant allure of alkanet as you dive into its history, uses, and the stunning shades it can produce.\"",
+    "description": "Alkanet: The Vibrant Natural Dye - Alkanet, also known as Alkanna tinctoria, is a powerful natural dye that has been used for centuries to impart rich and vibrant colors to fabrics. Derived from the roots of the Alkanet plant, this dye offers.",
+    "topic": "Alkanet",
     "shortTitle": "Alkanet",
-    "title": "\"Alkanet: Unparalleled Beauty in Natural Fabric Dye\"",
-    "content": "\n    <h2>The Vibrant Allure of Alkanet: A Natural Dye</h2>\n    <p>Alkanet, a captivating natural dye, possesses a beauty and richness that is truly unparalleled in the world of fabric coloring. Derived from the roots of the Alkanna tinctoria plant, this remarkable dye offers a wide range of hues, from deep purples and blues to magnificent shades of red. Its potency and versatility have made it a favorite among those dedicated to exploring the wonders of natural dyes.</p>\n\n    <p><em>Alkanet, my friends, is a gateway to another dimension of color.</em></p>\n\n    <p>The process of extracting the dye from the alkanet roots is an experience in itself. Steeped in history, this ancient technique unleashes a primal energy that can only be equated to summoning the spirits of antiquity. Tenderly coaxing the magic from the roots requires patience and finesse, as if conducting a delicate symphony.</p>\n\n    <p>The resulting dye, vivid and enchanting, is nothing short of transcendental. When applied to fabric, it imparts an otherworldly depth and a seductive allure that is guaranteed to turn heads. It engages with the fibers on a molecular level, intertwining its essence with the fabric's very soul. The fabric becomes a living canvas, vibrantly expressing the essence of alkanet.</p>\n\n    <p><strong>Behold the majesty of a garment bathed in alkanet!</strong> The colors dance like flame and water, flickering with a life force borrowed from nature's own palette. Each shade truly represents a union between the earth and the heavens, as if the celestial bodies themselves conspired to create a masterpiece.</p>\n\n    <p>Alkanet dye is not just a feast for the eyes, my friends, but for the senses as a whole. Envelop yourself in the fabric and a new world opens up—a world of untamed sensuality and enigmatic allure. Its scent, best described as earthy and remarkable, carries whiffs of secrets long forgotten. On the skin, it is an indulgence of the senses, engaging in a tactile ballet of pleasure and fascination. Oh, what an experience!</p>\n    \n    <p>However, tread the path of alkanet with caution, for its mesmerizing powers may tempt you to forsake all other natural dyes in its favor. But, my dear readers, diversity is the spice of life, and variety is the key to discovering new realms of creativity and beauty.</p>\n\n    <p><em>Remember this, as you venture into the enchanting world of alkanet, be propelled by wonder and curiosity, for it is the artists and creators who dare to explore the untamed universe of natural dyes that truly shape the future of fashion and design.</em></p>\n",
+    "title": "endless possibilities for creating beautiful and unique textiles. Known for its deep hues of purple and blue, alkanet dye has been a favorite among textile artists and enthusiasts.\n\nOne of the main reasons for alkanet's popularity as a dye is its ability to create colors that remain vibrant even after repeated washing and exposure to sunlight. This makes it an ideal choice for garments and textiles that need to retain their color over time.\n\nIn addition to its exceptional colorfastness, alkanet dye is also highly versatile and can be easily combined with other natural dyes to create a wide range of shades. By experimenting with different mordants and dyeing techniques, artists can achieve an array of colors, from subtle pastels to intense jewel tones.\n\nAnother advantage of alkanet dye is its ease of extraction. The roots of the alkanet plant contain high concentrations of the dye, and simply boiling them in water can release the vibrant color. This makes it accessible to both professional dyers and hobbyists who want to experiment with natural dyes.\n\nFurthermore, the alkanet plant is abundant and sustainable, making it an environmentally friendly choice for natural dyeing. Unlike synthetic dyes, which often have harmful effects on the environment and human health, alkanet dye is non-toxic and eco-friendly.\n\nThe versatility and sustainability of alkanet dye have led to its resurgence in popularity in recent years. Textile artists and designers are increasingly turning to natural dyes like alkanet to create unique and environmentally responsible pieces.\n\nIn conclusion, alkanet dye offers a powerful and vibrant natural alternative to synthetic dyes. With its rich colors, exceptional colorfastness, and ease of extraction, it is no wonder that alkanet has been used for centuries to create beautiful textiles. Whether you're a professional textile artist or an amateur enthusiast, alkanet dye is a versatile and eco-friendly choice for adding vibrant colors to your fabrics.",
+    "content": "\n<h2>Alkanet: The Vibrant Natural Dye</h2>\n<p><strong>Alkanet</strong>, also known as Alkanna tinctoria, is a powerful natural dye that has been used for centuries to impart rich and vibrant colors to fabrics. Derived from the roots of the Alkanet plant, this dye offers a range of shades from deep purples to intense blues, making it a favorite among textile enthusiasts.</p>\n<p>When it comes to natural dyes, Alkanet stands out for its exceptional colorfastness. The dye molecules in Alkanet root have a strong affinity for fabric fibers, resulting in long-lasting and fade-resistant hues. This makes it an ideal choice for those seeking to create sustainable and eco-friendly textiles.</p>\n<p><em>Legend has it that Alkanet was discovered by accident when a group of ancient textile artisans stumbled upon a patch of Alkanet plants while searching for new sources of dye. Intrigued by the deep red color of the roots, they decided to experiment with it, leading to the birth of a new dyeing tradition.</em></p>\n<p>One of the unique characteristics of Alkanet dye is its ability to produce different shades depending on the mordant used. A mordant is a substance that helps fix the dye to the fabric, enhancing its color and durability. Alum, iron, and copper are commonly used mordants with Alkanet, each resulting in a distinct color variation.</p>\n<p><em>The process of dyeing with Alkanet involves simmering the roots in water to extract the dye compounds. The fabric is then soaked in a mordant solution before being immersed in the dye bath. The longer the fabric remains in the dye bath, the deeper the color it absorbs.</em></p>\n<p>Aside from its vibrant coloring properties, Alkanet is also known for its medicinal benefits. The roots of the Alkanet plant contain compounds that have been used in traditional medicine for their anti-inflammatory and healing properties. In fact, the name \"Alkanet\" is derived from the Arabic word \"al-henna,\" meaning \"the henna,\" due to its traditional use as a natural remedy.</p>\n<p><strong>Caution:</strong> While Alkanet is generally safe to use as a dye, it is important to handle it with care. Some individuals may experience skin irritation when in direct contact with the dye or the plant itself. It is advisable to wear protective gloves and work in a well-ventilated area when handling Alkanet.</p>\n<p>In conclusion, Alkanet is a remarkable natural dye that offers a wide range of vibrant colors and excellent colorfastness. Its historical significance, medicinal benefits, and eco-friendly nature make it a popular choice among textile artists and enthusiasts. So, if you're looking to add a touch of natural beauty to your fabrics, give Alkanet a try!</p>\n",
     "timestamp": {
-      "_seconds": 1702442285,
-      "_nanoseconds": 931000000
+      "_seconds": 1702447313,
+      "_nanoseconds": 398000000
     }
   },
   {
