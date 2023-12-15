@@ -57,12 +57,12 @@ function addDateSuffix(str) {
 // eslint-disable-next-line func-names
 exports.handler = async function () {
   try {
-    const batch = 'w1'; // batchStr || 'w1';
+    const batch = 'w2'; // batchStr || 'w1';
     // const x = 0;
     // skip first x of array
     const topics = dyes.slice();
     // only use first few topics for now
-    topics.length = 1;
+    topics.length = 10;
 
     const colorThemes = [{ name: 'Indochine and complimentary', colors: ['#CF6B00', '#4F3C28'] }, { name: 'Indochine', colors: ['#CF6B00'] }, { name: 'Razzmatazz and complementary', colors: ['#D10067', '#52293D'] }, { name: 'Razzmatazz', colors: ['#D10067'] }];
 
@@ -77,13 +77,13 @@ exports.handler = async function () {
       const colorTheme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
 
       console.log(`Generating article for ${topic.name}...`);
-      /*
-      const colorThemeDescription = colorTheme.colors.length > 1 ? `${colorTheme.colors[0].name} and ${colorTheme.colors[1].name}` : colorTheme.colors[0].name; // eslint-disable-line max-len
+
+      const colorThemeDescription = colorTheme.colors.length > 1 ? `${colorTheme.colors[0]} and ${colorTheme.colors[1]}` : colorTheme.colors[0]; // eslint-disable-line max-len
 
       // eslint-disable-next-line no-await-in-loop
       const image = await generateGraphics(topic, colorThemeDescription, id);
       console.log('image', JSON.stringify(image, null, 2));
-      */
+
       const temperature = Math.random() + 0.3;
 
       const grade = getAGrade();
@@ -95,7 +95,7 @@ exports.handler = async function () {
       const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
 
       console.log(`Execution time: ${executionTime}`);
-      const image = { first: 'c' };
+      // const image = 'none';
       // JSON.stringify({ ...response, executionTime, topic: topic.name }, null, 2);
       const doc = {
         ...response, image, executionTime, topic: topic.name, batch,

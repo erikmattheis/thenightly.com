@@ -40,29 +40,43 @@ async function handler(prompt, imageStr, model = 'dall-e-2', n = 1, size = '512x
 
   const name = `${imageStr}.jpg`;
 
-  const url = await saveImage(buffer, name);
+  const original = await saveImage(buffer, name);
 
-  const imageName = url.split('/').slice(-1)[0];
+  const quality = 80;
+  const compressedBuffer = await sharp(buffer)
+    .jpeg({ quality })
+    .toBuffer();
 
-  const images = [60, 80, 90].map(async (quality) => {
+  const compressedFilename = name.replace('.jpg', `-q${quality}.jpg`);
+
+  const compressed = await saveImage(compressedBuffer, compressedFilename);
+
+  const images = {
+    original,
+    compressed,
+  };
+  /*
+  const compressed = [60, 80, 90].map(async (quality) => {
     const compressedBuffer = await sharp(buffer)
       .jpeg({ quality })
       .toBuffer();
 
-    const compressedFilename = imageName.replace('.jpg', `-q${quality}.jpg`);
+    const compressedFilename = name.replace('.jpg', `-q${quality}.jpg`);
 
-    await saveImage(compressedBuffer, compressedFilename);
+    const compressedUrl = await saveImage(compressedBuffer, compressedFilename);
 
-    return compressedFilename;
-  });
-  /*
-  const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
+    return {`a${quality}`: compressedUrl
+  }
+
+console.log('images', JSON.stringify(images, null, 2));
+/*
+const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
 */
   // const url = 'l'; // `../../../public/images/${imageNameWithDash}`;
 
   // await saveImageBufferToFile(buffer, imagePath);
 
-  return [...images, url];
+  return images;
 }
 
 exports.handler = handler;

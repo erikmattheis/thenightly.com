@@ -19,7 +19,7 @@ async function saveImage(buffer, name) {
   console.log('Saving image to Google Cloud...');
   try {
     // Upload the image data to Google Cloud Storage
-    const bucketName = 'thenightly';
+    const bucketName = 'nightly-images';
     const fileGroupName = 'article-images';
     const fileName = sanitizeId(name);
 
