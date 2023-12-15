@@ -1,7 +1,7 @@
 <template>
   <div class="drawer-container">
 
-    <div class="fake-li" :class="{ 'w250': expanded }">
+    <div class="fake-li" :class="{ 'w250': expanded, 'button-only': !expanded }">
       <button @click="toggleDrawer" ref="button" class="floating-button">
         <svg style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" xml:space="preserve"
           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -207,6 +207,11 @@ export default {
 </script>
 
 <style scoped>
+.button-only button {
+  position: fixed;
+  left: 10px;
+}
+
 .drawer-container {
 
   ::-webkit-scrollbar {
