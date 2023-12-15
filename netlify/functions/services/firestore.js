@@ -27,11 +27,13 @@ async function saveArticle(collection, doc, id = null) {
     }
 
     console.log('docId', docId);
+
     const docRef = db.collection(collection).doc(docId);
     const timestamp = admin.firestore.Timestamp.now();
-    await docRef.set({ ...doc, docId, timestamp });
+    const sav = await docRef.set({ ...doc, timestamp });
+    console.log('sav', JSON.stringify(sav, null, 2));
 
-    const result = docRef.get();
+    const result = await docRef.get();
     return result.data();
   } catch (error) {
     return `Error adding document: ${error}`;

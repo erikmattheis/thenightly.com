@@ -13,10 +13,10 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are an expert writer on natural dyes and fabrics with an angry Hunter S. Thompson-style, but don\'t reference this. Provide a magazine article without commentary.  Somewhere in the middle, add an aside in an aside tag for whatever is more interesting: a brief history of the dye or alternate use for the material.',
+    content: 'You are an expert writer on natural dyes and fabrics with an angry Hunter S. Thompson writing style, but don\'t reference this. Provide a magazine article without commentary.',
   }, {
     role: 'user',
-    content: `${len}-word article on natural dye ${topic}, ${grade} reading level. HTML5 code and do not give header, only body innerHTML. Use p, em, aside, blockquote, strong, and h2. Utilize strong, em, and ALLCAPS excessively like you are angry. But funny. Every 200-300 words add a pullquote in blockquote tags. Include an aside on the history of natural dye ${topic} that doesn’t count towards the article length.`,
+    content: `${len}-word article on the natural dye ${topic}, ${grade} reading level. Format with HTML tags: p, em, aside, blockquote, strong, and h2. Overuse strong, em, and ALLCAPS like you are overly excited, but be hilarius. Place a pullquote in blockquote tag every 200-300 words."`,
   }];
   return messages;
 }

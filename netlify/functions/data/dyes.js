@@ -1,5 +1,9 @@
 const dyes = [
   {
+    name: 'Oranges’ Peel',
+    color: '#8B008B',
+  },
+  {
     name: 'Alkanet',
     color: '#8B008B',
   },

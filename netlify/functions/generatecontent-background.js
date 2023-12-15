@@ -29,7 +29,7 @@ function normalRandom(mean, stdDev) {
 function getALength(assignedWords) {
   let finalWordCount;
   do {
-    const revisionFactor = normalRandom(1.1, 0.07);
+    const revisionFactor = normalRandom(1.1, 0.08);
     finalWordCount = (assignedWords * revisionFactor);
 
     finalWordCount = Math.round(finalWordCount);
@@ -55,53 +55,61 @@ function addDateSuffix(str) {
 }
 
 // eslint-disable-next-line func-names
-exports.handler = async function (batchStr) {
-  const batch = batchStr || 'a1';
-  // const x = 0;
-  // skip first x of array
-  const topics = dyes.slice();
-  // only use first few topics for now
-  topics.length = 1;
+exports.handler = async function () {
+  try {
+    const batch = 'w1'; // batchStr || 'w1';
+    // const x = 0;
+    // skip first x of array
+    const topics = dyes.slice();
+    // only use first few topics for now
+    topics.length = 1;
 
-  const colorThemes = [{ name: 'Indochine and complimentary', colors: ['#CF6B00', '#4F3C28'] }, { name: 'Indochine', colors: ['#CF6B00'] }, { name: 'Razzmatazz and complementary', colors: ['#D10067', '#52293D'] }, { name: 'Razzmatazz', colors: ['#D10067'] }];
+    const colorThemes = [{ name: 'Indochine and complimentary', colors: ['#CF6B00', '#4F3C28'] }, { name: 'Indochine', colors: ['#CF6B00'] }, { name: 'Razzmatazz and complementary', colors: ['#D10067', '#52293D'] }, { name: 'Razzmatazz', colors: ['#D10067'] }];
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const topic of topics) {
-    const start = performance.now();
+    // eslint-disable-next-line no-restricted-syntax
+    for (const topic of topics) {
+      const start = performance.now();
 
-    const name = addDateSuffix(topic.name.toLowerCase());
+      const name = addDateSuffix(topic.name.toLowerCase());
 
-    const id = sanitizeId(`${batch}-${name}`);
+      const id = sanitizeId(`${batch}-${name}`);
 
-    const colorTheme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
+      const colorTheme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
 
-    console.log(`Generating article for ${topic.name}...`);
+      console.log(`Generating article for ${topic.name}...`);
+      /*
+      const colorThemeDescription = colorTheme.colors.length > 1 ? `${colorTheme.colors[0].name} and ${colorTheme.colors[1].name}` : colorTheme.colors[0].name; // eslint-disable-line max-len
 
-    const colorThemeDescription = colorTheme.colors.length > 1 ? `${colorTheme.colors[0].name} and ${colorTheme.colors[1].name}` : colorTheme.colors[0].name; // eslint-disable-line max-len
+      // eslint-disable-next-line no-await-in-loop
+      const image = await generateGraphics(topic, colorThemeDescription, id);
+      console.log('image', JSON.stringify(image, null, 2));
+      */
+      const temperature = Math.random() + 0.3;
 
-    // eslint-disable-next-line no-await-in-loop
-    const image = await generateGraphics(topic, colorThemeDescription, id);
+      const grade = getAGrade();
+      const len = getALength(500);
 
-    const temperature = Math.random() + 0.3;
+      // eslint-disable-next-line no-await-in-loop
+      const response = await generateArticle(topic.name, grade, len, topic.color, colorTheme, temperature);
+      const end = performance.now();
+      const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
 
-    const grade = getAGrade();
-    const len = getALength(500);
-
-    // eslint-disable-next-line no-await-in-loop
-    const response = await generateArticle(topic.name, grade, len, topic.color, colorTheme, temperature);
-    const end = performance.now();
-    const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
-    console.log(`Execution time: ${executionTime}`);
-
-    // JSON.stringify({ ...response, executionTime, topic: topic.name }, null, 2);
-
-    // eslint-disable-next-line no-await-in-loop
-    await saveArticle('dyes', {
-      ...response, image, executionTime, topic: topic.name, batch,
-    }, id);
+      console.log(`Execution time: ${executionTime}`);
+      const image = { first: 'c' };
+      // JSON.stringify({ ...response, executionTime, topic: topic.name }, null, 2);
+      const doc = {
+        ...response, image, executionTime, topic: topic.name, batch,
+      };
+      console.log('doc', JSON.stringify(doc, null, 2));
+      // eslint-disable-next-line no-await-in-loop
+      const r = await saveArticle('dyes', doc, id);
+      console.log('return is', JSON.stringify(r, null, 2));
+    }
+  } catch {
+    console.log('error');
   }
 
-  await generateJson.handler();
+  // await generateJson.handler();
 
   console.log('Done.');
 

@@ -120,7 +120,7 @@ export default {
   methods: {
 
     handleMouseMove(event) {
-      if (event.clientX < 250) {
+      if (event.clientX < 2) {
         this.expanded = true;
       } else {
         this.expanded = false;

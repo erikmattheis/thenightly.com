@@ -38,11 +38,11 @@ async function handler(prompt, imageStr, model = 'dall-e-2', n = 1, size = '512x
 
   const buffer = Buffer.from(image.b64_json, 'base64');
 
-  console.log('buffer type received:', typeof buffer);
+  const name = `${imageStr}.jpg`;
 
-  const imageUrl = await saveImage(buffer, imageStr);
+  const url = await saveImage(buffer, name);
 
-  const imageName = imageUrl.split('/').slice(-1)[0];
+  const imageName = url.split('/').slice(-1)[0];
 
   const images = [60, 80, 90].map(async (quality) => {
     const compressedBuffer = await sharp(buffer)
@@ -55,14 +55,14 @@ async function handler(prompt, imageStr, model = 'dall-e-2', n = 1, size = '512x
 
     return compressedFilename;
   });
-
+  /*
   const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
+*/
+  // const url = 'l'; // `../../../public/images/${imageNameWithDash}`;
 
-  const imagePath = `../../../public/images/${imageNameWithDash}`;
+  // await saveImageBufferToFile(buffer, imagePath);
 
-  await saveImageBufferToFile(buffer, imagePath);
-
-  return [...images, imagePath];
+  return [...images, url];
 }
 
 exports.handler = handler;
@@ -75,7 +75,7 @@ exports.generateGraphics = async function generateGraphics(topic, colorThemeDesc
   const images = await handler(prompt, id, model, 1, size);
 
   const image = {
-    images,
+    ...images,
     prompt,
     colorThemeDescription,
     model,
