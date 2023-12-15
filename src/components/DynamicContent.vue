@@ -77,14 +77,12 @@ article {
   }
 }
 
-.quote {
+blockquote {
   margin: 0 0 0 -3rem;
   width: 50%;
   float: left;
   padding: 3rem 3rem 3rem 0;
-}
 
-.quote {
   padding: 1.5rem 1.5rem 1.5rem 0;
   margin-left: 0;
   font-size: 1.5rem;
