@@ -1,12 +1,13 @@
 const { performance } = require('perf_hooks');
+const { sanitizeId } = require('./services/utility');
 const { saveArticle } = require('./services/firestore');
-const generateImage = require('./generate-image');
+const { generateGraphics } = require('./services/openai-images');
 const generateJson = require('./generate-json');
 const { dyes } = require('./data/dyes');
 
 // const dyes = JSON.parse(dyesJson);
 
-const { generateArticle } = require('./services/completions');
+const { generateArticle } = require('./services/openai-completions');
 
 function getAGrade() {
   const grades = ['6th grade', '7th grade', '8th grade', '9th grade', '10th grade', '11th grade', '12th grade', 'college', 'graduate school', 'doctorate', 'post-doctorate', 'professor'];
@@ -42,12 +43,23 @@ function executionTimeToSeconds(executionTime) {
   return Math.round((executionTime / 1000) * 100) / 100;
 }
 
+function addDateSuffix(str) {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDay();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  return `${str}-${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
+}
+
 // eslint-disable-next-line func-names
 exports.handler = async function (batchStr) {
   const batch = batchStr || 'a1';
-  const x = 2;
+  // const x = 0;
   // skip first x of array
-  const topics = dyes.slice(x);
+  const topics = dyes.slice();
   // only use first few topics for now
   topics.length = 1;
 
@@ -57,32 +69,18 @@ exports.handler = async function (batchStr) {
   for (const topic of topics) {
     const start = performance.now();
 
+    const name = addDateSuffix(topic.name.toLowerCase());
+
+    const id = sanitizeId(`${batch}-${name}`);
+
     const colorTheme = colorThemes[Math.floor(Math.random() * colorThemes.length)];
 
-    console.log(`Generating article for ${JSON.stringify(topic.name, null, 2)}...`);
+    console.log(`Generating article for ${topic.name}...`);
 
-    const colorThemeDescription = colorTheme.colors.length > 1 ? `${colorTheme.colors[0]} and ${colorTheme.colors[1]}` : colorTheme.colors[0]; // eslint-disable-line max-len
-
-    const imagePrompt = `Closeup still life ${topic.name} natural dye. ${colorThemeDescription} background colors.`;
-
-    const imageModel = 'dall-e-2'; // Math.random() > 0.5 ? 'dall-e-2' : 'dall-e-3';
-
-    const imageSize = '512x512';// '1024x1024';
-
-    const n = 1;
-
-    const imageName = `${topic.name}.jpg`;
+    const colorThemeDescription = colorTheme.colors.length > 1 ? `${colorTheme.colors[0].name} and ${colorTheme.colors[1].name}` : colorTheme.colors[0].name; // eslint-disable-line max-len
 
     // eslint-disable-next-line no-await-in-loop
-    const images = await generateImage.handler(imagePrompt, imageName, imageModel, n, imageSize);
-
-    const image = {
-      images,
-      imagePrompt,
-      colorTheme,
-      imageModel,
-      imageSize,
-    };
+    const image = await generateGraphics(topic, colorThemeDescription, id);
 
     const temperature = Math.random() + 0.3;
 
@@ -90,7 +88,7 @@ exports.handler = async function (batchStr) {
     const len = getALength(500);
 
     // eslint-disable-next-line no-await-in-loop
-    const response = await generateArticle(`${`${topic.name}`}`, grade, len, topic.color, colorTheme, temperature);
+    const response = await generateArticle(topic.name, grade, len, topic.color, colorTheme, temperature);
     const end = performance.now();
     const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
     console.log(`Execution time: ${executionTime}`);
@@ -100,7 +98,7 @@ exports.handler = async function (batchStr) {
     // eslint-disable-next-line no-await-in-loop
     await saveArticle('dyes', {
       ...response, image, executionTime, topic: topic.name, batch,
-    });
+    }, id);
   }
 
   await generateJson.handler();

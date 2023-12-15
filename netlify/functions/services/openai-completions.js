@@ -13,10 +13,10 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are an expert writer on natural dyes and fabrics with an angry Hunter S. Thompson-style, but don\'t reference this. Provide a magazine article without commentary. Use HTML5 body content using only p, em, aside, blockquote, strong, and h2 tags. Utilize strong, em, and ALLCAPS excessively. Every 200-300 words add a pullquote in blockquote tags. Somewhere in the middle, add an aside in an aside tag for whatever is more interesting: a brief history of the dye or alternate use for the material.natural dye  The aside does not count towards article length and can be 300 words or one third the length, whichever is greater.',
+    content: 'You are an expert writer on natural dyes and fabrics with an angry Hunter S. Thompson-style, but don\'t reference this. Provide a magazine article without commentary.  Somewhere in the middle, add an aside in an aside tag for whatever is more interesting: a brief history of the dye or alternate use for the material.',
   }, {
     role: 'user',
-    content: `300-word article on natural dye black walnut. HTML5 code and do not give header, only body innerHTML. Use p, em, aside, blockquote, strong, and h2. Excessive use of strong, em, and ALLCAPS. Add two short pullquotes in blockquote tags. Include an aside on the history of natural dye ${topic} that doesn’t count towards the article length.`,
+    content: `${len}-word article on natural dye ${topic}, ${grade} reading level. HTML5 code and do not give header, only body innerHTML. Use p, em, aside, blockquote, strong, and h2. Utilize strong, em, and ALLCAPS excessively like you are angry. But funny. Every 200-300 words add a pullquote in blockquote tags. Include an aside on the history of natural dye ${topic} that doesn’t count towards the article length.`,
   }];
   return messages;
 }

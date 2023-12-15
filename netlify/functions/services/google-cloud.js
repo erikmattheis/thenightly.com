@@ -15,38 +15,6 @@ const storage = new Storage({
   credentials: serviceAccount,
 });
 
-/*
-
-async function saveImage(buffer, name) {
-  console.log('Saving image to Google Cloud...');
-  try {
-    const bucketName = 'thenightly';
-    const fileGroupName = 'article-images';
-    const fileName = sanitizeId(name);
-
-    const bucket = storage.bucket(bucketName);
-    const file = bucket.file(`${fileGroupName}/${fileName}`);
-
-    await bucket.upload(buffer, {
-      destination: file,
-      metadata: {
-        contentType: 'image/jpeg',
-      },
-    });
-
-    const publicUrl = `https://storage.googleapis.com/${bucketName}/${fileGroupName}${fileName}`;
-
-    return publicUrl;
-  } catch (error) {
-    console.error('Error saving image to Google Cloud:', error);
-    return `Error saving image to Google Cloud: ${error}`;
-  }
-}
-
-module.exports = { saveImage };
-
-*/
-
 async function saveImage(buffer, name) {
   console.log('Saving image to Google Cloud...');
   try {

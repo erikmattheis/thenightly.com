@@ -1,5 +1,7 @@
 // const path = require('path');
 const admin = require('firebase-admin');
+const { sanitizeId } = require('./utility');
+
 // Load your service account credentials from an environment variable or secret manager
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
@@ -13,29 +15,18 @@ if (!admin.apps.length) {
 // Get a Firestore database reference
 const db = admin.firestore();
 
-function sanitizeId(id) {
-  return encodeURIComponent(id.toLowerCase().replace(/\s/g, '-'));
-}
-
-function addDateSuffix(str) {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  const day = date.getDay();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
-  return `${str}-${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
-}
-
-async function saveArticle(collection, doc) {
+async function saveArticle(collection, doc, id = null) {
   console.log('Saving to Firestore...', collection);
   try {
     // Add a new document with a generated id to the 'messages' collection
-    const id = sanitizeId(`${doc.batch}-${doc.input.topic}`);
+    let docId;
+    if (id) {
+      docId = id;
+    } else {
+      docId = sanitizeId(`${doc.batch}-${doc.input.topic}`);
+    }
 
-    const docId = addDateSuffix(id);
-
+    console.log('docId', docId);
     const docRef = db.collection(collection).doc(docId);
     const timestamp = admin.firestore.Timestamp.now();
     await docRef.set({ ...doc, docId, timestamp });

@@ -3,7 +3,7 @@ const path = require('path');
 const OpenAI = require('openai');
 const sharp = require('sharp');
 
-const { saveImage } = require('./services/google-cloud');
+const { saveImage } = require('./google-cloud');
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -33,7 +33,7 @@ function replaceWhiteSpaceWithDash(imageName) {
   return imageName.replace(/\s+/g, '-');
 }
 
-exports.handler = async function handler(prompt, imageStr, model = 'dall-e-2', n = 1, size = '512x512') {
+async function handler(prompt, imageStr, model = 'dall-e-2', n = 1, size = '512x512') {
   const image = await generateImage(prompt, model, n, size);
 
   const buffer = Buffer.from(image.b64_json, 'base64');
@@ -58,9 +58,31 @@ exports.handler = async function handler(prompt, imageStr, model = 'dall-e-2', n
 
   const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
 
-  const imagePath = `../../public/images/${imageNameWithDash}.jpg`;
+  const imagePath = `../../../public/images/${imageNameWithDash}`;
 
   await saveImageBufferToFile(buffer, imagePath);
 
   return [...images, imagePath];
+}
+
+exports.handler = handler;
+
+exports.generateGraphics = async function generateGraphics(topic, colorThemeDescription, id) {
+  const prompt = `Closeup still life on style of ALBERT BIERSTADT of ${topic.name} natural dye. ${colorThemeDescription} background colors.`;
+  const model = 'dall-e-2';
+  const size = '512x512';
+  // eslint-disable-next-line no-await-in-loop
+  const images = await handler(prompt, id, model, 1, size);
+
+  const image = {
+    images,
+    prompt,
+    colorThemeDescription,
+    model,
+    size,
+  };
+
+  return image;
 };
+
+// generateGraphics('Madder', 'Indochine and complimentary', 'a1');

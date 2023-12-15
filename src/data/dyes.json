@@ -2945,48 +2945,5 @@
       "_seconds": 1702447313,
       "_nanoseconds": 398000000
     }
-  },
-  {
-    "executionTime": "23.26 seconds",
-    "input": {
-      "len": 615,
-      "grade": "6th grade",
-      "topic": "undefined",
-      "messages": {
-        "description": [
-          {
-            "role": "user",
-            "content": "A page about undefined and starts \"\n\nNatural Dye: Unlocking the Vibrancy of Nature!\n\nOh, the wonders of nature! From breathtaking landscapes to the whimsical colors of flowers, Mother Earth never fails to amaze us. And guess what? She has even more tricks up her sleeve. Enter natural\" needs HTML meta-description. Give only content attribute value."
-          }
-        ],
-        "title": [
-          {
-            "role": "user",
-            "content": "Title less than 66 characters, article described as \"Unlocking the Vibrancy of Nature! Discover the beauty and benefits of natural dyes. From vibrant colors to eco-friendly practices, learn how to harness the power of Mother Earth's pigments to create stunning works of art and sustainable fashion. Dive into the world of natural dyeing and explore the fascinating process of extracting color from plants, fruits, and minerals. Immerse yourself in a palette of abundant hues and explore the endless possibilities of natural dyeing. Join us on this adventure into the world of natural dyes and unlock the secrets of nature's vibrant hues!\""
-          }
-        ],
-        "content": [
-          {
-            "role": "system",
-            "content": "You are a writer with humour like Rickard Pryor"
-          },
-          {
-            "role": "user",
-            "content": "615 word article about natural dye undefined. Format in HTML, use only p, em, strong and h2 tags"
-          }
-        ]
-      },
-      "model": "gpt-3.5-turbo"
-    },
-    "color": "#8B008B",
-    "docId": "undefined",
-    "description": "\"Unlocking the Vibrancy of Nature! Discover the beauty and benefits of natural dyes. From vibrant colors to eco-friendly practices, learn how to harness the power of Mother Earth's pigments to create stunning works of art and sustainable fashion. Dive into the world of natural dyeing and explore the fascinating process of extracting color from plants, fruits, and minerals. Immerse yourself in a palette of abundant hues and explore the endless possibilities of natural dyeing. Join us on this adventure into the world of natural dyes and unlock the secrets of nature's vibrant hues!\"",
-    "shortTitle": "undefined",
-    "title": "\"Unlocking Nature's Vibrant Hues: The Art and Science of Natural Dyeing\"",
-    "content": "\n\n<h2>Natural Dye: Unlocking the Vibrancy of Nature!</h2>\n\n<p>Oh, the wonders of nature! From breathtaking landscapes to the whimsical colors of flowers, Mother Earth never fails to amaze us. And guess what? She has even more tricks up her sleeve. Enter natural dye, a fascinating process that brings vibrant hues to our clothing, all sourced straight from the great outdoors.</p>\n\n<p>Unlike synthetic dyes that come packed with chemicals, natural dyes are derived from plants, fruits, vegetables, and even insects. Talk about going au naturel! And the best part? The results are as unique as the Earth itself.</p>\n\n<p><em>Picture this:</em> you're standing in a picturesque meadow, a babbling brook nearby, ready to embark on your natural dyeing adventure. Armed with a bucket, some fabric, and a twinkle in your eye, you gather the raw materials nature has to offer.</p>\n\n<p>First on the list is the enchanting indigo plant. Oh, what a beauty! Its leaves provide a luscious blue pigment, as if the sky itself decided to lend you a brush. Strong and vibrant, the indigo dye is perfect for adding a touch of serene elegance to your garments.</p>\n\n<p>In your quest for color, you stumble upon a field of marigold flowers, their golden petals dancing in the wind. Ah, marigold! Its cheerful hue creates a warm orange dye, reminiscent of a cozy fireplace on a chilly evening. Wearing a marigold-dyed outfit is like carrying a patch of sunshine wherever you go.</p>\n\n<p>As you walk deeper into nature's palette, you spot an ancient cochineal insect creeping across a prickly pear cactus. Don't be fooled by its small size, for these little critters hold the secret to a captivating crimson dye. A few of them, a dash of alchemy, and voila! You have a red so intense, it could make a fire truck blush.</p>\n\n<p>But the world of natural dye offers more than just primary colors. From turmeric's sunny yellows to the earthy browns of walnut husks, each hue tells a story of its own. There's madder root for a passionate red, avocado pits for a delicate pink, and even black beans to create a moody, midnight blue.</p>\n\n<p>Using natural dyes is not just about fashion; it's also a way to connect with our roots. Our ancestors reveled in these organic pigments, transforming fabric into works of art, hand-me-down treasures that whispered of the land and the people who adorned them.</p>\n\n<p><strong>But let's not forget the hilarious mishaps that come along with natural dyeing:</strong></p>\n\n<p>Picture Fred, our enthusiastic adventurer, who accidentally fell into a pot of onion skins. Stumbling out, he found himself covered in a peculiar shade of brown, which the fashion-forward crowd later dubbed as \"Onion Ombré.\" Who knew vegetables could double as a fashion statement?</p>\n\n<p>And there was Lucy, who, aiming for a light shade of lavender, ended up with a vibrant fuschia concoction instead. She probably holds the record for the most surprised face in dyeing history.</p>\n\n<p>So, if you're ready to embark on a colorful journey, embrace the wonders of natural dyeing. Inside the greens of a forest, the petals of a flower, or the bug lurking among the cacti, lies the transformative power of the Earth. Unlock it, infuse your clothing with vivid splendor, and laugh along the way.</p>\n\n",
-    "timestamp": {
-      "_seconds": 1701240359,
-      "_nanoseconds": 225000000
-    }
   }
 ]

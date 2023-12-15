@@ -71,18 +71,7 @@ article {
   padding: 1.5rem
 }
 
-@media (min-width: 768px) {
-  .wrapper {
-    padding: 0
-  }
-}
-
 blockquote {
-  margin: 0 0 0 -3rem;
-  width: 50%;
-  float: left;
-  padding: 3rem 3rem 3rem 0;
-
   padding: 1.5rem 1.5rem 1.5rem 0;
   margin-left: 0;
   font-size: 1.5rem;
@@ -93,6 +82,17 @@ blockquote {
 }
 
 @media (min-width: 768px) {
+
+  .wrapper {
+    padding: 0
+  }
+
+  blockquote {
+    margin: 0 0 0 -3rem;
+    width: 50%;
+    float: left;
+    padding: 3rem 3rem 3rem 0;
+  }
 
   .text,
   .headline {
