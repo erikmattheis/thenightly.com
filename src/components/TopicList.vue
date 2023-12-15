@@ -212,6 +212,11 @@ export default {
   left: 10px;
 }
 
+.w-250 button {
+  position: fixed;
+  left: 10px;
+}
+
 .drawer-container {
 
   ::-webkit-scrollbar {
@@ -231,7 +236,7 @@ export default {
   background-color: transparent;
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: -10px;
   z-index: 10;
 }
 
