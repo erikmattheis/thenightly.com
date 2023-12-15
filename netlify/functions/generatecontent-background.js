@@ -45,7 +45,7 @@ function executionTimeToSeconds(executionTime) {
 // eslint-disable-next-line func-names
 exports.handler = async function (batchStr) {
   const batch = batchStr || 'a1';
-  const x = 1;
+  const x = 2;
   // skip first x of array
   const topics = dyes.slice(x);
   // only use first few topics for now

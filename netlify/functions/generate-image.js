@@ -45,8 +45,6 @@ exports.handler = async function handler(prompt, imageStr, model = 'dall-e-2', n
   const imageName = imageUrl.split('/').slice(-1)[0];
 
   const images = [60, 80, 90].map(async (quality) => {
-    console.log('buffer type:', typeof buffer);
-
     const compressedBuffer = await sharp(buffer)
       .jpeg({ quality })
       .toBuffer();
