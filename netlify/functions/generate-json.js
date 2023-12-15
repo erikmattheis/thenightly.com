@@ -4,7 +4,9 @@
 const { performance } = require('perf_hooks');
 const fs = require('fs');
 const path = require('path');
-const { getArticles } = require('./services/firestore');
+const { getArticlesByBatch, getArticlesByCollectionAndBatch } = require('./services/firestore');
+
+const batch = 'w2';
 
 function getJSONFromFile(filePath) { // eslint-disable-line no-unused-vars
   const json = fs.readFileSync(filePath, 'utf8');
@@ -15,6 +17,10 @@ function executionTimeToSeconds(executionTime) {
   return Math.round((executionTime / 1000) * 100) / 100;
 }
 
+function replaceWhiteSpaceWithDash(name) {
+  return name.replace(/\s+/g, '-');
+}
+
 // eslint-disable-next-line func-names
 exports.handler = async function () {
   console.log('Generating JSON...');
@@ -23,15 +29,17 @@ exports.handler = async function () {
   const subjects = [
     'dyes',
   ];
-  function replaceWhiteSpaceWithDash(name) {
-    return name.replace(/\s+/g, '-');
-  }
 
   // eslint-disable-next-line no-restricted-syntax
   for (const subject of subjects) {
+    const collection = subject;
     // eslint-disable-next-line no-await-in-loop
-    const topics = await getArticles(subject);
-    const fileName = replaceWhiteSpaceWithDash(subject);
+    // const topics = await getArticlesByBatch(subject);
+    // eslint-disable-next-line no-await-in-loop
+    const topics = await getArticlesByCollectionAndBatch(collection, batch);
+
+    const fileName = replaceWhiteSpaceWithDash(collection);
+
     fs.writeFileSync(path.join(__dirname, `../../src/data/${fileName}.json`), JSON.stringify(topics, null, 2));
   }
 

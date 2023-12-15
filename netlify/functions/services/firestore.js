@@ -26,8 +26,6 @@ async function saveArticle(collection, doc, id = null) {
       docId = sanitizeId(`${doc.batch}-${doc.input.topic}`);
     }
 
-    console.log('docId', docId);
-
     const docRef = db.collection(collection).doc(docId);
     const timestamp = admin.firestore.Timestamp.now();
     const sav = await docRef.set({ ...doc, timestamp });
@@ -40,7 +38,7 @@ async function saveArticle(collection, doc, id = null) {
   }
 }
 
-async function getArticles(name) {
+async function getArticlesByBatch(name) {
   const articlesRef = db.collection(name); // .orderBy('topic', 'asc');
   const snapshot = await articlesRef.get();
   const articles = snapshot.docs.map((doc) => doc.data());
@@ -55,4 +53,12 @@ async function getArticles(name) {
   return articles;
 }
 
-module.exports = { saveArticle, getArticles };
+async function getArticlesByCollectionAndBatch(collection, batch) {
+  const articlesRef = db.collection(collection); // .orderBy('topic', 'asc');
+  const snapshot = await articlesRef.get();
+  const articles = snapshot.docs.filter((doc) => doc.data().batch === batch).map((doc) => doc.data());
+
+  return articles;
+}
+
+module.exports = { saveArticle, getArticlesByBatch, getArticlesByCollectionAndBatch };
