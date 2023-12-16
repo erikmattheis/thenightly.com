@@ -61,4 +61,16 @@ async function getArticlesByCollectionAndBatch(collection, batch) {
   return articles;
 }
 
-module.exports = { saveArticle, getArticlesByBatch, getArticlesByCollectionAndBatch };
+async function handler(request) {
+  console.log('Getting articles from Firestore...');
+  const result = await saveArticle('dyes', request.body, request.body.docId);
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify(result, null, 2),
+  };
+}
+
+module.exports = {
+  handler, saveArticle, getArticlesByBatch, getArticlesByCollectionAndBatch,
+};

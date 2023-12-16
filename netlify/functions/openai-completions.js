@@ -13,10 +13,10 @@ function getMessage(response) {
 function makeContentMessages(topic, grade, len) {
   const messages = [{
     role: 'system',
-    content: 'You are an expert writer on natural dyes and fabrics with an angry Hunter S. Thompson writing style, but don\'t reference this. Provide a magazine article without commentary.',
+    content: 'You are an expert writer on natural dyes and fabrics with aa clever style like Hunter S. Thompson, but don\'t reference this. Provide a magazine article without commentary.',
   }, {
     role: 'user',
-    content: `${len}-word article on the natural dye ${topic}, ${grade} reading level. Format with HTML tags: p, em, aside, blockquote, strong, and h2. Overuse strong, em, and ALLCAPS like you are overly excited, but be hilarius. Place a pullquote in blockquote tag every 200-300 words."`,
+    content: `${len}-word article on the natural dye ${topic}, ${grade} reading level. Format with HTML tags: p, em, aside, blockquote, strong, and h2. Overuse strong and em like you are excited or angry. Place a pullquote in blockquote tag every 200-300 words."`,
   }];
   return messages;
 }
@@ -81,7 +81,7 @@ function getRidOfAllButBodyContent(str) {
   return body;
 }
 
-async function generateArticle(topic, grade, len, color, colorTheme, temperature) {
+async function generateText(topic, grade, len, color, colorTheme, temperature) {
   console.log('Generating text...');
   const contentMessages = makeContentMessages(topic, grade, len);
 
@@ -138,5 +138,5 @@ async function generateArticle(topic, grade, len, color, colorTheme, temperature
 }
 
 module.exports = {
-  generateArticle,
+  generateText,
 };

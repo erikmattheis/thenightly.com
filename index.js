@@ -4,10 +4,13 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
 }
 
-const generateJson = require('./netlify/functions/generate-json');
+const { generateArticles } = require('./netlify/functions/generate-content');
+const { handler } = require('./netlify/functions/generate-json');
 
 async function run() {
-  await generateJson.handler();
+  // const result = await generateArticles();
+  const result = await handler();
+  console.log(result);
 }
 
 run();

@@ -4,7 +4,7 @@
 const { performance } = require('perf_hooks');
 const fs = require('fs');
 const path = require('path');
-const { getArticlesByBatch, getArticlesByCollectionAndBatch } = require('./services/firestore');
+const { getArticlesByBatch, getArticlesByCollectionAndBatch } = require('./firestore');
 
 const batch = 'w2';
 

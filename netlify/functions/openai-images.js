@@ -82,7 +82,7 @@ const imageNameWithDash = replaceWhiteSpaceWithDash(imageName);
 exports.handler = handler;
 
 exports.generateGraphics = async function generateGraphics(topic, colorThemeDescription, id) {
-  const prompt = `Closeup still life on style of ALBERT BIERSTADT of ${topic.name} natural dye. ${colorThemeDescription} background colors.`;
+  const prompt = `Closeup still life in style of ALBERT BIERSTADT of ${topic.name} as a natural dye. ${colorThemeDescription} background colors.`;
   const model = 'dall-e-2';
   const size = '512x512';
   // eslint-disable-next-line no-await-in-loop

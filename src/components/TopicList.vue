@@ -3,9 +3,9 @@
 
     <div class="fake-li" :class="{ 'w250': expanded, 'button-only': !expanded }">
       <button @click="toggleDrawer" ref="button" class="floating-button">
-        <svg style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" xml:space="preserve"
-          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path ref="rectangle" fill="#fff"
+        <svg style="width:px" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path ref="rectangle" fill="#fff" style="width:100px; filter: drop-shadow(-2px 2px 3px #000000);"
             d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
         </svg>
         <!--
@@ -94,11 +94,13 @@ export default {
         color: this.contrastingColor(topic.color),
       },
     }));
-    window.addEventListener('mousemove', this.handleMouseMove);
+    // window.addEventListener('mousemove', this.handleMouseMove);
   },
+  /*
   beforeUnmount() {
     window.removeEventListener('mousemove', this.handleMouseMove);
   },
+  */
   watch: {
     expanded(newVal) {
       if (newVal) {
@@ -107,7 +109,7 @@ export default {
         const style = window.getComputedStyle(rectangle);
         const fillColor = style.fill;
         this.buttonStoppedColor = this.rgbStringToHslString(fillColor);
-        this.$refs.button.style.position = 'absolute';
+        // this.$refs.button.style.position = 'absolute';
         this.$refs.button.style.left = 'auto';
         this.$refs.button.style.right = '10px';
       } else {
@@ -120,7 +122,7 @@ export default {
   methods: {
 
     handleMouseMove(event) {
-      if (event.clientX < 2) {
+      if (event.clientX < 250) {
         this.expanded = true;
       } else {
         this.expanded = false;
@@ -228,18 +230,6 @@ export default {
   -ms-overflow-style: none;
 }
 
-.floating-button {
-  width: 32px;
-  height: 32px;
-  border: 2px solid #fff;
-  border-radius: 2px;
-  background-color: transparent;
-  position: absolute;
-  top: 10px;
-  right: -10px;
-  z-index: 10;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -272,21 +262,32 @@ li {
 
 .drawer {
   position: relative;
-  width: 250px;
   overflow: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .drawer button {
   background-color: transparent;
-  width: 52px;
-  height: 52px;
   position: absolute;
   top: 10px;
   right: 10px;
   display: block;
   animation: slideIn 0.5s forwards;
   z-index: 12;
+  transition: all 0.5s ease;
+
+}
+
+.floating-button {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: hand !important
 }
 
 .slide-enter-active,

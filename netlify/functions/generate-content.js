@@ -1,13 +1,13 @@
 const { performance } = require('perf_hooks');
-const { sanitizeId } = require('./services/utility');
-const { saveArticle } = require('./services/firestore');
-const { generateGraphics } = require('./services/openai-images');
+const { sanitizeId } = require('./utility');
+const { saveArticle } = require('./firestore');
+const { generateGraphics } = require('./openai-images');
+const { generateText } = require('./openai-completions');
+
 const generateJson = require('./generate-json');
 const { dyes } = require('./data/dyes');
 
 // const dyes = JSON.parse(dyesJson);
-
-const { generateArticle } = require('./services/openai-completions');
 
 function getAGrade() {
   const grades = ['6th grade', '7th grade', '8th grade', '9th grade', '10th grade', '11th grade', '12th grade', 'college', 'graduate school', 'doctorate', 'post-doctorate', 'professor'];
@@ -55,14 +55,14 @@ function addDateSuffix(str) {
 }
 
 // eslint-disable-next-line func-names
-exports.handler = async function () {
+async function generateArticles() {
   try {
     const batch = 'w2'; // batchStr || 'w1';
-    // const x = 0;
+    const x = 10;
     // skip first x of array
-    const topics = dyes.slice();
+    const topics = dyes.splice(0, x);
     // only use first few topics for now
-    topics.length = 10;
+    topics.length = 1;
 
     const colorThemes = [{ name: 'Indochine and complimentary', colors: ['#CF6B00', '#4F3C28'] }, { name: 'Indochine', colors: ['#CF6B00'] }, { name: 'Razzmatazz and complementary', colors: ['#D10067', '#52293D'] }, { name: 'Razzmatazz', colors: ['#D10067'] }];
 
@@ -90,7 +90,7 @@ exports.handler = async function () {
       const len = getALength(500);
 
       // eslint-disable-next-line no-await-in-loop
-      const response = await generateArticle(topic.name, grade, len, topic.color, colorTheme, temperature);
+      const response = await generateText(topic.name, grade, len, topic.color, colorTheme, temperature);
       const end = performance.now();
       const executionTime = `${executionTimeToSeconds(end - start)} seconds`;
 
@@ -100,16 +100,15 @@ exports.handler = async function () {
       const doc = {
         ...response, image, executionTime, topic: topic.name, batch,
       };
-      console.log('doc', JSON.stringify(doc, null, 2));
+
       // eslint-disable-next-line no-await-in-loop
-      const r = await saveArticle('dyes', doc, id);
-      console.log('return is', JSON.stringify(r, null, 2));
+      await saveArticle('dyes', doc, id);
     }
   } catch {
     console.log('error');
   }
 
-  // await generateJson.handler();
+  await generateJson.handler();
 
   console.log('Done.');
 
@@ -117,4 +116,6 @@ exports.handler = async function () {
     statusCode: 200,
     body: 'Done.',
   };
-};
+}
+
+module.exports = { generateArticles };
