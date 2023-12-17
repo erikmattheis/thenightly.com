@@ -3,7 +3,7 @@
     <div class="bar"></div>
     <div class="fake-li" :class="{ 'w250': expanded, 'button-only': !expanded }">
       <button @click="toggleDrawer" ref="button" class="floating-button">
-        <svg style="width:px" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        <svg style="width:32px" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <path ref="rectangle" fill="#fff" style="width:100px; filter: drop-shadow(-2px 2px 3px #000000);"
             d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
@@ -94,13 +94,11 @@ export default {
         color: this.contrastingColor(topic.color),
       },
     }));
-    // window.addEventListener('mousemove', this.handleMouseMove);
+    window.addEventListener('mousemove', this.handleMouseMove);
   },
-  /*
   beforeUnmount() {
     window.removeEventListener('mousemove', this.handleMouseMove);
   },
-  */
   watch: {
     expanded(newVal) {
       if (newVal) {
@@ -120,11 +118,10 @@ export default {
     },
   },
   methods: {
-
     handleMouseMove(event) {
-      if (event.clientX < 250) {
+      if (event.clientX < 52) {
         this.expanded = true;
-      } else {
+      } else if (this.expanded && event.clientX > 52) {
         this.expanded = false;
       }
     },
@@ -181,7 +178,6 @@ export default {
         h /= 6;
       }
       const result = { h: h * 360, s: s * 100, l: l * 100 };
-      console.log('rgbObjToHslString', result);
       return result;
     },
     hexStringToRgbObj(hex) {
@@ -196,7 +192,6 @@ export default {
     hexStringToHsl(hex) {
       const rgb = this.hexStringToRgbObj(hex);
       const hsl = this.rgbObjToHslString(rgb);
-      console.log('hexStringToHsl', hsl);
       return hsl;
     },
     contrastingColor(hex) {

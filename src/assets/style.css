@@ -11,6 +11,10 @@ body {
   background-image: url("/assets/tiled-background.jpg");
 }
 
+header {
+  width: min-content
+}
+
 blockquote p,
 .text {
   background-color: #ffffff;
