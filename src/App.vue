@@ -1,10 +1,9 @@
 <!-- src/App.vue -->
 <template>
   <div>
-    <header>
-      <TopicList />
-      <h1>NATURALY HUED</h1>
-    </header>
+
+    <TopicList />
+
     <router-view></router-view>
   </div>
 </template>

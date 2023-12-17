@@ -1,35 +1,46 @@
 <template>
-  <div class="header">
-    <div class="drawer-container">
-      <transition name="slide">
+  <div class="drawer-container background-window">
+    <div class="fake-li">
+      <button @click="toggleDrawer" ref="button" class="floating-button">
+        <svg style="width:32px" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path ref="rectangle" fill="#fff"
+            d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
+        </svg>
+        <!--
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+          viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" fill="#fff">
+          <g>
+            <rect x="7" y="12" width="12" height="12" ref="rectangle" :style="rectangleStyle">
 
-        <ul class="drawer" v-show="expanded">
-
-          <li v-for="article in  topics " :key="article.shortTitle"
-            :style="{ 'background-color': article.color.background }" ref="listItems">
-
-            <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
-              :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
-              {{ article.shortTitle }}
-            </router-link>
-
-          </li>
-
-        </ul>
-
-      </transition>
+            </rect>
+            <path
+              d="M7.8248291,9.8899841c-0.8098145,0.0700073-1.619873,0.1500244-2.4399414,0.25   c-1.8200684,0.2299805-3.1899414,1.7700195-3.1899414,3.5800171v7.1900024c0,2.2399902,1.8200684,4.0599976,4.0500488,4.0599976   h13.5c2.2399902,0,4.0600586-1.8200073,4.0600586-4.0599976v-7.1900024c0-1.8099976-1.3701172-3.3500366-3.2001953-3.5800171   c-0.8498535-0.0999756-1.7099609-0.1900024-2.5698242-0.2600098c-0.2102051-0.0200195-0.380127-0.1900024-0.380127-0.3999634   V7.9299622h0.2399902c1.3701172,0,2.4899902-1.1199951,2.4899902-2.4899902V3.7599792   c0-1.5-1.2199707-2.7299805-2.7299805-2.7299805H8.1048584c-1.369873,0-2.4899902,1.1199951-2.4899902,2.5v1.9099731   c0,1.3699951,1.1201172,2.4899902,2.4899902,2.4899902h0.1000977v1.5599976   C8.2049561,9.6999817,8.0450439,9.8699646,7.8248291,9.8899841z M9.8548584,14.0499573h6.2900391   c0.9299316,0,1.6799316,0.75,1.6799316,1.6800537v3.4599609c0,0.9299927-0.75,1.6799927-1.6799316,1.6799927H9.8548584   c-0.9199219,0-1.6799316-0.75-1.6799316-1.6799927V15.730011C8.1749268,14.7999573,8.9349365,14.0499573,9.8548584,14.0499573z" />
+          </g>
+        </svg>
+      -->
+      </button>
     </div>
-    <div class="floating-button-container">
-      <div class="floating-button" :class="{ 'expanded2': expanded }">
-        <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" ref="button">
-          <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path ref="rectangle" fill="#fff"
-              d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
-          </svg>
-        </button>
-      </div>
-    </div>
+
+    <transition name="slide">
+
+      <ul class="drawer">
+
+        <li v-for="article in topics" :key="article.shortTitle"
+          :style="{ 'background-color': article.color.background, transform: `scaleY(${article.scaleFactor})` }"
+          ref="listItems">
+
+          <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
+            :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
+            {{ article.shortTitle }}
+          </router-link>
+
+        </li>
+
+      </ul>
+
+    </transition>
+
   </div>
 </template>
 
@@ -87,15 +98,28 @@ export default {
   beforeUnmount() {
     window.removeEventListener('mousemove', this.handleMouseMove);
   },
+  watch: {
+    expanded(newVal) {
+      if (newVal) {
+        const { rectangle } = this.$refs;
+        const style = window.getComputedStyle(rectangle);
+        const fillColor = style.fill;
+        this.buttonStoppedColor = this.rgbStringToHslString(fillColor);
+        // this.$refs.button.style.position = 'absolute';
+        //this.$refs.button.style.left = 'auto';
+        //this.$refs.button.style.right = '10px';
+      } else {
+        //this.$refs.button.style.position = 'fixed';
+        // this.$refs.button.style.left = '10px';
+        // this.$refs.button.style.right = 'auto';
+      }
+    },
+  },
   methods: {
     handleMouseMove(event) {
-      console.log('handleMouseMove', event.clientX);
-      if (event.clientX < 64) {
+      if (event.clientX < 52) {
         this.expanded = true;
-      } else if (!this.expanded && event.clientX > 64) {
-        this.expanded = false;
-      }
-      else if (this.expanded && event.clientX > 150) {
+      } else if (this.expanded && event.clientX > 52) {
         this.expanded = false;
       }
     },
@@ -118,6 +142,7 @@ export default {
     },
     rgbStringToRgbObj(rgb) {
       const obj = rgb.replace(/[^\d,]/g, '').split(',');
+      console.log('rgbStringToRgbObj', JSON.stringify(obj));
       return obj;
     },
     rgbStringToHslString(rgb) {
@@ -176,45 +201,18 @@ export default {
 </script>
 
 <style scoped>
-header {
-  z-index: 9999;
-}
-
-.floating-button-container {
-  position: relative;
-  width: 150px;
-  height: 100vh;
-  z-index: 2;
-  background-color: #ffffff99;
-
-}
-
-.floating-button {
-  position: absolute;
-  vertical-align: top;
-  left: 0;
-  top: 0;
-  height: 100%;
-  transition: all 0.3s ease;
-}
-
-.floating-button.expanded {
-  left: calc(100% - 40px);
-}
-
+/*
 button {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background-color: red;
+  position: fixed;
   cursor: pointer;
+  right: -10px;
 }
 
-
-svg {
-  width: 40px;
+.button-only button {
+  position: fixed;
+  left: 10px;
 }
-
+*/
 
 .drawer-container {
 
@@ -227,11 +225,7 @@ svg {
   -ms-overflow-style: none;
 }
 
-.drawer {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+
 
 ul {
   list-style: none;
@@ -239,18 +233,60 @@ ul {
   margin: 0;
 }
 
+
 li {
-  width: 150px;
-  padding-left: 40px;
+  padding: 0.25rem 0.5rem;
+  width: 10rem;
 }
+
+/*
+.fake-li {
+  position: fixed;
+  top: 10;
+  left: 10;
+  background-color: aqua;
+  z-index: 20;
+  transition: all 0.5 ease;
+}
+*/
+
 
 .link {
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
 }
 
+/*
+.drawer {
+  position: relative;
+  overflow: auto;
+}
 
+.drawer button {
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  animation: slideIn 0.5s forwards;
+  z-index: 12;
+  transition: all 0.5s ease;
+
+}
+
+.floating-button {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: hand !important
+}
+*/
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.3s ease;

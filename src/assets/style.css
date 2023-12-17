@@ -9,6 +9,8 @@ html {
 
 body {
   background-image: url("/assets/tiled-background.jpg");
+  margin: 0;
+  padding: 0;
 }
 
 blockquote p,
