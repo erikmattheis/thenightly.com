@@ -1,4 +1,5 @@
 const OpenAI = require('openai');
+const DOMPurify = require('dompurify');
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -92,7 +93,9 @@ async function generateText(topic, grade, len, color, colorTheme, temperature) {
 
   const preliminaryContent = getMessage(contentResponse);
 
-  const content = getRidOfAllButBodyContent(preliminaryContent);
+  const sanatizedContent = DOMPurify.sanitize(preliminaryContent);
+
+  const content = getRidOfAllButBodyContent(sanatizedContent);
 
   const descriptionMessages = makeDescriptionMessages(content, topic);
 
