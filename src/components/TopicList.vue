@@ -1,11 +1,10 @@
 <template>
   <div class="drawer-container background-window">
-    <div class="bar"></div>
     <div class="fake-li" :class="{ 'w250': expanded, 'button-only': !expanded }">
       <button @click="toggleDrawer" ref="button" class="floating-button">
         <svg style="width:32px" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path ref="rectangle" fill="#fff" style="width:100px; filter: drop-shadow(-2px 2px 3px #000000);"
+          <path ref="rectangle" fill="#fff"
             d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
         </svg>
         <!--
@@ -25,7 +24,7 @@
 
     <transition name="slide">
 
-      <ul v-show="expanded" class="drawer">
+      <ul class="drawer">
 
         <li v-for="article in topics" :key="article.shortTitle"
           :style="{ 'background-color': article.color.background, transform: `scaleY(${article.scaleFactor}) translateY(${article.translateY}px)` }"
@@ -102,18 +101,17 @@ export default {
   watch: {
     expanded(newVal) {
       if (newVal) {
-        console.log('expanded', newVal);
         const { rectangle } = this.$refs;
         const style = window.getComputedStyle(rectangle);
         const fillColor = style.fill;
         this.buttonStoppedColor = this.rgbStringToHslString(fillColor);
         // this.$refs.button.style.position = 'absolute';
-        this.$refs.button.style.left = 'auto';
-        this.$refs.button.style.right = '10px';
+        //this.$refs.button.style.left = 'auto';
+        //this.$refs.button.style.right = '10px';
       } else {
-        this.$refs.button.style.position = 'fixed';
-        this.$refs.button.style.left = '10px';
-        this.$refs.button.style.right = 'auto';
+        //this.$refs.button.style.position = 'fixed';
+        // this.$refs.button.style.left = '10px';
+        // this.$refs.button.style.right = 'auto';
       }
     },
   },
@@ -137,7 +135,6 @@ export default {
       }
     },
     calculateNewHSLColor({ h1, s, l }, percent) {
-      // move the hue by percent
       const h = h1 * (1 + (percent / 100));
       const result = `hsl(${h}, ${s}, ${l})`;
       console.log('calculateNewHSLColor', result);
@@ -216,15 +213,18 @@ export default {
   height: 100vh
 }
 
+/*
+button {
+  position: fixed;
+  cursor: pointer;
+  right: -10px;
+}
+
 .button-only button {
   position: fixed;
   left: 10px;
 }
-
-.w-250 button {
-  position: fixed;
-  left: 10px;
-}
+*/
 
 .drawer-container {
 
@@ -237,18 +237,22 @@ export default {
   -ms-overflow-style: none;
 }
 
+
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/*
 li {
   display: block;
   margin: 0;
   padding: 1rem;
 }
 
+/*
 .fake-li {
   position: fixed;
   top: 10;
@@ -256,18 +260,16 @@ li {
   background-color: aqua;
   z-index: 20;
   transition: all 0.5 ease;
-
 }
+*/
 
-.w250 {
-  width: 250px;
-}
 
 .link {
   text-decoration: none;
   font-weight: 600;
 }
 
+/*
 .drawer {
   position: relative;
   overflow: auto;
@@ -297,7 +299,7 @@ li {
   background-color: transparent;
   cursor: hand !important
 }
-
+*/
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.3s ease;
@@ -349,7 +351,7 @@ li {
 
 @keyframes slideIn {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-250px);
   }
 
   100% {

@@ -42,10 +42,6 @@ export default {
 </script>
 
 <style scoped>
-article {
-  padding: 1rem;
-}
-
 .wrapper {
   max-width: 600px;
   margin: auto;

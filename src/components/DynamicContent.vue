@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="wrapper">
     <!-- <JsonEditorVue v-model="article" /> -->
     <a href @click.prevent="editMode = !editMode">Toggle Mode</a>
     <div v-if="editMode">
@@ -77,5 +77,13 @@ textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.background-window {
+  background-color: #ffffff99;
+  backdrop-filter: brightness(2);
+
+  border-radius: 10px;
+  padding-top: 60px;
 }
 </style>
