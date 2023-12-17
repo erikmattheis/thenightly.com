@@ -1,7 +1,7 @@
 <!-- src/App.vue -->
 <template>
   <div>
-    <header class="background-window">
+    <header>
       <TopicList />
       <h1>NATURALY HUED</h1>
     </header>

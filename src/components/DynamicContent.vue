@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <article>
     <!-- <JsonEditorVue v-model="article" /> -->
     <a href @click.prevent="editMode = !editMode">Toggle Mode</a>
     <div v-if="editMode">
@@ -17,15 +17,15 @@
         <button type="button" @click="editMode = false" :disabled="disabled">Reset</button>
       </form>
     </div>
-    <div v-else class="background-window">
+    <div v-else>
       <header :style="{ 'background-color': article.color }">
         <h1 class="headline">{{ article.title }}</h1>
       </header>
       <img :src="article.image.compressed" alt="">
 
-      <div v-html="article.content" class="background-filter"></div>
+      <div v-html="article.content" class="background-window"></div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -59,7 +59,7 @@ export default {
   },
   created() {
     this.article = this.articles.find((article) => article.shortTitle === this.topic);
-    this.article.content = DOMPurify.sanatize(this.article.content);
+    this.article.content = DOMPurify.sanitize(this.article.content);
     this.originalArticle = JSON.parse(JSON.stringify(this.article));
   },
   methods: {
@@ -77,9 +77,5 @@ textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-}
-
-article {
-  padding: 1rem;
 }
 </style>

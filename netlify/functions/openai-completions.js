@@ -93,9 +93,9 @@ async function generateText(topic, grade, len, color, colorTheme, temperature) {
 
   const preliminaryContent = getMessage(contentResponse);
 
-  const sanatizedContent = DOMPurify.sanitize(preliminaryContent);
+  const sanitizedContent = DOMPurify.sanitize(preliminaryContent);
 
-  const content = getRidOfAllButBodyContent(sanatizedContent);
+  const content = getRidOfAllButBodyContent(sanitizedContent);
 
   const descriptionMessages = makeDescriptionMessages(content, topic);
 

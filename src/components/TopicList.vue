@@ -1,6 +1,6 @@
 <template>
-  <div class="drawer-container">
-
+  <div class="drawer-container background-window">
+    <div class="bar"></div>
     <div class="fake-li" :class="{ 'w250': expanded, 'button-only': !expanded }">
       <button @click="toggleDrawer" ref="button" class="floating-button">
         <svg style="width:px" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
@@ -209,6 +209,18 @@ export default {
 </script>
 
 <style scoped>
+.bar {
+  position: fixed;
+  width: 52px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ffffff99;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  height: 100vh
+}
+
 .button-only button {
   position: fixed;
   left: 10px;
@@ -249,6 +261,7 @@ li {
   background-color: aqua;
   z-index: 20;
   transition: all 0.5 ease;
+
 }
 
 .w250 {
