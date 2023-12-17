@@ -1,5 +1,3 @@
-// const path = require('path');
-// const gm = require('gm').subClass({ imageMagick: true });
 const { Storage } = require('@google-cloud/storage');
 
 // Load your service account credentials from an environment variable or secret manager

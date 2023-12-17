@@ -1,0 +1,47 @@
+/* Set the global variables for everything. Change these to use your own fonts and colours. */
+:root {
+  --serif-font: Quattrocento, Georgia, "Times New Roman", Times, serif;
+}
+
+html {
+  font-family: var(--serif-font);
+}
+
+body {
+  background-image: url("/assets/tiled-background.jpg");
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: auto;
+  padding: 1.5rem
+}
+
+blockquote {
+  padding: 1.5rem 1.5rem 1.5rem 0;
+  margin-left: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 700;
+  font-family: serif;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+
+  .wrapper {
+    padding: 0
+  }
+
+  blockquote {
+    margin: 0 0 0 -3rem;
+    width: 50%;
+    float: left;
+    padding: 3rem 3rem 3rem 0;
+  }
+
+  .text,
+  .headline {
+    margin-left: 150px
+  }
+}

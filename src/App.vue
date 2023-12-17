@@ -1,7 +1,7 @@
 <!-- src/App.vue -->
 <template>
   <div>
-    <header>
+    <header class="background-window">
       <TopicList />
       <h1>NATURALY HUED</h1>
     </header>
@@ -20,7 +20,6 @@ export default {
 
 <style scoped>
 header {
-  background-color: #301;
   color: #fff;
 }
 
