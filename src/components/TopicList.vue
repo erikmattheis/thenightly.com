@@ -1,39 +1,37 @@
 <template>
   <div class="header">
-    <div class="drawer-container">
-      <transition name="slide">
-        <div class="drawer" v-show="expanded">
-          <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" ref="button">
-            <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
-              <path ref="rectangle" fill="#fff"
-                d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
-            </svg>
-          </button>
-        </div>
-      </transition>
-      <transition name="slide">
-        <ul class="drawer" v-show="expanded">
-          <li v-for="article in  topics " :key="article.shortTitle"
-            :style="{ 'background-color': article.color.background }" ref="listItems">
-
-            <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
-              :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
-              {{ article.shortTitle }}
-            </router-link>
-
-          </li>
-
-        </ul>
-
-      </transition>
+    <div class="floating-button">
+      <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" ref="button">
+        <svg class="svg" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path ref="rectangle" fill="#fff"
+            d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
+        </svg>
+      </button>
     </div>
-    <div class="nav-activation-area"></div>
+    <transition name="slide">
+      <ul class="drawer" v-show="expanded">
+        <li class="nav-choices">
+          Fabrics
+        </li>
+        <li class="nav-choices">
+          Dyes
+        </li>
+        <li v-for="article in  topics " :key="article.shortTitle"
+          :style="{ 'background-color': article.color.background }" ref="listItems">
+
+          <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
+            :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
+            {{ article.shortTitle }}
+          </router-link>
+        </li>
+      </ul>
+    </transition>
   </div>
+  <div class="nav-activation-area"></div>
 </template>
 
 <script>
-
 // import axios from 'axios';
 import dyes from '../data/dyes.json';
 
@@ -59,12 +57,12 @@ export default {
         const t85Color = this.calculateNewHSLColor(this.buttonStoppedColor, 85);
 
         styles = `animation: rainbow 5s linear infinite; --start-color: ${this.buttonStoppedColor};
-          --t14-color: ${t14Color};
-          --t28-color: ${t28Color};
-          --t41-color: ${t42Color};
-          --t57-color: ${t57Color};
-          --t71-color: ${t71Color};
-          --t85-color: ${t85Color};`;
+            --t14-color: ${t14Color};
+            --t28-color: ${t28Color};
+            --t41-color: ${t42Color};
+            --t57-color: ${t57Color};
+            --t71-color: ${t71Color};
+            --t85-color: ${t85Color};`;
       } else {
         styles = `fill: ${this.buttonStoppedColor};`;
       }
@@ -178,9 +176,8 @@ export default {
 .header {
   --button-width: 32px;
   --nav-width: 150px;
-  --total-width: calc(var(--button-width) + var(--nav-width));
+  --negative-total-width: calc(-1 * (var(--button-width) + var(--nav-width) + 1rem));
 }
-
 
 .nav-activation-area {
   position: absolute;
@@ -190,22 +187,22 @@ export default {
   background-color: #ffffff99;
 }
 
-/*
+
 .floating-button {
-  position: absolute;
-  vertical-align: top;
-  left: 250;
-  top: 400;
-  height: 100%;
-  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
 }
 
-
-.floating-button.expanded {
-  left: calc(100% - 40px);
+.nav-choices {
+  background-color: red;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem 0.5rem;
+  padding-left: calc(var(--button-width) + 0.5rem);
 }
-*/
-
 
 .drawer-container {
 
@@ -218,8 +215,9 @@ export default {
   -ms-overflow-style: none;
 }
 
-svg {
-  width: var(--nav-width);
+.svg {
+  margin: 10px;
+  width: var(--button-width);
 }
 
 .drawer {
@@ -227,7 +225,6 @@ svg {
   top: 0;
   left: 0;
 }
-
 
 li {
   width: var(--nav-width);
@@ -242,12 +239,12 @@ li {
 
 .button-enter-from,
 .button-leave-to {
-  transform: translateX(0);
+  transform: translateX(calc(-1 * var(--negative-total-width)));
 }
 
 .button-enter-to,
 .button-leave-from {
-  transform: translateX(calc(-1 * (var(--nav-width) + var(--button-width))));
+  transform: translateX(0);
 }
 
 .slide-enter-active,
@@ -257,7 +254,7 @@ li {
 
 .slide-enter-from,
 .slide-leave-to {
-  transform: translateX(calc(-1 * (var(--nav-width) + var(--button-width))));
+  transform: translateX(var(--negative-total-width));
 }
 
 .slide-enter-to,
