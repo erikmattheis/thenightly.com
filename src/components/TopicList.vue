@@ -10,28 +10,27 @@
         </svg>
       </button>
     </div>
-    <transition name="slide">
-      <ul class="drawer" v-show="expanded">
-        <li style="background-color:red;">
-          <router-link :to="{ query: { 'nav': 'fabrics' } }" style="background-color: red;" class="link">
-            Fabrics
-          </router-link>
-        </li>
-        <li style="background-color:blue;">
-          <router-link :to="{ query: { 'nav': 'dyes' } }" style="background-color:blue;" class="link">
-            Dyes
-          </router-link>
-        </li>
-        <li v-for="article in  topics " :key="article.shortTitle"
-          :style="{ 'background-color': article.color.background }">
 
-          <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
-            :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
-            {{ article.shortTitle }}
-          </router-link>
-        </li>
-      </ul>
-    </transition>
+    <ul class="drawer" :class="{ 'expanded': expanded }">
+      <li>
+        <router-link :to="{ query: { 'nav': 'fabrics' } }" style="background-color: red;" class="link">
+          Fabrics
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="{ query: { 'nav': 'dyes' } }" style="background-color:blue;" class="link">
+          Dyes
+        </router-link>
+      </li>
+      <li v-for="article in  topics " :key="article.shortTitle" :style="{ 'background-color': article.color.background }">
+
+        <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
+          :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
+          {{ article.shortTitle }}
+        </router-link>
+      </li>
+    </ul>
+
   </div>
 </template>
 
@@ -178,13 +177,12 @@ export default {
 
 <style scoped>
 .header {
-  --button-width: 32px;
-  --nav-width: 150px;
-  --negative-total-width: calc(-1 * (var(--button-width) + var(--nav-width) + 1rem));
+  --button-width: 3rem;
+  --nav-width: 13rem;
 }
 
 .nav-activation-area {
-  position: absolute;
+  position: fixed;
   width: var(--button-width);
   height: 100vh;
   z-index: 2;
@@ -199,15 +197,6 @@ export default {
   z-index: 3;
 }
 
-.nav-choices {
-  background-color: red;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  padding-left: calc(var(--button-width) + 0.5rem);
-}
-
 .drawer-container {
 
   ::-webkit-scrollbar {
@@ -220,11 +209,20 @@ export default {
 }
 
 .svg {
-  margin: 0.5rem;
-  width: calc(var(--button-width) - 1rem);
+  margin: 0;
+  padding: 0;
+  width: var(--button-width);
+  height: var(--button-width);
 }
 
 .drawer {
+  position: fixed;
+  top: 0;
+  left: -13rem;
+  transition: all 0.3s ease;
+}
+
+.drawer.expanded {
   position: fixed;
   top: 0;
   left: 0;
@@ -232,23 +230,9 @@ export default {
 
 li {
   width: var(--nav-width);
-  padding: 0.2rem 0.5rem;
-  padding-left: calc(var(--button-width) + 0.5rem);
-}
-
-.button-enter-active,
-.button-leave-active {
-  transition: all 0.3s ease;
-}
-
-.button-enter-from,
-.button-leave-to {
-  transform: translateX(calc(-1 * var(--negative-total-width)));
-}
-
-.button-enter-to,
-.button-leave-from {
-  transform: translateX(0);
+  line-height: 1.5;
+  padding: 0;
+  padding-left: calc(var(--button-width));
 }
 
 .slide-enter-active,

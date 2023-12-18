@@ -79,7 +79,7 @@ textarea {
   margin-bottom: 1rem;
 }
 
-.background-window {
+.wrapper {
   padding: 6rem 0;
 }
 </style>
