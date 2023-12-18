@@ -177,15 +177,19 @@ export default {
 
 <style scoped>
 .header {
+  position: absolute;
+  left: 0;
+  top: 0;
   --button-width: 3rem;
   --nav-width: 13rem;
+  z-index: 100;
 }
 
 .nav-activation-area {
   position: fixed;
   width: var(--button-width);
   height: 100vh;
-  z-index: 2;
+  z-index: 10;
   background-color: #ffffff99;
 }
 
@@ -194,7 +198,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 10;
 }
 
 .drawer-container {
@@ -229,10 +233,10 @@ export default {
 }
 
 li {
-  width: var(--nav-width);
+  width: calc(var(--nav-width) - 0.5rem);
   line-height: 1.5;
   padding: 0;
-  padding-left: calc(var(--button-width));
+  padding-left: calc(var(--button-width) + 0.5rem);
 }
 
 .slide-enter-active,
