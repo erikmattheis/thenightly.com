@@ -16,11 +16,12 @@
         <button type="button" @click="editMode = false" :disabled="disabled">Reset</button>
       </form>
     </div>
-    <div v-else>
-      <header :style="{ 'background-color': article.color.background, 'color': article.color.color }">
+    <div v-else>{{ JSON.stringify(article.color) }}
+      <header :style="{ 'background-color': article.color.background, }" :data-glyph="glyph" ref="header"
+        :data-title="article.title">
         <h1 class="headline">{{ article.title }}</h1>
       </header>
-      <img :src="article.image.compressed" alt="">
+      <img :src="article.image.compressed" :alt="article.shortTitle" class="main-image">
 
       <div v-html="article.content" class="content"></div>
     </div>
@@ -32,7 +33,7 @@ import axios from 'axios';
 // /import JsonEditorVue from 'json-editor-vue';
 import DOMPurify from 'dompurify';
 import dyes from '../data/dyes.json';
-import { contrastingColor } from '../services/colors.js';
+import { contrastingColor, adjustLightness } from '../services/colors.js';
 
 
 export default {
@@ -49,6 +50,8 @@ export default {
       editMode: false,
       articles: dyes,
       article: {},
+      colorShade: '',
+      glyph: '',
       originalArticle: {},
     };
   },
@@ -58,10 +61,20 @@ export default {
     },
   },
   created() {
-
     this.article = this.addColorObject(this.articles.find((article) => article.shortTitle === this.topic));
     this.article.content = DOMPurify.sanitize(this.article.content);
     this.originalArticle = JSON.parse(JSON.stringify(this.article));
+    this.glyph = this.article.shortTitle.toLowerCase();
+
+    this.colorShade = adjustLightness(this.article.color.background, 80);
+
+  },
+  mounted() {
+    console.log(this.article.color.background)
+    console.log(this.colorShade)
+    this.$refs.header.style.setProperty('--color-shade', this.colorShade);
+    const c = this.$refs.header.style.getPropertyValue('--color-shade');
+    console.log(c);
   },
   methods: {
     addColorObject(article) {
@@ -82,10 +95,33 @@ export default {
 </script>
 
 <style scoped>
+.main-image {
+  width: 100%;
+  height: auto;
+}
+
 header {
   padding: 1rem;
   text-align: center;
+  overflow: hidden;
+  width: calc(100% - 2rem);
+  height: 100%;
+  position: relative;
+  background-blend-mode: lighten;
 }
+
+header::before {
+  content: attr(data-shade);
+  font-size: 18rem;
+  font-weight: 700;
+  position: absolute;
+  color: #ff0000;
+  top: -7rem;
+  left: 0;
+  height: 100%;
+  /* Make it fill the entire width and height of the header */
+}
+
 
 input,
 textarea {

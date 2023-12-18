@@ -34,5 +34,7 @@ export default {
   border-radius: 10px;
   margin-left: -3rem;
   padding-left: 3rem;
+  margin-right: -3rem;
+  padding-right: 3rem;
 }
 </style>

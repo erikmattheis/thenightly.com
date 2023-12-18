@@ -11,36 +11,33 @@ function rgbStringToRgbObj(rgb) {
 
 function rgbStringToHslString(rgb) {
   const rgbObj = rgbStringToRgbObj(rgb);
-  const hsl = rgbObjToHslString(rgbObj);
+  const hsl = rgbObjToHslObj(rgbObj);
   return hsl;
 }
 
-function rgbObjToHslString({ r1, g1, b1 }) {
-  const r = r1 / 255;
-  const g = g1 / 255;
-  const b = b1 / 255;
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  let h;
-  let s;
-  const l = (max + min) / 2;
+function rgbObjToHslObj(rgb) {
+  let r = rgb.r / 255;
+  let g = rgb.g / 255;
+  let b = rgb.b / 255;
+
+  let max = Math.max(r, g, b);
+  let min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
 
   if (max === min) {
-    h = 0;
-    s = 0;
+    h = s = 0; // achromatic
   } else {
-    const d = max - min;
+    let d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
     switch (max) {
       case r: h = (g - b) / d + (g < b ? 6 : 0); break;
       case g: h = (b - r) / d + 2; break;
       case b: h = (r - g) / d + 4; break;
-      default: h = 0;
     }
     h /= 6;
   }
-  const result = { h: h * 360, s: s * 100, l: l * 100 };
-  return result;
+
+  return { h: h * 360, s: s * 100, l: l * 100 };
 }
 
 function hexStringToRgbObj(hex) {
@@ -53,9 +50,11 @@ function hexStringToRgbObj(hex) {
   } : { r: 0, g: 0, b: 0 };
 }
 
-function hexStringToHsl(hex) {
+function hexStringToHslObj(hex) {
   const rgb = hexStringToRgbObj(hex);
-  const hsl = rgbObjToHslString(rgb);
+  console.log('rgb', rgb)
+  const hsl = rgbObjToHslObj(rgb);
+  console.log('hsl', hsl)
   return hsl;
 }
 
@@ -65,6 +64,25 @@ function contrastingColor(hex) {
   return (luminance < 140) ? '#ffffff' : '#000000';
 }
 
+function adjustLightness(hex, percent) {
+  // strip the leading # if it's there
+  hex = hex.replace(/^\s*#|\s*$/g, '');
+
+  // convert 3 char codes --> 6, e.g. `E0F` --> `EE00FF`
+  if (hex.length == 3) {
+    hex = hex.replace(/(.)/g, '$1$1');
+  }
+
+  var r = parseInt(hex.substr(0, 2), 16),
+    g = parseInt(hex.substr(2, 2), 16),
+    b = parseInt(hex.substr(4, 2), 16);
+
+  return '#' +
+    ((0 | (1 << 8) + r + (256 - r) * percent / 100).toString(16)).substr(1) +
+    ((0 | (1 << 8) + g + (256 - g) * percent / 100).toString(16)).substr(1) +
+    ((0 | (1 << 8) + b + (256 - b) * percent / 100).toString(16)).substr(1);
+}
+
 export {
-  contrastingColor,
+  contrastingColor, adjustLightness
 };

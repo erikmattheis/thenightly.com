@@ -13,14 +13,7 @@ body {
   padding: 0;
 }
 
-blockquote p,
-.text {
-  background-color: #ffffff;
-}
 
-blockquote p {
-  padding: 25px;
-}
 
 .wrapper {
   margin: auto;
@@ -33,6 +26,10 @@ blockquote {
   line-height: 1.5;
   font-weight: 700;
   font-style: italic;
+}
+
+blockquote p {
+  padding: 2rem;
 }
 
 @media (min-width: 390px) {
