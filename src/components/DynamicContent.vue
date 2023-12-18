@@ -3,7 +3,7 @@
     <!-- <JsonEditorVue v-model="article" /> -->
     <div v-if="!editMode">
       <header :style="{ 'background-color': `${article.color.background}99`, 'color': article.color.color }"
-        :data-glyph="glyph" ref="header" :data-title="article.title">
+        :data-glyph="glyph" ref="header" :data-title="article.title" :data-shade="'#00ff00'">
         <h1 class="headline">{{ article.title }}</h1>
       </header>
 
@@ -69,15 +69,15 @@ export default {
     this.originalArticle = JSON.parse(JSON.stringify(this.article));
     this.glyph = this.article.shortTitle.toLowerCase();
 
-    this.colorShade = adjustLightness(this.article.color.background, 80);
+    this.colorShade = adjustLightness(this.article.color.background, 20);
 
   },
   mounted() {
-    console.log(this.article.color.background)
-    console.log(this.colorShade)
+    console.log('this.$refs.header', this.$refs.header)
+
     this.$refs.header.style.setProperty('--color-shade', this.colorShade);
     const c = this.$refs.header.style.getPropertyValue('--color-shade');
-    console.log(c);
+    console.log('mounted', c)
   },
   methods: {
     addColorObject(article) {
@@ -104,25 +104,31 @@ export default {
 }
 
 header {
-  padding: 1rem;
-  text-align: center;
-  overflow: hidden;
-  width: calc(100% - 2rem);
-  height: 100%;
   position: relative;
-  background-blend-mode: lighten;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+  text-align: right;
 }
 
 header::before {
-  content: attr(data-shade);
-  font-size: 18rem;
-  font-weight: 700;
   position: absolute;
-  color: #ff0000;
   top: -7rem;
   left: 0;
-  height: 100%;
-  /* Make it fill the entire width and height of the header */
+  z-index: 0;
+  content: attr(data-title);
+  font-size: 18rem;
+  font-weight: 700;
+  line-height: 0.75;
+  color: var(--color-shade);
+}
+
+.headline {
+  font-size: 5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .image-container {
