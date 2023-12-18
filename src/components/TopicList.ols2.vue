@@ -2,18 +2,9 @@
   <div class="header">
     <div class="drawer-container">
       <transition name="slide">
-        <div class="drawer" v-show="expanded">
-          <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" ref="button">
-            <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
-              <path ref="rectangle" fill="#fff"
-                d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
-            </svg>
-          </button>
-        </div>
-      </transition>
-      <transition name="slide">
+
         <ul class="drawer" v-show="expanded">
+
           <li v-for="article in  topics " :key="article.shortTitle"
             :style="{ 'background-color': article.color.background }" ref="listItems">
 
@@ -28,7 +19,17 @@
 
       </transition>
     </div>
-    <div class="nav-activation-area"></div>
+    <div class="floating-button-container">
+      <div class="floating-button" :class="{ 'expanded2': expanded }">
+        <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" ref="button">
+          <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path ref="rectangle" fill="#fff"
+              d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -81,8 +82,6 @@ export default {
         color: this.contrastingColor(topic.color),
       },
     }));
-
-    this.topics = [...this.topics, ...this.topics, ...this.topics];
     window.addEventListener('mousemove', this.handleMouseMove);
   },
   beforeUnmount() {
@@ -90,6 +89,7 @@ export default {
   },
   methods: {
     handleMouseMove(event) {
+      console.log('handleMouseMove', event.clientX);
       if (event.clientX < 64) {
         this.expanded = true;
       } else if (!this.expanded && event.clientX > 64) {
@@ -113,6 +113,7 @@ export default {
     calculateNewHSLColor({ h1, s, l }, percent) {
       const h = h1 * (1 + (percent / 100));
       const result = `hsl(${h}, ${s}, ${l})`;
+      console.log('calculateNewHSLColor', result);
       return result;
     },
     rgbStringToRgbObj(rgb) {
@@ -175,36 +176,44 @@ export default {
 </script>
 
 <style scoped>
-.header {
-  --button-width: 32px;
-  --nav-width: 150px;
-  --total-width: calc(var(--button-width) + var(--nav-width));
+header {
+  z-index: 9999;
 }
 
-
-.nav-activation-area {
-  position: absolute;
-  width: var(--button-width);
+.floating-button-container {
+  position: relative;
+  width: 150px;
   height: 100vh;
   z-index: 2;
   background-color: #ffffff99;
+
 }
 
-/*
 .floating-button {
   position: absolute;
   vertical-align: top;
-  left: 250;
-  top: 400;
+  left: 0;
+  top: 0;
   height: 100%;
   transition: all 0.3s ease;
 }
 
-
 .floating-button.expanded {
   left: calc(100% - 40px);
 }
-*/
+
+button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: red;
+  cursor: pointer;
+}
+
+
+svg {
+  width: 40px;
+}
 
 
 .drawer-container {
@@ -218,37 +227,29 @@ export default {
   -ms-overflow-style: none;
 }
 
-svg {
-  width: var(--nav-width);
-}
-
 .drawer {
   position: fixed;
   top: 0;
   left: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 li {
-  width: var(--nav-width);
-  padding: 0.2rem 0.5rem;
-  padding-left: calc(var(--button-width) + 0.5rem);
+  width: 150px;
+  padding-left: 40px;
 }
 
-.button-enter-active,
-.button-leave-active {
-  transition: all 0.3s ease;
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.button-enter-from,
-.button-leave-to {
-  transform: translateX(0);
-}
-
-.button-enter-to,
-.button-leave-from {
-  transform: translateX(calc(-1 * (var(--nav-width) + var(--button-width))));
-}
 
 .slide-enter-active,
 .slide-leave-active {
@@ -257,7 +258,7 @@ li {
 
 .slide-enter-from,
 .slide-leave-to {
-  transform: translateX(calc(-1 * (var(--nav-width) + var(--button-width))));
+  transform: translateX(-100%);
 }
 
 .slide-enter-to,
@@ -299,23 +300,13 @@ li {
   }
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-250px);
+  }
 
-.link {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-button {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background-color: red;
-  cursor: pointer;
+  100% {
+    transform: translateX(0);
+  }
 }
 </style>
