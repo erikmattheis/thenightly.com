@@ -1,10 +1,12 @@
 <!-- src/App.vue -->
 <template>
-  <div>
+  <div class="dynamic">
 
     <TopicList />
 
-    <router-view></router-view>
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -18,20 +20,19 @@ export default {
 </script>
 
 <style scoped>
-header {
-  color: #fff;
+.dynamic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 2.5em;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin: 0;
-  padding: 0;
+.content {
+  max-width: 768px;
+  background-color: #ffffff99;
+  backdrop-filter: brightness(2);
+  border-radius: 10px;
+  margin-left: -3rem;
+  padding-left: 3rem;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="header">
     <div class="nav-activation-area"></div>
     <div class="floating-button">
-      <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" ref="button">
+      <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" class="top-control">
         <svg class="svg" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <path ref="rectangle" fill="#fff"
@@ -12,18 +12,17 @@
     </div>
 
     <ul class="drawer" :class="{ 'expanded': expanded }">
-      <li>
-        <router-link :to="{ query: { 'nav': 'fabrics' } }" style="background-color: red;" class="link">
-          Fabrics
+      <li class="top-control">
+        <router-link to="/" class="link top-control">
+          Home
         </router-link>
       </li>
-      <li>
-        <router-link :to="{ query: { 'nav': 'dyes' } }" style="background-color:blue;" class="link">
-          Dyes
+      <li class="top-control">
+        <router-link to="/about" class="link top-control">
+          About
         </router-link>
       </li>
-      <li v-for="article in  topics " :key="article.shortTitle" :style="{ 'background-color': article.color.background }">
-
+      <li v-for="article in topics" :key="article.shortTitle" :style="{ 'background-color': article.color.background }">
         <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
           :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
           {{ article.shortTitle }}
@@ -37,6 +36,7 @@
 <script>
 // import axios from 'axios';
 import dyes from '../data/dyes.json';
+import { contrastingColor } from '../services/colors.js';
 
 export default {
   name: 'TopicList',
@@ -45,10 +45,11 @@ export default {
       editMode: false,
       topics: dyes,
       expanded: false,
-      buttonStoppedColor: this.hexStringToHsl('#FF0000'),
+      // buttonStoppedColor: this.hexStringToHsl('#FF0000'),
     };
   },
   computed: {
+    /*
     rectangleStyle() {
       let styles;
       if (this.expanded) {
@@ -71,6 +72,7 @@ export default {
       }
       return styles;
     },
+    */
 
   },
 
@@ -79,7 +81,7 @@ export default {
       ...topic,
       color: {
         background: topic.color,
-        color: this.contrastingColor(topic.color),
+        color: contrastingColor(topic.color),
       },
     }));
 
@@ -111,66 +113,6 @@ export default {
         console.error(error);
       }
     },
-    calculateNewHSLColor({ h1, s, l }, percent) {
-      const h = h1 * (1 + (percent / 100));
-      const result = `hsl(${h}, ${s}, ${l})`;
-      return result;
-    },
-    rgbStringToRgbObj(rgb) {
-      const obj = rgb.replace(/[^\d,]/g, '').split(',');
-      return obj;
-    },
-    rgbStringToHslString(rgb) {
-      const rgbObj = this.rgbStringToRgbObj(rgb);
-      const hsl = this.rgbObjToHslString(rgbObj);
-      return hsl;
-    },
-    rgbObjToHslString({ r1, g1, b1 }) {
-      const r = r1 / 255;
-      const g = g1 / 255;
-      const b = b1 / 255;
-      const max = Math.max(r, g, b);
-      const min = Math.min(r, g, b);
-      let h;
-      let s;
-      const l = (max + min) / 2;
-
-      if (max === min) {
-        h = 0;
-        s = 0;
-      } else {
-        const d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch (max) {
-          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-          case g: h = (b - r) / d + 2; break;
-          case b: h = (r - g) / d + 4; break;
-          default: h = 0;
-        }
-        h /= 6;
-      }
-      const result = { h: h * 360, s: s * 100, l: l * 100 };
-      return result;
-    },
-    hexStringToRgbObj(hex) {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-
-      return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      } : { r: 0, g: 0, b: 0 };
-    },
-    hexStringToHsl(hex) {
-      const rgb = this.hexStringToRgbObj(hex);
-      const hsl = this.rgbObjToHslString(rgb);
-      return hsl;
-    },
-    contrastingColor(hex) {
-      const rgb = this.hexStringToRgbObj(hex);
-      const luminance = (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b);
-      return (luminance < 140) ? '#ffffff' : '#000000';
-    },
   },
 };
 </script>
@@ -190,9 +132,13 @@ export default {
   width: var(--button-width);
   height: 100vh;
   z-index: 10;
-  background-color: #ffffff99;
+  background-color: #ffffff55;
 }
 
+.top-control {
+  background-color: black;
+  color: white;
+}
 
 .floating-button {
   position: fixed;
@@ -237,6 +183,15 @@ li {
   line-height: 1.5;
   padding: 0;
   padding-left: calc(var(--button-width) + 0.5rem);
+}
+
+router-link a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .slide-enter-active,
