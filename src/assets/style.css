@@ -13,11 +13,8 @@ body {
   padding: 0;
 }
 
-
-
 .wrapper {
   margin: auto;
-  padding: 1.5rem;
 }
 
 blockquote {
@@ -35,7 +32,7 @@ blockquote p {
 @media (min-width: 390px) {
 
   .wrapper {
-    max-width: 768px;
+    width: 100%;
     padding: 0;
   }
 

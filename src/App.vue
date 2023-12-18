@@ -28,10 +28,9 @@ export default {
 }
 
 .content {
-  max-width: 768px;
+  width: 100%;
   background-color: #ffffff99;
   backdrop-filter: brightness(2);
-  border-radius: 10px;
   margin-left: -3rem;
   padding-left: 3rem;
   margin-right: -3rem;

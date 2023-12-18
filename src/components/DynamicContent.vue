@@ -1,7 +1,19 @@
 <template>
   <article class="wrapper">
     <!-- <JsonEditorVue v-model="article" /> -->
-    <div v-if="editMode">
+    <div v-if="!editMode">
+      <header :style="{ 'background-color': `${article.color.background}99`, 'color': article.color.color }"
+        :data-glyph="glyph" ref="header" :data-title="article.title">
+        <h1 class="headline">{{ article.title }}</h1>
+      </header>
+
+      <div class="image-container">
+        <img :src="article.image.compressed" :alt="article.shortTitle" class="main-image">
+      </div>
+
+      <div v-html="article.content" class="content"></div>
+    </div>
+    <div v-else>
       <form @submit.prevent="submitForm(article)">
         <label>
           Title
@@ -15,15 +27,6 @@
         <button type="submit">Submit</button><br>
         <button type="button" @click="editMode = false" :disabled="disabled">Reset</button>
       </form>
-    </div>
-    <div v-else>{{ JSON.stringify(article.color) }}
-      <header :style="{ 'background-color': article.color.background, }" :data-glyph="glyph" ref="header"
-        :data-title="article.title">
-        <h1 class="headline">{{ article.title }}</h1>
-      </header>
-      <img :src="article.image.compressed" :alt="article.shortTitle" class="main-image">
-
-      <div v-html="article.content" class="content"></div>
     </div>
   </article>
 </template>
@@ -122,6 +125,27 @@ header::before {
   /* Make it fill the entire width and height of the header */
 }
 
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  padding-top: 56.89%;
+  /* 1024 / 1792 * 100 = 56.89% */
+  overflow: hidden;
+  /* Hide the parts of the image that are outside the container */
+}
+
+.main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Scale the image to cover the container */
+}
 
 input,
 textarea {
