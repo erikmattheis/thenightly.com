@@ -23,9 +23,14 @@ blockquote p {
 }
 
 .wrapper {
+  display: flex;
+  justify-content: space-between;
   max-width: 600px;
   margin: auto;
-  padding: 1.5rem
+  padding: 1.5rem 1.5rem 1.5rem 6rem;
+  background-color: #ffffff99;
+  backdrop-filter: brightness(2);
+  border-radius: 10px;
 }
 
 blockquote {
@@ -41,7 +46,7 @@ blockquote {
 @media (min-width: 768px) {
 
   .wrapper {
-    padding: 0
+    margin-left: -3rem;
   }
 
   blockquote {

@@ -80,10 +80,6 @@ textarea {
 }
 
 .background-window {
-  background-color: #ffffff99;
-  backdrop-filter: brightness(2);
-
-  border-radius: 10px;
-  padding-top: 60px;
+  padding: 6rem 0;
 }
 </style>

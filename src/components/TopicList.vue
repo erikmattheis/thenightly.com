@@ -1,5 +1,6 @@
 <template>
   <div class="header">
+    <div class="nav-activation-area"></div>
     <div class="floating-button">
       <button @click.prevent="toggleDrawer" @touchstart.prevent="toggleDrawer" ref="button">
         <svg class="svg" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
@@ -11,14 +12,18 @@
     </div>
     <transition name="slide">
       <ul class="drawer" v-show="expanded">
-        <li class="nav-choices">
-          Fabrics
+        <li style="background-color:red;">
+          <router-link :to="{ query: { 'nav': 'fabrics' } }" style="background-color: red;" class="link">
+            Fabrics
+          </router-link>
         </li>
-        <li class="nav-choices">
-          Dyes
+        <li style="background-color:blue;">
+          <router-link :to="{ query: { 'nav': 'dyes' } }" style="background-color:blue;" class="link">
+            Dyes
+          </router-link>
         </li>
         <li v-for="article in  topics " :key="article.shortTitle"
-          :style="{ 'background-color': article.color.background }" ref="listItems">
+          :style="{ 'background-color': article.color.background }">
 
           <router-link :to="{ name: 'DynamicContent', params: { topic: article.shortTitle } }"
             :style="{ 'background-color': article.color.background, 'color': article.color.color }" class="link">
@@ -28,7 +33,6 @@
       </ul>
     </transition>
   </div>
-  <div class="nav-activation-area"></div>
 </template>
 
 <script>
@@ -200,7 +204,7 @@ export default {
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0.5rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   padding-left: calc(var(--button-width) + 0.5rem);
 }
 
@@ -216,8 +220,8 @@ export default {
 }
 
 .svg {
-  margin: 10px;
-  width: var(--button-width);
+  margin: 0.5rem;
+  width: calc(var(--button-width) - 1rem);
 }
 
 .drawer {
