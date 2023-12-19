@@ -1,7 +1,12 @@
 <!-- src/views/HomePage.vue -->
 <template>
   <div class="wrapper">
-    <div class="text">
+    <div class="text" v-if="!loaded">
+      <content-loader viewBox="0 0 400 460" :speed="2" primaryColor="#7d7d7d" secondaryColor="#ecebeb">
+        <rect x="178" y="266" rx="0" ry="0" width="5" height="25" />
+      </content-loader>
+    </div>
+    <div class="text" v-else>
 
       <h2>Embark on an AI-Infused Exploration</h2>
 
@@ -61,7 +66,7 @@ blockquote {
   font-style: italic;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 390px) {
 
   .wrapper {
     padding: 0

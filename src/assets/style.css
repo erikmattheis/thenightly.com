@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'Quattrocento';
+  src: url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
+}
+
 /* Set the global variables for everything. Change these to use your own fonts and colours. */
 :root {
-  --serif-font: Quattrocento, Georgia, "Times New Roman", Times, serif;
+  --serif-font: Verdana, Times,
 }
 
 html {

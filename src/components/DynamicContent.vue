@@ -2,8 +2,8 @@
   <article class="wrapper">
     <!-- <JsonEditorVue v-model="article" /> -->
     <div v-if="!editMode">
-      <header :style="{ 'background-color': `${article.color.background}99`, 'color': article.color.color }"
-        :data-glyph="glyph" ref="header" :data-title="article.title" :data-shade="'#00ff00'">
+      <header :style="{ 'background-color': `${article.color.background}99`, 'color': article.color.color }" ref="header"
+        :data-background-title="titleLowercase" :data-shade="'#00ff00'">
         <h1 class="headline">{{ article.title }}</h1>
       </header>
 
@@ -54,7 +54,7 @@ export default {
       articles: dyes,
       article: {},
       colorShade: '',
-      glyph: '',
+      titleLowercase: '',
       originalArticle: {},
     };
   },
@@ -67,10 +67,9 @@ export default {
     this.article = this.addColorObject(this.articles.find((article) => article.shortTitle === this.topic));
     this.article.content = DOMPurify.sanitize(this.article.content);
     this.originalArticle = JSON.parse(JSON.stringify(this.article));
-    this.glyph = this.article.shortTitle.toLowerCase();
-
-    this.colorShade = adjustLightness(this.article.color.background, 20);
-
+    const t = this.article.shortTitle.toUpperCase().replace(/\s/g, '');
+    this.titleLowercase = t + t + t + t + t + t + t;
+    this.colorShade = adjustLightness(this.article.color.background, 10);
   },
   mounted() {
     console.log('this.$refs.header', this.$refs.header)
@@ -117,11 +116,23 @@ header::before {
   top: -7rem;
   left: 0;
   z-index: 0;
-  content: attr(data-title);
-  font-size: 18rem;
+  width: 100%;
+  content: attr(data-background-title);
+  word-break: break-word;
+  font-size: 7rem;
   font-weight: 700;
-  line-height: 0.75;
+  font-style: italic;
+  line-height: 0.9;
   color: var(--color-shade);
+  overflow: hidden;
+}
+
+@media screen and (min-width: 390px) {
+  header::before {
+    top: -10rem;
+    font-size: 18rem;
+  }
+
 }
 
 .headline {
@@ -138,9 +149,7 @@ header::before {
   width: 100%;
   z-index: -1;
   padding-top: 56.89%;
-  /* 1024 / 1792 * 100 = 56.89% */
   overflow: hidden;
-  /* Hide the parts of the image that are outside the container */
 }
 
 .main-image {
@@ -150,7 +159,6 @@ header::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Scale the image to cover the container */
 }
 
 input,

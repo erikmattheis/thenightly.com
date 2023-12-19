@@ -4,23 +4,33 @@
 
     <TopicList />
 
+    <h1>NATURALLY HUED</h1>
+
     <div class="content">
       <router-view></router-view>
     </div>
+
   </div>
-</template>
+</template>a
 
 <script>
+import { ContentLoader } from 'vue-content-loader'
 import TopicList from './components/TopicList.vue';
 
 export default {
   name: 'App',
-  components: { TopicList },
+  components: { TopicList, ContentLoader },
+  data() {
+    return {
+      isLoading: true
+    };
+  },
 };
 </script>
 
 <style scoped>
 .dynamic {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +38,7 @@ export default {
 }
 
 .content {
-  width: 100%;
+  max-width: 50rem;
   background-color: #ffffff99;
   backdrop-filter: brightness(2);
   margin-left: -3rem;

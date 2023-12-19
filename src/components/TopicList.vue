@@ -123,7 +123,9 @@ export default {
   left: 0;
   top: 0;
   --button-width: 3rem;
-  --nav-width: 13rem;
+  --nav-width: 16rem;
+  --total-width: calc(var(--button-width) + var(--nav-width));
+  --negative-total-width: calc(-1 * var(--total-width));
   z-index: 100;
 }
 
@@ -135,17 +137,6 @@ export default {
   background-color: #ffffff55;
 }
 
-.top-control {
-  background-color: black;
-  color: white;
-}
-
-.floating-button {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
 
 .drawer-container {
 
@@ -168,7 +159,7 @@ export default {
 .drawer {
   position: fixed;
   top: 0;
-  left: -13rem;
+  left: var(--negative-total-width);
   transition: all 0.3s ease;
 }
 
