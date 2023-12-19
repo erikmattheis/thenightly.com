@@ -68,7 +68,7 @@ export default {
     this.article.content = DOMPurify.sanitize(this.article.content);
     this.originalArticle = JSON.parse(JSON.stringify(this.article));
     const t = this.article.shortTitle.toUpperCase().replace(/\s/g, '');
-    this.titleLowercase = t + t + t + t + t + t + t;
+    this.titleLowercase = t + t + t + t;
     this.colorShade = adjustLightness(this.article.color.background, 10);
   },
   mounted() {
@@ -130,7 +130,7 @@ header::before {
 @media screen and (min-width: 390px) {
   header::before {
     top: -10rem;
-    font-size: 18rem;
+    font-size: 7rem;
   }
 
 }
