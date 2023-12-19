@@ -7,8 +7,6 @@
                     color: article.color.color,
                 }"
                 ref="header"
-                :data-background-title="titleLowercase"
-                :data-shade="'#00ff00'"
             >
                 <h1 class="headline">{{ article.title }}</h1>
             </header>

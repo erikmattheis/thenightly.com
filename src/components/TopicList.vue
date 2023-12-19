@@ -1,6 +1,5 @@
 <template>
     <div class="header">
-        <div class="nav-activation-area"></div>
         <div class="floating-button">
             <button
                 @click.prevent="toggleDrawer"
@@ -145,19 +144,7 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
-    --button-width: 3rem;
-    --nav-width: 16rem;
-    --total-width: calc(var(--button-width) + var(--nav-width));
-    --negative-total-width: calc(-1 * var(--total-width));
     z-index: 100;
-}
-
-.nav-activation-area {
-    position: fixed;
-    width: var(--button-width);
-    height: 100vh;
-    z-index: 10;
-    background-color: #ffffff55;
 }
 
 .drawer-container {

@@ -5,7 +5,11 @@
 
 /* Set the global variables for everything. Change these to use your own fonts and colours. */
 :root {
-  --serif-font: Verdana, Times,
+  --serif-font: Times, serif;
+  --button-width: 3rem;
+  --nav-width: 16rem;
+  --total-width: calc(var(--button-width) + var(--nav-width));
+  --negative-total-width: calc(-1 * var(--total-width));
 }
 
 html {
