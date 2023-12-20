@@ -29,7 +29,7 @@ export default {
 <style scoped>
 .dynamic {
     position: absolute;
-    left: var(--button-width);
+    padding-left: var(--button-width);
     width: calc(100% - var(--button-width));
     display: flex;
     flex-direction: column;
@@ -38,9 +38,7 @@ export default {
 }
 
 .spa {
-    width: 100%;
-
-    backdrop-filter: brightness(2);
+    max-width: 50rem;
 }
 
 .nav {
@@ -50,6 +48,5 @@ export default {
     width: var(--button-width);
     height: 100vh;
     z-index: 10;
-    background-color: #ffffff55;
 }
 </style>

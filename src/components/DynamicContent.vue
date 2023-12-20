@@ -25,31 +25,12 @@
                     />"
                 </div>
             </div>
-            <div
-                v-else
-                class="hero-wrapper"
-                :style="{ 'padding-top': navHeightStr }"
-            >
-                <div
-                    class="hero-nav"
-                    ref="hero"
-                    :class="{ fixme: fixme }"
-                    :style="{ height: navHeightStr }"
-                >
-                    <div class="hero-nav__inner">
-                        <h1>Neat Title</h1>
-                        <div class="hero-nav__button">
-                            <a href="#" class="btn"></a>
-                        </div>
-                    </div>
-                </div>
-                <div style="float: right">{{ navHeightStr }}</div>
+            <div v-else>
                 <header
                     :style="{
                         'background-color': `${article.color.background}99`,
                         color: article.color.color,
                     }"
-                    ref="header"
                 >
                     <h1 class="headline">{{ article.title }}</h1>
                 </header>
@@ -111,7 +92,7 @@ export default {
             originalArticle: {},
             isLoading: false,
             heroHeight: 0,
-            fixme: false,
+            darken: false,
         }
     },
     computed: {
@@ -157,9 +138,9 @@ export default {
                 this.heroHeight = heroHeight - scrollOffset
             }
             if (scrollOffset > heroHeight - 215) {
-                this.fixme = true
+                this.darken = true
             } else {
-                this.fixme = false
+                this.darken = false
             }
         },
         async submitForm(article) {
@@ -231,50 +212,16 @@ header::before {
     object-fit: cover;
 }
 
+.content {
+    padding: 3rem;
+    background-color: #ffffff99;
+    backdrop-filter: lighten(0.5);
+}
+
 input,
 textarea {
     display: block;
     width: 100%;
     margin-bottom: 1rem;
-}
-</style>
-
-<style>
-.hero-nav {
-    position: fixed !important;
-    z-index: 99999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    min-height: 105px;
-    background-image: url(https://images.unsplash.com/photo-1442606383395-175ee96ed967?q=80&fm=jpg&s=5c8c74be9bc91b47c79a1aaf92264be5);
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-.hero-nav .hero-nav__inner {
-    z-index: 1;
-}
-.hero-nav h1 {
-    color: #efefef;
-    font-size: 5vw;
-}
-.hero-nav:before {
-    content: '';
-    background: rgba(0, 0, 0, 0);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: background 400ms;
-}
-.hero-nav.fixme:before {
-    background: rgba(0, 0, 0, 0.8);
 }
 </style>

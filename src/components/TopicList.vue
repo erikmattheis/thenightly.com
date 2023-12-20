@@ -58,7 +58,6 @@
 </template>
 
 <script>
-// import axios from 'axios';
 import dyes from '../data/dyes.json'
 import { contrastingColor } from '../services/colors.js'
 
