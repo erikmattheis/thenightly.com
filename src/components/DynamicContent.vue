@@ -91,7 +91,6 @@ export default {
             article: {},
             originalArticle: {},
             isLoading: false,
-            heroHeight: 0,
             darken: false,
         }
     },
@@ -103,9 +102,6 @@ export default {
                 this.article.content !== this.originalArticle.content
             )
         },
-        navHeightStr() {
-            return `${this.heroHeight}px`
-        },
     },
     created() {
         this.article = this.addColorObject(
@@ -113,13 +109,6 @@ export default {
         )
         this.article.content = DOMPurify.sanitize(this.article.content)
         this.originalArticle = JSON.parse(JSON.stringify(this.article))
-    },
-    mounted() {
-        this.heroHeight = this.$refs.hero.offsetHeight
-        window.addEventListener('scroll', this.handleScroll)
-    },
-    beforeDestroy() {
-        window.removeEventListener('scroll', this.handleScroll)
     },
     methods: {
         addColorObject(article) {
@@ -129,18 +118,6 @@ export default {
                     background: article.color,
                     color: contrastingColor(article.color),
                 },
-            }
-        },
-        handleScroll() {
-            const heroHeight = this.$refs.hero.offsetHeight
-            var scrollOffset = window.scrollY
-            if (scrollOffset < heroHeight) {
-                this.heroHeight = heroHeight - scrollOffset
-            }
-            if (scrollOffset > heroHeight - 215) {
-                this.darken = true
-            } else {
-                this.darken = false
             }
         },
         async submitForm(article) {

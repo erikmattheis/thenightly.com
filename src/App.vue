@@ -2,6 +2,7 @@
 <template>
     <div class="dynamic">
         <h1>NATURALLY HUED</h1>
+
         <div class="spa">
             <RouterView></RouterView>
         </div>
