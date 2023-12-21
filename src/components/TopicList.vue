@@ -17,73 +17,48 @@
                         name: 'DynamicContent',
                         params: { topic: article.shortTitle },
                     }"
+                    :class="{ 'hovered-link': isHovered }"
+                    @mouseover="this.isHovered = true"
+                    @mouseout="this.isHovered = false"
                     :style="{
-                        'background-color': article.color.background,
-                        color: article.color.color,
+                        color: this.isHovered
+                            ? article.color.background
+                            : article.color.color,
+                        'background-color': isHovered
+                            ? article.color.color
+                            : article.color.background,
                     }"
-                    class="link"
                 >
                     {{ article.shortTitle }}
                 </router-link>
             </li>
         </ul>
-        <div style="float: right">expanded: {{ expanded }}</div>
         <div class="floating-button">
-            <button @click.prevent="toggleDrawer" class="top-control">
+            <button
+                @click.prevent="toggleDrawer"
+                class="top-control"
+                style="padding: 0.4rem"
+            >
                 <svg
-                    viewBox="115.7643 62.0205 195.9395 195.1673"
-                    fill="#ffffff"
+                    viewBox="165.943 85.0498 135.385 85.1675"
+                    width="100%"
+                    height="100%"
                     xmlns="http://www.w3.org/2000/svg"
-                    style="width: 100%; height: 100%"
-                >
-                    <g
-                        transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 118.81526947021483, 145.49591064453125)"
-                    >
-                        <g
-                            transform="matrix(1.128446, 0, 0, 1.224057, 209.494965, 87.574318)"
-                            style="transform-origin: 47.808px -22.186px"
-                        >
-                            <path
-                                d="M -82.561 -105.401 C -78.989 -66.66 -120.968 -16.287 -182.911 -23.713 C -152.694 -54.353 -160.658 -84.226 -160.658 -105.401 C -160.658 -134.917 -128.117 -153.365 -102.086 -138.607 C -90.004 -131.757 -83.819 -119.041 -82.561 -105.401 Z M -103.127 -123.282 C -103.516 -123.975 -103.97 -124.631 -104.486 -125.239 C -106.321 -127.888 -109.295 -129.56 -112.549 -129.777 C -117.931 -129.966 -122.345 -125.631 -122.153 -120.346 C -122.159 -118.044 -121.286 -115.822 -119.707 -114.119 L -119.797 -114.03 C -110.848 -105.349 -106.442 -93.122 -107.838 -80.846 C -107.838 -80.846 -91.349 -103.265 -103.127 -123.282 Z"
-                                style="
-                                    transform-box: fill-box;
-                                    transform-origin: 50% 50%;
-                                "
-                                transform="matrix(-1, 0, 0, -1, 0.000008, -0.000011)"
-                            />
-                        </g>
-                    </g>
-                    <g
-                        transform="matrix(6.825747013092041, 0, 0, 6.574432849884033, 134.48666381835938, 86.1821060180664)"
-                        style=""
-                    />
-                    <g
-                        transform="matrix(-1.128445982933, 0, 0, -1.224056959152, 212.906155099503, 204.156755711491)"
-                        style="transform-origin: 47.8078px -22.1862px"
-                    >
-                        <path
-                            d="M 93.054 -38.195 C 96.626 0.546 54.647 50.919 -7.296 43.493 C 22.921 12.853 14.957 -17.02 14.957 -38.195 C 14.957 -67.711 47.498 -86.159 73.529 -71.401 C 85.611 -64.551 91.796 -51.835 93.054 -38.195 Z M 31.254 27.673 C 31.254 27.673 83.289 -11.261 55.779 -88.396 C 55.368 -88.971 46.852 -89.319 46.852 -89.319 C 47.287 -88.908 82.418 -30.613 31.254 27.673 Z"
-                            style=""
-                            transform="matrix(-1, 0, 0, -1, 95.887548446655, -39.407169342041)"
-                        />
-                    </g>
-                </svg>
-                <!--
-                <svg
-                    class="svg"
-                    version="1.1"
-                    viewBox="0 0 32 32"
-                    xml:space="preserve"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
                 >
                     <path
-                        ref="rectangle"
-                        fill="#fff"
-                        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+                        d="M 200.565 85.991 C 199.365 84.736 197.361 84.736 196.161 85.991 C 194.942 87.367 165.943 119.906 165.943 137.109 C 167.712 180.107 229.015 180.107 230.823 137.109 C 230.784 119.906 201.784 87.367 200.565 85.991 Z"
+                        style="fill: rgb(255, 111, 8)"
+                    />
+                    <path
+                        d="M 249.207 137.968 C 249.207 136.915 249.769 135.941 250.681 135.414 C 252.647 134.279 255.105 135.698 255.105 137.968 C 255.105 144.026 259.019 149.169 264.456 151.008 C 266.1 147.16 267.122 142.726 267.333 137.706 C 267.293 120.502 238.294 87.964 237.075 86.587 C 235.875 85.333 233.871 85.333 232.671 86.587 C 231.452 87.964 202.452 120.502 202.452 137.706 C 203.913 173.222 245.992 179.402 261.611 156.247 C 254.344 153.359 249.207 146.264 249.207 137.968 Z"
+                        style="fill: rgb(89, 33, 33)"
+                    />
+                    <path
+                        d="M 301.328 137.968 C 299.519 180.967 238.216 180.967 236.447 137.968 C 236.447 120.765 265.447 88.226 266.666 86.85 C 267.866 85.596 269.87 85.596 271.07 86.85 C 272.289 88.226 301.288 120.765 301.328 137.968 Z M 268.868 151.731 C 261.267 151.731 255.105 145.569 255.105 137.968 C 255.105 135.698 252.647 134.279 250.681 135.414 C 249.769 135.941 249.207 136.915 249.207 137.968 C 249.207 148.827 258.009 157.629 268.868 157.629 C 271.138 157.629 272.557 155.172 271.422 153.206 C 270.895 152.293 269.921 151.731 268.868 151.731 Z"
+                        style="fill: rgb(0, 121, 191)"
                     />
                 </svg>
-            --></button>
+            </button>
         </div>
     </div>
 </template>
@@ -151,8 +126,11 @@ export default {
         window.removeEventListener('mousemove', this.handleMouseMove)
     },
     methods: {
+        mouseOver(event) {
+            event.target.style.color = event.target.style.backgroundColor
+            this.isHovered = true
+        },
         handleMouseMove(event) {
-            console.log('handleMouseMove', event.clientX)
             if (event.clientX < 100 && !this.expanded) {
                 console.log('mousemove expands')
                 this.expanded = true
@@ -237,13 +215,21 @@ li {
     padding: 0 0.5rem;
 }
 
-router-link a {
+.router-link a {
     position: absolute;
     top: 0;
     left: 0;
     display: block;
     width: 100%;
     height: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.router-link a:hover {
+    background-color: var(
+        --hover-color
+    ); /* Use CSS variable for hover background color */
+    color: var(--hover-bg-color); /* Use CSS variable for hover text color */
 }
 
 .slide-enter-active,
@@ -319,7 +305,7 @@ button {
     border: 0;
     padding: 0;
     margin: 0;
-    background-color: red;
+    background-color: transparent;
     cursor: pointer;
 }
 </style>

@@ -1,7 +1,7 @@
 <!-- src/App.vue -->
 <template>
     <div class="dynamic">
-        <h1>NATURALLY HUED</h1>
+        <h1 :style="{ color: color }">NATURALLY HUED</h1>
 
         <div class="spa">
             <RouterView></RouterView>
@@ -19,6 +19,7 @@ export default {
     data() {
         return {
             isLoading: true,
+            color: '#FFFFFF',
         }
     },
     mounted() {
@@ -28,6 +29,10 @@ export default {
 </script>
 
 <style scoped>
+.link:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-color);
+}
 .dynamic {
     position: absolute;
     padding-left: var(--button-width);
