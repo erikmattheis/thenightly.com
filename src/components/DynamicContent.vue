@@ -151,7 +151,7 @@ header::before {
     position: absolute;
     top: -7rem;
     left: 0;
-    z-index: 0;
+    /* z-index: 0; */
     width: 100%;
     content: attr(data-background-title);
     word-break: break-word;
@@ -167,7 +167,7 @@ header::before {
     font-size: 5rem;
     font-weight: 700;
     position: relative;
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .image-container {

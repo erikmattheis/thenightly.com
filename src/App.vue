@@ -29,10 +29,6 @@ export default {
 </script>
 
 <style scoped>
-.link:hover {
-    background-color: var(--hover-bg-color);
-    color: var(--hover-color);
-}
 .dynamic {
     position: absolute;
     padding-left: var(--button-width);

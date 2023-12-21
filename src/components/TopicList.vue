@@ -10,13 +10,14 @@
             <li
                 v-for="article in topics"
                 :key="article.shortTitle"
-                @mouseover="article.isHovered = true"
-                @mouseout="article.isHovered = false"
                 :style="{
-                    'background-color': article.isHovered
+                    'background-color': this.isHovered
                         ? article.color.color
                         : article.color.background,
+                    cursor: 'pointer',
                 }"
+                @mouseover="article.isHovered = true"
+                @mouseout="article.isHovered = false"
             >
                 <router-link
                     class="router-link"
@@ -113,14 +114,8 @@ export default {
             },
         }))
 
-        this.topics = [
-            ...this.topics,
-            ...this.topics,
-            ...this.topics,
-            ...this.topics,
-            ...this.topics,
-        ]
-        window.addEventListener('mousemove', this.handleMouseMove)
+        this.topics = [...this.topics]
+        //window.addEventListener('mousemove', this.handleMouseMove)
     },
     beforeUnmount() {
         window.removeEventListener('mousemove', this.handleMouseMove)
@@ -167,7 +162,6 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 100;
 }
 
 .drawer-container {
@@ -186,7 +180,7 @@ export default {
     left: 0;
     width: var(--button-width);
     height: var(--button-width);
-    z-index: 100;
+    /* z-index: 100;*/
 }
 
 .svg {
@@ -214,20 +208,15 @@ li {
     line-height: 1.5;
     padding: 0 0.5rem;
 }
+
 .router-link {
     display: block;
     width: 100%;
     height: 100%;
-
     transition: all 0.2s ease;
-
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-}
-
-.router-link:hover {
-    cursor: pointer;
 }
 
 .slide-enter-active,
