@@ -11,13 +11,10 @@
                 v-for="article in topics"
                 :key="article.shortTitle"
                 :style="{
-                    'background-color': this.isHovered
+                    'background-color': article.isHovered
                         ? article.color.color
                         : article.color.background,
-                    cursor: 'pointer',
                 }"
-                @mouseover="article.isHovered = true"
-                @mouseout="article.isHovered = false"
             >
                 <router-link
                     class="router-link"
@@ -29,7 +26,10 @@
                         color: article.isHovered
                             ? article.color.background
                             : article.color.color,
+                        cursor: article.isHovered ? 'pointer' : 'default',
                     }"
+                    @mouseover="article.isHovered = true"
+                    @mouseout="article.isHovered = false"
                 >
                     {{ article.shortTitle }}
                 </router-link>
@@ -114,7 +114,13 @@ export default {
             },
         }))
 
-        this.topics = [...this.topics]
+        this.topics = [
+            ...this.topics,
+            ...this.topics,
+            ...this.topics,
+            ...this.topics,
+            ...this.topics,
+        ]
         //window.addEventListener('mousemove', this.handleMouseMove)
     },
     beforeUnmount() {
@@ -208,7 +214,9 @@ li {
     line-height: 1.5;
     padding: 0 0.5rem;
 }
-
+li:hover {
+    cursor: pointer;
+}
 .router-link {
     display: block;
     width: 100%;
@@ -217,6 +225,10 @@ li {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.router-link:hover {
+    cursor: pointer;
 }
 
 .slide-enter-active,
