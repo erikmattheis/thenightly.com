@@ -10,23 +10,24 @@
             <li
                 v-for="article in topics"
                 :key="article.shortTitle"
-                :style="{ 'background-color': article.color.background }"
+                @mouseover="article.isHovered = true"
+                @mouseout="article.isHovered = false"
+                :style="{
+                    'background-color': article.isHovered
+                        ? article.color.color
+                        : article.color.background,
+                }"
             >
                 <router-link
+                    class="router-link"
                     :to="{
                         name: 'DynamicContent',
                         params: { topic: article.shortTitle },
                     }"
-                    :class="{ 'hovered-link': isHovered }"
-                    @mouseover="this.isHovered = true"
-                    @mouseout="this.isHovered = false"
                     :style="{
-                        color: this.isHovered
+                        color: article.isHovered
                             ? article.color.background
                             : article.color.color,
-                        'background-color': isHovered
-                            ? article.color.color
-                            : article.color.background,
                     }"
                 >
                     {{ article.shortTitle }}
@@ -74,7 +75,6 @@ export default {
             editMode: false,
             topics: dyes,
             expanded: true,
-            // buttonStoppedColor: this.hexStringToHsl('#FF0000'),
         }
     },
     computed: {
@@ -214,22 +214,20 @@ li {
     line-height: 1.5;
     padding: 0 0.5rem;
 }
-
-.router-link a {
-    position: absolute;
-    top: 0;
-    left: 0;
+.router-link {
     display: block;
     width: 100%;
     height: 100%;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
+
+    transition: all 0.2s ease;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-.router-link a:hover {
-    background-color: var(
-        --hover-color
-    ); /* Use CSS variable for hover background color */
-    color: var(--hover-bg-color); /* Use CSS variable for hover text color */
+.router-link:hover {
+    cursor: pointer;
 }
 
 .slide-enter-active,
@@ -285,12 +283,6 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.link {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
 }
 
 .special-page-link,
