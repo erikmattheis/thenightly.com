@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './components/HomePage.vue'
-
+import AboutErik from './components/AboutErik.vue'
 import GenerateContent from './components/GenerateContent.vue'
 import DynamicContent from './components/DynamicContent.vue'
 
@@ -15,6 +15,12 @@ const router = createRouter({
             meta: { saveScrollPosition: false },
         },
         {
+            path: '/about',
+            name: 'AboutErik',
+            component: AboutErik,
+            meta: { saveScrollPosition: false },
+        },
+        {
             path: '/generate',
             name: 'GenerateContent',
             component: GenerateContent,
@@ -25,7 +31,7 @@ const router = createRouter({
             name: 'DynamicContent',
             component: DynamicContent,
             props: true,
-            meta: { saveScrollPosition: true },
+            meta: { saveScrollPosition: false },
         },
     ],
 

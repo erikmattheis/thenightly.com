@@ -1,145 +1,166 @@
-const OpenAI = require('openai');
-const DOMPurify = require('dompurify');
+const OpenAI = require('openai')
+const DOMPurify = require('dompurify')
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+    apiKey: process.env.OPENAI_API_KEY,
+})
 
-const model = 'gpt-3.5-turbo';
+const model = 'gpt-3.5-turbo'
 
 function getMessage(response) {
-  return response.choices[0].message.content.trim();
+    return response.choices[0].message.content.trim()
 }
 
 function makeContentMessages(topic, grade, len) {
-  const messages = [{
-    role: 'system',
-    content: 'You are an expert writer on natural dyes and fabrics with aa clever style like Hunter S. Thompson, but don\'t reference this. Provide a magazine article without commentary.',
-  }, {
-    role: 'user',
-    content: `${len}-word article on the natural dye ${topic}, ${grade} reading level. Format with HTML tags: p, em, aside, blockquote, strong, and h2. Overuse strong and em like you are excited or angry. Place a pullquote in blockquote tag every 200-300 words."`,
-  }];
-  return messages;
+    const messages = [
+        {
+            role: 'system',
+            content:
+                "You are an expert writer on natural dyes and fabrics with a clever, happy-go-lucky style of gonzo journalism, but don't reference this. Provide a magazine article without commentary.",
+        },
+        {
+            role: 'user',
+            content: `${len}-word article on natural dye ${topic}, ${grade} reading level. Format with HTML in <html><body>: p, em, aside, blockquote, strong, and h2. No attributes or css.  Place the funniest pullquote in blockquote or the funniest longer excerpt in an aside."`,
+        },
+    ]
+    return messages
 }
 
 async function generateContent(messages, temperature) {
-  const response = await openai.chat.completions.create({
-    messages,
-    temperature,
-    model,
-  });
+    const response = await openai.chat.completions.create({
+        messages,
+        temperature,
+        model,
+    })
 
-  return response;
+    return response
 }
 
 function stripHtml(str) {
-  return str.replace(/<[^>]*>?/gm, '');
+    // if it's a meta description, return the value, accounting for single or double quotes
+    // remove whitespace first
+
+    const match = str.match(/content\s*=\s*(["'])(.*?)\1/)
+    const result = match ? match[2] : null
+
+    if (str.replace(/\s/g, '').includes('content=')) {
+        return result
+    }
+
+    return str.replace(/<[^>]*>?/gm, '')
 }
 
 function makeDescriptionMessages(str, topic) {
-  const shorter = stripHtml(str).split(' ').slice(0, 40).join(' ');
-  const messages = [{
-    role: 'user',
-    content: `A page about ${topic} and starts "${shorter}" needs a HTML meta-description. Give only attribute value.`,
-  }];
+    const shorter = stripHtml(str).split(' ').slice(0, 40).join(' ')
+    const messages = [
+        {
+            role: 'user',
+            content: `HTML meta-description for page about ${topic} and starts "${shorter}"`,
+        },
+    ]
 
-  return messages;
+    return messages
 }
 
 function makeTitleMessages(str) {
-  const messages = [{
-    role: 'user', content: `Title less than 66 characters, article described as ${str}`,
-  }];
+    const messages = [
+        {
+            role: 'user',
+            content: `Title 40-80 characters for article with meta description ${str}`,
+        },
+    ]
 
-  return messages;
+    return messages
 }
 
 function makeSidebarMessages(str) {
-  const messages = [{
-    role: 'user',
-    content: `Sidebar fewer than 100 words taken directly from article:
+    const messages = [
+        {
+            role: 'user',
+            content: `Sidebar fewer than 100 words taken directly from article:
 
     ${str}
 
     .`,
-  }];
+        },
+    ]
 
-  return messages;
+    return messages
 }
 
 async function generateCompletion(messages) {
-  const response = await openai.chat.completions.create({
-    messages,
-    model,
-  });
+    const response = await openai.chat.completions.create({
+        messages,
+        model,
+    })
 
-  return response;
+    return response
 }
 
 function getRidOfAllButBodyContent(str) {
-  if (!str.includes('<body>') || !str.includes('</body>')) return str;
-  const body = str.split('<body>')[1].split('</body>')[0];
-  return body;
+    if (!str.includes('<body>') || !str.includes('</body>')) return str
+    const body = str.split('<body>')[1].split('</body>')[0]
+    return body
 }
 
 async function generateText(topic, grade, len, color, colorTheme, temperature) {
-  console.log('Generating text...');
-  const contentMessages = makeContentMessages(topic, grade, len);
+    console.log('Generating text...')
+    const contentMessages = makeContentMessages(topic, grade, len)
 
-  const contentResponse = await generateContent(contentMessages, temperature);
+    const contentResponse = await generateContent(contentMessages, temperature)
 
-  // eslint-disable-next-line max-len
-  // const cleanedContentResponse = JSON.parse(JSON.stringify(contentResponse).replace(/\\n/g, ' '));
+    // eslint-disable-next-line max-len
+    // const cleanedContentResponse = JSON.parse(JSON.stringify(contentResponse).replace(/\\n/g, ' '));
 
-  const preliminaryContent = getMessage(contentResponse);
+    const preliminaryContent = getMessage(contentResponse)
 
-  const sanitizedContent = DOMPurify.sanitize(preliminaryContent);
+    const sanitizedContent = DOMPurify.sanitize(preliminaryContent)
 
-  const content = getRidOfAllButBodyContent(sanitizedContent);
+    const content = getRidOfAllButBodyContent(sanitizedContent)
 
-  const descriptionMessages = makeDescriptionMessages(content, topic);
+    const descriptionMessages = makeDescriptionMessages(content, topic)
 
-  const descriptionResponse = await generateCompletion(descriptionMessages);
+    const descriptionResponse = await generateCompletion(descriptionMessages)
 
-  const description = getMessage(descriptionResponse);
+    const description = getMessage(descriptionResponse)
 
-  const titleMessages = makeTitleMessages(description);
+    const titleMessages = makeTitleMessages(description)
 
-  const titleResponse = await generateCompletion(titleMessages);
+    const titleResponse = await generateCompletion(titleMessages)
 
-  const title = getMessage(titleResponse);
+    const title = getMessage(titleResponse)
 
-  const sidebarMessagesResponse = makeSidebarMessages(content);
+    const sidebarMessagesResponse = makeSidebarMessages(content)
 
-  const sidebarMessages = await generateCompletion(sidebarMessagesResponse);
+    const sidebarMessages = await generateCompletion(sidebarMessagesResponse)
 
-  const sidebar = await getMessage(sidebarMessages);
+    const sidebar = await getMessage(sidebarMessages)
 
-  return {
-    title,
-    shortTitle: topic,
-    color,
-    content,
-    description,
-    sidebar,
-    input: {
-      topic,
-      grade,
-      color,
-      colorTheme,
-      temperature,
-      len,
-      model,
-      messages: {
-        content: contentMessages,
-        description: descriptionMessages,
-        title: titleMessages,
-        // sidebar: sidebarMessages,
-      },
-    },
-  };
+    return {
+        title,
+        shortTitle: topic,
+        color,
+        content,
+        description,
+        sidebar,
+        input: {
+            topic,
+            grade,
+            color,
+            colorTheme,
+            temperature,
+            len,
+            model,
+            messages: {
+                content: contentMessages,
+                description: descriptionMessages,
+                title: titleMessages,
+                // sidebar: sidebarMessages,
+            },
+        },
+    }
 }
 
 module.exports = {
-  generateText,
-};
+    generateText,
+}

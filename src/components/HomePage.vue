@@ -1,7 +1,7 @@
 <!-- src/views/HomePage.vue -->
 <template>
     <div class="wrapper">
-        <div class="text" v-if="!loaded">
+        <div class="text" v-if="isLoading">
             <content-loader
                 viewBox="0 0 400 460"
                 :speed="2"
@@ -57,3 +57,17 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'HomePage',
+    data() {
+        return {
+            isLoading: true,
+        }
+    },
+    mounted() {
+        this.isLoading = false
+    },
+}
+</script>
