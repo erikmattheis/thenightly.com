@@ -1,8 +1,16 @@
 <template>
     <div class="header">
         <ul class="drawer" :class="{ expanded: expanded }">
-            <li class="special-page-link">
-                <router-link to="/" class="link"> Home </router-link>
+            <li
+                class="special-page-link"
+                :style="{
+                    'background-color': homeIsHovered ? '#ffffff' : '#000000',
+                    cursor: homeIsHovered ? 'pointer' : 'default',
+                }"
+                @mouseover="homeIsHovered = true"
+                @mouseout="homeIsHovered = false"
+            >
+                <router-link to="/" class="link">Home</router-link>
             </li>
             <li class="special-page-link">
                 <router-link to="/about" class="link"> About </router-link>
@@ -17,7 +25,7 @@
                 }"
             >
                 <router-link
-                    class="link"
+                    class="link dynamic-link"
                     :to="{
                         name: 'DynamicContent',
                         params: { topic: article.shortTitle },
@@ -76,6 +84,7 @@ export default {
             editMode: false,
             topics: dyes,
             expanded: true,
+            homeIsHovered: false,
         }
     },
     computed: {
@@ -209,7 +218,10 @@ export default {
 li {
     width: calc(var(--nav-width) - 2rem);
     line-height: 1.5;
-    padding: 0 0.5rem;
+}
+
+.dynamic-link {
+    margin-left: 0.5rem;
 }
 
 li:hover {
@@ -282,6 +294,12 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.special-page-link {
+    padding-right: 0.5rem;
+    margin-right: -0.5rem;
+    width: calc(var(--nav-width) - 2rem) !important;
 }
 
 .special-page-link,

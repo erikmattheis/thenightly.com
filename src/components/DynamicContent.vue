@@ -177,7 +177,6 @@ header::before {
 }
 
 .headline {
-    font-size: 5rem;
     font-weight: 700;
     position: relative;
     /*z-index: 1;*/
