@@ -68,73 +68,19 @@
 </template>
 
 <script>
-import axios from 'axios'
-import DOMPurify from 'dompurify'
-import dyes from '../data/dyes.json'
 import LoadingMessage from './LoadingMessage.vue'
 import { contrastingColor } from '../services/colors.js'
 
 export default {
-    name: 'DynamicContent',
+    name: 'AboutErik',
     components: { LoadingMessage },
-    props: {
-        topic: {
-            type: String,
-            required: true,
-        },
-    },
     data() {
         return {
-            editMode: false,
-            articles: dyes,
-            article: {},
-            originalArticle: {},
             isLoading: false,
             darken: false,
         }
     },
-    computed: {
-        disabled() {
-            return (
-                this.article.title !== this.originalArticle.title ||
-                this.article.shortTitle !== this.originalArticle.shortTitle ||
-                this.article.content !== this.originalArticle.content
-            )
-        },
-    },
-    created() {
-        this.setArticle(this.topic)
-    },
-    watch: {
-        '$route.params.topic': {
-            immediate: true,
-            handler(topic) {
-                this.setArticle(topic)
-            },
-        },
-    },
     methods: {
-        setArticle(topic) {
-            this.article = this.articles.find((article) => {
-                return article.topic === topic
-            })
-            this.originalArticle = JSON.parse(JSON.stringify(this.article))
-            this.article.content = DOMPurify.sanitize(this.article.content)
-            this.article = this.addColorObject(this.article)
-        },
-        addColorObject(article) {
-            return {
-                ...article,
-                color: {
-                    background: article.color,
-                    color: contrastingColor(article.color),
-                },
-            }
-        },
-        async submitForm(article) {
-            const result = await axios.post('/article', article)
-            console.log(result)
-        },
     },
 }
 </script>
@@ -146,76 +92,5 @@ h2, h3 {
   font-weight: 700;
   font-style: italic;
 
-}
-.main-image {
-    width: 100%;
-    height: auto;
-}
-.loading-image {
-    width: 100%;
-    height: auto;
-}
-
-header {
-    position: relative;
-    width: calc(100% - 2rem);
-    height: 100%;
-    padding: 1rem;
-    overflow: hidden;
-    text-align: right;
-}
-
-header::before {
-    position: absolute;
-    top: -7rem;
-    left: 0;
-    /* z-index: 0; */
-    width: 100%;
-    content: attr(data-background-title);
-    word-break: break-word;
-    font-size: 7rem;
-    font-weight: 700;
-    font-style: italic;
-    line-height: 0.9;
-    color: var(--color-shade);
-    overflow: hidden;
-}
-
-.headline {
-    font-weight: 700;
-    position: relative;
-    /*z-index: 1;*/
-}
-
-.image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    padding-top: 56.89%;
-    overflow: hidden;
-}
-
-.main-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.content {
-    padding: 3rem;
-    background-color: #ffffff99;
-    backdrop-filter: lighten(0.5);
-}
-
-input,
-textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
 }
 </style>
