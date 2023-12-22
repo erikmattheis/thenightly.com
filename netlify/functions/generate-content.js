@@ -67,12 +67,12 @@ function addDateSuffix(str) {
 // eslint-disable-next-line func-names
 async function generateArticles() {
     try {
-        const batch = 'w2' // batchStr || 'w1';
-        const x = 10
+        const batch = '23.12.22'
+        const x = 11110
         // skip first x of array
-        const topics = dyes.splice(0, x)
+        const topics = dyes
         // only use first few topics for now
-        topics.length = 1
+        topics.length = 10
 
         const colorThemes = [
             {
@@ -115,7 +115,6 @@ async function generateArticles() {
                 colorThemeDescription,
                 id
             )
-            console.log('image', JSON.stringify(image, null, 2))
 
             const temperature = Math.random() + 0.3
 
@@ -150,11 +149,11 @@ async function generateArticles() {
             // eslint-disable-next-line no-await-in-loop
             await saveArticle('dyes', doc, id)
         }
-    } catch {
-        console.log('error')
+    } catch (error) {
+        console.log('error', error)
     }
 
-    await generateJson.handler()
+    //await generateJson.handler()
 
     console.log('Done.')
 

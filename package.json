@@ -17,6 +17,7 @@
     "firebase-admin": "^11.11.1",
     "gm": "^1.25.0",
     "install": "^0.13.0",
+    "jsdom": "^23.0.1",
     "json-editor-vue": "^0.11.2",
     "npm": "^10.2.4",
     "oh-vue-icons": "^1.0.0-rc3",

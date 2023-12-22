@@ -39,6 +39,33 @@ export default {
     justify-content: center;
 }
 
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+.h1 {
+    position: relative;
+    z-index: 1;
+    margin: 4rem 0;
+}
+
+.h1::before {
+    content: '';
+    position: absolute;
+    top: 0.8rem;
+    left: -10.8rem;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    transform: skew(-18deg);
+}
+
 .spa {
     max-width: 50rem;
 }

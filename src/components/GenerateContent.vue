@@ -2,16 +2,6 @@
 <template>
     <div>
         <button @click="createInitialData()">Create Initial Data</button>
-        <h1>Generate Content</h1>
-        <input v-model="topic" placeholder="Type topic here" /><br />
-        <input v-model="grade" placeholder="Type grade here" /><br />
-        <input v-model="len" placeholder="Type length here" /><br />
-        <button @click="newParams">New Params</button><br />
-        <h1>{{ title }}</h1>
-        <p>{{ description }}</p>
-        <div v-html="content"></div>
-        <div v-html="sidebar"></div>
-        <button @click="saveContent()">Save Content</button>
     </div>
 </template>
 
@@ -28,7 +18,6 @@ export default {
             title: '',
             description: '',
             content: '',
-            sidebar: '',
         }
     },
     created() {
@@ -36,11 +25,10 @@ export default {
     },
     methods: {
         async createInitialData() {
-            await axios.post('/.netlify/functions/generatecontent-background', {
-                topic: 'test',
-                grade: 'College',
-                len: 100,
-            })
+            await axios.post(
+                '/.netlify/functions/generate-content-background',
+                {}
+            )
         },
 
         async saveContent() {

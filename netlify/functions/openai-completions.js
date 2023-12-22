@@ -1,11 +1,16 @@
 const OpenAI = require('openai')
-const DOMPurify = require('dompurify')
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 })
-
 const model = 'gpt-3.5-turbo'
+
+const jsdom = require('jsdom')
+const { JSDOM } = jsdom
+
+const window = new JSDOM('').window
+const createDOMPurify = require('dompurify')
+const DOMPurify = createDOMPurify(window)
 
 function getMessage(response) {
     return response.choices[0].message.content.trim()
@@ -16,7 +21,7 @@ function makeContentMessages(topic, grade, len) {
         {
             role: 'system',
             content:
-                "You are an expert writer on natural dyes and fabrics with a clever, happy-go-lucky style of gonzo journalism, but don't reference this. Provide a magazine article without commentary.",
+                "You are an expert writer on natural dyes and fabrics with a clever, happy-go-lucky style of 1970s gonzo journalism, but don't reference this. Provide a magazine article without commentary.",
         },
         {
             role: 'user',
@@ -73,21 +78,6 @@ function makeTitleMessages(str) {
     return messages
 }
 
-function makeSidebarMessages(str) {
-    const messages = [
-        {
-            role: 'user',
-            content: `Sidebar fewer than 100 words taken directly from article:
-
-    ${str}
-
-    .`,
-        },
-    ]
-
-    return messages
-}
-
 async function generateCompletion(messages) {
     const response = await openai.chat.completions.create({
         messages,
@@ -130,19 +120,12 @@ async function generateText(topic, grade, len, color, colorTheme, temperature) {
 
     const title = getMessage(titleResponse)
 
-    const sidebarMessagesResponse = makeSidebarMessages(content)
-
-    const sidebarMessages = await generateCompletion(sidebarMessagesResponse)
-
-    const sidebar = await getMessage(sidebarMessages)
-
     return {
         title,
         shortTitle: topic,
         color,
         content,
         description,
-        sidebar,
         input: {
             topic,
             grade,
@@ -155,7 +138,6 @@ async function generateText(topic, grade, len, color, colorTheme, temperature) {
                 content: contentMessages,
                 description: descriptionMessages,
                 title: titleMessages,
-                // sidebar: sidebarMessages,
             },
         },
     }
