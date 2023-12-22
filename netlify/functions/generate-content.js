@@ -73,7 +73,7 @@ async function generateArticles() {
         const topics = dyes
 
         // skip first 20 members
-        topics.splice(0, 25)
+        topics.splice(0, 39)
         // only use first few topics for now
         //topics.length = 10
 

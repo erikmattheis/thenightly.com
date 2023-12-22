@@ -22,7 +22,7 @@
                         :alt="article.shortTitle"
                         class="loading-image"
                         @loaded="isLoading = false"
-                    />"
+                    />
                 </div>
             </div>
             <div v-else>
@@ -43,7 +43,13 @@
                     />
                 </div>
             </div>
-            <div v-html="article.content" class="content"></div>
+            <section class="content">
+                <img
+                    :src="article.image.compressed"
+                    :alt="article.shortTitle"
+                />
+                <span v-html="article.content"></span>
+            </section>
         </div>
         <div v-else>
             <form @submit.prevent="submitForm(article)">
