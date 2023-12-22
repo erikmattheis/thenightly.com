@@ -1,6 +1,5 @@
 <template>
     <article class="wrapper">
-
         <div v-if="isLoading" class="wrapper">
             <header style="background-color: #00000099;
                     color: #ffffff;"
@@ -46,12 +45,12 @@
                 like BMW, Coca-Cola, and NASA.</p>
                 
             <p>I have Agile experience as a scrum master and developer. Co-led 
-              a Meetup for entrepreneurs interested in Lean startup methods that involved game-like role-playing excercizes.
+              a Meetup for entrepreneurs interested in Lean startup methods that involved role-playing exercises.
               Independent contractor since 2012, crafting solutions for Articl.net, Grocery Shopping
                 Network, Authentic A Tees and more.</p>
                 
                 <p><h3>Let's Talk</h3> I'm open to turning your ideas into digital wonders—especially if it
-                involves a good laugh. Reach out at <a href="mailto:erik@mattheis.org">erik@mattheis.org</a> or
+                involves a vexing puzzle. Reach out at <a href="mailto:erik@mattheis.org">erik@mattheis.org</a> or
                 (M) <a href="tel:612-377-2272">612-377-2272</a>. If you're willing to pay for brilliance (and
                 maybe a dad joke or two), I'm your developer!</p>
 
@@ -97,6 +96,5 @@ h2, h3 {
   font-style: italic;
   line-height: 1;
   margin: 0 
-
 }
 </style>

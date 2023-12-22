@@ -92,20 +92,12 @@ const dyes = [
         color: '#FFD700',
     },
     {
-        name: 'Cow Urine',
-        color: '#FFD700',
-    },
-    {
         name: 'Cumin',
         color: '#924321',
     },
     {
         name: 'Dandelion',
         color: '#FED85D',
-    },
-    {
-        name: "Dragon's Blood",
-        color: '#A8452F',
     },
     {
         name: 'Dutch Pink',
@@ -158,6 +150,10 @@ const dyes = [
     {
         name: 'Hollyhock',
         color: '#B666D2',
+    },
+    {
+        name: 'Indian Yellow',
+        color: '#FFD700',
     },
     {
         name: 'Indigo',

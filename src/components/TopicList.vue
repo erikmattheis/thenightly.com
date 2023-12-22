@@ -48,6 +48,7 @@
                 @touchstart.prevent="toggleDrawerTouch()"
                 class="top-control"
                 style="padding: 0.4rem"
+                @click.prevent="$router.push({ path: '/' })"
             >
                 <svg
                     viewBox="165.943 85.0498 135.385 85.1675"

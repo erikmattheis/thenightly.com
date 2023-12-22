@@ -69,10 +69,13 @@ async function generateArticles() {
     try {
         const batch = '23.12.22'
         const x = 11110
-        // skip first x of array
+
         const topics = dyes
+
+        // skip first 20 members
+        topics.splice(0, 25)
         // only use first few topics for now
-        topics.length = 10
+        //topics.length = 10
 
         const colorThemes = [
             {

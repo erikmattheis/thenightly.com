@@ -21,7 +21,7 @@ function makeContentMessages(topic, grade, len) {
         {
             role: 'system',
             content:
-                "You are an expert writer on natural dyes and fabrics with a clever, happy-go-lucky style of 1970s gonzo journalism, but don't reference this. Provide a magazine article without commentary.",
+                "You are a non-fiction writer with a clever, happy-go-lucky of 1970s gonzo journalism style, but don't reference this. Provide an article without commentary. You write for a website with many articles on natural fabrics and dyes.",
         },
         {
             role: 'user',

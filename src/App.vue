@@ -1,8 +1,9 @@
 <!-- src/App.vue -->
 <template>
-    <div class="dynamic">
-        <h1 :style="{ color: color }">NATURALLY HUED</h1>
-
+    <div class="dynamic wrapper">
+        <div class="headline">
+            <h1 :style="{ color: color }">NATURALLY HUED</h1>
+        </div>
         <div class="spa">
             <RouterView></RouterView>
         </div>
@@ -48,13 +49,17 @@ h1 {
     padding: 0;
 }
 
-.h1 {
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 1;
-    margin: 4rem 0;
+    margin: 2rem 0 3rem 0;
+    height: 4rem; /* Adjust this as needed */
 }
 
-.h1::before {
+h1::before {
     content: '';
     position: absolute;
     top: 0.8rem;

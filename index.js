@@ -10,7 +10,7 @@ const { handler } = require('./netlify/functions/generate-json')
 async function run() {
     const result = await generateArticles()
 
-    //const result = await handler()
+    const result2 = await handler()
 
     process.exit(0)
 }
