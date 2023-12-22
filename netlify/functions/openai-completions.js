@@ -25,7 +25,7 @@ function makeContentMessages(topic, grade, len) {
         },
         {
             role: 'user',
-            content: `${len}-word article on natural dye ${topic}, ${grade} reading level. Format with HTML in <html><body>: p, em, aside, blockquote, strong, and h2. No attributes or css.  Place the funniest pullquote in blockquote or the funniest longer excerpt in an aside."`,
+            content: `${len}-word article on natural dye ${topic}, ${grade} reading level. Format with HTML: p, em, aside, blockquote, strong, and h2. No attributes or css.  Sometime after the third paragraph, place the funniest pullquote in blockquote or the funniest longer excerpt in an aside."`,
         },
     ]
     return messages

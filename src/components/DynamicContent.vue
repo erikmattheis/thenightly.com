@@ -44,11 +44,7 @@
                 </div>
             </div>
             <section class="content">
-                <img
-                    :src="article.image.compressed"
-                    :alt="article.shortTitle"
-                />
-                <span v-html="article.content"></span>
+                <span v-html="formattedContent"></span>
             </section>
         </div>
         <div v-else>
@@ -112,6 +108,19 @@ export default {
     },
     created() {
         this.setArticle(this.topic)
+    },
+    computed: {
+        formattedContent() {
+            const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" style="width:40%; float:right"/>`
+
+            const paragraphs = this.article.content.split('</p>')
+            if (paragraphs.length < 3) {
+                return this.article.content + img
+            }
+            paragraphs.splice(2, 0, img)
+
+            return paragraphs.join('</p>')
+        },
     },
     watch: {
         '$route.params.topic': {
