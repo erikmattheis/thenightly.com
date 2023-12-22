@@ -17,7 +17,7 @@
                 }"
             >
                 <router-link
-                    class="router-link"
+                    class="link"
                     :to="{
                         name: 'DynamicContent',
                         params: { topic: article.shortTitle },
@@ -37,7 +37,7 @@
         </ul>
         <div class="floating-button">
             <button
-                @click.prevent="toggleDrawer"
+                @touchstart.prevent="toggleDrawerTouch()"
                 class="top-control"
                 style="padding: 0.4rem"
             >
@@ -121,7 +121,7 @@ export default {
             ...this.topics,
             ...this.topics,
         ]
-        //window.addEventListener('mousemove', this.handleMouseMove)
+        window.addEventListener('mousemove', this.handleMouseMove)
     },
     beforeUnmount() {
         window.removeEventListener('mousemove', this.handleMouseMove)
@@ -140,10 +140,7 @@ export default {
                 this.expanded = false
             }
         },
-        toggleDrawer() {
-            console.log('toggleDrawer', this.expanded ? 'expands' : 'contracts')
-            this.expanded = !this.expanded
-        },
+
         toggleDrawerTouch() {
             console.log(
                 'toggleDrawerTouch',
@@ -214,10 +211,11 @@ li {
     line-height: 1.5;
     padding: 0 0.5rem;
 }
+
 li:hover {
     cursor: pointer;
 }
-.router-link {
+.link {
     display: block;
     width: 100%;
     height: 100%;
@@ -227,7 +225,7 @@ li:hover {
     font-weight: 700;
 }
 
-.router-link:hover {
+.link:hover {
     cursor: pointer;
 }
 
@@ -292,6 +290,11 @@ ul {
     text-align: right;
     background-color: black;
     color: white;
+}
+
+.special-page-link a:hover {
+    color: black;
+    background-color: white;
 }
 
 button {

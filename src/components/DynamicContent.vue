@@ -39,6 +39,7 @@
                         :src="article.image.compressed"
                         :alt="article.shortTitle"
                         class="main-image"
+                        @loaded="isLoading = false"
                     />
                 </div>
             </div>
@@ -104,13 +105,25 @@ export default {
         },
     },
     created() {
-        this.article = this.addColorObject(
-            this.articles.find((article) => article.shortTitle === this.topic)
-        )
-        this.article.content = DOMPurify.sanitize(this.article.content)
-        this.originalArticle = JSON.parse(JSON.stringify(this.article))
+        this.setArticle(this.topic)
+    },
+    watch: {
+        '$route.params.topic': {
+            immediate: true,
+            handler(topic) {
+                this.setArticle(topic)
+            },
+        },
     },
     methods: {
+        setArticle(topic) {
+            this.article = this.articles.find((article) => {
+                return article.topic === topic
+            })
+            this.originalArticle = JSON.parse(JSON.stringify(this.article))
+            this.article.content = DOMPurify.sanitize(this.article.content)
+            this.article = this.addColorObject(this.article)
+        },
         addColorObject(article) {
             return {
                 ...article,
