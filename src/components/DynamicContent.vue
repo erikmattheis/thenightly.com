@@ -36,8 +36,23 @@
                         :style="{
                             'background-image': `url(${article.image.compressed})`,
                             'background-size': 'cover',
+                            position: relative,
                         }"
                     >
+                        <img
+                            :src="article.image.compressed"
+                            :alt="article.shortTitle"
+                            @loaded="isLoading = false"
+                            style="
+                                float: right;
+                                width: 40%;
+                                top: 3em;
+                                position: absolute;
+                                bottom: 30%;
+                                left: 2em;
+                                z-index: -1;
+                            "
+                        />
                         <h1>
                             {{ article.title }}
                         </h1>
