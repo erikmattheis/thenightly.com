@@ -19,6 +19,7 @@ body {
 }
 
 
+
 h1 {
   margin: 0;
 }
@@ -30,6 +31,31 @@ h3 {
   font-weight: 900 !important;
   font-family: var(--serif-font);
   letter-spacing: 0.1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  line-height: 1.5;
+  backdrop-filter: blur(5px);
+}
+
+.headline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin: 2rem 0 3rem 0;
+}
+
+.headline::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 110%;
+  height: 100%;
+  background: #ccc;
+  transform: translateX(0%) skew(-18deg);
 }
 
 blockquote {

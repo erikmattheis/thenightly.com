@@ -49,28 +49,8 @@ h1 {
     padding: 0;
 }
 
-.headline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    margin: 2rem 0 3rem 0;
-}
-
-.headline::before {
-    content: '';
-    position: absolute;
-
-    z-index: -1;
-    width: 110%;
-    height: 100%;
-    background: #ccc;
-    transform: translateX(0%) skew(-18deg);
-}
-
 .spa {
-    max-width: 50rem;
+    max-width: 44rem;
 }
 
 .nav {

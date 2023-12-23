@@ -22,7 +22,7 @@
             </div>
         </div>
         <div v-else>
-          <header style="background-color: #00000099;
+          <header class="headline" style="background-color: #00000099;
                     color: #ffffff;"
             >            
             <p><h2>About</h2> the Developer</p>

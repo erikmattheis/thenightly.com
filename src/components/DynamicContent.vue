@@ -32,7 +32,16 @@
                         color: article.color.color,
                     }"
                 >
-                    <h1 class="headline">{{ article.title }}</h1>
+                    <div
+                        :style="{
+                            'background-image': `url(${article.image.compressed})`,
+                            'background-size': 'cover',
+                        }"
+                    >
+                        <h1>
+                            {{ article.title }}
+                        </h1>
+                    </div>
                 </header>
                 <div class="image-container">
                     <img

@@ -27,7 +27,8 @@
     "vite": "^5.0.0",
     "vue": "^3.3.8",
     "vue-content-loader": "^2.0.1",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
