@@ -71,7 +71,7 @@ function makeTitleMessages(str) {
     const messages = [
         {
             role: 'user',
-            content: `Title 40-80 characters for article with meta description ${str}`,
+            content: `Title 40-80 characters long for article with meta description ${str}`,
         },
     ]
 

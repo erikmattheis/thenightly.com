@@ -235,7 +235,6 @@ li:hover {
     transition: all 0.2s ease;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 700;
 }
 
 .link:hover {

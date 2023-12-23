@@ -86,7 +86,6 @@ p {
 h2,
 h3 {
     display: inline;
-    font-weight: 700;
     font-style: italic;
     line-height: 1;
     margin: 0;

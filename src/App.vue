@@ -56,19 +56,17 @@ h1 {
     position: relative;
     z-index: 1;
     margin: 2rem 0 3rem 0;
-    height: 4rem; /* Adjust this as needed */
 }
 
-h1::before {
+.headline::before {
     content: '';
     position: absolute;
-    top: 0.8rem;
-    left: -10.8rem;
+
     z-index: -1;
-    width: 100%;
+    width: 110%;
     height: 100%;
     background: #ccc;
-    transform: skew(-18deg);
+    transform: translateX(0%) skew(-18deg);
 }
 
 .spa {

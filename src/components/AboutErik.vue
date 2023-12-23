@@ -14,7 +14,7 @@
                     secondaryColor="#00000099"
                 />
                 <img
-                    src="/assets/erik.jpg"
+                    src="https://storage.googleapis.com/nightly-images/assets/Erik.jpg"
                     alt="Erik Mattheis"
                     class="loading-image"
                     @loaded="isLoading = false"
@@ -29,7 +29,7 @@
             </header>
             <div class="image-container">
                 <img
-                    src="/assets/Erik.jpg"
+                    src="https://storage.googleapis.com/nightly-images/assets/Erik.jpg"
                     alt="Erik Mattheis"
                     class="main-image"
                     @loaded="isLoading = false"
@@ -92,7 +92,6 @@ p {
 
 h2, h3 {
   display: inline;
-  font-weight: 700;
   font-style: italic;
   line-height: 1;
   margin: 0 
