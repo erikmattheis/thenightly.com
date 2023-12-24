@@ -36,7 +36,7 @@
                         :style="{
                             'background-image': `url(${article.image.compressed})`,
                             'background-size': 'cover',
-                            position: relative,
+                            position: 'relative',
                         }"
                     >
                         <img
@@ -48,12 +48,19 @@
                                 width: 40%;
                                 top: 3em;
                                 position: absolute;
+                                border: 5px solid red;
                                 bottom: 30%;
                                 left: 2em;
                                 z-index: -1;
                             "
                         />
-                        <h1>
+                        <h1 v-if="article.title.length > 30">
+                            {{ firstThirdWords }}
+                        </h1>
+                        <h3 v-if="article.title.length > 30">
+                            {{ restWords }}
+                        </h3>
+                        <h1 v-else>
                             {{ article.title }}
                         </h1>
                     </div>
@@ -122,6 +129,18 @@ export default {
         }
     },
     computed: {
+        words() {
+            console.log('this.article.title', this.article.title)
+            return this.article.title.split(' ')
+        },
+        firstThirdWords() {
+            return this.words
+                .slice(0, Math.ceil(this.words.length / 3))
+                .join(' ')
+        },
+        restWords() {
+            return this.words.slice(Math.ceil(this.words.length / 3)).join(' ')
+        },
         disabled() {
             return (
                 this.article.title !== this.originalArticle.title ||

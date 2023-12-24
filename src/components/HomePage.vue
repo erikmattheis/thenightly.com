@@ -2,13 +2,13 @@
 <template>
     <div class="content">
         <header style="background-color: #00000099;
-                    color: #ffffff;"
-            >            
-            <p><h2>About</h2> on an AI-Infused Exploration</p>
-            </header>
+                    color: #ffffff; background-blend-mode: multiply;">
+            <p>
+            <h2>Embark</h2> on an AI-Infused Exploration</p>
+        </header>
         <article class="wrapper">
             <div class="text">
-                <h2>Embark</h2>
+                <h2>About</h2>
 
                 <p>
                     Dive intoating world of natural dyes and fabrics, where
@@ -29,7 +29,8 @@
                 </p>
             </div>
             <blockquote>
-                "The dye told the cloth, 'It's not you, it's dye.' Sometimes you just have to leave and see the rainbow on the other side!"
+                "The dye told the cloth, 'It's not you, it's dye.' Sometimes you just have to leave and see the rainbow on
+                the other side!"
             </blockquote>
             <div class="text">
                 <h2>Explore the World of Natural Dyes</h2>
@@ -75,9 +76,11 @@ export default {
 h2 {
     font-size: 3rem;
 }
+
 h3 {
     font-size: 2.5rem;
 }
+
 p {
     font-size: 1.25rem;
     line-height: 1.8;
@@ -89,5 +92,4 @@ h3 {
     font-style: italic;
     line-height: 1;
     margin: 0;
-}
-</style>
+}</style>
