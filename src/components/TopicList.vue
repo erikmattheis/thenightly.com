@@ -1,6 +1,10 @@
 <template>
-    <div class="header">
-        <ul class="drawer" :class="{ expanded: expanded }">
+    <div class="header drawer-container">
+        <ul
+            class="drawer"
+            :class="{ expanded: expanded }"
+            style="max-height: 100vh; overflow-y: auto"
+        >
             <li class="special-link">
                 <router-link to="/" class="link">Home</router-link>
             </li>
@@ -43,6 +47,7 @@
                 @click.prevent="$router.push({ path: '/' })"
             >
                 <svg
+                    aria-hidden="true"
                     viewBox="165.943 85.0498 135.385 85.1675"
                     width="100%"
                     height="100%"
@@ -61,6 +66,7 @@
                         style="fill: rgb(0, 121, 191)"
                     />
                 </svg>
+                <span class="sr-only">Menu</span>
             </button>
         </div>
     </div>
@@ -171,6 +177,7 @@ export default {
     scrollbar-width: none;
 
     -ms-overflow-style: none;
+    overflow-y: scroll;
 }
 
 .floating-button {

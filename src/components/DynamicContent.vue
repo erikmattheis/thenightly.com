@@ -1,96 +1,48 @@
 <template>
     <article class="wrapper">
-        <div v-if="!editMode">
-            <div v-if="isLoading" class="wrapper">
-                <header
-                    :style="{
-                        'background-color': `${article.color.background}99`,
-                        color: article.color.color,
-                    }"
-                    v-html="article.title"
-                ></header>
-                <div class="image-container">
-                    <LoadingMessage
-                        class="main-image"
-                        :isLoading="isLoading"
-                        :primaryColor="article.color.background"
-                        :secondaryColor="article.color.color"
-                    />
-                    <img
-                        :src="article.image.compressed"
-                        :alt="article.shortTitle"
-                        class="loading-image"
-                        @loaded="isLoading = false"
-                    />
-                </div>
+        <header
+            :style="{
+                'background-color': `${article.color.background}99`,
+                color: article.color.color,
+            }"
+        >
+            <div
+                :style="{
+                    'background-image': `url(${article.image.compressed})`,
+                    'background-size': 'cover',
+                    position: 'relative',
+                }"
+            >
+                <img
+                    :src="article.image.compressed"
+                    :alt="article.shortTitle"
+                    @loaded="isLoading = false"
+                    style="
+                        float: right;
+                        width: 40%;
+                        top: 3em;
+                        position: absolute;
+                        border: 5px solid red;
+                        bottom: 30%;
+                        left: 2em;
+                        z-index: -1;
+                        margin: -3rem 0 0 0;
+                    "
+                />
+                <span v-html="formattedTitle"></span>
             </div>
-            <div v-else>
-                <header
-                    :style="{
-                        'background-color': `${article.color.background}99`,
-                        color: article.color.color,
-                    }"
-                >
-                    <div
-                        :style="{
-                            'background-image': `url(${article.image.compressed})`,
-                            'background-size': 'cover',
-                            position: 'relative',
-                        }"
-                    >
-                        <img
-                            :src="article.image.compressed"
-                            :alt="article.shortTitle"
-                            @loaded="isLoading = false"
-                            style="
-                                float: right;
-                                width: 40%;
-                                top: 3em;
-                                position: absolute;
-                                border: 5px solid red;
-                                bottom: 30%;
-                                left: 2em;
-                                z-index: -1;
-                                margin: -3rem 0 0 0;
-                            "
-                        />
-                        <span v-html="formattedTitle"></span>
-                    </div>
-                </header>
-                <div class="image-container">
-                    <img
-                        :src="article.image.compressed"
-                        :alt="article.shortTitle"
-                        class="main-image"
-                        @loaded="isLoading = false"
-                    />
-                </div>
-            </div>
-            <section class="content">
-                <span v-html="formattedContent"></span>
-            </section>
+        </header>
+        <div class="image-container">
+            <img
+                :src="article.image.compressed"
+                :alt="article.shortTitle"
+                class="main-image"
+                @loaded="isLoading = false"
+            />
         </div>
-        <div v-else>
-            <form @submit.prevent="submitForm(article)">
-                <label>
-                    Title
-                    <input type="text" v-model="article.title" /> </label
-                ><br />
-                <label>
-                    Short Title
-                    <input type="text" v-model="article.shortTitle" /> </label
-                ><br />
-                <textarea v-model="article.content"></textarea><br />
-                <button type="submit">Submit</button><br />
-                <button
-                    type="button"
-                    @click="editMode = false"
-                    :disabled="disabled"
-                >
-                    Reset
-                </button>
-            </form>
-        </div>
+        <section class="content">
+            <template v-html="formattedContent"></template>
+        </section>
     </article>
 </template>
 
@@ -238,11 +190,4 @@ export default {
 }
 </script>
 
-<style scoped>
-input,
-textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-</style>
+<style scoped></style>
