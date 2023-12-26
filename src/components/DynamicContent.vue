@@ -148,9 +148,9 @@ export default {
 
             return chunks.map((chunk, index) => {
                 if (index === h2Indexes[0] || index === h2Indexes[1]) {
-                    return `<h2 class="title">${chunk}</h2>`
+                    return `<h2 class="title"><span>${chunk}</span></h2>`
                 } else {
-                    return `<h3 class="title">${chunk}</h3>`
+                    return `<h3 class="title"><span>${chunk}</span></h3>`
                 }
             })
         },
