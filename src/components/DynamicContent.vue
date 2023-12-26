@@ -7,9 +7,8 @@
                         'background-color': `${article.color.background}99`,
                         color: article.color.color,
                     }"
-                >
-                    <h1 class="headline">{{ article.title }}</h1>
-                </header>
+                    v-html="article.title"
+                ></header>
                 <div class="image-container">
                     <LoadingMessage
                         class="main-image"
@@ -54,15 +53,7 @@
                                 z-index: -1;
                             "
                         />
-                        <h1 v-if="article.title.length > 30">
-                            {{ firstThirdWords }}
-                        </h1>
-                        <h3 v-if="article.title.length > 30">
-                            {{ restWords }}
-                        </h3>
-                        <h1 v-else>
-                            {{ article.title }}
-                        </h1>
+                        <span v-html="article.title"></span>
                     </div>
                 </header>
                 <div class="image-container">
@@ -125,32 +116,11 @@ export default {
             article: {},
             originalArticle: {},
             isLoading: false,
-            darken: false,
         }
-    },
-    computed: {
-        words() {
-            console.log('this.article.title', this.article.title)
-            return this.article.title.split(' ')
-        },
-        firstThirdWords() {
-            return this.words
-                .slice(0, Math.ceil(this.words.length / 3))
-                .join(' ')
-        },
-        restWords() {
-            return this.words.slice(Math.ceil(this.words.length / 3)).join(' ')
-        },
-        disabled() {
-            return (
-                this.article.title !== this.originalArticle.title ||
-                this.article.shortTitle !== this.originalArticle.shortTitle ||
-                this.article.content !== this.originalArticle.content
-            )
-        },
     },
     created() {
         this.setArticle(this.topic)
+        console.log('Article:', this.articleTitle)
     },
     computed: {
         formattedContent() {
@@ -164,7 +134,15 @@ export default {
 
             return paragraphs.join('</p>')
         },
+        disabled() {
+            return (
+                this.article.title !== this.originalArticle.title ||
+                this.article.shortTitle !== this.originalArticle.shortTitle ||
+                this.article.content !== this.originalArticle.content
+            )
+        },
     },
+
     watch: {
         '$route.params.topic': {
             immediate: true,
@@ -173,7 +151,62 @@ export default {
             },
         },
     },
+
     methods: {
+        notRandomNumberBetween2And7(str) {
+            if (str.length < 4) {
+                return Math.max(str.length, 2)
+            }
+            const len = str.charCodeAt(2) + str.charCodeAt(3)
+            return (len % 6) + 2
+        },
+
+        formattedTitle(title) {
+            const chunks = this.getChunks(title)
+            const withTags = this.addTagsToChunks(chunks)
+            return withTags
+                .join(' ')
+                .replace('</h3> <h3 class="title">', ' ')
+                .replace('</h2> <h2 class="title">', ' ')
+        },
+        getChunks(title) {
+            const words = title.split(' ')
+            const chunks = []
+            let i = 0
+
+            while (i < words.length) {
+                const chunkSize = Math.min(2 + (i % 4), words.length - i)
+                const chunk = words.slice(i, i + chunkSize).join(' ')
+                chunks.push(chunk)
+                i += chunkSize
+            }
+
+            return chunks
+        },
+        addTagsToChunks(chunks) {
+            const h2Indexes = [
+                this.notRandomNumberBetween2And3(chunks[0]),
+                this.notRandomNumberBetween2And3(chunks[chunks.length - 1]),
+            ].sort()
+            if (h2Indexes[0] === h2Indexes[1]) {
+                h2Indexes[1]++
+            }
+
+            return chunks.map((chunk, index) => {
+                if (index === h2Indexes[0] || index === h2Indexes[1]) {
+                    return `<h2 class="title">${chunk}</h2>`
+                } else {
+                    return `<h3 class="title">${chunk}</h3>`
+                }
+            })
+        },
+        notRandomNumberBetween2And3(input) {
+            const sum = [...input].reduce(
+                (acc, char) => acc + char.charCodeAt(0),
+                0
+            )
+            return Math.floor((sum % input.length) / 2)
+        },
         setArticle(topic) {
             this.article = this.articles.find((article) => {
                 return article.topic === topic
@@ -181,6 +214,7 @@ export default {
             this.originalArticle = JSON.parse(JSON.stringify(this.article))
             this.article.content = DOMPurify.sanitize(this.article.content)
             this.article = this.addColorObject(this.article)
+            this.article.title = this.formattedTitle(this.article.title)
         },
         addColorObject(article) {
             return {
@@ -191,6 +225,7 @@ export default {
                 },
             }
         },
+
         async submitForm(article) {
             const result = await axios.post('/article', article)
             console.log(result)
