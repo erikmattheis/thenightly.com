@@ -51,9 +51,10 @@
                                 bottom: 30%;
                                 left: 2em;
                                 z-index: -1;
+                                margin: -3rem 0 0 0;
                             "
                         />
-                        <span v-html="article.title"></span>
+                        <span v-html="formattedTitle"></span>
                     </div>
                 </header>
                 <div class="image-container">
@@ -114,26 +115,16 @@ export default {
             editMode: false,
             articles: dyes,
             article: {},
+            formattedTitle: '',
+            formattedContent: '',
             originalArticle: {},
             isLoading: false,
         }
     },
     created() {
         this.setArticle(this.topic)
-        console.log('Article:', this.articleTitle)
     },
     computed: {
-        formattedContent() {
-            const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" style="width:40%; float:right"/>`
-
-            const paragraphs = this.article.content.split('</p>')
-            if (paragraphs.length < 3) {
-                return this.article.content + img
-            }
-            paragraphs.splice(2, 0, img)
-
-            return paragraphs.join('</p>')
-        },
         disabled() {
             return (
                 this.article.title !== this.originalArticle.title ||
@@ -161,13 +152,24 @@ export default {
             return (len % 6) + 2
         },
 
-        formattedTitle(title) {
+        formatTitle(title) {
             const chunks = this.getChunks(title)
             const withTags = this.addTagsToChunks(chunks)
             return withTags
                 .join(' ')
                 .replace('</h3> <h3 class="title">', ' ')
                 .replace('</h2> <h2 class="title">', ' ')
+        },
+        formatContent() {
+            const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" style="width:40%; float:right"/>`
+
+            const paragraphs = this.article.content.split('</p>')
+            if (paragraphs.length < 3) {
+                return this.article.content + img
+            }
+            paragraphs.splice(2, 0, img)
+
+            return paragraphs.join('</p>')
         },
         getChunks(title) {
             const words = title.split(' ')
@@ -211,10 +213,12 @@ export default {
             this.article = this.articles.find((article) => {
                 return article.topic === topic
             })
-            this.originalArticle = JSON.parse(JSON.stringify(this.article))
+            this.article.title = DOMPurify.sanitize(this.article.title)
+            this.formattedTitle = this.formatTitle(this.article.title)
             this.article.content = DOMPurify.sanitize(this.article.content)
+            this.formattedContent = this.formatContent(this.article.content)
             this.article = this.addColorObject(this.article)
-            this.article.title = this.formattedTitle(this.article.title)
+            this.originalArticle = JSON.parse(JSON.stringify(this.article))
         },
         addColorObject(article) {
             return {
