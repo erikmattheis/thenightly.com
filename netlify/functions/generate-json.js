@@ -5,11 +5,11 @@ const { performance } = require('perf_hooks')
 const fs = require('fs')
 const path = require('path')
 const {
-    getArticlesByBatch,
+    getArticlesByCollection,
     getArticlesByCollectionAndBatch,
 } = require('./firestore')
 
-const batch = '23.12.22'
+const batches = ['23.12.22', '23.12.26']
 
 function getJSONFromFile(filePath) {
     // eslint-disable-line no-unused-vars
@@ -38,10 +38,15 @@ exports.handler = async function () {
         // eslint-disable-next-line no-await-in-loop
         // const topics = await getArticlesByBatch(subject);
         // eslint-disable-next-line no-await-in-loop
-        const topics = await getArticlesByCollectionAndBatch(collection, batch)
+
+        const topics = await getArticlesByCollectionAndBatch(
+            'dyes',
+            batches
+            // eslint-disable-next-line no-await-in-loop
+        )
 
         const fileName = replaceWhiteSpaceWithDash(collection)
-
+        console.log('found topics', topics.length)
         fs.writeFileSync(
             path.join(__dirname, `../../src/data/${fileName}.json`),
             JSON.stringify(topics, null, 2)

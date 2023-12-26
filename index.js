@@ -8,7 +8,7 @@ const { generateArticles } = require('./netlify/functions/generate-content')
 const { handler } = require('./netlify/functions/generate-json')
 
 async function run() {
-    const result = await generateArticles()
+    // const result = await generateArticles()
 
     const result2 = await handler()
 

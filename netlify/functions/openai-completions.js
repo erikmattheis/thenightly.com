@@ -21,11 +21,11 @@ function makeContentMessages(topic, grade, len) {
         {
             role: 'system',
             content:
-                "You are a non-fiction 1970s gonzo journalis, and you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website.",
+                "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website.",
         },
         {
             role: 'user',
-            content: `${len}-word humor article on natural dye ${topic}, ${grade} reading level. One of many articles on dyes. Format with HTML: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote and aside sparingly."`,
+            content: `${len}-word humor article on natural dye ${topic}, ${grade} reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words."`,
         },
     ]
     return messages

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import AboutErik from './components/AboutErik.vue'
-//import GenerateContent from './components/GenerateContent.vue'
+import GenerateContent from './components/GenerateContent.vue'
 import DynamicContent from './components/DynamicContent.vue'
 
 const router = createRouter({
@@ -20,14 +20,14 @@ const router = createRouter({
             component: AboutErik,
             meta: { saveScrollPosition: false },
         },
-        /*
+
         {
             path: '/generate',
             name: 'GenerateContent',
             component: GenerateContent,
             meta: { saveScrollPosition: false },
         },
-        */
+
         {
             path: '/dyes/:topic',
             name: 'DynamicContent',

@@ -1,48 +1,47 @@
 // const path = require('path');
-const admin = require('firebase-admin');
-const { sanitizeId } = require('./utility');
+const admin = require('firebase-admin')
+const { sanitizeId } = require('./utility')
 
 // Load your service account credentials from an environment variable or secret manager
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
 
 // Initialize the Firebase application with the service account credentials
 if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount),
+    })
 }
 
 // Get a Firestore database reference
-const db = admin.firestore();
+const db = admin.firestore()
 
 async function saveArticle(collection, doc, id = null) {
-  console.log('Saving to Firestore...', collection);
-  try {
-    // Add a new document with a generated id to the 'messages' collection
-    let docId;
-    if (id) {
-      docId = id;
-    } else {
-      docId = sanitizeId(`${doc.batch}-${doc.input.topic}`);
+    console.log('Saving to Firestore...', collection)
+    try {
+        // Add a new document with a generated id to the 'messages' collection
+        let docId
+        if (id) {
+            docId = id
+        } else {
+            docId = sanitizeId(`${doc.batch}-${doc.input.topic}`)
+        }
+
+        const docRef = db.collection(collection).doc(docId)
+        const timestamp = admin.firestore.Timestamp.now()
+        const sav = await docRef.set({ ...doc, timestamp })
+
+        const result = await docRef.get()
+        return result.data()
+    } catch (error) {
+        return `Error adding document: ${error}`
     }
-
-    const docRef = db.collection(collection).doc(docId);
-    const timestamp = admin.firestore.Timestamp.now();
-    const sav = await docRef.set({ ...doc, timestamp });
-    console.log('sav', JSON.stringify(sav, null, 2));
-
-    const result = await docRef.get();
-    return result.data();
-  } catch (error) {
-    return `Error adding document: ${error}`;
-  }
 }
 
-async function getArticlesByBatch(name) {
-  const articlesRef = db.collection(name); // .orderBy('topic', 'asc');
-  const snapshot = await articlesRef.get();
-  const articles = snapshot.docs.map((doc) => doc.data());
-  /*
+async function getArticlesByCollection(name) {
+    const articlesRef = db.collection(name) // .orderBy('topic', 'asc');
+    const snapshot = await articlesRef.get()
+    const articles = snapshot.docs.map((doc) => doc.data())
+    /*
   const articles = snapshot.docs.map((doc) => ({
     title: doc.data().title,
     description: doc.data().description,
@@ -50,27 +49,33 @@ async function getArticlesByBatch(name) {
   }));
 */
 
-  return articles;
+    return articles
 }
 
-async function getArticlesByCollectionAndBatch(collection, batch) {
-  const articlesRef = db.collection(collection); // .orderBy('topic', 'asc');
-  const snapshot = await articlesRef.get();
-  const articles = snapshot.docs.filter((doc) => doc.data().batch === batch).map((doc) => doc.data());
-
-  return articles;
+async function getArticlesByCollectionAndBatch(collection, batches) {
+    const articlesRef = db.collection(collection) // .orderBy('topic', 'asc');
+    const snapshot = await articlesRef.get()
+    console.log('snapshots found ', snapshot.docs.length)
+    const articles = snapshot.docs
+        .filter((doc) => batches.includes(doc.data().batch))
+        .map((doc) => doc.data())
+    console.log('articles found ', articles.length)
+    return articles
 }
 
 async function handler(request) {
-  console.log('Getting articles from Firestore...');
-  const result = await saveArticle('dyes', request.body, request.body.docId);
+    console.log('Getting articles from Firestore...')
+    const result = await saveArticle('dyes', request.body, request.body.docId)
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify(result, null, 2),
-  };
+    return {
+        statusCode: 200,
+        body: JSON.stringify(result, null, 2),
+    }
 }
 
 module.exports = {
-  handler, saveArticle, getArticlesByBatch, getArticlesByCollectionAndBatch,
-};
+    handler,
+    saveArticle,
+    getArticlesByCollection,
+    getArticlesByCollectionAndBatch,
+}
