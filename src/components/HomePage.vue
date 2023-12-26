@@ -2,13 +2,14 @@
 <template>
     <div class="content">
         <header style="background-color: #00000099;
-                    color: #ffffff; background-blend-mode: multiply;">
+                    color: #ffffff;
+                    background-blend-mode: multiply;">
             <p>
             <h2>Embark</h2> on an AI-Infused Exploration</p>
         </header>
         <article class="wrapper">
             <div class="text">
-                <h2>About</h2>
+                <h2 class="sec">About</h2>
 
                 <p>
                     Dive intoating world of natural dyes and fabrics, where
@@ -28,12 +29,9 @@
                     technology.
                 </p>
             </div>
-            <blockquote>
-                "The dye told the cloth, 'It's not you, it's dye.' Sometimes you just have to leave and see the rainbow on
-                the other side!"
-            </blockquote>
+
             <div class="text">
-                <h2>Explore the World of Natural Dyes</h2>
+                <h2 class="sec">Explore the World of Natural Dyes</h2>
                 <p>
                     From the ancient Indus Valley civilization to the modern-day
                     fashion runways, natural dyes have been a part of our lives
@@ -41,7 +39,7 @@
                     dyes, their cultural significance, and the science behind
                     their creation.
                 </p>
-                <h2>Crafting Sustainability with Code</h2>
+                <h2 class="sec">Crafting Sustainability with Code</h2>
                 <p>
                     Behind the scenes, we've harnessed the power of AI to
                     enhance our understanding of natural dyes and sustainable
@@ -52,6 +50,10 @@
                 </p>
             </div>
             <footer>
+                <blockquote>
+                "The dye told the cloth, 'It's not you, it's dye.' Sometimes you just have to leave and see the rainbow on
+                the other side!"
+            </blockquote>
                 Why did the dye go on a journey? It wanted to find its true hue-north!"
             </footer>
         </article>
@@ -73,8 +75,10 @@ export default {
 </script>
 
 <style scoped>
-h2 {
+h2.sec {
     font-size: 3rem;
+    transform:scaleY(1.2);
+    margin-bottom: 3rem;
 }
 
 h3 {
@@ -92,4 +96,9 @@ h3 {
     font-style: italic;
     line-height: 1;
     margin: 0;
-}</style>
+}
+
+header {
+    margin-bottom: 4rem;
+}
+</style>

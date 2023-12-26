@@ -29,7 +29,7 @@ const router = createRouter({
         },
         */
         {
-            path: '/articles/:topic',
+            path: '/dyes/:topic',
             name: 'DynamicContent',
             component: DynamicContent,
             props: true,

@@ -41,7 +41,7 @@
             />
         </div>
         <section class="content">
-            <template v-html="formattedContent"></template>
+            <div v-html="formattedContent"></div>
         </section>
     </article>
 </template>
