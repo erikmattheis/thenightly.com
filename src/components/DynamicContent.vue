@@ -97,7 +97,6 @@ export default {
             },
         },
     },
-
     methods: {
         notRandomNumberBetween2And7(str) {
             if (str.length < 4) {
@@ -106,7 +105,6 @@ export default {
             const len = str.charCodeAt(2) + str.charCodeAt(3)
             return (len % 6) + 2
         },
-
         formatTitle(title) {
             const chunks = this.getChunks(title)
             const withTags = this.addTagsToChunks(chunks)
@@ -116,15 +114,12 @@ export default {
                 .replace('</h2> <h2 class="title">', ' ')
         },
         formatContent() {
-            const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" style="width:40%; float:right"/>`
+            const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" class="article-image" />`
 
-            const paragraphs = this.article.content.split('</p>')
-            if (paragraphs.length < 3) {
-                return this.article.content + img
-            }
-            paragraphs.splice(2, 0, img)
+            const paragraphs = this.article.content.split('</h2>')
+            paragraphs.splice(1, 0, img)
 
-            return paragraphs.join('</p>')
+            return paragraphs.join('</h2>')
         },
         getChunks(title) {
             const words = title.split(' ')
