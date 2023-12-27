@@ -2,7 +2,7 @@
 <template>
     <div class="dynamic" :style="{ 'background-image': backgroundImage }">
         <div class="headline">
-            <h1 :style="{ color: color }">NATURALLY HUED</h1>
+            <h1>NATURALLY HUED</h1>
         </div>
         <div class="spa">
             <RouterView @changeBackground="setWrapperBGImage"></RouterView>
@@ -53,15 +53,6 @@ export default {
     background-position: center;
     background-blend-mode: soft-light;
     background-color: #00000066;
-}
-
-h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-align: center;
-    font-style: italic;
-    margin: 0;
-    padding: 0;
 }
 
 .spa {

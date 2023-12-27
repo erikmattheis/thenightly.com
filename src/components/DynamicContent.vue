@@ -1,5 +1,5 @@
 <template>
-    <article class="wrapper">
+    <article class="wrapper fade-in">
         <header
             :style="{
                 'background-color': `${article.color.background}99`,

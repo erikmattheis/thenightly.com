@@ -6,10 +6,21 @@
             style="max-height: 100vh; overflow-y: auto"
         >
             <li class="special-link">
-                <router-link to="/" class="link">Home</router-link>
+                <router-link
+                    @touchstart.prevent="closeDrawerTouch()"
+                    to="/"
+                    class="link"
+                    >Home</router-link
+                >
             </li>
             <li class="special-link">
-                <router-link to="/about" class="link"> About </router-link>
+                <router-link
+                    @touchstart.prevent="closeDrawerTouch()"
+                    to="/about"
+                    class="link"
+                >
+                    About
+                </router-link>
             </li>
             <li
                 v-for="article in topics"
@@ -20,31 +31,39 @@
                         : article.color.background,
                 }"
             >
-                <router-link
+                <a
                     class="link dynamic-link"
-                    :to="{
-                        name: 'DynamicContent',
-                        params: { topic: article.shortTitle },
-                    }"
                     :style="{
                         color: article.isHovered
                             ? article.color.background
                             : article.color.color,
                         cursor: article.isHovered ? 'pointer' : 'default',
                     }"
+                    @click.prevent="
+                        $router.push({
+                            name: 'DynamicContent',
+                            params: { topic: article.shortTitle },
+                        })
+                    "
+                    @touchstart.prevent="
+                        $router.push({
+                            name: 'DynamicContent',
+                            params: { topic: article.shortTitle },
+                        })
+                    "
+                    @touchend.prevent="closeDrawerTouch()"
                     @mouseover="article.isHovered = true"
                     @mouseout="article.isHovered = false"
                 >
                     {{ article.shortTitle }}
-                </router-link>
+                </a>
             </li>
         </ul>
         <div class="floating-button">
             <button
-                @touchstart.prevent="toggleDrawerTouch()"
+                @touchstart.prevent="toggleDrawer()"
                 class="top-control"
                 style="padding: 0.4rem"
-                @click.prevent="$router.push({ path: '/' })"
             >
                 <svg
                     aria-hidden="true"
@@ -140,13 +159,12 @@ export default {
                 this.expanded = false
             }
         },
-
-        toggleDrawerTouch() {
-            console.log(
-                'toggleDrawerTouch',
-                this.expanded ? 'expands' : 'contracts'
-            )
+        toggleDrawer() {
+            console.log('toggleDrawer', this.expanded ? 'expands' : 'contracts')
             this.expanded = !this.expanded
+        },
+        closeDrawerTouch() {
+            this.expanded = false
         },
         async submitForm(article) {
             try {
