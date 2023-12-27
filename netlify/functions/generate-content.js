@@ -67,13 +67,13 @@ function addDateSuffix(str) {
 // eslint-disable-next-line func-names
 async function generateArticles() {
     try {
-        const batch = '23.12.26'
+        const batch = '23.12.27'
         const x = 11110
 
         const topics = dyes
 
         // skip first 20 members
-        topics.splice(0, 44)
+        topics.splice(0, 54)
         // only use first few topics for now
         topics.length = 10
 

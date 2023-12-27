@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .dynamic {
     display: flex;
     flex-direction: column;
@@ -66,5 +66,248 @@ export default {
     width: var(--button-width);
     height: 100vh;
     z-index: 10;
+}
+
+:root {
+    --serif-font: 'Work Sans', Arial, sans-serif;
+    --button-width: 3rem;
+    --nav-width: 16rem;
+    --total-width: calc(var(--button-width) + var(--nav-width));
+    --negative-total-width: calc(-1 * var(--total-width));
+}
+
+/* todo: no */
+aside {
+    display: none;
+}
+
+html,
+body {
+    font-family: var(--serif-font);
+    letter-spacing: 0.065rem;
+}
+
+body {
+    background-image: url('/assets/tiled-background.jpg');
+    margin: 0;
+    padding: 0;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: scroll;
+}
+
+h1 {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900 !important;
+    font-family: var(--serif-font);
+    letter-spacing: 0.1rem;
+    display: inline;
+}
+
+header div {
+    margin: 3rem;
+    background-color: #00000044;
+    color: #ffffffe6;
+}
+
+header div h1 span {
+    display: inline-block;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    background-color: #00000099;
+}
+
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    font-size: 1rem !important;
+    margin: 0 0 3rem 0;
+    background: #ccccccaa;
+}
+
+blockquote {
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0;
+    width: 60%;
+    float: left;
+}
+
+blockquote p {
+    padding: 0;
+}
+
+h2.title {
+    display: inline-block;
+    align-items: center;
+    height: rem;
+    font-size: 3.2rem;
+    font-weight: 800;
+    transform: scaleY(1.3);
+    transform-origin: top;
+    margin: 0 0 2.4rem 0;
+    padding: 0;
+    line-height: 1.3;
+    background-color: #00000066;
+}
+
+h3.title {
+    display: inline;
+}
+
+h3.title span {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0;
+    padding: 0.2rem 0.8rem;
+    color: #000000;
+    line-height: 1.9;
+    background-color: #ffffff99;
+    box-decoration-break: clone;
+}
+
+.article-image {
+    width: 40%;
+    float: right;
+    margin: 1rem -2rem 3rem 1rem;
+}
+
+/* the rest */
+
+.main-image {
+    width: 100%;
+    height: auto;
+}
+
+.loading-image {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    position: relative;
+    width: calc(100% - 2rem);
+    height: 100%;
+    padding: 1rem;
+    text-align: right;
+}
+
+header div {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    background-color: #00000099;
+}
+
+.title-background {
+    background-size: cover;
+    position: relative;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.content {
+    padding: 0.5rem;
+    background-color: #ffffffdd;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.headline {
+    font-size: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin: 2rem 0 3rem 0;
+    background: transparent;
+}
+
+.headline::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 110%;
+    height: 100%;
+    background: #ccccccaa;
+    transform: translateX(0%) skew(-18deg);
+}
+
+@media (min-width: 391px) {
+    /* Have to use float but get a fancy mgazine-like layout */
+    .wrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .content {
+        padding: 3rem;
+    }
+
+    blockquote {
+        margin: 0 0 0 -3rem;
+        width: 60%;
+        float: left;
+        padding: 1rem;
+    }
+
+    blockquote p {
+        padding: 0;
+    }
+
+    .text {
+        margin-left: 150px;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 </style>

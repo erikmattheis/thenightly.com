@@ -9,7 +9,7 @@ const {
     getArticlesByCollectionAndBatch,
 } = require('./firestore')
 
-const batches = ['23.12.22', '23.12.26']
+const batches = ['23.12.22', '23.12.26', '23.12.27']
 
 function getJSONFromFile(filePath) {
     // eslint-disable-line no-unused-vars

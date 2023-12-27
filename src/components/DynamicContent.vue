@@ -2,7 +2,7 @@
     <article class="wrapper fade-in">
         <header
             :style="{
-                'background-color': `${article.color.background}99`,
+                'background-color': `${article.color.background}cc`,
                 color: article.color.color,
             }"
         >
@@ -12,35 +12,9 @@
                 }"
                 class="title-background"
             >
-                <img
-                    :src="article.image.compressed"
-                    :alt="article.shortTitle"
-                    @loaded="isLoading = false"
-                    style="
-                        float: right;
-                        width: 40%;
-                        top: 3em;
-                        position: absolute;
-                        border: 5px solid red;
-                        bottom: 30%;
-                        left: 2em;
-                        z-index: -1;
-                        margin: -3rem 0 0 0;
-                    "
-                />
                 <span v-html="formattedTitle"></span>
             </div>
         </header>
-
-        <div class="image-container">
-            <img
-                :src="article.image.compressed"
-                :alt="article.shortTitle"
-                class="main-image"
-                style="border: 5px solid red"
-                @loaded="isLoading = false"
-            />
-        </div>
 
         <section class="content">
             <div v-html="formattedContent"></div>
@@ -146,9 +120,9 @@ export default {
 
             return chunks.map((chunk, index) => {
                 if (index === h2Indexes[0] || index === h2Indexes[1]) {
-                    return `<h2 class="title"><span>${chunk}</span></h2>`
+                    return `<h2 class="title"> <span> ${chunk} </span> </h2>`
                 } else {
-                    return `<h3 class="title"><span>${chunk}</span></h3>`
+                    return `<h3 class="title"> <span> ${chunk} </span> </h3>`
                 }
             })
         },

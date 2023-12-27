@@ -194,6 +194,8 @@ export default {
 
     -ms-overflow-style: none;
     overflow-y: scroll;
+
+    touch-action: pan-yl;
 }
 
 .floating-button {
