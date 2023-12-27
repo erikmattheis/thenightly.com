@@ -9,9 +9,8 @@
             <div
                 :style="{
                     'background-image': `url(${article.image.compressed})`,
-                    'background-size': 'cover',
-                    position: 'relative',
                 }"
+                class="title-background"
             >
                 <img
                     :src="article.image.compressed"
@@ -32,14 +31,17 @@
                 <span v-html="formattedTitle"></span>
             </div>
         </header>
+
         <div class="image-container">
             <img
                 :src="article.image.compressed"
                 :alt="article.shortTitle"
                 class="main-image"
+                style="border: 5px solid red"
                 @loaded="isLoading = false"
             />
         </div>
+
         <section class="content">
             <div v-html="formattedContent"></div>
         </section>
@@ -62,6 +64,7 @@ export default {
             required: true,
         },
     },
+    emits: ['changeBackground'],
     data() {
         return {
             editMode: false,
@@ -171,6 +174,7 @@ export default {
             this.formattedContent = this.formatContent(this.article.content)
             this.article = this.addColorObject(this.article)
             this.originalArticle = JSON.parse(JSON.stringify(this.article))
+            this.$emit('changeBackground', this.article.image.compressed)
         },
         addColorObject(article) {
             return {
@@ -189,5 +193,3 @@ export default {
     },
 }
 </script>
-
-<style scoped></style>

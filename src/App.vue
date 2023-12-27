@@ -1,11 +1,11 @@
 <!-- src/App.vue -->
 <template>
-    <div class="dynamic wrapper">
+    <div class="dynamic" :style="{ 'background-image': backgroundImage }">
         <div class="headline">
             <h1 :style="{ color: color }">NATURALLY HUED</h1>
         </div>
         <div class="spa">
-            <RouterView></RouterView>
+            <RouterView @changeBackground="setWrapperBGImage"></RouterView>
         </div>
         <TopicList class="nav" />
     </div>
@@ -21,23 +21,38 @@ export default {
         return {
             isLoading: true,
             color: '#FFFFFF',
+            transparentGif:
+                'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+            backgroundImage: this.transparentGif,
         }
     },
     mounted() {
         this.isLoading = false
+    },
+    methods: {
+        setWrapperBGImage(url) {
+            console.log('setWrapperBGImage', url)
+            if (url) {
+                this.backgroundImage = `url(${url})`
+            } else {
+                this.backgroundImage = this.transparentGif
+            }
+        },
     },
 }
 </script>
 
 <style scoped>
 .dynamic {
-    position: absolute;
-    padding-left: var(--button-width);
-    width: calc(100% - var(--button-width));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: soft-light;
+    background-color: #00000066;
 }
 
 h1 {

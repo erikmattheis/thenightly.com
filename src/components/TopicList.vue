@@ -135,10 +135,8 @@ export default {
         },
         handleMouseMove(event) {
             if (event.clientX < 100 && !this.expanded) {
-                console.log('mousemove expands')
                 this.expanded = true
             } else if (event.clientX > 240 && this.expanded) {
-                console.log('mousemove contracts')
                 this.expanded = false
             }
         },

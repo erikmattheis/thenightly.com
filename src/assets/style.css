@@ -92,7 +92,6 @@ h2.title {
 
 h3.title {
   display: inline;
-  /* Change this to inline */
 }
 
 h3.title span {
@@ -104,7 +103,6 @@ h3.title span {
   line-height: 1.9;
   background-color: #ffffff99;
   box-decoration-break: clone;
-  /* Add this property */
 }
 
 
@@ -174,8 +172,13 @@ h3.title span {
     width: calc(100% - 2rem);
     height: 100%;
     padding: 1rem;
-    overflow: hidden;
+
     text-align: right;
+  }
+
+  .title-background {
+    background-size: cover;
+    position: relative;
   }
 
   .headline {
@@ -187,8 +190,8 @@ h3.title span {
     top: 0;
     left: 0;
     width: 100%;
+    height: auto;
     z-index: -1;
-    padding-top: 56.89%;
     overflow: hidden;
   }
 
@@ -197,7 +200,7 @@ h3.title span {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
   }
 
