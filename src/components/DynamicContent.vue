@@ -1,4 +1,42 @@
 <template>
+    <div v-if="editMode">
+        <form @submit.prevent="submitForm(article)">
+            <label for="title">Title</label>
+            <input
+                type="text"
+                id="title"
+                v-model="article.title"
+                placeholder="Title"
+            />
+            <label for="shortTitle">Short Title</label>
+            <input
+                type="text"
+                id="shortTitle"
+                v-model="article.shortTitle"
+                placeholder="Short Title"
+            />
+            <label for="content">Description</label>
+            <textarea
+                style="width: 600px; height: 300px"
+                id="description"
+                v-model="article.description"
+                placeholder="Description"
+            ></textarea>
+            <label for="content">Content</label>
+            <textarea
+                style="width: 600px; height: 300px"
+                id="content"
+                v-model="article.content"
+                placeholder="Content"
+            ></textarea>
+            <button type="submit" :disabled="!disabled">Submit</button>
+        </form>
+    </div>
+    <h2>
+        <a @click="editMode = !editMode" @touchend="editMode = !editMode"
+            >edit</a
+        >
+    </h2>
     <article class="wrapper fade-in">
         <header
             :style="{
@@ -58,6 +96,7 @@ export default {
             return (
                 this.article.title !== this.originalArticle.title ||
                 this.article.shortTitle !== this.originalArticle.shortTitle ||
+                this.article.description !== this.originalArticle.description ||
                 this.article.content !== this.originalArticle.content
             )
         },
@@ -154,10 +193,23 @@ export default {
                 },
             }
         },
+        async saveArticle(article) {
+            await axios.post('/.netlify/functions/save-article', {
+                title: DOMPurify.sanitize(this.article.title),
+                shortTitle: DOMPurify.sanitize(this.article.shortTitle),
+                description: DOMPurify.sanitize(this.article.description),
+                content: DOMPurify.sanitize(this.article.content),
+                id: this.article.id,
+            })
+        },
 
-        async submitForm(article) {
-            const result = await axios.post('/article', article)
-            console.log(result)
+        async submitForm() {
+            try {
+                await this.saveArticle(article)
+                this.setArticle(article.topic)
+            } catch (error) {
+                console.log(error)
+            }
         },
     },
 }

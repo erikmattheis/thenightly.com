@@ -37,6 +37,27 @@ async function saveArticle(collection, doc, id = null) {
     }
 }
 
+async function updateArticle(collection, doc, id = null) {
+    console.log('Updating Firestore...', doc)
+    try {
+        // Add a new document with a generated id to the 'messages' collection
+        let docId
+        if (id) {
+            docId = id
+        } else {
+            docId = sanitizeId(`${doc.batch}-${doc.input.topic}`)
+        }
+
+        const docRef = db.collection(collection).doc(docId)
+        const timestamp = admin.firestore.Timestamp.now()
+        const sav = await docRef.update({ ...doc, timestamp })
+
+        const result = await docRef.get()
+        return result.data()
+    } catch (error) {
+        return `Error updating document: ${error}`
+    }
+}
 async function getArticlesByCollection(name) {
     const articlesRef = db.collection(name) // .orderBy('topic', 'asc');
     const snapshot = await articlesRef.get()
@@ -65,7 +86,7 @@ async function getArticlesByCollectionAndBatch(collection, batches) {
 
 async function handler(request) {
     console.log('Getting articles from Firestore...')
-    const result = await saveArticle('dyes', request.body, request.body.docId)
+    const result = await updateArticle('dyes', request.body, request.body.docId)
 
     return {
         statusCode: 200,

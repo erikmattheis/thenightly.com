@@ -1,10 +1,6 @@
 <template>
     <div class="header drawer-container">
-        <ul
-            class="drawer"
-            :class="{ expanded: expanded }"
-            style="max-height: 100vh; overflow-y: auto"
-        >
+        <ul class="drawer" :class="{ expanded: expanded }">
             <li class="special-link">
                 <router-link
                     @touchstart.prevent="closeDrawerTouch()"
@@ -194,8 +190,6 @@ export default {
 
     -ms-overflow-style: none;
     overflow-y: scroll;
-
-    touch-action: pan-yl;
 }
 
 .floating-button {

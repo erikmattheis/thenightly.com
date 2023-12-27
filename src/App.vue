@@ -85,20 +85,18 @@ html,
 body {
     font-family: var(--serif-font);
     letter-spacing: 0.065rem;
-}
-
-body {
-    background-image: url('/assets/tiled-background.jpg');
-    margin: 0;
-    padding: 0;
-
     ::-webkit-scrollbar {
         display: none;
     }
 
     scrollbar-width: none;
     -ms-overflow-style: none;
-    overflow-y: scroll;
+}
+
+body {
+    background-image: url('/assets/tiled-background.jpg');
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
