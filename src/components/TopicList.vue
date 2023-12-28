@@ -1,5 +1,5 @@
 <template>
-    <div class="header drawer-container">
+    <div class="drawer-container">
         <ul class="drawer" :class="{ expanded: expanded }">
             <li class="special-link">
                 <router-link
@@ -189,7 +189,6 @@ export default {
     scrollbar-width: none;
 
     -ms-overflow-style: none;
-    overflow-y: scroll;
 }
 
 .floating-button {

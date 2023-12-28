@@ -53,7 +53,9 @@
                 <span v-html="formattedTitle"></span>
             </div>
         </header>
-
+        <code style="color: white; white-space: pre">
+            {{ JSON.stringify(article, null, 2) }}
+        </code>
         <section class="content">
             <div v-html="formattedContent"></div>
         </section>
@@ -193,20 +195,20 @@ export default {
                 },
             }
         },
-        async saveArticle(article) {
-            await axios.post('/.netlify/functions/save-article', {
+        async saveArticle() {
+            await axios.post('/.netlify/functions/firestore', {
                 title: DOMPurify.sanitize(this.article.title),
                 shortTitle: DOMPurify.sanitize(this.article.shortTitle),
                 description: DOMPurify.sanitize(this.article.description),
                 content: DOMPurify.sanitize(this.article.content),
-                id: this.article.id,
+                docId: this.article.docId,
             })
         },
 
         async submitForm() {
             try {
-                await this.saveArticle(article)
-                this.setArticle(article.topic)
+                await this.saveArticle()
+                this.setArticle(this.article.topic)
             } catch (error) {
                 console.log(error)
             }

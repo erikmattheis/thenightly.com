@@ -26,6 +26,8 @@ async function saveArticle(collection, doc, id = null) {
             docId = sanitizeId(`${doc.batch}-${doc.input.topic}`)
         }
 
+        doc.id = docId
+
         const docRef = db.collection(collection).doc(docId)
         const timestamp = admin.firestore.Timestamp.now()
         const sav = await docRef.set({ ...doc, timestamp })
@@ -38,12 +40,12 @@ async function saveArticle(collection, doc, id = null) {
 }
 
 async function updateArticle(collection, doc, id = null) {
-    console.log('Updating Firestore...', doc)
+    console.log('Updating Firestore...')
     try {
         // Add a new document with a generated id to the 'messages' collection
         let docId
         if (id) {
-            docId = id
+            docId = dod.id
         } else {
             docId = sanitizeId(`${doc.batch}-${doc.input.topic}`)
         }
@@ -53,6 +55,7 @@ async function updateArticle(collection, doc, id = null) {
         const sav = await docRef.update({ ...doc, timestamp })
 
         const result = await docRef.get()
+        console.log('result', result.data())
         return result.data()
     } catch (error) {
         return `Error updating document: ${error}`
@@ -76,7 +79,9 @@ async function getArticlesByCollection(name) {
 async function getArticlesByCollectionAndBatch(collection, batches) {
     const articlesRef = db.collection(collection) // .orderBy('topic', 'asc');
     const snapshot = await articlesRef.get()
-    console.log('snapshots found ', snapshot.docs.length)
+    snapshot.forEach((doc) => {
+        console.log('Document ID:', doc.id) // This will log the ID of each document
+    })
     const articles = snapshot.docs
         .filter((doc) => batches.includes(doc.data().batch))
         .map((doc) => doc.data())
@@ -85,7 +90,7 @@ async function getArticlesByCollectionAndBatch(collection, batches) {
 }
 
 async function handler(request) {
-    console.log('Getting articles from Firestore...')
+    console.log('Upserting article...', request.body.docId)
     const result = await updateArticle('dyes', request.body, request.body.docId)
 
     return {
@@ -94,9 +99,22 @@ async function handler(request) {
     }
 }
 
+async function addIdToDyes() {
+    const dyesRef = db.collection('dyes')
+    const snapshot = await dyesRef.get()
+
+    snapshot.forEach((doc) => {
+        const docData = doc.data()
+        const id = sanitizeId(`${docData.batch}-${docData.input.topic}`)
+        console.log('id', id)
+        dyesRef.doc(doc.id).update({ id })
+    })
+}
+
 module.exports = {
     handler,
     saveArticle,
     getArticlesByCollection,
     getArticlesByCollectionAndBatch,
+    addIdToDyes,
 }

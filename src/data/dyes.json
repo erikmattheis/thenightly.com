@@ -57,7 +57,8 @@
     "timestamp": {
       "_seconds": 1703236596,
       "_nanoseconds": 907000000
-    }
+    },
+    "id": "23.12.22-alkanet"
   },
   {
     "executionTime": "23.53 seconds",
@@ -111,7 +112,8 @@
     "timestamp": {
       "_seconds": 1703235987,
       "_nanoseconds": 43000000
-    }
+    },
+    "id": "23.12.22-alkanet"
   },
   {
     "executionTime": "26.41 seconds",
@@ -172,7 +174,8 @@
     "timestamp": {
       "_seconds": 1703236623,
       "_nanoseconds": 846000000
-    }
+    },
+    "id": "23.12.22-annatto"
   },
   {
     "executionTime": "30.66 seconds",
@@ -233,7 +236,8 @@
     "timestamp": {
       "_seconds": 1703236654,
       "_nanoseconds": 666000000
-    }
+    },
+    "id": "23.12.22-avocado-pits"
   },
   {
     "executionTime": "24.33 seconds",
@@ -294,7 +298,8 @@
     "timestamp": {
       "_seconds": 1703236679,
       "_nanoseconds": 263000000
-    }
+    },
+    "id": "23.12.22-beets"
   },
   {
     "executionTime": "30.41 seconds",
@@ -354,7 +359,8 @@
     "timestamp": {
       "_seconds": 1703236709,
       "_nanoseconds": 818000000
-    }
+    },
+    "id": "23.12.22-black-beans"
   },
   {
     "executionTime": "26.71 seconds",
@@ -415,7 +421,8 @@
     "timestamp": {
       "_seconds": 1703236736,
       "_nanoseconds": 690000000
-    }
+    },
+    "id": "23.12.22-black-elderberry"
   },
   {
     "executionTime": "25.89 seconds",
@@ -476,7 +483,8 @@
     "timestamp": {
       "_seconds": 1703236762,
       "_nanoseconds": 740000000
-    }
+    },
+    "id": "23.12.22-black-walnuts"
   },
   {
     "executionTime": "27.24 seconds",
@@ -536,7 +544,8 @@
     "timestamp": {
       "_seconds": 1703236790,
       "_nanoseconds": 129000000
-    }
+    },
+    "id": "23.12.22-blackthorn"
   },
   {
     "executionTime": "29.17 seconds",
@@ -596,7 +605,8 @@
     "timestamp": {
       "_seconds": 1703236819,
       "_nanoseconds": 465000000
-    }
+    },
+    "id": "23.12.22-blueberries"
   },
   {
     "executionTime": "25.05 seconds",
@@ -657,7 +667,8 @@
     "timestamp": {
       "_seconds": 1703239022,
       "_nanoseconds": 612000000
-    }
+    },
+    "id": "23.12.22-brazilwood"
   },
   {
     "executionTime": "23.8 seconds",
@@ -717,7 +728,8 @@
     "timestamp": {
       "_seconds": 1703239046,
       "_nanoseconds": 840000000
-    }
+    },
+    "id": "23.12.22-buckthorn"
   },
   {
     "executionTime": "26.54 seconds",
@@ -777,7 +789,8 @@
     "timestamp": {
       "_seconds": 1703236846,
       "_nanoseconds": 155000000
-    }
+    },
+    "id": "23.12.22-buckthorn-berries"
   },
   {
     "executionTime": "24.39 seconds",
@@ -838,7 +851,8 @@
     "timestamp": {
       "_seconds": 1703239071,
       "_nanoseconds": 415000000
-    }
+    },
+    "id": "23.12.22-cabbage"
   },
   {
     "executionTime": "24.85 seconds",
@@ -899,7 +913,8 @@
     "timestamp": {
       "_seconds": 1703239096,
       "_nanoseconds": 440000000
-    }
+    },
+    "id": "23.12.22-caramel"
   },
   {
     "executionTime": "24.21 seconds",
@@ -960,7 +975,8 @@
     "timestamp": {
       "_seconds": 1703239120,
       "_nanoseconds": 812000000
-    }
+    },
+    "id": "23.12.22-carrot-tops"
   },
   {
     "executionTime": "22.65 seconds",
@@ -1020,7 +1036,8 @@
     "timestamp": {
       "_seconds": 1703239143,
       "_nanoseconds": 672000000
-    }
+    },
+    "id": "23.12.22-chamomile"
   },
   {
     "executionTime": "26.26 seconds",
@@ -1081,7 +1098,8 @@
     "timestamp": {
       "_seconds": 1703239170,
       "_nanoseconds": 87000000
-    }
+    },
+    "id": "23.12.22-cherries"
   },
   {
     "executionTime": "33.13 seconds",
@@ -1141,7 +1159,8 @@
     "timestamp": {
       "_seconds": 1703239203,
       "_nanoseconds": 370000000
-    }
+    },
+    "id": "23.12.22-chokecherries"
   },
   {
     "executionTime": "32.72 seconds",
@@ -1201,7 +1220,8 @@
     "timestamp": {
       "_seconds": 1703239236,
       "_nanoseconds": 325000000
-    }
+    },
+    "id": "23.12.22-cinnabar"
   },
   {
     "executionTime": "33.74 seconds",
@@ -1261,7 +1281,8 @@
     "timestamp": {
       "_seconds": 1703239270,
       "_nanoseconds": 212000000
-    }
+    },
+    "id": "23.12.22-cochineal"
   },
   {
     "executionTime": "24.6 seconds",
@@ -1321,7 +1342,8 @@
     "timestamp": {
       "_seconds": 1703240042,
       "_nanoseconds": 821000000
-    }
+    },
+    "id": "23.12.22-cocoa"
   },
   {
     "executionTime": "23.57 seconds",
@@ -1382,7 +1404,8 @@
     "timestamp": {
       "_seconds": 1703240067,
       "_nanoseconds": 37000000
-    }
+    },
+    "id": "23.12.22-coffee"
   },
   {
     "executionTime": "23.02 seconds",
@@ -1443,7 +1466,8 @@
     "timestamp": {
       "_seconds": 1703240090,
       "_nanoseconds": 376000000
-    }
+    },
+    "id": "23.12.22-coreopsis"
   },
   {
     "executionTime": "25.09 seconds",
@@ -1504,7 +1528,8 @@
     "timestamp": {
       "_seconds": 1703240631,
       "_nanoseconds": 363000000
-    }
+    },
+    "id": "23.12.22-coreopsis"
   },
   {
     "executionTime": "24.8 seconds",
@@ -1565,7 +1590,8 @@
     "timestamp": {
       "_seconds": 1703240656,
       "_nanoseconds": 771000000
-    }
+    },
+    "id": "23.12.22-cumin"
   },
   {
     "executionTime": "24.6 seconds",
@@ -1626,7 +1652,8 @@
     "timestamp": {
       "_seconds": 1703240681,
       "_nanoseconds": 541000000
-    }
+    },
+    "id": "23.12.22-dandelion"
   },
   {
     "executionTime": "24.87 seconds",
@@ -1687,7 +1714,8 @@
     "timestamp": {
       "_seconds": 1703241363,
       "_nanoseconds": 83000000
-    }
+    },
+    "id": "23.12.22-dutch-pink"
   },
   {
     "executionTime": "23.59 seconds",
@@ -1747,7 +1775,8 @@
     "timestamp": {
       "_seconds": 1703241387,
       "_nanoseconds": 344000000
-    }
+    },
+    "id": "23.12.22-elder"
   },
   {
     "executionTime": "25.88 seconds",
@@ -1808,7 +1837,8 @@
     "timestamp": {
       "_seconds": 1703241413,
       "_nanoseconds": 510000000
-    }
+    },
+    "id": "23.12.22-elderberry"
   },
   {
     "executionTime": "25.7 seconds",
@@ -1869,7 +1899,8 @@
     "timestamp": {
       "_seconds": 1703241439,
       "_nanoseconds": 372000000
-    }
+    },
+    "id": "23.12.22-eucalyptus"
   },
   {
     "executionTime": "25.16 seconds",
@@ -1929,7 +1960,8 @@
     "timestamp": {
       "_seconds": 1703241464,
       "_nanoseconds": 732000000
-    }
+    },
+    "id": "23.12.22-falu-red"
   },
   {
     "executionTime": "25.04 seconds",
@@ -1990,7 +2022,8 @@
     "timestamp": {
       "_seconds": 1703241489,
       "_nanoseconds": 955000000
-    }
+    },
+    "id": "23.12.22-fustic"
   },
   {
     "executionTime": "24.34 seconds",
@@ -2051,7 +2084,8 @@
     "timestamp": {
       "_seconds": 1703241514,
       "_nanoseconds": 492000000
-    }
+    },
+    "id": "23.12.22-gamboge"
   },
   {
     "executionTime": "24.49 seconds",
@@ -2112,7 +2146,8 @@
     "timestamp": {
       "_seconds": 1703241539,
       "_nanoseconds": 131000000
-    }
+    },
+    "id": "23.12.22-grapes"
   },
   {
     "executionTime": "24.1 seconds",
@@ -2172,7 +2207,8 @@
     "timestamp": {
       "_seconds": 1703241563,
       "_nanoseconds": 384000000
-    }
+    },
+    "id": "23.12.22-green-walnut-hulls"
   },
   {
     "executionTime": "22.69 seconds",
@@ -2233,7 +2269,8 @@
     "timestamp": {
       "_seconds": 1703241586,
       "_nanoseconds": 231000000
-    }
+    },
+    "id": "23.12.22-guava"
   },
   {
     "executionTime": "24.4 seconds",
@@ -2293,7 +2330,8 @@
     "timestamp": {
       "_seconds": 1703241610,
       "_nanoseconds": 770000000
-    }
+    },
+    "id": "23.12.22-henna"
   },
   {
     "executionTime": "27.17 seconds",
@@ -2354,7 +2392,8 @@
     "timestamp": {
       "_seconds": 1703241638,
       "_nanoseconds": 90000000
-    }
+    },
+    "id": "23.12.22-hibiscus"
   },
   {
     "executionTime": "26.8 seconds",
@@ -2414,7 +2453,8 @@
     "timestamp": {
       "_seconds": 1703241665,
       "_nanoseconds": 42000000
-    }
+    },
+    "id": "23.12.22-hollyhock"
   },
   {
     "executionTime": "22.42 seconds",
@@ -2475,7 +2515,8 @@
     "timestamp": {
       "_seconds": 1703241687,
       "_nanoseconds": 590000000
-    }
+    },
+    "id": "23.12.22-indian-yellow"
   },
   {
     "executionTime": "26.26 seconds",
@@ -2535,7 +2576,8 @@
     "timestamp": {
       "_seconds": 1703241714,
       "_nanoseconds": 9000000
-    }
+    },
+    "id": "23.12.22-indigo"
   },
   {
     "executionTime": "23.42 seconds",
@@ -2595,7 +2637,8 @@
     "timestamp": {
       "_seconds": 1703589561,
       "_nanoseconds": 388000000
-    }
+    },
+    "id": "23.12.26-indigo"
   },
   {
     "executionTime": "37.6 seconds",
@@ -2655,7 +2698,8 @@
     "timestamp": {
       "_seconds": 1703589599,
       "_nanoseconds": 434000000
-    }
+    },
+    "id": "23.12.26-jackfruit"
   },
   {
     "executionTime": "33.97 seconds",
@@ -2716,7 +2760,8 @@
     "timestamp": {
       "_seconds": 1703589633,
       "_nanoseconds": 573000000
-    }
+    },
+    "id": "23.12.26-kermes"
   },
   {
     "executionTime": "32.1 seconds",
@@ -2776,7 +2821,8 @@
     "timestamp": {
       "_seconds": 1703589665,
       "_nanoseconds": 844000000
-    }
+    },
+    "id": "23.12.26-lac"
   },
   {
     "executionTime": "23.83 seconds",
@@ -2837,7 +2883,8 @@
     "timestamp": {
       "_seconds": 1703589689,
       "_nanoseconds": 816000000
-    }
+    },
+    "id": "23.12.26-lavender"
   },
   {
     "executionTime": "32.72 seconds",
@@ -2898,7 +2945,8 @@
     "timestamp": {
       "_seconds": 1703589783,
       "_nanoseconds": 516000000
-    }
+    },
+    "id": "23.12.26-lichen"
   },
   {
     "executionTime": "25.22 seconds",
@@ -2958,7 +3006,8 @@
     "timestamp": {
       "_seconds": 1703589809,
       "_nanoseconds": 196000000
-    }
+    },
+    "id": "23.12.26-logwood"
   },
   {
     "executionTime": "40.07 seconds",
@@ -3019,7 +3068,8 @@
     "timestamp": {
       "_seconds": 1703589849,
       "_nanoseconds": 559000000
-    }
+    },
+    "id": "23.12.26-madder"
   },
   {
     "executionTime": "35.86 seconds",
@@ -3079,7 +3129,8 @@
     "timestamp": {
       "_seconds": 1703589885,
       "_nanoseconds": 593000000
-    }
+    },
+    "id": "23.12.26-mahogany"
   },
   {
     "executionTime": "25.07 seconds",
@@ -3140,7 +3191,8 @@
     "timestamp": {
       "_seconds": 1703589910,
       "_nanoseconds": 824000000
-    }
+    },
+    "id": "23.12.26-marigold"
   },
   {
     "executionTime": "25 seconds",
@@ -3201,7 +3253,8 @@
     "timestamp": {
       "_seconds": 1703589935,
       "_nanoseconds": 925000000
-    }
+    },
+    "id": "23.12.26-mulberries"
   },
   {
     "executionTime": "42.54 seconds",
@@ -3262,7 +3315,8 @@
     "timestamp": {
       "_seconds": 1703589978,
       "_nanoseconds": 629000000
-    }
+    },
+    "id": "23.12.26-mullein"
   },
   {
     "executionTime": "24.52 seconds",
@@ -3323,7 +3377,8 @@
     "timestamp": {
       "_seconds": 1703590003,
       "_nanoseconds": 309000000
-    }
+    },
+    "id": "23.12.26-mustard"
   },
   {
     "executionTime": "23.28 seconds",
@@ -3384,7 +3439,8 @@
     "timestamp": {
       "_seconds": 1703590026,
       "_nanoseconds": 758000000
-    }
+    },
+    "id": "23.12.26-myrobalan"
   },
   {
     "executionTime": "24.59 seconds",
@@ -3445,6 +3501,625 @@
     "timestamp": {
       "_seconds": 1703590051,
       "_nanoseconds": 537000000
-    }
+    },
+    "id": "23.12.26-nettle"
+  },
+  {
+    "executionTime": "37.11 seconds",
+    "input": {
+      "color": "#A52A2A",
+      "len": 484,
+      "grade": "3rd grade",
+      "colorTheme": {
+        "name": "Indochine and complimentary",
+        "colors": [
+          "#CF6B00",
+          "#4F3C28"
+        ]
+      },
+      "temperature": 0.710206036575767,
+      "topic": "Oak Galls",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Oak Galls and starts \"\n\nDiscovering the Magic of Oak Galls\n\nOnce upon a time, in a land not so far away, there were special little growths on oak trees called oak galls. These tiny round wonders may not look like much, but they hold a\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description world of magic and intrigue. Oak galls have been used for centuries in various cultures for their medicinal and mystical properties. In this page, explore the enchanting world of oak galls and discover their fascinating history, uses, and the legends surrounding them. From traditional medicine to natural dyes and even as inspiration for artists, oak galls have made their mark in many fields. Join us on this journey and uncover the hidden secrets and beauty of these captivating creations of nature."
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "484-word humor article on natural dye Oak Galls, 3rd grade reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-oak-galls-2023-11-3-10-11-23.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-oak-galls-2023-11-3-10-11-23-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Oak Galls as a natural dye. #CF6B00 and #4F3C28 background colors.",
+      "colorThemeDescription": "#CF6B00 and #4F3C28"
+    },
+    "color": "#A52A2A",
+    "batch": "23.12.27",
+    "description": "world of magic and intrigue. Oak galls have been used for centuries in various cultures for their medicinal and mystical properties. In this page, explore the enchanting world of oak galls and discover their fascinating history, uses, and the legends surrounding them. From traditional medicine to natural dyes and even as inspiration for artists, oak galls have made their mark in many fields. Join us on this journey and uncover the hidden secrets and beauty of these captivating creations of nature.",
+    "topic": "Oak Galls",
+    "shortTitle": "Oak Galls",
+    "title": "Unveiling the Mystical World of Oak Galls: Medicinal, Magical, and More",
+    "content": "\n\n<h2>Discovering the Magic of Oak Galls</h2>\n\n<p>Once upon a time, in a land not so far away, there were special little growths on oak trees called oak galls. These tiny round wonders may not look like much, but they hold a secret power - they can create beautiful natural dyes!</p>\n\n<blockquote>Did you know? Oak galls are formed when certain types of wasps lay their eggs on oak trees. The tree responds by creating a protective growth around the eggs, which eventually becomes a gall.</blockquote>\n\n<p>Now, you might be wondering, how can something as small as an oak gall create such vibrant colors? Well, my young friends, it's all thanks to a substance called tannin. Tannin is present in oak galls and it has the ability to bind with natural fibers like cotton, wool, and silk, resulting in stunning hues.</p>\n\n<p>Long ago, people discovered this magical property of oak galls and started using them to dye fabrics. They would crush the galls, mix them with water, and then soak the fabric in the mixture. After some time, the fabric would take on the rich colors of the oak galls.</p>\n\n<aside>Fun Fact: Oak galls can produce colors ranging from light yellows and browns to deep blues and blacks!</aside>\n\n<p>Imagine wearing a shirt dyed with oak galls - you would be walking around with a piece of nature's artwork! And the best part is, these dyes are all-natural and eco-friendly. No harmful chemicals involved!</p>\n\n<p>But wait, there's more! Oak galls aren't just for dyeing fabrics. They also have other uses. In the past, people used oak galls to make ink. They would crush them, mix them with some water and iron salts, and voila! They had their own homemade ink.</p>\n\n<p>Additionally, oak galls have been used for medicinal purposes. Some people believed that they had healing properties and would use them in various remedies.</p>\n\n<blockquote>Did you know? Oak galls have been used for centuries to treat skin ailments, such as cuts and burns.</blockquote>\n\n<p>So, next time you're out exploring nature and come across an oak tree, keep an eye out for these fascinating little growths. Who knows, you might just stumble upon a hidden treasure that can bring color and creativity into your world!</p>\n\n<strong>Remember:</strong>\n<ul>\n  <li>Oak galls are small round growths on oak trees</li>\n  <li>They contain tannin, which can dye fabrics</li>\n  <li>Colors produced can range from light to dark shades</li>\n  <li>Oak galls can also be used to make ink and for medicinal purposes</li>\n</ul>\n\n<h2>Conclusion</h2>\n\n<p>So there you have it, the marvelous world of oak galls and their colorful adventures! Who knew something so tiny could have such a big impact? Nature truly is full of surprises, waiting to be discovered.</p>\n\n\n",
+    "timestamp": {
+      "_seconds": 1703693520,
+      "_nanoseconds": 741000000
+    },
+    "id": "23.12.27-oak-galls"
+  },
+  {
+    "executionTime": "42.49 seconds",
+    "input": {
+      "color": "#FFA500",
+      "len": 575,
+      "grade": "college",
+      "colorTheme": {
+        "name": "Razzmatazz and complementary",
+        "colors": [
+          "#D10067",
+          "#52293D"
+        ]
+      },
+      "temperature": 0.4379949893986547,
+      "topic": "Onion Skin",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Onion Skin and starts \"The Pungent Power of Onion Skin: A Colorful Journey into Natural Dyeing\n\nWhen it comes to natural dyes, the world is a veritable kaleidoscope of possibilities. From vibrant flowers to earthy roots, the options are endless. But today, we turn our\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description attention to a humble ingredient that packs a powerful punch: onion skin. Discover the rich history and incredible dyeing properties of onion skin as we embark on a colorful journey into the world of natural dyeing. Learn how to extract and utilize the pungent power of onion skin to create stunning and unique hues for all your dyeing projects. Whether you're a seasoned natural dyer or a curious beginner, this page is your guide to unlocking the vibrant potential of onion skin and bringing the beauty of nature into your fabric creations. Join us on this fascinating exploration of onion skin dyeing and let your creative spirit bloom.\""
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "575-word humor article on natural dye Onion Skin, college reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-onion-skin-2023-11-3-10-12-3.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-onion-skin-2023-11-3-10-12-3-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Onion Skin as a natural dye. #D10067 and #52293D background colors.",
+      "colorThemeDescription": "#D10067 and #52293D"
+    },
+    "color": "#FFA500",
+    "batch": "23.12.27",
+    "description": "attention to a humble ingredient that packs a powerful punch: onion skin. Discover the rich history and incredible dyeing properties of onion skin as we embark on a colorful journey into the world of natural dyeing. Learn how to extract and utilize the pungent power of onion skin to create stunning and unique hues for all your dyeing projects. Whether you're a seasoned natural dyer or a curious beginner, this page is your guide to unlocking the vibrant potential of onion skin and bringing the beauty of nature into your fabric creations. Join us on this fascinating exploration of onion skin dyeing and let your creative spirit bloom.\"",
+    "topic": "Onion Skin",
+    "shortTitle": "Onion Skin",
+    "title": "Unveiling the Magic of Onion Skin: A Journey into Natural Dyeing",
+    "content": "<h2>The Pungent Power of Onion Skin: A Colorful Journey into Natural Dyeing</h2>\n\n<p>When it comes to natural dyes, the world is a veritable kaleidoscope of possibilities. From vibrant flowers to earthy roots, the options are endless. But today, we turn our attention to a humble kitchen staple that packs a punch in the dyeing department: onion skin.</p>\n\n<p><em>Onion skin, you say? Isn't that just waste?</em></p>\n\n<p>Ah, dear reader, don't be fooled by appearances! Onion skin, that papery layer that protects the flavorful bulb within, holds within it a secret world of color. So, put on your dyeing apron and join me on this aromatic adventure!</p>\n\n<p><strong>A Splash of History</strong></p>\n\n<aside>\n  <p>Did you know? Ancient Egyptians used onion skin to dye their sacred garments, believing it would bring them closer to the gods.</p>\n</aside>\n\n<p>Onion skin dyeing is no modern fad. It has been practiced for centuries, with its roots (pun intended) stretching back to ancient civilizations. The Egyptians, in their quest for divine connection, used onion skin to dye their sacred garments. They believed that the vibrant hues would bring them closer to the gods. Who knew onions had such divine powers?</p>\n\n<p><strong>Peeling Back the Layers</strong></p>\n\n<blockquote>\n  <p>\"Onion skin dyeing is like a treasure hunt. Each layer reveals a new shade, waiting to be unlocked.\"</p>\n</blockquote>\n\n<p>Now, let's get down to the nitty-gritty of dyeing with onion skin. First, gather a bunch of onion skins. The more, the merrier! Next, simmer them in a pot of water, allowing the natural dye to infuse the liquid. The longer you simmer, the deeper the color. It's like watching a magic potion brew!</p>\n\n<p><em>But wait, there's more!</em></p>\n\n<p>Onion skin dyeing is like a treasure hunt. Each layer reveals a new shade, waiting to be unlocked. The outer skins produce a lovely golden hue, while the inner layers offer a range of oranges and browns. Experimentation is the name of the game!</p>\n\n<p><strong>A Whiff of Inspiration</strong></p>\n\n<aside>\n  <p>Fun Fact: The pungent smell of onions while dyeing can be a great conversation starter!</p>\n</aside>\n\n<p>Prepare yourself for an aromatic experience like no other. As the onion skins simmer away, a pungent smell will fill the air. Embrace it! The scent of onions wafting through your home can be a great conversation starter. Who knows, you might even find yourself discussing the wonders of natural dyeing with your neighbors!</p>\n\n<p><strong>Unleashing Your Creativity</strong></p>\n\n<p>With your pot of onion skin dye ready, it's time to unleash your inner artist. Dip fabrics, yarns, or even paper into the dye bath and watch the magic happen. Experiment with different materials and techniques to achieve unique results. The world is your canvas, and onion skin dye is your paint!</p>\n\n<blockquote>\n  <p>\"Onion skin dyeing is a journey of discovery, where the unexpected becomes the most beautiful.\"</p>\n</blockquote>\n\n<p>Remember, dear reader, onion skin dyeing is a journey of discovery. Sometimes, the unexpected becomes the most beautiful. Embrace the imperfections, the variations in color, and let your creativity run wild. You never know what masterpiece you might create!</p>\n\n<p>So, the next time you find yourself peeling an onion, don't discard those papery skins. Instead, embark on a colorful adventure and explore the world of onion skin dyeing. It's an experience that will leave you with a newfound appreciation for the humble onion and the wonders of natural dyes.</p>",
+    "timestamp": {
+      "_seconds": 1703693565,
+      "_nanoseconds": 715000000
+    },
+    "id": "23.12.27-onion-skin"
+  },
+  {
+    "executionTime": "47.08 seconds",
+    "input": {
+      "color": "#FFBF00",
+      "len": 594,
+      "grade": "college",
+      "colorTheme": {
+        "name": "Razzmatazz and complementary",
+        "colors": [
+          "#D10067",
+          "#52293D"
+        ]
+      },
+      "temperature": 1.2137172477202467,
+      "topic": "Orpiment",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Orpiment and starts \"Use strong tags very sparingly.\n\n-------------------------------------------\n\nOh, the Orpiment: A Yellow Delight for the Dye-Savvy!\n\nAre you ready to dye your world with a burst of vibrant yellow? Well, look no further than the ancient dye, Orpiment!\n\n\nOrpiment, a natural pigment derived from arsenic\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description sulfide, has been used for centuries to create stunning yellow hues in arts and textiles. Its vivid and intense color makes it a favorite among dye-savvy artists and craftsmen.\n\n\nIn addition to its vibrant shade, Orpiment also boasts excellent lightfastness, making it a long-lasting choice for dyeing projects. Whether you're a seasoned dyer or a beginner, this ancient pigment is sure to add a touch of brilliance to your creations.\n\n\nHowever, it's important to exercise caution when handling Orpiment due to its arsenic content. Protective measures should be taken to ensure safe usage and avoid any potential health risks.\n\n\nJoin us on a journey to discover the wonders of Orpiment and unlock the secrets of this beautiful yellow dye. Explore its history, properties, and various applications, and get inspired to create your very own works of art using this remarkable pigment. Experience the joy of Orpiment, the yellow delight that has stood the test of time."
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "594-word humor article on natural dye Orpiment, college reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-orpiment-2023-11-3-10-13-22.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-orpiment-2023-11-3-10-13-22-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Orpiment as a natural dye. #D10067 and #52293D background colors.",
+      "colorThemeDescription": "#D10067 and #52293D"
+    },
+    "color": "#FFBF00",
+    "batch": "23.12.27",
+    "description": "sulfide, has been used for centuries to create stunning yellow hues in arts and textiles. Its vivid and intense color makes it a favorite among dye-savvy artists and craftsmen.\n\n\nIn addition to its vibrant shade, Orpiment also boasts excellent lightfastness, making it a long-lasting choice for dyeing projects. Whether you're a seasoned dyer or a beginner, this ancient pigment is sure to add a touch of brilliance to your creations.\n\n\nHowever, it's important to exercise caution when handling Orpiment due to its arsenic content. Protective measures should be taken to ensure safe usage and avoid any potential health risks.\n\n\nJoin us on a journey to discover the wonders of Orpiment and unlock the secrets of this beautiful yellow dye. Explore its history, properties, and various applications, and get inspired to create your very own works of art using this remarkable pigment. Experience the joy of Orpiment, the yellow delight that has stood the test of time.",
+    "topic": "Orpiment",
+    "shortTitle": "Orpiment",
+    "title": "Orpiment: Unleashing the Timeless Beauty of the Yellow Delight",
+    "content": "Use strong tags very sparingly.\n\n-------------------------------------------\n\n<h2>Oh, the Orpiment: A Yellow Delight for the Dye-Savvy!</h2>\n\n<p><em>Are you ready to dye your world with a burst of vibrant yellow? Well, look no further than the ancient dye, Orpiment!</em></p>\n\n<blockquote>\n<p>Orpiment, a natural pigment derived from arsenic trisulfide, has been used for centuries to add a pop of color to fabrics and art. Its brilliant yellow hue can effortlessly brighten up any garment and leave a lasting impression on those lucky enough to lay their eyes on it.</p>\n</blockquote>\n\n<p>Dating back to ancient Egypt and Persia, Orpiment has long entranced dye enthusiasts with its shimmering beauty and unique characteristics. Its name, derived from the Latin phrase \"auri pigmentum\" meaning \"gold pigment,\" perfectly captures its dazzling essence.</p>\n\n<p>But let's not dwell on its chemical makeup and delve right into the fun stuff – what makes Orpiment so exceptional? Its warm and sunny hues can brighten up any rainy day!</p>\n\n<p>Those who fancy dying fabrics with this glorious pigment take immense pleasure in the dyeing process itself. Crafting with Orpiment is a ritualistic experience, as passionate artisans gather their tools, don their aprons, and prepare for a chromatic battle.</p>\n\n<aside>\n  <p><strong><em>Trivia Time:</em></strong>  Orpiment was once known as \"king's yellow,\" as it was widely used during Renaissance times to color royal garments and heraldic symbols.</p>\n</aside>\n\n<p>While Orpiment can produce breathtaking results, it is essential to handle the dye with caution. Remember, \"safety first\" should be your mantra when it comes to all things Orpiment-related!</p>\n\n<p>Now, let's address the big arsenic elephant in the room. Arsenic is undeniably a powerful and toxic compound, so aspiring dyers must know how to use Orpiment responsibly. Protective gear, well-ventilated workspaces, and thorough precautions are non-negotiable.</p>\n\n<p>It also doesn't hurt to pay homage to the Sulfur BP, as it is the main chemical associate in this dazzling duo – Orpiment is, after all, arsenic trisulfide!</p>\n\n<p>The vibrancy of Orpiment knows no bounds, but those who wish to embark on an Orpiment dyeing frenzy must tread cautiously. Experimenting without proper knowledge can yield results as unpredictable as a fickle star-</p>\n\n<blockquote>\n  <p>ioneer skirting the Milky Way.</p>\n</blockquote>\n\n<p>So, gather thy notes, recipes, and best-practice manuals. Arm yourself with a hefty dose of determination, brimming with safety protocols to extract the golden ecstasy from this slightly hazardous endeavor. Equipped with this knowledge, your journey toward Orpiment glory may truly begin.</p>\n\n<aside>  \n  <p><strong><em>Fun Fact:</em></strong> Even some acclaimed painters of yesteryears, like Vincent van Gogh, dabbled in the remarkable world of Orpiment-infused pigments to bring their masterpieces to life.</p>\n</aside>\n\n<p>Whether Orpiment finds its way into haute couture creations, standout street fashion, or intricate textile design, one thing remains certain – this golden gift from nature never fails to astonish.</p>\n\n<p>In conclusion, Orpiment isn't just a dye; it's an assertion, a showstopper, and a seductive siren of the golden realm. With the power to transform and captivate, Orpiment will continue serving as the soul of vibrant yellow hues for many generations to come.</p>\n\n<p>So, dear readers, embrace the Orpiment's allure, honor its rich history, and let the golden tide wash over you as you indulge in the art of dyeing with this truly awe-inspiring, arsenic-kissed pigment!</p>",
+    "timestamp": {
+      "_seconds": 1703693649,
+      "_nanoseconds": 112000000
+    },
+    "id": "23.12.27-orpiment"
+  },
+  {
+    "executionTime": "35.98 seconds",
+    "input": {
+      "color": "#FF4500",
+      "len": 485,
+      "grade": "6th grade",
+      "colorTheme": {
+        "name": "Razzmatazz and complementary",
+        "colors": [
+          "#D10067",
+          "#52293D"
+        ]
+      },
+      "temperature": 0.4301363259142709,
+      "topic": "Osage Orange",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Osage Orange and starts \"The Colorful World of Osage Orange\n\nIn the realm of natural dyes, there exists a vibrant and unique hue that is sure to catch your eye. Ladies and gentlemen, let me introduce you to the marvelous Osage Orange dye!\n\nDerived from the\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description fruit of the Osage Orange tree (Maclura pomifera), this dye offers a range of stunning orange shades that have mesmerized artists and craftsmen for centuries. Whether used in fabric, paper or even hair dye, the Osage Orange dye is renowned for its longevity and ability to retain its vibrant color even after years of use. Discover the rich history, diverse applications, and captivating beauty of Osage Orange dye in our comprehensive guide. Let us take you on a journey into the colorful world of Osage Orange dye, where nature's gift meets artistic expression."
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "485-word humor article on natural dye Osage Orange, 6th grade reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-osage-orange-2023-11-3-10-12-45.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-osage-orange-2023-11-3-10-12-45-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Osage Orange as a natural dye. #D10067 and #52293D background colors.",
+      "colorThemeDescription": "#D10067 and #52293D"
+    },
+    "color": "#FF4500",
+    "batch": "23.12.27",
+    "description": "fruit of the Osage Orange tree (Maclura pomifera), this dye offers a range of stunning orange shades that have mesmerized artists and craftsmen for centuries. Whether used in fabric, paper or even hair dye, the Osage Orange dye is renowned for its longevity and ability to retain its vibrant color even after years of use. Discover the rich history, diverse applications, and captivating beauty of Osage Orange dye in our comprehensive guide. Let us take you on a journey into the colorful world of Osage Orange dye, where nature's gift meets artistic expression.",
+    "topic": "Osage Orange",
+    "shortTitle": "Osage Orange",
+    "title": "Unleashing the Vibrant Beauty of Osage Orange Dye: A Journey into Nature's Colorful Gift",
+    "content": "<h2>The Colorful World of Osage Orange</h2>\n\n<p>In the realm of natural dyes, there exists a vibrant and unique hue that is sure to catch your eye. Ladies and gentlemen, let me introduce you to the marvelous Osage Orange dye!</p>\n\n<p><em>Derived from the fruits of the Osage Orange tree, this dye has been used for centuries to add a pop of color to fabrics and textiles.</em></p>\n\n<blockquote>Legend has it that the Osage Orange tree was brought to the United States by none other than the dinosaurs themselves. Okay, maybe not, but it's still a pretty cool story!</blockquote>\n\n<p><strong>So, what makes Osage Orange dye so special?</strong></p>\n\n<p>Well, my friends, it all comes down to the vibrant and intense shade it produces. The color of Osage Orange dye can best be described as a sunny and cheerful yellow, reminiscent of a field of sunflowers on a bright summer day.</p>\n\n<aside><em>Fun fact: Did you know that Osage Orange dye was once used by Native American tribes to dye their arrows? Talk about adding some flair to your archery skills!</em></aside>\n\n<p>But wait, there's more! Osage Orange dye is not only visually appealing, but it also has some interesting properties. This dye is known for its ability to create a long-lasting color that resists fading over time. So you can rest assured that your favorite yellow shirt won't lose its vibrant charm after a few washes.</p>\n\n<p><strong>Now, let's dive into the process of creating this marvelous dye.</strong></p>\n\n<p>First, the fruits of the Osage Orange tree are harvested. These fruits, also known as hedge apples, are rich in a compound called osajin, which is responsible for the dye's vibrant color.</p>\n\n<blockquote>Fun fact: Despite its name, the Osage Orange tree is not actually related to oranges at all. It's more like a distant cousin who decided to go its own way in the family tree.</blockquote>\n\n<p>Once the fruits are collected, they are sliced and boiled to extract the osajin. This magical concoction is then strained and ready to be used as a dye.</p>\n\n<p><em>From clothing to home decor, Osage Orange dye can add a touch of sunshine to just about anything!</em></p>\n\n<aside><strong>Caution:</strong> While Osage Orange dye is a delightful addition to any project, it's important to remember that natural dyes can sometimes cause allergies or skin irritation. So, be sure to take necessary precautions and test the dye on a small patch before going all out!</aside>\n\n<p>In conclusion, dear readers, if you're looking to add a burst of sunshine to your life, look no further than the marvelous Osage Orange dye. With its vibrant color and long-lasting charm, it's bound to brighten up any fabric or textile it touches.</p>\n\n<p><strong>So go forth and embrace the world of Osage Orange!</strong></p>",
+    "timestamp": {
+      "_seconds": 1703693601,
+      "_nanoseconds": 864000000
+    },
+    "id": "23.12.27-osage-orange"
+  },
+  {
+    "executionTime": "36.72 seconds",
+    "input": {
+      "color": "#FF4500",
+      "len": 484,
+      "grade": "3rd grade",
+      "colorTheme": {
+        "name": "Razzmatazz and complementary",
+        "colors": [
+          "#D10067",
+          "#52293D"
+        ]
+      },
+      "temperature": 0.5333310709953394,
+      "topic": "Paprika",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Paprika and starts \"The Power of Paprika: A Colorful Adventure\n\nOnce upon a time, in a land far, far away, there was a little spice that had a big secret. This spice was none other than the fiery and flavorful paprika. But did you\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description know that paprika is not just a beautiful red spice, but also a powerhouse of health benefits? Explore the vibrant world of paprika and uncover its hidden treasures. From adding a burst of color and flavor to your dishes to its potential antioxidant and anti-inflammatory properties, paprika truly holds the power to transform your culinary experience. Join us on this colorful adventure through the spice racks and discover the magic that lies within the fiery embrace of paprika.\""
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "484-word humor article on natural dye Paprika, 3rd grade reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-paprika-2023-11-3-10-14-9.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-paprika-2023-11-3-10-14-9-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Paprika as a natural dye. #D10067 and #52293D background colors.",
+      "colorThemeDescription": "#D10067 and #52293D"
+    },
+    "color": "#FF4500",
+    "batch": "23.12.27",
+    "description": "know that paprika is not just a beautiful red spice, but also a powerhouse of health benefits? Explore the vibrant world of paprika and uncover its hidden treasures. From adding a burst of color and flavor to your dishes to its potential antioxidant and anti-inflammatory properties, paprika truly holds the power to transform your culinary experience. Join us on this colorful adventure through the spice racks and discover the magic that lies within the fiery embrace of paprika.\"",
+    "topic": "Paprika",
+    "shortTitle": "Paprika",
+    "title": "Unleashing the Health Benefits of Paprika: A Colorful Journey into Spice Rack Magic",
+    "content": "<h2>The Power of Paprika: A Colorful Adventure</h2>\n\n<p>Once upon a time, in a land far, far away, there was a little spice that had a big secret. This spice was none other than the fiery and flavorful paprika. But did you know that paprika isn't just for adding a kick to your favorite dishes? Oh no, my dear readers, this little red spice also has the power to dye fabrics and create a rainbow of colors!</p>\n\n<blockquote> \"Paprika is like a magician in the kitchen, turning food into a flavorful spectacle. But its talents don't stop there!\" - Spice Enthusiast </blockquote>\n\n<p>Let's embark on a colorful adventure and discover the wonders of paprika dye!</p>\n\n<p>First, let's gather our materials. You will need some plain white fabric, a pot of boiling water, and of course, a generous amount of paprika. Now, roll up your sleeves and let's get started!</p>\n\n<aside>\n<strong>Fun Fact:</strong> Paprika is made from dried and ground red peppers. It originated in Central and South America and was brought to Europe by Christopher Columbus. </aside>\n\n<p>Step one is simple: soak your fabric in water. This will help the dye to penetrate the fibers more easily. Once your fabric is wet, it's time to move on to step two!</p>\n\n<p>Now, take a big handful of paprika and sprinkle it into your pot of boiling water. Stir it gently, and watch as the water transforms into a rich, reddish-brown color. It's like a spicy potion brewing!</p>\n\n<blockquote> \"The paprika dye is like a sizzling sunset captured in a pot.\" - Color Enthusiast </blockquote>\n\n<p>Next, carefully place your wet fabric into the pot of paprika dye. Let it simmer for about an hour, stirring occasionally. The longer you let it soak, the deeper the color will be.</p>\n\n<p>Once your fabric has absorbed all the vibrant hues, carefully remove it from the pot and rinse it under cold water. Watch as the excess dye washes away, revealing the beautiful color that paprika has bestowed upon your fabric!</p>\n\n<aside>\n<strong>Did You Know?</strong> Paprika dye can create shades ranging from pale pinks to deep russet browns, depending on the concentration and duration of the dyeing process. </aside>\n\n<p>Now, hang your dyed fabric to dry, and marvel at the masterpiece you've created with the power of paprika! You can use your newly dyed fabric to make unique clothing, accessories, or even a colorful wall hanging.</p>\n\n<p>So, the next time you're in the kitchen and reach for that trusty jar of paprika, remember its hidden talents. It's not just a spice, but a magical dye that can transform plain fabric into a kaleidoscope of colors!</p>\n\n<blockquote> \"Paprika is the spicy artist of the spice rack, painting the world with its vibrant hues.\" - Spice Poet </blockquote>\n\n<p>Now, go forth and explore the world of natural dyes. Who knew that a little spice could add such flavor to both our meals and our wardrobes? The power of paprika truly knows no bounds!</p>",
+    "timestamp": {
+      "_seconds": 1703693686,
+      "_nanoseconds": 45000000
+    },
+    "id": "23.12.27-paprika"
+  },
+  {
+    "executionTime": "39.54 seconds",
+    "input": {
+      "color": "#966F33",
+      "len": 529,
+      "grade": "12th grade",
+      "colorTheme": {
+        "name": "Indochine",
+        "colors": [
+          "#CF6B00"
+        ]
+      },
+      "temperature": 0.48526591805676395,
+      "topic": "Pecan Shells",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Pecan Shells and starts \"The Peculiar Power of Pecan Shells: A Nutty Natural Dye\n\nWhen it comes to natural dyes, we often think of vibrant flowers, exotic plants, or even peculiar insects. But have you ever considered the humble pecan shell? Yes, you heard it\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description right – pecan shells can be used to create a unique and nutty natural dye. Explore the fascinating world of pecan shell dyeing and discover its peculiar power to transform fabrics into earthy hues. Uncover the secrets of this overlooked resource and embrace the sustainable beauty of pecan shells as a natural dyeing alternative. Experience the magic of nature's bounty and bring a touch of nuttiness to your creations with pecan shell dye.\""
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "529-word humor article on natural dye Pecan Shells, 12th grade reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-pecan-shells-2023-11-3-10-14-46.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-pecan-shells-2023-11-3-10-14-46-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Pecan Shells as a natural dye. #CF6B00 background colors.",
+      "colorThemeDescription": "#CF6B00"
+    },
+    "color": "#966F33",
+    "batch": "23.12.27",
+    "description": "right – pecan shells can be used to create a unique and nutty natural dye. Explore the fascinating world of pecan shell dyeing and discover its peculiar power to transform fabrics into earthy hues. Uncover the secrets of this overlooked resource and embrace the sustainable beauty of pecan shells as a natural dyeing alternative. Experience the magic of nature's bounty and bring a touch of nuttiness to your creations with pecan shell dye.\"",
+    "topic": "Pecan Shells",
+    "shortTitle": "Pecan Shells",
+    "title": "\"Nuts for Natural Color: Unleashing the Hidden Beauty of Pecan Shell Dye\" (Meta Description: Discover the exquisite art of pecan shell dyeing and unlock the sustainable charm of this fascinating natural dye. Transform fabrics with earthy hues and embrace the magic of pecan shells!)",
+    "content": "<h2>The Peculiar Power of Pecan Shells: A Nutty Natural Dye</h2>\n\n<p>When it comes to natural dyes, we often think of vibrant flowers, exotic plants, or even peculiar insects. But have you ever considered the humble pecan shell? Yes, you heard it right! Those discarded shells from everyone's favorite nut can actually be transformed into a dye that will leave you feeling nutty with excitement.</p>\n\n<aside>\n<blockquote>Did you know that pecan shells can dye fabric? It's time to embrace the nutty side of fashion!</blockquote>\n</aside>\n\n<p>So, how does this magical transformation occur? It all begins with the process of extraction. The first step is to gather a substantial amount of pecan shells, preferably ones that have been discarded after enjoying a tasty pecan pie. Once you have your shells, they need to be crushed into small pieces. This can be done using a hammer, a rolling pin, or even your frustration after a failed attempt at cracking open a stubborn nut.</p>\n\n<p>Once the shells are sufficiently crushed, it's time to brew up a dye bath. Place the crushed shells in a pot of water and bring it to a boil. Let it simmer for about an hour, allowing the shells to release their natural dye pigments. The result? A rich, earthy brown liquid that will make you appreciate the hidden potential of pecan shells.</p>\n\n<p>Now that you have your dye bath ready, it's time to dip your fabric into the nutty concoction. Make sure to pre-wash your fabric to remove any dirt or oils that might hinder the dye absorption. Once your fabric is clean and damp, submerge it into the dye bath and let the magic happen. The longer you leave it in, the deeper the color will be. It's like marinating a piece of fabric in a nutty broth of fashion-forwardness.</p>\n\n<aside>\n<blockquote>Who knew that pecan shells could turn your plain white t-shirt into a fashion statement? Embrace the nutty side of fashion!</blockquote>\n</aside>\n\n<p>After the desired amount of time, remove the fabric from the dye bath and rinse it thoroughly with cold water. Hang it up to dry, and voila! You've just witnessed the pecan shell's transformational powers firsthand. Now you can proudly wear your pecan-dyed creation, knowing that it's a one-of-a-kind piece that no one else will have.</p>\n\n<p>But wait, there's more! Pecan shells don't just dye fabric; they can also be used to add a touch of nuttiness to paper. By boiling the shells and using the resulting liquid as a dye bath for paper, you can create unique stationery or even artistic masterpieces. Imagine receiving a handwritten letter on pecan-dyed paper – it's sure to leave a lasting impression.</p>\n\n<p>So, the next time you crack open a pecan, don't toss those shells aside. Instead, embrace their hidden potential and let them take you on a nutty adventure in the world of natural dyes. Whether it's transforming fabric or paper, pecan shells are here to remind us that beauty can be found in the most unexpected places. It's time to go nuts with your creativity!</p>\n\n<aside>\n<blockquote>Unleash your inner artist and explore the nutty world of pecan shell dyes. It's time to let your creativity go nuts!</blockquote>\n</aside>\n\n<strong>Disclaimer:</strong> This article is intended for humor and informational purposes only. Please use caution when experimenting with natural dyes and always follow proper safety guidelines.",
+    "timestamp": {
+      "_seconds": 1703693725,
+      "_nanoseconds": 766000000
+    },
+    "id": "23.12.27-pecan-shells"
+  },
+  {
+    "executionTime": "36.38 seconds",
+    "input": {
+      "color": "#FFD700",
+      "len": 512,
+      "grade": "6th grade",
+      "colorTheme": {
+        "name": "Indochine",
+        "colors": [
+          "#CF6B00"
+        ]
+      },
+      "temperature": 0.9778568613549175,
+      "topic": "Pomegranate",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Pomegranate and starts \"Sweet and Juicy: The Colorful Tale of Pomegranate Dye\n\n\n    Discovering the secrets of natural dyes can be as satisfying as biting into a ripe, crimson pomegranate. Packed with antioxidants and bursting with flavor, this vibrant fruit has\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description historically been used to create dyes for textiles. Delve into the fascinating history and process of extracting vibrant colors from pomegranates, from ancient civilizations to modern techniques. Uncover the mesmerizing tale of pomegranate dye, its rich hues that have adorned fabrics for centuries, and its enduring allure as a sustainable and eco-friendly dyeing option."
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "512-word humor article on natural dye Pomegranate, 6th grade reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-pomegranate-2023-11-3-10-15-26.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-pomegranate-2023-11-3-10-15-26-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Pomegranate as a natural dye. #CF6B00 background colors.",
+      "colorThemeDescription": "#CF6B00"
+    },
+    "color": "#FFD700",
+    "batch": "23.12.27",
+    "description": "historically been used to create dyes for textiles. Delve into the fascinating history and process of extracting vibrant colors from pomegranates, from ancient civilizations to modern techniques. Uncover the mesmerizing tale of pomegranate dye, its rich hues that have adorned fabrics for centuries, and its enduring allure as a sustainable and eco-friendly dyeing option.",
+    "topic": "Pomegranate",
+    "shortTitle": "Pomegranate",
+    "title": "Unearthing the Enchanting Legacy of Pomegranate Dye: From Ancient Textiles to Sustainable Fabric Coloring",
+    "content": "<h2>Sweet and Juicy: The Colorful Tale of Pomegranate Dye</h2>\n\n<p>\n    Discovering the secrets of natural dyes can be as satisfying as biting into a ripe, crimson pomegranate. Packed with antioxidants and bursting with flavor, this vibrant fruit has been used for centuries to create eye-catching colors that delight the senses. Today, we peel back the layers and explore the rich dyeing traditions behind pomegranate, unlocking the doorway to a world full of natural wonders.\n</p>\n\n<blockquote>\n    <em>\"Pomegranate dye is a true gem that brings a touch of nature's artistry to our textiles,\"</em> says renowned textile artist, Valerie Vanderweird. <em>\"Its brilliant hues and unique properties make it a favorite among artists and craftspeople worldwide.\"</em>\n</blockquote>\n\n<p>\n    Much like the fruit itself, pomegranate dye is extracted from the juicy arils and the rind. The arils, resembling tiny rubies, provide a range of lovely pink and red tones, while the rind offers a warm and earthy yellow. Together, they create a harmonious symphony of colors that can transform any fabric or yarn into a work of art.\n</p>\n\n<aside>\n    <strong>Fun Fact:</strong> Did you know that pomegranate is considered a symbol of abundance and fertility in many cultures? It's no wonder this fruit has the power to give new life to our textiles!\n</aside>\n\n<p>\n    To harness the dyeing power of pomegranate, one must first prepare the fruit. The arils are gently crushed to release their vibrant juice, while the rind is boiled to extract its golden essence. These magical liquids are then strained and combined, creating a dye bath that can turn even the most boring fabric into a visual feast.\n</p>\n\n<blockquote>\n    <em>\"Working with pomegranate dye is like painting with nature's own paintbrush,\"</em> says master dyer, Oliver Oxenfree. <em>\"The colors are so alive and full of character, each dyeing session feels like an adventure.\"</em>\n</blockquote>\n\n<p>\n    Besides its stunning colors, pomegranate dye has a reputation for being long-lasting and colorfast. This means that once you've dyed your fabric or yarn, the color will stay vibrant and true through countless washes. It's like having a pomegranate party on your clothes that never ends!\n</p>\n\n<p>\n    Pomegranate dye also has other hidden talents. When used in combination with iron, it can create mesmerizing shades of deep purple and black. With the addition of alum, the colors shift to delicate pinks and soft oranges. The possibilities are as endless as the fruit's seeds!\n</p>\n\n<aside>\n    <strong>Did You Know:</strong> Pomegranates have been cultivated since ancient times and have been mentioned in many ancient texts, including Greek mythology and the Bible.\n</aside>\n\n<p>\n    So, the next time you stumble upon a pomegranate, think beyond its tantalizing taste. Embrace its potential as a vibrant natural dye and let your imagination run wild. Whether you're an artist, a fashionista, or simply a lover of all things colorful, pomegranate dye is a delightful way to add a burst of natural beauty to your world. Cheers to the power of pomegranate!\n</p>",
+    "timestamp": {
+      "_seconds": 1703693762,
+      "_nanoseconds": 585000000
+    },
+    "id": "23.12.27-pomegranate"
+  },
+  {
+    "executionTime": "36.67 seconds",
+    "input": {
+      "color": "#FF4500",
+      "len": 556,
+      "grade": "12th grade",
+      "colorTheme": {
+        "name": "Razzmatazz and complementary",
+        "colors": [
+          "#D10067",
+          "#52293D"
+        ]
+      },
+      "temperature": 0.8717719238998007,
+      "topic": "Purple Carrot",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Purple Carrot and starts \"\nThe Purple Carrot: A Dye Like No Other\n\nIn the world of natural dyes, there's one vegetable that reigns supreme - the purple carrot. While carrots are often associated with their vibrant orange hue, the lesser-known purple carrot offers a dye\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description that is unique and versatile. Discover the fascinating history, cultivation, and uses of this extraordinary vegetable as a dyeing agent. From its deep and rich purple color to its eco-friendly properties, the purple carrot is truly a dye like no other. Explore the world of natural dyes and unlock the secrets of the captivating purple carrot dye at The Purple Carrot: A Dye Like No Other.\""
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "556-word humor article on natural dye Purple Carrot, 12th grade reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-purple-carrot-2023-11-3-10-16-2.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-purple-carrot-2023-11-3-10-16-2-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Purple Carrot as a natural dye. #D10067 and #52293D background colors.",
+      "colorThemeDescription": "#D10067 and #52293D"
+    },
+    "color": "#FF4500",
+    "batch": "23.12.27",
+    "description": "that is unique and versatile. Discover the fascinating history, cultivation, and uses of this extraordinary vegetable as a dyeing agent. From its deep and rich purple color to its eco-friendly properties, the purple carrot is truly a dye like no other. Explore the world of natural dyes and unlock the secrets of the captivating purple carrot dye at The Purple Carrot: A Dye Like No Other.\"",
+    "topic": "Purple Carrot",
+    "shortTitle": "Purple Carrot",
+    "title": "Unlock the Vibrant World of Purple Carrot Dye: A Natural Marvel",
+    "content": "\n<h2>The Purple Carrot: A Dye Like No Other</h2>\n\n<p>In the world of natural dyes, there's one vegetable that reigns supreme - the purple carrot. While carrots are often associated with their vibrant orange hue, the lesser-known purple carrot offers a dye like no other. So, gather 'round, dear readers, as we embark on a colorful journey into the realm of the purple carrot!</p>\n\n<blockquote>\n<p><em>\"Purple carrot, oh how you confound, with your unexpected color profound!\"</em></p>\n</blockquote>\n\n<p>Discovered way back in the annals of time, purple carrots have been used for centuries to create stunning dyes. It's no wonder that these humble vegetables have become the secret weapon of artisans, dyers, and fashion enthusiasts alike.</p>\n\n<p>The secret to the purple carrot's dyeing prowess lies within its pigment. These vibrant vegetables contain a natural compound called anthocyanin, which is responsible for their rich purple hue. When extracted and used as a dye, anthocyanin creates a color that is truly one-of-a-kind.</p>\n\n<aside>\n<p><strong>Fun Fact:</strong> Did you know that purple carrots were the norm until the 17th century, when the orange variety was selectively bred and gained popularity?</p>\n</aside>\n\n<p>Not only does the purple carrot provide a stunning purple dye, but it also has excellent colorfastness. This means that once the dye is applied to fabrics or fibers, it holds its color even after multiple washes. Talk about a dye that goes the distance!</p>\n\n<blockquote>\n<p><em>\"Oh, purple carrot, so vibrant and bold, your dye remains steadfast, never to fold!\"</em></p>\n</blockquote>\n\n<p>But wait, there's more! The purple carrot offers an array of shades depending on the mordant used in the dyeing process. Mordants, for those unfamiliar, are substances that help fix the dye to the fabric or fiber. With the right combination of purple carrot dye and mordant, you can achieve anything from deep plum tones to lavender hues.</p>\n\n<p>Now, one might think that the purple carrot's dyeing capabilities are limited to fabrics and fibers. Oh, how wrong one would be! This versatile vegetable can also be used to dye paper, leather, and even food. Just imagine the surprise on your dinner guests' faces when they discover their purple pasta!</p>\n\n<aside>\n<p><strong>Did You Know:</strong> The purple carrot's dyeing properties don't stop at fabric and food - it's also used in the production of natural cosmetics!</p>\n</aside>\n\n<p>So, dear readers, next time you stumble upon a purple carrot at your local market, don't just think of it as a delicious addition to your salad or stew. Consider the vast potential of this mighty vegetable, capable of transforming the mundane into the extraordinary.</p>\n\n<blockquote>\n<p><em>\"Purple carrot, I salute thee, for your dyeing prowess sets my creativity free!\"</em></p>\n</blockquote>\n\n<p>From its ancient origins to its modern-day applications, the purple carrot continues to captivate and inspire. So, why not embrace the magic of the purple carrot and dive headfirst into the world of natural dyeing? Your creations will surely bloom with a hue that's truly unforgettable!</p>\n\n\n",
+    "timestamp": {
+      "_seconds": 1703693799,
+      "_nanoseconds": 527000000
+    },
+    "id": "23.12.27-purple-carrot"
+  },
+  {
+    "executionTime": "39.68 seconds",
+    "input": {
+      "color": "#E30022",
+      "len": 567,
+      "grade": "college",
+      "colorTheme": {
+        "name": "Ultramarine and complementary",
+        "colors": [
+          "#3F00FF",
+          "#FFC700"
+        ]
+      },
+      "temperature": 0.9542407500488028,
+      "topic": "Quebracho",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Quebracho and starts \"The Colorful Chronicles of Quebracho: A Tint of Tannin\n\nIn the realm of natural dyes, there exists a hidden gem that has been captivating the textile world for centuries. Allow me to introduce you to the vibrant world of Quebracho, a\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description dye derived from the Quebracho tree. Known for its rich tannin content, Quebracho has been cherished by artists, designers, and artisans for its remarkable ability to impart an array of stunning colors onto fabrics. From deep reds and earthy browns to radiant purples and vibrant yellows, the possibilities are endless with this ancient dye. Join us as we delve into the intricate history, magical properties, and modern applications of Quebracho dye, unlocking the secrets of its enchanting hues."
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "567-word humor article on natural dye Quebracho, college reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-quebracho-2023-11-3-10-16-39.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-quebracho-2023-11-3-10-16-39-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Quebracho as a natural dye. #3F00FF and #FFC700 background colors.",
+      "colorThemeDescription": "#3F00FF and #FFC700"
+    },
+    "color": "#E30022",
+    "batch": "23.12.27",
+    "description": "dye derived from the Quebracho tree. Known for its rich tannin content, Quebracho has been cherished by artists, designers, and artisans for its remarkable ability to impart an array of stunning colors onto fabrics. From deep reds and earthy browns to radiant purples and vibrant yellows, the possibilities are endless with this ancient dye. Join us as we delve into the intricate history, magical properties, and modern applications of Quebracho dye, unlocking the secrets of its enchanting hues.",
+    "topic": "Quebracho",
+    "shortTitle": "Quebracho",
+    "title": "Unlocking the Beauty of Quebracho: An Ancient Dye with Endless Possibilities",
+    "content": "<h2>The Colorful Chronicles of Quebracho: A Tint of Tannin</h2>\n\n<p>In the realm of natural dyes, there exists a hidden gem that has been captivating the textile world for centuries. Allow me to introduce you to the vibrant world of Quebracho, a dye that has stained itself into the annals of history. Prepare to be mesmerized as we journey through the rich hues and fascinating origins of this tannin tint.</p>\n\n<aside>Fun Fact: The name Quebracho is derived from the Spanish words \"quebrar\" meaning \"to break\" and \"hacha\" meaning \"axe.\" So, in essence, Quebracho is like a colorful axe breaking through the monotony of natural dyes. How delightful!</aside>\n\n<p>Crafting Quebracho dye is no simple task. It all begins with the inner bark of the Quebracho tree, native to the South American region. The bark is hacked, cracked, and extracted with precision, much like an artist chipping away at a masterpiece.</p>\n\n<p>Once the bark is in hand, the real magic happens. The tannin-rich extract is then boiled and simmered, releasing its tannic treasures into the liquid like a symphony of color waiting to be unleashed upon fabric. It's like watching an explosion of hues bursting forth!</p>\n\n<blockquote>Imagine a pot of boiling Quebracho dye as a cauldron of creativity, simmering and stewing with the power to transform fabrics into vivid works of art.</blockquote>\n\n<p>What's truly remarkable about Quebracho dye is the sheer variety of shades it produces. From earthy browns and warm yellows to deep reds and vibrant pinks, Quebracho presents a kaleidoscope of colors that can bring any garment to life.</p>\n\n<aside>Did you know? Some artists even mix Quebracho with other natural dyes to create unique color combinations. It's like watching a culinary artist whip up a delectable feast of colors for the eyes!</aside>\n\n<p>Not only does Quebracho offer a plethora of colors, but it also boasts exceptional lightfastness. This means that garments dyed with Quebracho can withstand the test of time, boldly flaunting their colors without fear of fading away. It's like wearing a badge of honor, shouting to the world, \"Look at me, I'm here to stay!\"</p>\n\n<p>In addition to its artistic merits, Quebracho also possesses some remarkable ecological benefits. The dye is entirely natural and biodegradable, making it a sustainable alternative to synthetic dyes that pollute our precious environment.</p>\n\n<blockquote>Quebracho dye not only colors fabric, but it also paints a brighter future for our planet.</blockquote>\n\n<aside>Trivia Time: The Quebracho tree itself has a fascinating history. It has long been used in the production of tannins for leather tanning, showcasing its versatility in various industries. The Quebracho tree definitely knows how to branch out!</aside>\n\n<p>So, whether you're a fashion enthusiast searching for a pop of color or an eco-conscious individual seeking sustainable solutions, Quebracho dye is here to satisfy your every need. With its broad spectrum of shades, incredible lightfastness, and eco-friendly qualities, Quebracho truly is a dye worth celebrating.</p>\n\n<strong>The world of natural dyes just got a little more colorful with Quebracho.</strong>\n\n<aside>And remember, when it comes to dyes, Quebracho is in a class of its own. It's dye-namite!</aside>",
+    "timestamp": {
+      "_seconds": 1703693839,
+      "_nanoseconds": 408000000
+    },
+    "id": "23.12.27-quebracho"
+  },
+  {
+    "executionTime": "34.93 seconds",
+    "input": {
+      "color": "#8A2BE2",
+      "len": 541,
+      "grade": "college",
+      "colorTheme": {
+        "name": "Razzmatazz and complementary",
+        "colors": [
+          "#D10067",
+          "#52293D"
+        ]
+      },
+      "temperature": 0.5655146621015086,
+      "topic": "Red Cabbage",
+      "messages": {
+        "description": [
+          {
+            "role": "user",
+            "content": "HTML meta-description for page about Red Cabbage and starts \"Natural Dye Delights: The Remarkable Red Cabbage\n\nMove over, chemical dyes! It's time to embrace the vibrant world of natural dyes. Today, we're diving headfirst into the enchanting realm of red cabbage dye. Yes, you heard it right! This humble vegetable\""
+          }
+        ],
+        "title": [
+          {
+            "role": "user",
+            "content": "Title 40-80 characters long for article with meta description is not only a nutritious addition to your meals but also a fascinating source of color for all your dyeing needs. Discover the wonders of red cabbage dye and how it can transform fabrics, crafts, and even food in our comprehensive guide. Whether you're a seasoned dyer or a newbie in the world of natural dyes, this page will take you on an exciting journey into the remarkable properties and endless possibilities that red cabbage dye has to offer. Unleash your creativity and explore the captivating beauty of this natural dye today!\""
+          }
+        ],
+        "content": [
+          {
+            "role": "system",
+            "content": "You are a non-fiction 1970s gonzo journalist, you include many alliterations and puns but don't say any of that. Provide an article without commentary. You write for a website."
+          },
+          {
+            "role": "user",
+            "content": "541-word humor article on natural dye Red Cabbage, college reading level. One of many articles on dyes. Format only with HTML tags: p, em, aside, blockquote, strong, and h2. No attributes or css. Use blockquote or aside once or twice evey 400 words.\""
+          }
+        ]
+      },
+      "model": "gpt-3.5-turbo"
+    },
+    "image": {
+      "original": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-red-cabbage-2023-11-3-10-17-19.jpg",
+      "size": "512x512",
+      "model": "dall-e-2",
+      "compressed": "https://storage.googleapis.com/nightly-images/article-images/23.12.27-red-cabbage-2023-11-3-10-17-19-q80.jpg",
+      "prompt": "Closeup realistic oil still life of Red Cabbage as a natural dye. #D10067 and #52293D background colors.",
+      "colorThemeDescription": "#D10067 and #52293D"
+    },
+    "color": "#8A2BE2",
+    "batch": "23.12.27",
+    "description": "is not only a nutritious addition to your meals but also a fascinating source of color for all your dyeing needs. Discover the wonders of red cabbage dye and how it can transform fabrics, crafts, and even food in our comprehensive guide. Whether you're a seasoned dyer or a newbie in the world of natural dyes, this page will take you on an exciting journey into the remarkable properties and endless possibilities that red cabbage dye has to offer. Unleash your creativity and explore the captivating beauty of this natural dye today!\"",
+    "topic": "Red Cabbage",
+    "shortTitle": "Red Cabbage",
+    "title": "\"Exploring the Hidden Power of Red Cabbage Dye: Transforming Fabrics, Crafts, and Food\" - Unleash Your Creativity and Discover the Endless Possibilities of this Natural Dye",
+    "content": "<h2>Natural Dye Delights: The Remarkable Red Cabbage</h2>\n\n<p>Move over, chemical dyes! It's time to embrace the vibrant world of natural dyes. Today, we're diving headfirst into the enchanting realm of red cabbage dye. Yes, you heard it right! This humble vegetable holds the power to transform your world into a kaleidoscope of mesmerizing hues.</p>\n\n<p>Red cabbage, a cruciferous delight, is not only a culinary superstar but also a secret weapon in the world of natural dyeing. Its vibrant purple hue is a testament to the rich pigments hidden within its leaves. So, let's unravel the mysteries of this remarkable vegetable and discover the magic it holds.</p>\n\n<aside>\n  <p><em>Fun Fact:</em> Red cabbage gets its stunning color from a group of pigments called anthocyanins. These compounds are not only responsible for its vibrant hue but also possess antioxidant properties! Talk about a double whammy!</p>\n</aside>\n\n<p>Now, let's get down to business. To extract the dye from red cabbage, follow these simple steps:</p>\n\n<ol>\n  <li>Chop up a head of red cabbage into small pieces.</li>\n  <li>Place the cabbage in a pot and cover it with water.</li>\n  <li>Bring the water to a boil and let it simmer for about an hour.</li>\n  <li>Remove the cabbage from the pot, and voila! You're left with a magnificent pot of purple liquid gold.</li>\n</ol>\n\n<p>But wait, there's more! The beauty of red cabbage dye lies in its versatility. By altering the pH of the dye bath, you can unlock a whole new world of colors. Add a splash of lemon juice, and your purple potion transforms into a stunning shade of pink. On the other hand, a dash of baking soda turns it into a striking blue hue. Talk about a magical color-changing extravaganza!</p>\n\n<blockquote>\n  <p><strong>Pro Tip:</strong> Experiment with different pH levels to create a range of colors. Just remember, it's all about the chemistry!</p>\n</blockquote>\n\n<p>Now that you've got your vibrant red cabbage dye, it's time to put it to use. Whether you're a seasoned fiber artist or a DIY enthusiast, the possibilities are endless. Dye your favorite fabrics, yarns, or even unleash your inner Picasso on a canvas.</p>\n\n<p>But hold on, folks! We're not done yet. Red cabbage dye isn't just limited to textiles. It can also be used to add a touch of natural pizzazz to your culinary creations. Imagine serving up a vibrant purple pasta dish or surprising your friends with a batch of homemade purple lemonade. It's guaranteed to make your taste buds tingle and your Instagram followers swoon.</p>\n\n<aside>\n  <p><em>Did You Know?</em> Red cabbage dye can also be used as a pH indicator. Its color changes depending on whether a substance is acidic or alkaline. Science and art collide in the most marvelous way!</p>\n</aside>\n\n<p>So, my friends, it's time to bid adieu to dull and lifeless colors. Embrace the wonders of red cabbage dye and let your creativity soar to new heights. From textiles to culinary delights, this natural dye is a game-changer. So, what are you waiting for? Get your hands on some red cabbage and let the dyeing adventures begin!</p>",
+    "timestamp": {
+      "_seconds": 1703693874,
+      "_nanoseconds": 480000000
+    },
+    "id": "23.12.27-red-cabbage"
   }
 ]
