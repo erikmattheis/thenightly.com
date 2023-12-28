@@ -99,38 +99,10 @@ export default {
     name: 'TopicList',
     data() {
         return {
-            editMode: false,
             topics: dyes,
             expanded: false,
         }
     },
-    computed: {
-        /*
-    rectangleStyle() {
-      let styles;
-      if (this.expanded) {
-        const t14Color = this.calculateNewHSLColor(this.buttonStoppedColor, 14);
-        const t28Color = this.calculateNewHSLColor(this.buttonStoppedColor, 28);
-        const t42Color = this.calculateNewHSLColor(this.buttonStoppedColor, 42);
-        const t57Color = this.calculateNewHSLColor(this.buttonStoppedColor, 57);
-        const t71Color = this.calculateNewHSLColor(this.buttonStoppedColor, 71);
-        const t85Color = this.calculateNewHSLColor(this.buttonStoppedColor, 85);
-
-        styles = `animation: rainbow 5s linear infinite; --start-color: ${this.buttonStoppedColor};
-            --t14-color: ${t14Color};
-            --t28-color: ${t28Color};
-            --t41-color: ${t42Color};
-            --t57-color: ${t57Color};
-            --t71-color: ${t71Color};
-            --t85-color: ${t85Color};`;
-      } else {
-        styles = `fill: ${this.buttonStoppedColor};`;
-      }
-      return styles;
-    },
-    */
-    },
-
     mounted() {
         this.topics = this.topics.map((topic) => ({
             ...topic,
@@ -164,14 +136,6 @@ export default {
         },
         closeDrawerTouch() {
             this.expanded = false
-        },
-        async submitForm(article) {
-            try {
-                // await axios.post('functions', this.form);
-                this.editMode[article.shortTitle] = false
-            } catch (error) {
-                console.error(error)
-            }
         },
     },
 }

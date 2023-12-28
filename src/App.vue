@@ -52,10 +52,10 @@ export default {
     background-position: center;
     background-blend-mode: soft-light;
     background-color: #00000066;
+    width: 100%;
 }
 
 .spa {
-    max-width: 44rem;
 }
 
 .nav {

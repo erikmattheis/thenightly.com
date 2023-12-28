@@ -1,9 +1,4 @@
 <template>
-    <h2>
-        <a @click="editMode = !editMode" @touchend="editMode = !editMode"
-            >edit</a
-        >
-    </h2>
     <article class="wrapper fade-in">
         <header
             :style="{
@@ -78,7 +73,7 @@ export default {
     emits: ['changeBackground'],
     data() {
         return {
-            editMode: true,
+            editMode: false,
             articles: dyes,
             article: {},
             originalArticle: {},
