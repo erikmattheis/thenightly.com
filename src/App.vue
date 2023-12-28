@@ -5,22 +5,29 @@
             <h1>NATURALLY HUED</h1>
         </div>
         <div class="spa">
-            <RouterView @changeBackground="setWrapperBGImage"></RouterView>
+            <RouterView @changeBackground="setBg"></RouterView>
         </div>
         <TopicList class="nav" />
+        <SiteFooter :colors="customization" />
     </div>
 </template>
 
 <script>
 import TopicList from './components/TopicList.vue'
+import SiteFooter from './components/SiteFooter.vue'
 
 export default {
     name: 'App',
-    components: { TopicList },
+    components: { TopicList, SiteFooter },
     data() {
         return {
             isLoading: true,
             color: '#FFFFFF',
+            bgColor: '#000000',
+            customization: {
+                color: '#FFFFFF',
+                bgColor: '#000000',
+            },
             transparentGif:
                 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
             backgroundImage: this.transparentGif,
@@ -30,12 +37,20 @@ export default {
         this.isLoading = false
     },
     methods: {
+        setBg(obj) {
+            console.log('setBg', obj)
+            this.setWrapperBGImage(obj.url)
+            this.setFooterBGColor(obj)
+        },
         setWrapperBGImage(url) {
             if (url) {
                 this.backgroundImage = `url(${url})`
             } else {
                 this.backgroundImage = this.transparentGif
             }
+        },
+        setFooterBGColor(colors) {
+            this.customization = colors
         },
     },
 }
@@ -52,10 +67,10 @@ export default {
     background-position: center;
     background-blend-mode: soft-light;
     background-color: #00000066;
-    width: 100%;
 }
 
 .spa {
+    max-width: 44rem;
 }
 
 .nav {

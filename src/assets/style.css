@@ -30,9 +30,8 @@ body {
 }
 
 .wrapper {
-  width: 100%;
+  width: calc(100% - 20rem);
 }
-
 
 .headline {
   display: flex;
@@ -122,10 +121,8 @@ blockquote p {
 .article-image {
   width: 40%;
   float: right;
-  margin: 1rem -2rem 3rem 1rem;
+  margin: 1rem -1.5rem 1rem 1rem;
 }
-
-
 
 .loading-image {
   width: 100%;
@@ -171,8 +168,19 @@ header div {
 }
 
 .content {
-  padding: 0.5rem;
   background-color: #ffffffdd;
+  padding: 2rem 2rem 12rem 2rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 8rem;
+  max-width: 44rem;
+  width: 100%;
 }
 
 .sr-only {
@@ -187,15 +195,11 @@ header div {
 @media (min-width: 391px) {
 
   .wrapper {
-    max-width: 620px;
-  }
-
-  .content {
-    padding: 3rem;
+    width: 100%;
   }
 
   blockquote {
-    margin: 0 0 0 -3rem;
+    margin: 0 0 0 -2rem;
     width: 60%;
     float: left;
     padding: 1rem;

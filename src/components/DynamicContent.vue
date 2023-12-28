@@ -225,7 +225,11 @@ export default {
             this.article.content = DOMPurify.sanitize(this.article.content)
             this.article = this.addColorObject(this.article)
             this.originalArticle = JSON.parse(JSON.stringify(this.article))
-            this.$emit('changeBackground', this.article.image.compressed)
+            this.$emit('changeBackground', {
+                url: this.article.image.compressed,
+                bgColor: this.article.color.background,
+                color: this.article.color.color,
+            })
         },
         addColorObject(article) {
             return {
