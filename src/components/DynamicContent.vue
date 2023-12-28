@@ -90,12 +90,38 @@ export default {
     },
     computed: {
         formattedTitle() {
-            const chunks = this.getChunks(this.article.title)
-            const withTags = this.addTagsToChunks(chunks)
-            return withTags
-                .join(' ')
-                .replace('</h3> <h3 class="title">', ' ')
-                .replace('</h2> <h2 class="title">', ' ')
+            const words = this.article.title.split(' ')
+            const chunks = []
+            let i = 0
+
+            while (i < words.length) {
+                const n = words[i].charCodeAt(0) % 6
+                const chunkSize = Math.min(2 + n, words.length - i)
+                const chunk = words
+                    .slice(i, i + chunkSize)
+                    .join(' ')
+                    .trim()
+                chunks.push(chunk)
+                i += chunkSize
+            }
+
+            const h2Indexes = [
+                this.notRandomNumberBetween2And3(chunks[0]),
+                this.notRandomNumberBetween2And3(chunks[chunks.length - 1]),
+            ].sort()
+            if (h2Indexes[0] === h2Indexes[1]) {
+                h2Indexes[1]++
+            }
+
+            const result = chunks.map((chunk, index) => {
+                if (index === h2Indexes[0] || index === h2Indexes[1]) {
+                    return `<h2 class="title"><span>&nbsp;${chunk}&nbsp;</span> </h2>`
+                } else {
+                    return `<h3 class="title"><span>&nbsp;${chunk}&nbsp;</span> </h3>`
+                }
+            })
+
+            return result.join('<span>&nbsp;</span>')
         },
         formattedContent() {
             const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" class="article-image" />`
@@ -131,14 +157,6 @@ export default {
             const len = str.charCodeAt(2) + str.charCodeAt(3)
             return (len % 6) + 2
         },
-        formatTitle(title) {
-            const chunks = this.getChunks(title)
-            const withTags = this.addTagsToChunks(chunks)
-            return withTags
-                .join(' ')
-                .replace('</h3> <h3 class="title">', ' ')
-                .replace('</h2> <h2 class="title">', ' ')
-        },
         formatContent() {
             const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" class="article-image" />`
 
@@ -152,9 +170,16 @@ export default {
             const chunks = []
             let i = 0
 
+            const h = this.notRandomNumberBetween2And3(words[0])
+
             while (i < words.length) {
                 const chunkSize = Math.min(2 + (i % 4), words.length - i)
-                const chunk = words.slice(i, i + chunkSize).join(' ')
+                const chunk = words
+                    .slice(i, i + chunkSize)
+                    .join(' ')
+                    .trim()
+                const result =
+                    i === h ? `<h2>${chunk}</h2>` : `<h3>${chunk}</h3>`
                 chunks.push(chunk)
                 i += chunkSize
             }
@@ -162,6 +187,17 @@ export default {
             return chunks
         },
         addTagsToChunks(chunks) {
+            let result = ''
+
+            while (chunks.length) {
+                const chunk = chunks.shift()
+                const h2 = this.notRandomNumberBetween2And7(chunk)
+                const tag = h2 ? 'h2' : 'h3'
+                result += `<${tag} class="title"><span> ${chunk} </span></${tag}>`
+            }
+
+            // pick four differ
+            /*
             const h2Indexes = [
                 this.notRandomNumberBetween2And3(chunks[0]),
                 this.notRandomNumberBetween2And3(chunks[chunks.length - 1]),
@@ -172,11 +208,12 @@ export default {
 
             return chunks.map((chunk, index) => {
                 if (index === h2Indexes[0] || index === h2Indexes[1]) {
-                    return `<h2 class="title"> <span> ${chunk} </span> </h2>`
+                    return `<h2 class="title"><span> ${chunk} </span></h2>`
                 } else {
-                    return `<h3 class="title"> <span> ${chunk} </span> </h3>`
+                    return `<h3 class="title"><span> ${chunk} </span></h3>`
                 }
             })
+            */
         },
         notRandomNumberBetween2And3(input) {
             const sum = [...input].reduce(
@@ -190,7 +227,6 @@ export default {
                 return article.topic === topic
             })
             this.article.title = DOMPurify.sanitize(this.article.title)
-            this.formattedTitle = this.formatTitle(this.article.title)
             this.article.content = DOMPurify.sanitize(this.article.content)
             this.article = this.addColorObject(this.article)
             this.originalArticle = JSON.parse(JSON.stringify(this.article))
