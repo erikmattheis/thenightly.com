@@ -6,25 +6,27 @@
         </div>
         <div class="spa">
             <RouterView @changeBackground="setBg"></RouterView>
+            <EndMark :colors="colors" />
         </div>
         <TopicList class="nav" />
-        <SiteFooter :colors="customization" />
+        <SiteFooter :colors="colors" />
     </div>
 </template>
 
 <script>
 import TopicList from './components/TopicList.vue'
+import EndMark from './components/EndMark.vue'
 import SiteFooter from './components/SiteFooter.vue'
 
 export default {
     name: 'App',
-    components: { TopicList, SiteFooter },
+    components: { TopicList, EndMark, SiteFooter },
     data() {
         return {
             isLoading: true,
             color: '#FFFFFF',
             bgColor: '#000000',
-            customization: {
+            colors: {
                 color: '#FFFFFF',
                 bgColor: '#000000',
             },
@@ -38,7 +40,6 @@ export default {
     },
     methods: {
         setBg(obj) {
-            console.log('setBg', obj)
             this.setWrapperBGImage(obj.url)
             this.setFooterBGColor(obj)
         },
@@ -50,7 +51,7 @@ export default {
             }
         },
         setFooterBGColor(colors) {
-            this.customization = colors
+            this.colors = colors
         },
     },
 }
@@ -66,12 +67,11 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: soft-light;
-    background-color: #00000066;
 }
 
 .spa {
     max-width: 44rem;
-    background-color: var(--text-bg-color);
+    background-color: var(--text-background-color);
 }
 
 .nav {

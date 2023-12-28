@@ -1,6 +1,7 @@
 <template>
-    <footer>
-        <EndMark :color="color" />{{ color }}
+    <footer
+        :style="{ 'background-color': colors.bgColor, color: colors.color }"
+    >
         <p>
             <em
                 >This site demonstrates human-enhanced machine creativity and
@@ -8,7 +9,6 @@
             >
         </p>
         <p>
-            Erik Mattheis 2024<br />
             <a class="special-link" href="mailto:erik@mattheis.org?subject=OMG"
                 >erik@mattheis.org</a
             >
@@ -17,15 +17,17 @@
 </template>
 
 <script>
-import EndMark from './EndMark.vue'
 export default {
     name: 'SiteFooter',
     props: {
-        color: {
-            type: String,
-            default: () => '#FFFFFF',
+        colors: {
+            type: Object,
+            required: true,
+            default: () => ({
+                color: '#FFFFFF',
+                bgColor: '#000000',
+            }),
         },
     },
-    components: { EndMark },
 }
 </script>
