@@ -4,6 +4,7 @@
   --nav-width: 16rem;
   --total-width: calc(var(--button-width) + var(--nav-width));
   --negative-total-width: calc(-1 * var(--total-width));
+  --text-background-color: #ffffffcc;
 }
 
 /* todo: no */
@@ -32,6 +33,12 @@ body {
 .wrapper {
   width: calc(100% - 20rem);
 }
+
+footer {
+  width: 70%;
+}
+
+
 
 .headline {
   display: flex;
@@ -168,7 +175,7 @@ header div {
 }
 
 .content {
-  background-color: #ffffffdd;
+  background-color: var(--text-background-color);
   padding: 2rem 2rem 12rem 2rem;
 }
 
@@ -181,6 +188,12 @@ footer {
   height: 8rem;
   max-width: 44rem;
   width: 100%;
+  padding: 4rem 0;
+
+}
+
+footer p {
+  width: 60%;
 }
 
 .sr-only {

@@ -18,6 +18,7 @@
         <section class="content">
             <div v-html="formattedContent"></div>
         </section>
+
         <div v-if="editMode">
             <form @submit.prevent="submitForm(article)">
                 <label for="title">Title</label>
@@ -59,6 +60,7 @@ import axios from 'axios'
 import DOMPurify from 'dompurify'
 import dyes from '../data/dyes.json'
 import LoadingMessage from './LoadingMessage.vue'
+
 import { contrastingColor } from '../services/colors.js'
 
 export default {

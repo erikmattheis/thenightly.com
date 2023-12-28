@@ -51,10 +51,9 @@
             </div>
             <footer>
                 <blockquote>
-                "The dye told the cloth, 'It's not you, it's dye.' Sometimes you just have to leave and see the rainbow on
-                the other side!"
+                   <h2> Why did the dye go on a journey? It wanted to find its hue-north!"</h2>
             </blockquote>
-                Why did the dye go on a journey? It wanted to find its true hue-north!"
+                
             </footer>
         </article>
     </div>

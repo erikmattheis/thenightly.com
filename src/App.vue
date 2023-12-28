@@ -71,6 +71,7 @@ export default {
 
 .spa {
     max-width: 44rem;
+    background-color: var(--text-bg-color);
 }
 
 .nav {

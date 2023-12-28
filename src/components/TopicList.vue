@@ -7,7 +7,7 @@
         >
             <li class="special-link">
                 <router-link
-                    @touchstart.prevent="closeDrawerTouch()"
+                    @touchstart.passive="closeDrawerTouch()"
                     to="/"
                     class="link"
                     >Home</router-link
@@ -15,7 +15,7 @@
             </li>
             <li class="special-link">
                 <router-link
-                    @touchstart.prevent="closeDrawerTouch()"
+                    @touchstart.passive="closeDrawerTouch()"
                     to="/about"
                     class="link"
                 >
@@ -45,13 +45,13 @@
                             params: { topic: article.shortTitle },
                         })
                     "
-                    @touchstart.prevent="
+                    @touchstart.passive="
                         $router.push({
                             name: 'DynamicContent',
                             params: { topic: article.shortTitle },
                         })
                     "
-                    @touchend.prevent="closeDrawerTouch()"
+                    @touchend="closeDrawerTouch()"
                     @mouseover="article.isHovered = true"
                     @mouseout="article.isHovered = false"
                 >
@@ -61,7 +61,7 @@
         </ul>
         <div class="floating-button">
             <button
-                @touchstart.prevent="toggleDrawer()"
+                @touchstart.passive="toggleDrawer()"
                 class="top-control"
                 style="padding: 0.4rem"
             >
@@ -113,7 +113,9 @@ export default {
         }))
 
         this.topics = [...this.topics]
-        window.addEventListener('mousemove', this.handleMouseMove)
+        window.addEventListener('mousemove', this.handleMouseMove, {
+            passive: true,
+        })
     },
     beforeUnmount() {
         window.removeEventListener('mousemove', this.handleMouseMove)
