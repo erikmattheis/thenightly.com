@@ -1,37 +1,4 @@
 <template>
-    <div v-if="editMode">
-        <form @submit.prevent="submitForm(article)">
-            <label for="title">Title</label>
-            <input
-                type="text"
-                id="title"
-                v-model="article.title"
-                placeholder="Title"
-            />
-            <label for="shortTitle">Short Title</label>
-            <input
-                type="text"
-                id="shortTitle"
-                v-model="article.shortTitle"
-                placeholder="Short Title"
-            />
-            <label for="content">Description</label>
-            <textarea
-                style="width: 600px; height: 300px"
-                id="description"
-                v-model="article.description"
-                placeholder="Description"
-            ></textarea>
-            <label for="content">Content</label>
-            <textarea
-                style="width: 600px; height: 300px"
-                id="content"
-                v-model="article.content"
-                placeholder="Content"
-            ></textarea>
-            <button type="submit" :disabled="!disabled">Submit</button>
-        </form>
-    </div>
     <h2>
         <a @click="editMode = !editMode" @touchend="editMode = !editMode"
             >edit</a
@@ -53,12 +20,42 @@
                 <span v-html="formattedTitle"></span>
             </div>
         </header>
-        <code style="color: white; white-space: pre">
-            {{ JSON.stringify(article, null, 2) }}
-        </code>
         <section class="content">
             <div v-html="formattedContent"></div>
         </section>
+        <div v-if="editMode">
+            <form @submit.prevent="submitForm(article)">
+                <label for="title">Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    v-model="article.title"
+                    placeholder="Title"
+                />
+                <label for="shortTitle">Short Title</label>
+                <input
+                    type="text"
+                    id="shortTitle"
+                    v-model="article.shortTitle"
+                    placeholder="Short Title"
+                />
+                <label for="content">Description</label>
+                <textarea
+                    style="width: 600px; height: 300px"
+                    id="description"
+                    v-model="article.description"
+                    placeholder="Description"
+                ></textarea>
+                <label for="content">Content</label>
+                <textarea
+                    style="width: 600px; height: 300px"
+                    id="content"
+                    v-model="article.content"
+                    placeholder="Content"
+                ></textarea>
+                <button type="submit" :disabled="!disabled">Submit</button>
+            </form>
+        </div>
     </article>
 </template>
 
@@ -81,11 +78,9 @@ export default {
     emits: ['changeBackground'],
     data() {
         return {
-            editMode: false,
+            editMode: true,
             articles: dyes,
             article: {},
-            formattedTitle: '',
-            formattedContent: '',
             originalArticle: {},
             isLoading: false,
         }
@@ -94,6 +89,22 @@ export default {
         this.setArticle(this.topic)
     },
     computed: {
+        formattedTitle() {
+            const chunks = this.getChunks(this.article.title)
+            const withTags = this.addTagsToChunks(chunks)
+            return withTags
+                .join(' ')
+                .replace('</h3> <h3 class="title">', ' ')
+                .replace('</h2> <h2 class="title">', ' ')
+        },
+        formattedContent() {
+            const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" class="article-image" />`
+
+            const paragraphs = this.article.content.split('</h2>')
+            paragraphs.splice(1, 0, img)
+
+            return paragraphs.join('</h2>')
+        },
         disabled() {
             return (
                 this.article.title !== this.originalArticle.title ||
@@ -181,7 +192,6 @@ export default {
             this.article.title = DOMPurify.sanitize(this.article.title)
             this.formattedTitle = this.formatTitle(this.article.title)
             this.article.content = DOMPurify.sanitize(this.article.content)
-            this.formattedContent = this.formatContent(this.article.content)
             this.article = this.addColorObject(this.article)
             this.originalArticle = JSON.parse(JSON.stringify(this.article))
             this.$emit('changeBackground', this.article.image.compressed)

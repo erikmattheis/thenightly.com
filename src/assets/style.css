@@ -56,16 +56,7 @@ header div h1 span {
   background-color: #00000099;
 }
 
-.headline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  font-size: 1rem !important;
-  margin: 0 0 3rem 0;
-  background: #ccccccaa;
-}
+
 
 blockquote {
   line-height: 1.5;
@@ -179,14 +170,16 @@ header div {
 }
 
 .headline {
-  font-size: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
+  font-size: 1rem;
   margin: 2rem 0 3rem 0;
   background: transparent;
+  font-style: italic;
+  font-weight: 800;
 }
 
 .headline::before {
@@ -195,7 +188,8 @@ header div {
   z-index: -1;
   width: 110%;
   height: 100%;
-  background: #ccccccaa;
+  background: #cccccccc;
+  color: #ffffff;
   transform: translateX(0%) skew(-18deg);
 }
 

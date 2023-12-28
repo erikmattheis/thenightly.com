@@ -95,20 +95,8 @@ async function handler(request) {
 
     return {
         statusCode: 200,
-        body: JSON.stringify(result, null, 2),
+        body: result,
     }
-}
-
-async function addIdToDyes() {
-    const dyesRef = db.collection('dyes')
-    const snapshot = await dyesRef.get()
-
-    snapshot.forEach((doc) => {
-        const docData = doc.data()
-        const id = sanitizeId(`${docData.batch}-${docData.input.topic}`)
-        console.log('id', id)
-        dyesRef.doc(doc.id).update({ id })
-    })
 }
 
 module.exports = {
@@ -116,5 +104,4 @@ module.exports = {
     saveArticle,
     getArticlesByCollection,
     getArticlesByCollectionAndBatch,
-    addIdToDyes,
 }
