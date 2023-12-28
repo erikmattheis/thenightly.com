@@ -79,9 +79,6 @@ async function getArticlesByCollection(name) {
 async function getArticlesByCollectionAndBatch(collection, batches) {
     const articlesRef = db.collection(collection) // .orderBy('topic', 'asc');
     const snapshot = await articlesRef.get()
-    snapshot.forEach((doc) => {
-        console.log('Document ID:', doc.id) // This will log the ID of each document
-    })
     const articles = snapshot.docs
         .filter((doc) => batches.includes(doc.data().batch))
         .map((doc) => doc.data())

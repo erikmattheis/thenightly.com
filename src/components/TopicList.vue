@@ -1,6 +1,10 @@
 <template>
     <div class="drawer-container">
-        <ul class="drawer" :class="{ expanded: expanded }">
+        <ul
+            class="drawer"
+            :class="{ expanded: expanded }"
+            style="max-height: 100vh; overflow: scroll"
+        >
             <li class="special-link">
                 <router-link
                     @touchstart.prevent="closeDrawerTouch()"
@@ -97,8 +101,7 @@ export default {
         return {
             editMode: false,
             topics: dyes,
-            expanded: true,
-            homeIsHovered: false,
+            expanded: false,
         }
     },
     computed: {
@@ -212,6 +215,7 @@ export default {
     top: 0;
     left: var(--negative-total-width);
     transition: all 0.3s ease;
+    height: 100%;
 }
 
 .drawer.expanded {
