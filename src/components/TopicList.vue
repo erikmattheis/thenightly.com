@@ -26,23 +26,18 @@
                 v-for="article in topics"
                 :key="article.shortTitle"
                 :style="{
-                    color: article.isHovered
-                        ? article.color.color
-                        : `${article.color.background}cc`,
-                    'background-color': article.isHovered
-                        ? `${article.color.background}cc`
-                        : article.color.color,
+                    'background-color': `${article.color.color}`,
                 }"
             >
                 <a
                     class="link dynamic-link text-content"
                     :style="{
                         color: article.isHovered
-                            ? article.color.color
+                            ? `${article.color.color}`
                             : `${article.color.background}`,
                         'background-color': article.isHovered
-                            ? `${article.color.background}33`
-                            : `${article.color.color}33`,
+                            ? `${article.color.background}99`
+                            : `${article.color.color}99`,
                         cursor: article.isHovered ? 'pointer' : 'default',
                     }"
                     @click.prevent="
@@ -112,7 +107,7 @@ export default {
     data() {
         return {
             topics: dyes,
-            expanded: true,
+            expanded: false,
         }
     },
     mounted() {
@@ -124,7 +119,7 @@ export default {
             },
         }))
 
-        window.addEventListener('mousemove', this.handleMouseMovex, {
+        window.addEventListener('mousemove', this.handleMouseMove, {
             passive: true,
         })
     },
@@ -216,8 +211,6 @@ button {
     transition: all 0.3s ease;
     text-decoration: none;
     padding: 0.5rem 0.5rem;
-    background-color: white;
-    color: black;
 }
 
 .link .text-content {
@@ -228,7 +221,6 @@ button {
 
 .box {
     position: absolute;
-
     width: 1rem;
     height: var(--button-width);
     right: 0;
