@@ -1,9 +1,7 @@
 <template>
     <article class="wrapper">
         <div>
-          <header class="headline" style="background-color: #00000099;
-                    color: #ffffff;"
-            >            
+          <header class="headline">            
             <p><h2>About</h2> the Developer</p>
             </header>
             <div class="image-container">

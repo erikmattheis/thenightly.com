@@ -1,6 +1,6 @@
 <template>
     <article class="wrapper">
-        <div>
+        <div v-if="article">
             <header
                 :style="{
                     'background-color': `${article.color.background}`,
@@ -48,7 +48,12 @@ export default {
         return {
             editMode: true,
             articles: dyes,
-            article: {},
+            article: {
+                color: {
+                    background: '#000000',
+                    color: '#FFFFFF',
+                },
+            },
             originalArticle: {},
             isLoading: false,
         }
@@ -98,11 +103,6 @@ export default {
             paragraphs.splice(1, 0, img)
 
             return paragraphs.join('</h2>')
-        },
-        submitForm(article) {
-            this.article = article
-            this.editMode = false
-            this.saveArticle()
         },
     },
 
@@ -191,6 +191,7 @@ export default {
             this.article = this.articles.find((article) => {
                 return article.topic === topic
             })
+            console.log('found', this.article.title)
             this.article.title = DOMPurify.sanitize(this.article.title)
             this.article.content = DOMPurify.sanitize(this.article.content)
             this.article = this.addColorObject(this.article)

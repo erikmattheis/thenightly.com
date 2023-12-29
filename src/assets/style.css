@@ -199,11 +199,11 @@ footer p {
 
 footer a {
   display: inline-block;
-  color: #ffffff;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 900;
   font-size: 1.5rem;
-  background-color: #ffffff99;
+  background-color: var(--text-background-color);
   margin: 1rem 0;
   padding: 0.2rem 0.8rem;
   border-radius: 0.2rem;
