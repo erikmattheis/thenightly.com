@@ -1,13 +1,13 @@
 <template>
     <article class="wrapper">
-        <header>
-            <div class="title-background">
+            <div>     
+                <header>
                 <span>
-                    <p>
-                    <h2>Embark</h2> on an AI-Infused Exploration</p>
+                    <p><h2>Embark</h2> on an AI-Infused Exploration</p>
                 </span>
+            </header>
             </div>
-        </header>
+       
         <section class="content">
             <div class="wrapper">
                 <div class="text">
