@@ -7,7 +7,12 @@
                     color: article.color.color,
                 }"
             >
-                <div class="title-background">
+                <div
+                    :style="{
+                        'background-image': `url(${article.image.compressed})`,
+                    }"
+                    class="title-background"
+                >
                     <span v-html="formattedTitle"></span>
                 </div>
             </header>
@@ -58,6 +63,7 @@ export default {
     },
     computed: {
         formattedTitle() {
+            return `<h2 class="t"><span>${this.article.shortTitle}</span></h2>`
             const words = this.article.title.split(' ')
             const chunks = []
             let i = 0
