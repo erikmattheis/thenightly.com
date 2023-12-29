@@ -1,6 +1,6 @@
 <template>
     <footer
-        :style="{ 'background-color': colors.bgColor, color: colors.color }"
+        :style="{ 'background-color': color.background, color: color.color }"
     >
         <p>
             <em
@@ -20,12 +20,12 @@
 export default {
     name: 'SiteFooter',
     props: {
-        colors: {
+        color: {
             type: Object,
             required: true,
             default: () => ({
                 color: '#FFFFFF',
-                bgColor: '#000000',
+                background: '#000000',
             }),
         },
     },

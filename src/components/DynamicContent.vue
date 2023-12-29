@@ -3,7 +3,7 @@
         <div>
             <header
                 :style="{
-                    'background-color': `${article.color.background}cc`,
+                    'background-color': `${article.color.background}`,
                     color: article.color.color,
                 }"
             >
@@ -21,37 +21,7 @@
             </section>
         </div>
         <div v-if="editMode">
-            <form @submit.prevent="submitForm(article)">
-                <label for="title">Title</label>
-                <input
-                    type="text"
-                    id="title"
-                    v-model="article.title"
-                    placeholder="Title"
-                />
-                <label for="shortTitle">Short Title</label>
-                <input
-                    type="text"
-                    id="shortTitle"
-                    v-model="article.shortTitle"
-                    placeholder="Short Title"
-                />
-                <label for="content">Description</label>
-                <textarea
-                    style="width: 600px; height: 300px"
-                    id="description"
-                    v-model="article.description"
-                    placeholder="Description"
-                ></textarea>
-                <label for="content">Content</label>
-                <textarea
-                    style="width: 600px; height: 300px"
-                    id="content"
-                    v-model="article.content"
-                    placeholder="Content"
-                ></textarea>
-                <button type="submit" :disabled="!disabled">Submit</button>
-            </form>
+            <ArticleForm :article="article" @submitForm="submitForm" />
         </div>
     </article>
 </template>
@@ -76,7 +46,7 @@ export default {
     emits: ['changeBackground'],
     data() {
         return {
-            editMode: false,
+            editMode: true,
             articles: dyes,
             article: {},
             originalArticle: {},
@@ -129,13 +99,10 @@ export default {
 
             return paragraphs.join('</h2>')
         },
-        disabled() {
-            return (
-                this.article.title !== this.originalArticle.title ||
-                this.article.shortTitle !== this.originalArticle.shortTitle ||
-                this.article.description !== this.originalArticle.description ||
-                this.article.content !== this.originalArticle.content
-            )
+        submitForm(article) {
+            this.article = article
+            this.editMode = false
+            this.saveArticle()
         },
     },
 
@@ -230,7 +197,7 @@ export default {
             this.originalArticle = JSON.parse(JSON.stringify(this.article))
             this.$emit('changeBackground', {
                 url: this.article.image.compressed,
-                bgColor: this.article.color.background,
+                background: this.article.color.background,
                 color: this.article.color.color,
             })
         },
@@ -243,13 +210,13 @@ export default {
                 },
             }
         },
-        async saveArticle() {
-            await axios.post('/.netlify/functions/firestore', {
-                title: DOMPurify.sanitize(this.article.title),
-                shortTitle: DOMPurify.sanitize(this.article.shortTitle),
-                description: DOMPurify.sanitize(this.article.description),
-                content: DOMPurify.sanitize(this.article.content),
-                docId: this.article.docId,
+        async saveArticle(article) {
+            await axios.post('/functions/firestore', {
+                title: DOMPurify.sanitize(article.title),
+                shortTitle: DOMPurify.sanitize(article.shortTitle),
+                description: DOMPurify.sanitize(article.description),
+                content: DOMPurify.sanitize(article.content),
+                docId: article.docId,
             })
         },
 

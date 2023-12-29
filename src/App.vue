@@ -6,10 +6,10 @@
         </div>
         <div class="spa">
             <RouterView @changeBackground="setBg"></RouterView>
-            <EndMark :colors="colors" />
+            <EndMark :color="color" />
         </div>
         <TopicList class="nav" />
-        <SiteFooter :colors="colors" />
+        <SiteFooter :color="color" />
     </div>
 </template>
 
@@ -24,11 +24,9 @@ export default {
     data() {
         return {
             isLoading: true,
-            color: '#FFFFFF',
-            bgColor: '#000000',
-            colors: {
+            color: {
                 color: '#FFFFFF',
-                bgColor: '#000000',
+                background: '#000000',
             },
             transparentGif:
                 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
@@ -40,18 +38,18 @@ export default {
     },
     methods: {
         setBg(obj) {
-            this.setWrapperBGImage(obj.url)
-            this.setFooterBGColor(obj)
+            this.setWrapperBackgroundImage(obj.url)
+            this.setFooterBackgroundColor(obj)
         },
-        setWrapperBGImage(url) {
+        setWrapperBackgroundImage(url) {
             if (url) {
                 this.backgroundImage = `url(${url})`
             } else {
                 this.backgroundImage = this.transparentGif
             }
         },
-        setFooterBGColor(colors) {
-            this.colors = colors
+        setFooterBackgroundColor(color) {
+            this.color = color
         },
     },
 }

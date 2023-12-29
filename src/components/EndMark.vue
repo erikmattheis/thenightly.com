@@ -5,7 +5,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1"
             viewBox="0 50 130 30"
-            :style="{ fill: colors.bgColor, width: '40%' }"
+            :style="{ fill: color.background, width: '40%' }"
         >
             <g>
                 <path
@@ -19,12 +19,12 @@
 export default {
     name: 'EndMark',
     props: {
-        colors: {
+        color: {
             type: Object,
             required: true,
             default: () => ({
                 color: '#FFFFFF',
-                bgColor: '#000000',
+                background: '#000000',
             }),
         },
     },
