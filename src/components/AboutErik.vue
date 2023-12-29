@@ -1,27 +1,6 @@
 <template>
     <article class="wrapper">
-        <div v-if="isLoading" class="wrapper">
-            <header style="background-color: #00000099;
-                    color: #ffffff;"
-            >
-            <p><h2>About</h2> the Developer</p>
-            </header>
-            <div class="image-container">
-                <LoadingMessage
-                    class="main-image"
-                    isLoading="true"
-                    primaryColor="#ffffff"
-                    secondaryColor="#00000099"
-                />
-                <img
-                    src="https://storage.googleapis.com/nightly-images/assets/Erik.jpg"
-                    alt="Erik Mattheis"
-                    class="loading-image"
-                    @loaded="isLoading = false"
-                />"
-            </div>
-        </div>
-        <div v-else>
+        <div>
           <header class="headline" style="background-color: #00000099;
                     color: #ffffff;"
             >            
@@ -76,24 +55,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-
-h2 {
-  font-size: 3rem;
-}
-h3 {
-  font-size: 2.5rem;
-}
-p {
-  font-size: 1.25rem;
-  line-height: 1.8;
-}
-
-h2, h3 {
-  display: inline;
-  font-style: italic;
-  line-height: 1;
-  margin: 0 
-}
-</style>

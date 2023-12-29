@@ -1,24 +1,25 @@
 <template>
-    <article class="wrapper fade-in">
-        <header
-            :style="{
-                'background-color': `${article.color.background}cc`,
-                color: article.color.color,
-            }"
-        >
-            <div
+    <article class="wrapper">
+        <div>
+            <header
                 :style="{
-                    'background-image': `url(${article.image.compressed})`,
+                    'background-color': `${article.color.background}cc`,
+                    color: article.color.color,
                 }"
-                class="title-background"
             >
-                <span v-html="formattedTitle"></span>
-            </div>
-        </header>
-        <section class="content">
-            <div v-html="formattedContent"></div>
-        </section>
-
+                <div
+                    :style="{
+                        'background-image': `url(${article.image.compressed})`,
+                    }"
+                    class="title-background"
+                >
+                    <span v-html="formattedTitle"></span>
+                </div>
+            </header>
+            <section class="content">
+                <div v-html="formattedContent"></div>
+            </section>
+        </div>
         <div v-if="editMode">
             <form @submit.prevent="submitForm(article)">
                 <label for="title">Title</label>

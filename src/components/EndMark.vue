@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="endmark-wrapper">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1"
             viewBox="0 50 130 30"
-            :style="{ fill: colors.color, width: '40%' }"
+            :style="{ fill: colors.bgColor, width: '40%' }"
         >
             <g>
                 <path

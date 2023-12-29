@@ -56,30 +56,3 @@ export default {
     },
 }
 </script>
-
-<style>
-.dynamic {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: soft-light;
-}
-
-.spa {
-    max-width: 44rem;
-    background-color: var(--text-background-color);
-}
-
-.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--button-width);
-    height: 100vh;
-    z-index: 10;
-}
-</style>
