@@ -3,7 +3,7 @@
         <div v-if="article">
             <header
                 :style="{
-                    'background-color': `${article.color.background}`,
+                    'background-color': article.color.background,
                     color: article.color.color,
                 }"
             >
@@ -13,7 +13,8 @@
                     }"
                     class="title-background"
                 >
-                    <span v-html="formattedTitle"></span>
+                    <h2><span v-text="article.shortTitle"></span></h2>
+                    <p><span v-text="article.title"></span></p>
                 </div>
             </header>
             <section class="content">

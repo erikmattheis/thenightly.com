@@ -74,7 +74,7 @@
             >
                 <svg
                     aria-hidden="true"
-                    viewBox="165.943 85.0498 135.385 85.1675"
+                    viewBox="165.943 60.0498 135.385 125.1675"
                     width="100%"
                     height="100%"
                     xmlns="http://www.w3.org/2000/svg"
@@ -168,10 +168,12 @@ export default {
 
 .floating-button {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 1rem;
+    left: 1rem;
     width: var(--button-width);
-    height: var(--button-width);
+    height: ar(--button-width);
+    border-radius: 100rem;
+    background-color: #ffffffdd;
     /* z-index: 100;*/
 }
 
