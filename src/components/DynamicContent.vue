@@ -7,12 +7,7 @@
                     color: article.color.color,
                 }"
             >
-                <div
-                    :style="{
-                        'background-image': `url(${article.image.compressed})`,
-                    }"
-                    class="title-background"
-                >
+                <div class="title-background">
                     <span v-html="formattedTitle"></span>
                 </div>
             </header>

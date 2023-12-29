@@ -4,8 +4,8 @@
   --nav-width: 16rem;
   --total-width: calc(var(--button-width) + var(--nav-width));
   --negative-total-width: calc(-1 * var(--total-width));
-  --text-color: #00000099;
-  --text-background-color: #ffffff99;
+  --text-color: #000000cc;
+  --text-background-color: #ffffffdd;
 }
 
 /* todo: no */
@@ -119,6 +119,7 @@ h3.title span {
   padding: 0.2rem 0.8rem;
   line-height: 1.9;
   background-color: var(--text-background-color);
+  color: var(--text-color);
 }
 
 blockquote {
