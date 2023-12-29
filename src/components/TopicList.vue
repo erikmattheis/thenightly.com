@@ -26,17 +26,23 @@
                 v-for="article in topics"
                 :key="article.shortTitle"
                 :style="{
-                    'background-color': article.isHovered
+                    color: article.isHovered
                         ? article.color.color
-                        : article.color.background,
+                        : `${article.color.background}cc`,
+                    'background-color': article.isHovered
+                        ? `${article.color.background}cc`
+                        : article.color.color,
                 }"
             >
                 <a
-                    class="link dynamic-link"
+                    class="link dynamic-link text-content"
                     :style="{
                         color: article.isHovered
-                            ? article.color.background
-                            : article.color.color,
+                            ? article.color.color
+                            : `${article.color.background}`,
+                        'background-color': article.isHovered
+                            ? `${article.color.background}33`
+                            : `${article.color.color}33`,
                         cursor: article.isHovered ? 'pointer' : 'default',
                     }"
                     @click.prevent="
@@ -56,6 +62,12 @@
                     @mouseout="article.isHovered = false"
                 >
                     {{ article.shortTitle }}
+                    <div
+                        class="box"
+                        :style="{
+                            'background-color': article.color.background,
+                        }"
+                    ></div>
                 </a>
             </li>
         </ul>
@@ -100,7 +112,7 @@ export default {
     data() {
         return {
             topics: dyes,
-            expanded: false,
+            expanded: true,
         }
     },
     mounted() {
@@ -112,8 +124,7 @@ export default {
             },
         }))
 
-        this.topics = [...this.topics]
-        window.addEventListener('mousemove', this.handleMouseMove, {
+        window.addEventListener('mousemove', this.handleMouseMovex, {
             passive: true,
         })
     },
@@ -169,13 +180,6 @@ export default {
     /* z-index: 100;*/
 }
 
-.svg {
-    margin: 0;
-    padding: 0;
-    width: var(--button-width);
-    height: var(--button-width);
-}
-
 .drawer {
     position: fixed;
     top: 0;
@@ -190,15 +194,46 @@ export default {
     left: 0;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .link {
+    position: relative;
     display: block;
     width: calc(var(--nav-width) - 2rem);
     line-height: 1.5;
-    height: 100%;
     transition: all 0.3s ease;
     text-decoration: none;
-    text-transform: uppercase;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
+    background-color: white;
+    color: black;
+}
+
+.link .text-content {
+    flex-grow: 1 1 auto;
+    width: calc(var(--nav-width)-var(--button-width));
+    height: var(--button-width);
+}
+
+.box {
+    position: absolute;
+
+    width: 1rem;
+    height: var(--button-width);
+    right: 0;
+    top: 0;
+    z-index: 100000;
 }
 
 .link:hover {
@@ -270,19 +305,5 @@ export default {
     100% {
         fill: var(--start-color);
     }
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-button {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    cursor: pointer;
 }
 </style>
