@@ -26,19 +26,16 @@
                 v-for="article in topics"
                 :key="article.shortTitle"
                 :style="{
-                    'background-color': `${article.color.color}`,
+                    'background-color': `${article.color.background}`,
                 }"
             >
                 <a
-                    class="link dynamic-link text-content"
+                    class="link"
                     :style="{
-                        color: article.isHovered
-                            ? `${article.color.color}`
-                            : `${article.color.background}`,
-                        'background-color': article.isHovered
-                            ? `${article.color.background}99`
-                            : `${article.color.color}99`,
                         cursor: article.isHovered ? 'pointer' : 'default',
+                        'background-color': article.isHovered
+                            ? '#ffffff66'
+                            : '#ffffffdd',
                     }"
                     @click.prevent="
                         $router.push({
@@ -107,7 +104,7 @@ export default {
     data() {
         return {
             topics: dyes,
-            expanded: false,
+            expanded: true,
         }
     },
     mounted() {
@@ -150,12 +147,6 @@ export default {
 </script>
 
 <style scoped>
-.header {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
 .drawer-container {
     ::-webkit-scrollbar {
         display: none;
@@ -173,10 +164,17 @@ export default {
     width: var(--button-width);
     height: ar(--button-width);
     border-radius: 100rem;
-    background-color: #ffffffdd;
-    /* z-index: 100;*/
+    background-color: var(--text-background-color);
+    color: var(--text-color);
 }
 
+button {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
 .drawer {
     position: fixed;
     top: 0;
@@ -197,14 +195,6 @@ ul {
     margin: 0;
 }
 
-button {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    cursor: pointer;
-}
-
 .link {
     position: relative;
     display: block;
@@ -220,7 +210,6 @@ button {
     width: calc(var(--nav-width)-var(--button-width));
     height: var(--button-width);
 }
-
 .box {
     position: absolute;
     width: 1rem;
@@ -238,66 +227,19 @@ button {
 .special-link a,
 .special-link a:link {
     text-align: right;
-    background-color: black;
-    color: white;
+    margin-right: -1.5rem;
+    padding-right: 1.5rem;
+    background-color: var(--text-background-color);
+    color: var(--text-color);
 }
 
 .special-link:hover {
-    color: black;
-    background-color: white;
+    color: var(--text-background-color);
+    background-color: var(--text-color);
 }
 
 .special-link a:hover {
-    color: black;
-    background-color: white;
-}
-
-.slide-enter-active,
-.slide-leave-active {
-    transition: all 0.3s ease;
-}
-
-.slide-enter-from,
-.slide-leave-to {
-    transform: translateX(var(--negative-total-width));
-}
-
-.slide-enter-to,
-.slide-leave-from {
-    transform: translateX(0);
-}
-
-@keyframes rainbow {
-    0% {
-        fill: var(--start-color);
-    }
-
-    14% {
-        fill: var(--t14-color);
-    }
-
-    28% {
-        fill: var(--t28-color);
-    }
-
-    42% {
-        fill: var(--t42-color);
-    }
-
-    57% {
-        fill: var(--t57-color);
-    }
-
-    71% {
-        fill: var(--t71-color);
-    }
-
-    85% {
-        fill: var(--t85-color);
-    }
-
-    100% {
-        fill: var(--start-color);
-    }
+    color: var(--text-background-color);
+    background-color: var(--text-color);
 }
 </style>

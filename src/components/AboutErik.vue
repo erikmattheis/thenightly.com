@@ -8,14 +8,12 @@
                 <img
                     src="https://storage.googleapis.com/nightly-images/assets/Erik.jpg"
                     alt="Erik Mattheis"
-                    class="main-image"
                     @loaded="isLoading = false"
                 />
             </div>
         </div>
         <div class="content">
             
-
             <p><h3>Hey there!</h3> I'm Erik Mattheis, a Full Stack Developer based
                 in Saint Paul, MN. With expertise in Javascript, Vue.js,
                 NodeJS, MongoDB, and more, I've collaborated with big names
