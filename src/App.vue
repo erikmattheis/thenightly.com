@@ -1,7 +1,7 @@
 <!-- src/App.vue -->
 <template>
     <div class="dynamic" :style="{ 'background-image': backgroundImage }">
-        <div class="headline">
+        <div class="headline" v-if="!showHeadline">
             <h1>NATURALLY HUED</h1>
         </div>
         <div class="spa">
@@ -28,10 +28,14 @@ export default {
                 color: '#FFFFFF',
                 background: '#000000',
             },
+            showHeadline: false,
             transparentGif:
                 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
             backgroundImage: this.transparentGif,
         }
+    },
+    created() {
+        this.showHeadline = this.$route.name !== 'HomePage'
     },
     mounted() {
         this.isLoading = false
