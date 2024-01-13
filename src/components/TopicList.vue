@@ -7,7 +7,7 @@
         >
             <li class="special-link">
                 <router-link
-                    @touchstart.passive="closeDrawerTouch()"
+                    @touchend.passive="closeDrawerTouch()"
                     to="/"
                     class="link"
                     >Home</router-link
@@ -15,7 +15,7 @@
             </li>
             <li class="special-link">
                 <router-link
-                    @touchstart.passive="closeDrawerTouch()"
+                    @touchend.passive="closeDrawerTouch()"
                     to="/about"
                     class="link"
                 >
@@ -49,7 +49,7 @@
                             params: { topic: article.shortTitle },
                         })
                     "
-                    @touchend="closeDrawerTouch()"
+                    @touchend.passive="closeDrawerTouch()"
                     @mouseover="article.isHovered = true"
                     @mouseout="article.isHovered = false"
                 >
@@ -104,7 +104,7 @@ export default {
     data() {
         return {
             topics: dyes,
-            expanded: true,
+            expanded: false,
         }
     },
     mounted() {
@@ -136,10 +136,11 @@ export default {
             }
         },
         toggleDrawer() {
-            console.log('toggleDrawer', this.expanded ? 'expands' : 'contracts')
+            console.log('toggleDrawer', this.expanded)
             this.expanded = !this.expanded
         },
         closeDrawerTouch() {
+            console.log('closeDrawerTouch', this.expanded)
             this.expanded = false
         },
     },
