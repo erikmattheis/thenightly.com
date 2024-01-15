@@ -10,7 +10,7 @@
         </p>
 
         <p>
-            <a class="special-link" href="mailto:erik@mattheis.org?subject=OMG"
+            <a class="special-link" href="mailto:erik@mattheis.org?subject=OMG!"
                 >erik@mattheis.org</a
             >
         </p>

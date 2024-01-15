@@ -44,8 +44,7 @@
                         diverse traditions and practices of societies across the
                         globe.
                     </p>
-
-                    <h3>Craftsmanship Unveiled</h3>
+                    <!--                    <h3>Craftsmanship Unveiled</h3>
                     <p>
                         Unearth the secrets behind traditional craftsmanship,
                         where skilled artisans transform raw materials into
@@ -78,7 +77,10 @@
                         Begin your exploration into the traditions and cultures
                         woven into natural dyes and fabrics.
                     </p>
-
+                -->
+                    <h3>
+                        Human Creativity Merged With Artificial Intelligence
+                    </h3>
                     <p>
                         Experience the fusion of human and artificial
                         intelligence as we bring you cutting-edge insights,
