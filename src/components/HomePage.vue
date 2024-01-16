@@ -106,6 +106,62 @@ export default {
     },
     mounted() {
         this.isLoading = false
+
+        document.title = 'Naturally Hued'
+
+        let meta = document.querySelector('meta[name="description"]')
+
+        if (meta) {
+            meta.setAttribute('content', this.article.description)
+        } else {
+            meta = document.createElement('meta')
+            meta.name = 'description'
+            meta.content = this.article.description
+            document.getElementsByTagName('head')[0].appendChild(meta)
+        }
+
+        let ogType = document.querySelector('meta[property="og:type"]')
+
+        if (ogType) {
+            ogType.setAttribute('content', 'website')
+        } else {
+            ogType = document.createElement('meta')
+            ogType.property = 'og:type'
+            ogType.content = 'website'
+            document.getElementsByTagName('head')[0].appendChild(ogType)
+        }
+
+        let ogDescription = document.querySelector(
+            'meta[property="og:description"]'
+        )
+
+        if (ogDescription) {
+            ogDescription.setAttribute(
+                'content',
+                'Step into the enchanting world of natural dyes, a heritage passed down through generations. Explore the cultural significance and historical roots of traditional colorants sourced from plants, minerals, and time-honored techniques.'
+            )
+        } else {
+            ogDescription = document.createElement('meta')
+            ogDescription.property = 'og:description'
+            ogDescription.content =
+                'Step into the enchanting world of natural dyes, a heritage passed down through generations. Explore the cultural significance and historical roots of traditional colorants sourced from plants, minerals, and time-honored techniques.'
+            document.getElementsByTagName('head')[0].appendChild(meta)
+        }
+
+        let ogImage = document.querySelector('meta[property="og:image"]')
+
+        if (ogImage) {
+            ogImage.setAttribute(
+                'content',
+                'https://storage.googleapis.com/nightly-images/article-images/23.12.22-cherries-2023-11-5-3-59-3-q80.jpg'
+            )
+        } else {
+            ogImage = document.createElement('meta')
+            ogImage.property = 'og:image'
+            ogImage.content =
+                'https://storage.googleapis.com/nightly-images/article-images/23.12.22-cherries-2023-11-5-3-59-3-q80.jpg'
+            ogImage.getElementsByTagName('head')[0].appendChild(meta)
+        }
     },
 }
 </script>

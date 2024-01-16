@@ -63,41 +63,6 @@ export default {
         this.setArticle(this.topic)
     },
     computed: {
-        formattedTitle() {
-            return `<h2 class="t"><span>${this.article.shortTitle}</span></h2>`
-            const words = this.article.title.split(' ')
-            const chunks = []
-            let i = 0
-
-            while (i < words.length) {
-                const n = words[i].charCodeAt(0) % 6
-                const chunkSize = Math.min(2 + n, words.length - i)
-                const chunk = words
-                    .slice(i, i + chunkSize)
-                    .join(' ')
-                    .trim()
-                chunks.push(chunk)
-                i += chunkSize
-            }
-
-            const h2Indexes = [
-                this.notRandomNumberBetween2And3(chunks[0]),
-                this.notRandomNumberBetween2And3(chunks[chunks.length - 1]),
-            ].sort()
-            if (h2Indexes[0] === h2Indexes[1]) {
-                h2Indexes[1]++
-            }
-
-            const result = chunks.map((chunk, index) => {
-                if (index === h2Indexes[0] || index === h2Indexes[1]) {
-                    return `<h2 class="title"><span>&nbsp;${chunk}&nbsp;</span> </h2>`
-                } else {
-                    return `<h3 class="title"><span>&nbsp;${chunk}&nbsp;</span> </h3>`
-                }
-            })
-
-            return result.join('<span>&nbsp;</span>')
-        },
         formattedContent() {
             const img = `<img src="${this.article.image.compressed}" alt="${this.article.shortTitle}" class="article-image" />`
 
@@ -203,6 +168,53 @@ export default {
                 background: this.article.color.background,
                 color: this.article.color.color,
             })
+            document.title = `${this.article.shortTitle} as a natural dye`
+
+            let metaType = document.querySelector('meta[property="og:type"]')
+
+            if (metaType) {
+                metaType.setAttribute('content', 'article')
+            } else {
+                metaType = document.createElement('meta')
+                metaType.property = 'og:type'
+                metaType.content = 'article'
+                document.getElementsByTagName('head')[0].appendChild(metaType)
+            }
+
+            let meta = document.querySelector('meta[name="description"]')
+
+            if (meta) {
+                meta.setAttribute('content', this.article.description)
+            } else {
+                meta = document.createElement('meta')
+                meta.name = 'description'
+                meta.content = this.article.description
+                document.getElementsByTagName('head')[0].appendChild(meta)
+            }
+
+            let ogMeta = document.querySelector(
+                'meta[property="og:description"]'
+            )
+
+            if (ogMeta) {
+                ogMeta.setAttribute('content', this.article.description)
+            } else {
+                ogMeta = document.createElement('meta')
+                ogMeta.property = 'og:description'
+                ogMeta.content = this.article.description
+                document.getElementsByTagName('head')[0].appendChild(meta)
+            }
+
+            let ogImage = document.querySelector('meta[property="og:image"]')
+
+            if (ogImage) {
+                ogImage.setAttribute('content', this.article.image.compressed)
+            } else {
+                ogImage = document.createElement('meta')
+                ogImage.property = 'og:image'
+                ogImage.content = this.article.image.compressed
+                ogImage.getElementsByTagName('head')[0].appendChild(meta)
+            }
         },
         addColorObject(article) {
             return {
