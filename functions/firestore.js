@@ -1,9 +1,12 @@
 // const path = require('path');
 const admin = require('firebase-admin')
 const { sanitizeId } = require('./utility')
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 // Load your service account credentials from an environment variable or secret manager
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
 
 // Initialize the Firebase application with the service account credentials
 if (!admin.apps.length) {
@@ -81,7 +84,14 @@ async function getArticlesByCollectionAndBatch(collection, batches) {
     const snapshot = await articlesRef.get()
     const articles = snapshot.docs
         .filter((doc) => batches.includes(doc.data().batch))
-        .map((doc) => doc.data())
+        .map((doc) => {
+            const data = doc.data()
+            return {
+                image: data.image,
+                topic: data.topic,
+                color: data.color,
+            }
+        })
     console.log('articles found ', articles.length)
     return articles
 }

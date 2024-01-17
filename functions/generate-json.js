@@ -7,7 +7,6 @@ const path = require('path')
 const {
     getArticlesByCollection,
     getArticlesByCollectionAndBatch,
-    addIdToDyes,
 } = require('./firestore')
 
 const batches = ['23.12.22', '23.12.26', '23.12.27']
@@ -29,7 +28,6 @@ function replaceWhiteSpaceWithDash(name) {
 // eslint-disable-next-line func-names
 exports.handler = async function () {
     console.log('Generating JSON...')
-    await addIdToDyes()
     const t0 = performance.now()
     // const topic = body.topic || 'Synthetic fabrics used in sports';
     const subjects = ['dyes']
@@ -50,7 +48,7 @@ exports.handler = async function () {
         const fileName = replaceWhiteSpaceWithDash(collection)
 
         fs.writeFileSync(
-            path.join(__dirname, `../../src/data/${fileName}.json`),
+            path.join(__dirname, `../src/data/${fileName}.json`),
             JSON.stringify(topics, null, 2)
         )
     }

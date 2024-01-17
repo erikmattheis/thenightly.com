@@ -2,6 +2,7 @@
 <template>
     <div>
         <button @click="createInitialData()">Create Initial Data</button>
+        <button @click="saveContent()">Save Content</button>
     </div>
 </template>
 
@@ -32,7 +33,7 @@ export default {
         },
 
         async saveContent() {
-            await axios.post('/.netlify/functions/generate-json', {
+            await axios.post('/functions/generate-json', {
                 topic: this.topic,
                 grade: this.grade,
                 len: this.len,
