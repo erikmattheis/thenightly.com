@@ -15,7 +15,7 @@
         <div class="content">
             
             <p><h3>Hey there!</h3> I'm Erik Mattheis, a Full Stack Developer based
-                in Saint Paul, MN. With expertise in Javascript, Vue.js,
+                in Saint Paul, MN. Here is <a href="https://mattheis.org/">my portfolio</a>. With expertise in Javascript, Vue.js,
                 NodeJS, MongoDB, and more, I've collaborated with big names
                 like BMW, Coca-Cola, and NASA.</p>
                 

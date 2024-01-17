@@ -21,9 +21,6 @@
                 <div v-html="formattedContent"></div>
             </section>
         </div>
-        <div v-if="editMode">
-            <ArticleForm :article="article" @submitForm="submitForm" />
-        </div>
     </article>
 </template>
 

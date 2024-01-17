@@ -109,16 +109,11 @@ export default {
 
         document.title = 'Naturally Hued'
 
-        let meta = document.querySelector('meta[name="description"]')
+        const siteDescription =
+            'Step into the enchanting world of natural dyes, a heritage passed down through generations. Explore the cultural significance and historical roots of traditional colorants sourced from plants, minerals, and time-honored techniques.'
 
-        if (meta) {
-            meta.setAttribute('content', this.article.description)
-        } else {
-            meta = document.createElement('meta')
-            meta.name = 'description'
-            meta.content = this.article.description
-            document.getElementsByTagName('head')[0].appendChild(meta)
-        }
+        let meta = document.querySelector('meta[name="description"]')
+        meta.setAttribute('content', siteDescription)
 
         let ogType = document.querySelector('meta[property="og:type"]')
 
@@ -138,7 +133,7 @@ export default {
         if (ogDescription) {
             ogDescription.setAttribute(
                 'content',
-                'Step into the enchanting world of natural dyes, a heritage passed down through generations. Explore the cultural significance and historical roots of traditional colorants sourced from plants, minerals, and time-honored techniques.'
+                siteDescription || 'Naturally Hued'
             )
         } else {
             ogDescription = document.createElement('meta')
