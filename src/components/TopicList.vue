@@ -30,6 +30,7 @@
                 }"
             >
                 <a
+                    :href="`/dyes/${article.shortTitle}`"
                     class="link"
                     :style="{
                         cursor: article.isHovered ? 'pointer' : 'default',
