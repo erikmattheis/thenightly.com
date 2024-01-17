@@ -86,8 +86,10 @@ async function getArticlesByCollectionAndBatch(collection, batches) {
         .filter((doc) => batches.includes(doc.data().batch))
         .map((doc) => {
             const data = doc.data()
+            console.log('data', data)
             return {
                 title: data.title,
+                title: data.shortTitle,
                 description: data.description,
                 content: data.content,
                 image: data.image,
