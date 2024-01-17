@@ -87,6 +87,9 @@ async function getArticlesByCollectionAndBatch(collection, batches) {
         .map((doc) => {
             const data = doc.data()
             return {
+                title: data.title,
+                description: data.description,
+                content: data.content,
                 image: data.image,
                 topic: data.topic,
                 color: data.color,
